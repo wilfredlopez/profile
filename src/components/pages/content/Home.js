@@ -1,5 +1,5 @@
 import React from 'react'
-import Counter from '../Utils/Counter'
+import Counter from '../../Utils/Counter'
 
 const Home = () => {
     return (

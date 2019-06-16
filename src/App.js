@@ -1,13 +1,15 @@
 import React from 'react';
 import Routes from './Routes'
-import Layout from './components/containers/Layout'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import ResponsiveContainer from './components/pages/containers/ResponsiveContainer'
+import SiteFooter from './components/pages/partials/SiteFooter'
+
 
 function App() {
   return (
-    <Layout>
+    <ResponsiveContainer>
       <Routes />
-    </Layout>
+      <SiteFooter />
+    </ResponsiveContainer>
   );
 }
 
