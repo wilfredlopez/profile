@@ -1,10 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Boilerplate app
+
+This app is ready for heroku deploy. Its a combination of create-react-app, semantic-ui, react-router, easy-peasy(redux), and bootstrap(optional).
+
+for Netlyfy deploy just add an [_redirects] file to the root of the build folder with the following code (wihout the brakets)
+[/* /index.html 200]
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

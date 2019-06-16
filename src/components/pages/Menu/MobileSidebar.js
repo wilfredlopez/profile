@@ -14,11 +14,19 @@ const SidebarMenu = ({ handleToggle }) => {
                 </Menu.Item>
                 <Menu.Item position='right'>
                     <Button as='a' inverted>
-                        Log in
-</Button>
+                        <Icon.Group >
+                            <Icon name='github' />
+                            <Icon corner name='add' />
+                        </Icon.Group>
+                        github
+                    </Button>
                     <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                        Sign Up
-</Button>
+                        <Icon.Group>
+                            <Icon name='twitter' style={{ color: "#1da1f2" }} />
+                            <Icon corner name='add' style={{ color: "#1da1f2" }} />
+                        </Icon.Group>
+                        @wilfreddonaldlo
+                    </Button>
                 </Menu.Item>
             </Menu>
         </React.Fragment>

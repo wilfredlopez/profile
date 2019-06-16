@@ -12,7 +12,7 @@ import MenuItemsMobile from '../Menu/MenuItemsMobile'
 import getWidth from './getWidth'
 
 //custum
-import SidebarMenu from '../Menu/SidebarMenu'
+import MobileSidebar from '../Menu/MobileSidebar'
 
 
 class MobileContainer extends Component {
@@ -52,7 +52,7 @@ class MobileContainer extends Component {
                         vertical
                     >
                         <Container>
-                            <SidebarMenu handleToggle={this.handleToggle} />
+                            <MobileSidebar handleToggle={this.handleToggle} />
                         </Container>
 
                     </Segment>

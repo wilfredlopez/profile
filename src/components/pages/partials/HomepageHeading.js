@@ -7,10 +7,10 @@ import {
     Icon,
     Responsive,
     Sidebar,
-    Segment
+    Segment,
+    Image
 } from 'semantic-ui-react'
 
-import Counter from '../../Utils/Counter'
 import getWidth from '../containers/getWidth'
 
 
@@ -28,33 +28,32 @@ const HomepageHeading = ({ mobile }) => (
             vertical
         >
             <Container text>
+                <Image
+                    src='https://res.cloudinary.com/wlopez/image/upload/v1560691736/wilfred.jpg'
+                    size='medium'
+                    circular
+                    alt="wilfred"
+                    className="m-auto"
+                />
                 <Header
                     as='h1'
-                    content='Wilfred React Template'
+                    content='WILFRED LOPEZ'
                     inverted
                     style={{
                         fontSize: mobile ? '2em' : '4em',
                         fontWeight: 'normal',
                         marginBottom: 0,
-                        marginTop: mobile ? '1.5em' : '1em',
+                        marginTop: mobile ? '0.5em' : '0.2em',
                     }}
                 />
-                <Header
-                    as='h2'
-                    content='Simple Counter with Easy Peasy (redux)'
-                    inverted
-                    style={{
-                        fontSize: mobile ? '1.5em' : '1.7em',
-                        fontWeight: 'normal',
-                        marginTop: mobile ? '0.5em' : '1em',
-                    }}
-                />
-
-                <Counter />
-                <br />
+                <p>QA/Web Development
+                    <br />
+                    <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
+                </p>
                 <Button primary size='huge'>
-                    <a href="https://github.com/wilfredlopez">Get from Github</a>
-                    <Icon name='right arrow' />
+                    <Icon name='mail' />
+                    <a href="mailto:cubamc@gmail.com">Contact Me</a>
+
                 </Button>
             </Container>
         </Segment>

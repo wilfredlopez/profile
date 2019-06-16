@@ -1,20 +1,16 @@
 
 
 import React, { Fragment } from 'react'
-import {
-    Menu,
-} from 'semantic-ui-react'
+import { NavLink } from 'react-router-dom'
+
 
 const MenuItems = ({ fixed }) => {
 
     return (
         <Fragment>
-            <Menu.Item as='a' active>Home</Menu.Item>
-            <Menu.Item as='a'>Work</Menu.Item>
-            <Menu.Item as='a'>Company</Menu.Item>
-            <Menu.Item as='a'>Careers</Menu.Item>
-            <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a'>Sign Up</Menu.Item>
+            <NavLink to="/" className="item" exact>Home</NavLink>
+            <NavLink to="/projects" className="item" exact>Projects</NavLink>
+            <NavLink to="/about" className="item" exact>About</NavLink>
         </Fragment>
     )
 }

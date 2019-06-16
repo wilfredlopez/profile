@@ -24,9 +24,6 @@ const HomepageLayout = () => {
             setMobile(false)
         }
     }, [])
-
-    console.log(mobile)
-
     return (
         <React.Fragment>
             {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
@@ -70,14 +67,12 @@ const HomepageLayout = () => {
               </Header>
                             <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
                         </Grid.Column>
-                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                            <Header as='h3' style={{ fontSize: '2em' }}>
-                                "I shouldn't have gone with their competitor."
-              </Header>
-                            <p style={{ fontSize: '1.33em' }}>
-                                <Image avatar src='https://res.cloudinary.com/wlopez/image/upload/v1553345921/gp2nduoaesieuqpzvt6h.png' />
-                                <b>Nan</b> Chief Fun Officer Acme Toys
-              </p>
+                        <Grid.Column style={{ paddingBottom: '1em', paddingTop: '1em' }}>
+
+                            <a className="twitter-timeline" href="https://twitter.com/WilfredDonaldLo?ref_src=twsrc%5Etfw">
+                                Tweets by WilfredDonaldLo
+                            </a>
+
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
