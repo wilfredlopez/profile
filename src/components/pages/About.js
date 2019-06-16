@@ -40,10 +40,13 @@ const About = () => (
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
-                    <Grid.Column textAlign='center' className="p-3" style={{background: 'rgba(0, 0, 0, 0.85)', borderRadius: '1rem'}}>
+                    <Grid.Column textAlign='center' >
+                    <div className="p-3" style={{background: 'rgba(0, 0, 0, 0.85)', borderRadius: '1rem'}}>
                     <h3 className="text-center text-white">Contact Me</h3>
-                        <Button size='huge'><a href="mailto:cubamc@gmail.com">By Email <Icon name="mail"></Icon></a></Button>
-                        <Button size='huge'><a href="tel:1+5514442665">By Phone <Icon name="phone"></Icon></a></Button>
+                        <Button size='large'><a href="mailto:cubamc@gmail.com">By Email <Icon name="mail"></Icon></a></Button>
+                        <Button size='large'><a href="tel:1+5514442665">By Phone <Icon name="phone"></Icon></a></Button>
+                    </div>
+                    
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

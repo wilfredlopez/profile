@@ -9,7 +9,6 @@ import {
     List,
     Icon,
     Sticky,
-    Rail,
     Ref
 } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
@@ -53,15 +52,15 @@ const facebookPostsList = [
 const HomepageLayout = () => {
     const [mobile, setMobile] = useState(null)
     const contextRef = useRef()
-
+    let deviceWith = getWidth()
     useEffect(() => {
-        let deviceWith = getWidth()
+
         if (deviceWith <= 767) {
             setMobile(true)
         } else {
             setMobile(false)
         }
-    }, [])
+    }, [deviceWith])
 
 
     const facebookPosts = facebookPostsList.map((p) => {
@@ -194,21 +193,19 @@ const HomepageLayout = () => {
 
             <Segment style={{ padding: '0em' }} vertical>
                 <h1 className="text-center display-3">Social Media</h1>
-
-
-
                 <Grid celled='internally' columns='equal' stackable>
                     <Ref innerRef={contextRef}>
                         <Grid.Row textAlign='center'>
                             <Grid.Column style={{ paddingBottom: '1em', paddingTop: '1em', zIndex: '1' }}>
                                 {!mobile ?
-                                    <Rail position="left">
+                                    <React.Fragment>
                                         <Header as='h3' style={{ fontSize: '2em' }}>
                                             <u>Facebook</u>
                                         </Header>
-                                        <Sticky offset={80} context={contextRef} bottomOffset={200} >
+
+                                        <Sticky offset={80} context={contextRef}>
                                             {facebookPosts}
-                                        </Sticky> </Rail> :
+                                        </Sticky></React.Fragment> :
 
                                     <React.Fragment>
                                         <Header as='h3' style={{ fontSize: '2em' }}>
