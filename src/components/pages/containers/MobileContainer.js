@@ -16,11 +16,13 @@ import MobileSidebar from '../Menu/MobileSidebar'
 
 
 class MobileContainer extends Component {
-    state = {}
+    state = { sidebarOpened: null }
 
     handleSidebarHide = () => this.setState({ sidebarOpened: false })
 
     handleToggle = () => this.setState({ sidebarOpened: true })
+
+    barToggle = () => { this.setState(prevState => { return { sidebarOpened: !prevState.sidebarOpened } }) }
 
     render() {
         const { children } = this.props
@@ -40,11 +42,11 @@ class MobileContainer extends Component {
                     vertical
                     visible={sidebarOpened}
                 >
-                    <MenuItemsMobile />
+                    <MenuItemsMobile handleOut={this.barToggle} />
 
                 </Sidebar>
 
-                <Sidebar.Pusher dimmed={sidebarOpened}>
+                <Sidebar.Pusher dimmed={sidebarOpened} style={{ minHeight: "100vh" }}>
                     <Segment
                         inverted
                         textAlign='center'
@@ -52,7 +54,7 @@ class MobileContainer extends Component {
                         vertical
                     >
                         <Container>
-                            <MobileSidebar handleToggle={this.handleToggle} />
+                            <MobileSidebar handleToggle={this.barToggle} />
                         </Container>
 
                     </Segment>

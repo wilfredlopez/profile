@@ -67,13 +67,14 @@ const HomepageLayout = () => {
     const facebookPosts = facebookPostsList.map((p) => {
         return (
             <iframe
+                key={p.url}
                 title="Facebook Post"
                 src={p.url}
                 width="500" height={p.height}
                 style={{ border: 'none', overflow: "hidden", minWidth: '100%', maxWidth: '100%' }}
                 scrolling="no"
-                frameborder="0"
-                allowTransparency="true"
+                frameBorder="0"
+                allowtransparency="true"
                 allow="encrypted-media">
             </iframe>
         )
@@ -201,7 +202,7 @@ const HomepageLayout = () => {
                         <Grid.Row textAlign='center'>
                             <Grid.Column style={{ paddingBottom: '1em', paddingTop: '1em', zIndex: '1' }}>
                                 {!mobile ?
-                                    <Rail>
+                                    <Rail position="left">
                                         <Header as='h3' style={{ fontSize: '2em' }}>
                                             <u>Facebook</u>
                                         </Header>
