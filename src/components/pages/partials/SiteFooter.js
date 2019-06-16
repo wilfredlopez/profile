@@ -7,6 +7,8 @@ import {
     Segment
 } from 'semantic-ui-react'
 
+import SocialList from './SocialList'
+
 const SiteFooter = () => {
     return (
         <Segment inverted vertical style={{ padding: '5em 0em' }}>
@@ -14,31 +16,29 @@ const SiteFooter = () => {
                 <Grid divided inverted stackable>
                     <Grid.Row>
                         <Grid.Column width={3}>
-                            <Header inverted as='h4' content='About' />
+                            <Header inverted as='h4' content='Wilfred' />
                             <List link inverted>
-                                <List.Item as='a'>Sitemap</List.Item>
-                                <List.Item as='a'>Contact Us</List.Item>
-                                <List.Item as='a'>Religious Ceremonies</List.Item>
-                                <List.Item as='a'>Gazebo Plans</List.Item>
+                                <List.Item as='a' href="/">Home</List.Item>
+                                <List.Item as='a' href="/projects">Demo Projects</List.Item>
+                                <List.Item as='a' href="/contact">Contact</List.Item>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={3}>
-                            <Header inverted as='h4' content='Services' />
+                            <Header inverted as='h4' content='Projects' />
                             <List link inverted>
-                                <List.Item as='a'>Banana Pre-Order</List.Item>
-                                <List.Item as='a'>DNA FAQ</List.Item>
-                                <List.Item as='a'>How To Access</List.Item>
-                                <List.Item as='a'>Favorite X-Men</List.Item>
+                                <List.Item as='a'>Vape Music</List.Item>
+                                <List.Item as='a'>EasyTodos</List.Item>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={7}>
                             <Header as='h4' inverted>
-                                Footer Header
+                                Follow Me!
                 </Header>
-                            <p>
-                                Extra space for a call to action inside the footer that could help re-engage users.
-                </p>
+                            <SocialList />
+
                         </Grid.Column>
+                        <h4>All Rights Reseved
+                        <p>2019 &copy; Wilfred Lopez</p></h4>
                     </Grid.Row>
                 </Grid>
             </Container>

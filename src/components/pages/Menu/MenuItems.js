@@ -16,14 +16,14 @@ const MenuItems = ({ fixed }) => {
             <NavLink to="/projects" className="item" exact>Projects</NavLink>
             <NavLink to="/about" className="item" exact>Contact Me</NavLink>
             <Menu.Item position='right'>
-                <Button as='a' inverted={!fixed} primary={fixed} href="https://github.com/wilfredlopez" target="_blank">
+                <Button as='a' inverted={!fixed} primary={fixed} href="https://github.com/wilfredlopez" target="_blank" rel="noopener noreferrer">
                     <Icon.Group size='large'>
                         <Icon name='github' />
                         <Icon corner name='add' />
                     </Icon.Group>
-                    github
+                    Github
                 </Button>
-                <Button as='a' inverted={!fixed} style={{ marginLeft: '0.5em' }} href="https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw" target="_blank">
+                <Button as='a' inverted={!fixed} style={{ marginLeft: '0.5em' }} href="https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw" rel="noopener noreferrer" target="_blank">
                     <Icon.Group size='large'>
                         <Icon name='twitter' style={{ color: "#1da1f2" }} />
                         <Icon corner name='add' style={{ color: "#1da1f2" }} />

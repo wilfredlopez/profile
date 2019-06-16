@@ -18,7 +18,7 @@ const SidebarMenu = ({ handleToggle }) => {
                             <Icon name='github' />
                             <Icon corner name='add' />
                         </Icon.Group>
-                        github
+                        Github
                     </Button>
                     <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
                         <Icon.Group>

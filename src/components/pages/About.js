@@ -3,13 +3,16 @@ import {
     Button,
     Grid,
     Header,
-    Segment
+    Segment,
+    Icon
 } from 'semantic-ui-react'
+
+import SocialList from './partials/SocialList'
 
 
 const About = () => (
     <React.Fragment>
-        <Segment style={{ padding: '8em 0em' }} vertical>
+        <Segment style={{ padding: '2em 0em' }} vertical>
             <Grid container stackable verticalAlign='middle'>
                 <Grid.Row>
                     <Grid.Column width={8}>
@@ -18,21 +21,29 @@ const About = () => (
                        
               </Header>
                         <p style={{ fontSize: '1.33em' }}>
-                        @Github - Wilfred Lopez 2019
-                      
+                        Studied Tourism Bussiness Management in UAPA University. Experience in Customer Service, Web QA and Web Accessibility (Deque University Certified).
+                          
               </p>
                       
                         <p style={{ fontSize: '1.33em' }}>
-                        
+                        Currently working as a Web QA Analyst for a B2C Reail Store. Self educated in React, NodeJS, Express, MongoDB and other modern Javascript based languages.
               </p>
                     </Grid.Column>
                     <Grid.Column floated='right' width={6}>
-                    Boilerplate combining Create-react-app, React-router-dom, React-redux(with Easy-peasy) and Semantic-UI.
+         
+
+                    <div style={{background: 'rgba(34, 103, 71, 0.84)', borderRadius: '1rem'}} className="p-3 mt-2">
+                    <h3 className="text-white text-center">Follow Me!</h3>
+                    <SocialList/>
+                    </div>
+                   
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
-                    <Grid.Column textAlign='center'>
-                        <Button size='huge'><a href="https://github.com/wilfredlopez">Check it out</a></Button>
+                    <Grid.Column textAlign='center' className="p-3" style={{background: 'rgba(0, 0, 0, 0.85)', borderRadius: '1rem'}}>
+                    <h3 className="text-center text-white">Contact Me</h3>
+                        <Button size='huge'><a href="mailto:cubamc@gmail.com">By Email <Icon name="mail"></Icon></a></Button>
+                        <Button size='huge'><a href="tel:1+5514442665">By Phone <Icon name="phone"></Icon></a></Button>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

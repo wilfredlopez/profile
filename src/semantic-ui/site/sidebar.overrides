@@ -1,3 +1,6 @@
 /*******************************
          Site Overrides
 *******************************/
+.left.sidebar {
+  z-index: @topLayer !important;
+}
