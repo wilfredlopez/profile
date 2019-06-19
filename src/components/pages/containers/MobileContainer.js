@@ -46,7 +46,7 @@ class MobileContainer extends Component {
 
                 </Sidebar>
 
-                <Sidebar.Pusher dimmed={sidebarOpened} style={{ minHeight: "100vh" }}>
+                <Sidebar.Pusher dimmed={sidebarOpened} style={{ minHeight: "100vh" }} onClick={sidebarOpened && this.barToggle}>
                     <Segment
                         inverted
                         textAlign='center'

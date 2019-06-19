@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {
     Button,
     Grid,
@@ -8,10 +8,33 @@ import {
 } from 'semantic-ui-react'
 
 import SocialList from './partials/SocialList'
+import HomepageHeading from './partials/HomepageHeading'
+import getWidth from './containers/getWidth'
+import SocialMediaEmbeds from './partials/SocialMediaEmbeds'
 
+const About = () => {
+    const [mobile, setMobile] = useState(null)
+    let deviceWith = getWidth()
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }, [])
+    
+    useEffect(() => {
 
-const About = () => (
+        if (deviceWith <= 767) {
+            setMobile(true)
+        } else {
+            setMobile(false)
+        }
+    }, [deviceWith])
+    
+    return (
     <React.Fragment>
+
         <Segment style={{ padding: '2em 0em' }} vertical>
             <Grid container stackable verticalAlign='middle'>
                 <Grid.Row>
@@ -51,7 +74,9 @@ const About = () => (
                 </Grid.Row>
             </Grid>
         </Segment>
+        <SocialMediaEmbeds mobile={mobile}/>
+        {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
     </React.Fragment>
-)
+)}
 
 export default About

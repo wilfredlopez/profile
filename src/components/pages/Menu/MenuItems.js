@@ -14,9 +14,9 @@ const MenuItems = ({ fixed }) => {
         <Fragment>
             <NavLink to="/" className="item" exact>Home</NavLink>
             <NavLink to="/projects" className="item" exact>Projects</NavLink>
-            <NavLink to="/about" className="item" exact>Contact Me</NavLink>
+            <NavLink to="/about" className="item" exact>About</NavLink>
             <Menu.Item position='right'>
-                <Button as='a' inverted={!fixed} primary={fixed} href="https://github.com/wilfredlopez" target="_blank" rel="noopener noreferrer">
+                <Button as='a' inverted={!fixed} primary={fixed} href="https://github.com/wilfredlopez" target="_blank" rel="noopener noreferrer" role="link">
                     <Icon.Group size='large'>
                         <Icon name='github' />
                         <Icon corner name='add' />

@@ -6,6 +6,7 @@ import {
     List,
     Segment
 } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import SocialList from './SocialList'
 
@@ -18,20 +19,20 @@ const SiteFooter = () => {
                         <Grid.Column width={3}>
                             <Header inverted as='h4' content='Wilfred' />
                             <List link inverted>
-                                <List.Item as='a' href="/">Home</List.Item>
-                                <List.Item as='a' href="/projects">Demo Projects</List.Item>
-                                <List.Item as='a' href="/contact">Contact</List.Item>
+                                <Link to='/' className="item">Home</Link>
+                                <Link to='/projects' className="item">Projects</Link>
+                                <Link to='/about' className="item">About</Link>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={3}>
                             <Header inverted as='h4' content='Projects' />
                             <List link inverted>
-                                <List.Item as='a'>Vape Music</List.Item>
-                                <List.Item as='a'>EasyTodos</List.Item>
+                                <List.Item as='a' href="https://lmusic.herokuapp.com" target="_blank" rel="noopener noreferrer" role="link">Vape Music</List.Item>
+                                <List.Item as='a' href="https://wilnotes.herokuapp.com" target="_blank" rel="noopener noreferrer" role="link">EasyTodos</List.Item>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={7}>
-                            <Header as='h4' inverted>
+                            <Header as='h4' inverted >
                                 Follow Me!
                 </Header>
                             <SocialList />

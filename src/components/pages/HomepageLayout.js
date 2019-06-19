@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     Button,
     Container,
@@ -7,15 +7,14 @@ import {
     Header,
     Segment,
     List,
-    Icon,
-    Sticky,
-    Ref
+    Icon
 } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 import getWidth from './containers/getWidth'
 
 import HomepageHeading from './partials/HomepageHeading'
+import SocialMediaEmbeds from './partials/SocialMediaEmbeds'
 
 const education = [
     { icon: 'react', label: 'React' },
@@ -38,21 +37,21 @@ const experiences = [
 ]
 
 
-const facebookPostsList = [
-    { url: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FWilfredDonaldLo%2Fposts%2F10161583476580497&width=500", height: '180' },
-    { url: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FWilfredDonaldLo%2Fposts%2F10161487251325497%3A0&width=500", height: '605' },
-    { url: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FWilfredDonaldLo%2Fposts%2F10161052973195497&width=500", height: '174' },
-    { url: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FWilfredDonaldLo%2Fposts%2F10162092215695497&width=500", height: '210' }
-]
-
-
 
 
 
 const HomepageLayout = () => {
     const [mobile, setMobile] = useState(null)
-    const contextRef = useRef()
     let deviceWith = getWidth()
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }, [])
+
     useEffect(() => {
 
         if (deviceWith <= 767) {
@@ -62,22 +61,6 @@ const HomepageLayout = () => {
         }
     }, [deviceWith])
 
-
-    const facebookPosts = facebookPostsList.map((p) => {
-        return (
-            <iframe
-                key={p.url}
-                title="Facebook Post"
-                src={p.url}
-                width="500" height={p.height}
-                style={{ border: 'none', overflow: "hidden", minWidth: '100%', maxWidth: '100%' }}
-                scrolling="no"
-                frameBorder="0"
-                allowtransparency="true"
-                allow="encrypted-media">
-            </iframe>
-        )
-    })
 
     const educationList = education.map((edu => {
         return (
@@ -122,8 +105,8 @@ const HomepageLayout = () => {
                             </List>
                         </Grid.Column>
                         <Grid.Column floated='right' width={6}>
-                            <h2>Education</h2>
-                            <List divided verticalAlign='middle' animated>
+                            <h2>Skills</h2>
+                            <List divided verticalAlign='middle' animated size="large">
                                 {educationList}
                             </List>
 
@@ -131,7 +114,7 @@ const HomepageLayout = () => {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column textAlign='center'>
-                            <Button size='huge'><Link to="/projects">Look at my projects</Link></Button>
+                            <Button size='huge'><Link to="/projects">Peek at my Projects</Link></Button>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -174,12 +157,10 @@ const HomepageLayout = () => {
                         EasyTodos - Save your todo list
                     </Header>
                     <div style={{ fontSize: '1.33em' }}>
-                        <p>  EasyTodos is a simple solution to keep track of your daily tasks.
-
-    This app is great to manage your daily job or just to have a place to keep relevant information that regards to a particular task.
-</p><p>
-                            All todos have a "Notes" section that can be styled and edited very easy. You can filter the list, mark a todo as completed or find a completed todo an have it listed back again.
-</p>
+                        <p> EasyTodos is a simple solution to keep track of your daily tasks.This app is great to manage your daily job or just to have a place to keep relevant information that regards to a particular task.
+                    </p>
+                        <p>All todos have a "Notes" section that can be styled and edited very easy. You can filter the list, mark a todo as completed or find a completed todo an have it listed back again.
+                    </p>
                     </div>
                     <Button as='a'
                         size='large'
@@ -190,53 +171,10 @@ const HomepageLayout = () => {
                 </Container>
             </Segment>
 
+            <SocialMediaEmbeds mobile={mobile} />
 
-            <Segment style={{ padding: '0em' }} vertical>
-                <h1 className="text-center display-3">Social Media</h1>
-                <Grid celled='internally' columns='equal' stackable>
-                    <Ref innerRef={contextRef}>
-                        <Grid.Row textAlign='center'>
-                            <Grid.Column style={{ paddingBottom: '1em', paddingTop: '1em', zIndex: '1' }}>
-                                {!mobile ?
-                                    <React.Fragment>
-                                        <Header as='h3' style={{ fontSize: '2em' }}>
-                                            <u>Facebook</u>
-                                        </Header>
-
-                                        <Sticky offset={80} context={contextRef}>
-                                            {facebookPosts}
-                                        </Sticky></React.Fragment> :
-
-                                    <React.Fragment>
-                                        <Header as='h3' style={{ fontSize: '2em' }}>
-                                            <u>Facebook</u>
-                                        </Header>
-
-                                        {facebookPosts}
-
-                                    </React.Fragment>
-                                }
-
-
-                            </Grid.Column>
-
-                            <Grid.Column style={{ paddingBottom: '1em', paddingTop: '1em' }}>
-                                <Header as='h3' style={{ fontSize: '2em', zIndex: '0' }}>
-
-                                    <u>Twitter</u>
-
-                                </Header>
-                                <a className="twitter-timeline" href="https://twitter.com/WilfredDonaldLo?ref_src=twsrc%5Etfw">
-                                    Tweets by WilfredDonaldLo
-                            </a>
-
-                            </Grid.Column>
-
-                        </Grid.Row>
-                    </Ref>
-                </Grid>
-            </Segment>
         </React.Fragment>
     )
 }
 export default HomepageLayout
+
