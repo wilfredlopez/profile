@@ -7,8 +7,12 @@ import SiteFooter from './components/pages/partials/SiteFooter'
 function App() {
   return (
     <ResponsiveContainer>
-      <Routes />
-      <SiteFooter />
+      <main>
+        <Routes />
+      </main>
+      <footer>
+        <SiteFooter />
+      </footer>
     </ResponsiveContainer>
   );
 }

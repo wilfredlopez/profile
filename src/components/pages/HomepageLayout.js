@@ -114,7 +114,7 @@ const HomepageLayout = () => {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column width={8}>
-                            <List size="large" as="ul">
+                            <List size="large" as="ul" style={{ fontSize: '1.3em' }}>
                                 <List.Item as="li">Proficient knowledge of HTML 5, CSS 3, JavaScript.</List.Item>
                                 <List.Item as="li">Proficient and experieced with MS Excel.</List.Item>
                                 <List.Item as="li">Excellent communication skills, organization skills, and excellent attention to detail.</List.Item>

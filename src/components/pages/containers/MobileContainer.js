@@ -34,6 +34,7 @@ class MobileContainer extends Component {
                 getWidth={getWidth}
                 maxWidth={Responsive.onlyMobile.maxWidth}
             >
+
                 <Sidebar
                     as={Menu}
                     animation='push'
@@ -42,22 +43,26 @@ class MobileContainer extends Component {
                     vertical
                     visible={sidebarOpened}
                 >
-                    <MenuItemsMobile handleOut={this.barToggle} />
-
+                    <nav>
+                        <MenuItemsMobile handleOut={this.barToggle} />
+                    </nav>
                 </Sidebar>
 
                 <Sidebar.Pusher dimmed={sidebarOpened} style={{ minHeight: "100vh" }} onClick={sidebarOpened && this.barToggle}>
-                    <Segment
-                        inverted
-                        textAlign='center'
-                        style={{ /*minHeight: 350, */padding: '1em 0em' }}
-                        vertical
-                    >
-                        <Container>
-                            <MobileSidebar handleToggle={this.barToggle} />
-                        </Container>
+                    <header>
 
-                    </Segment>
+                        <Segment
+                            inverted
+                            textAlign='center'
+                            style={{ /*minHeight: 350, */padding: '1em 0em' }}
+                            vertical
+                        >
+                            <Container>
+                                <MobileSidebar handleToggle={this.barToggle} />
+                            </Container>
+
+                        </Segment>
+                    </header>
                     {children}
                 </Sidebar.Pusher>
             </Responsive>

@@ -28,30 +28,34 @@ class DesktopContainer extends Component {
 
         return (
             <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
-                <Visibility
-                    once={false}
-                    onBottomPassed={this.showFixedMenu}
-                    onBottomPassedReverse={this.hideFixedMenu}
-                >
-                    <Segment
-                        inverted
-                        textAlign='center'
-                        style={{ /*minHeight: 500,*/ padding: '1em 0em' }}
-                        vertical
+                <header>
+                    <Visibility
+                        once={false}
+                        onBottomPassed={this.showFixedMenu}
+                        onBottomPassedReverse={this.hideFixedMenu}
                     >
-                        <Menu
-                            fixed={fixed ? 'top' : null}
-                            inverted={!fixed}
-                            pointing={!fixed}
-                            secondary={!fixed}
-                            size='large'
+                        <Segment
+                            inverted
+                            textAlign='center'
+                            style={{ /*minHeight: 500,*/ padding: '1em 0em' }}
+                            vertical
                         >
-                            <Container>
-                                <MenuItems fixed={fixed} />
-                            </Container>
-                        </Menu>
-                    </Segment>
-                </Visibility>
+                            <nav>
+                                <Menu
+                                    fixed={fixed ? 'top' : null}
+                                    inverted={!fixed}
+                                    pointing={!fixed}
+                                    secondary={!fixed}
+                                    size='large'
+                                >
+                                    <Container>
+                                        <MenuItems fixed={fixed} />
+                                    </Container>
+                                </Menu>
+                            </nav>
+                        </Segment>
+                    </Visibility>
+                </header>
 
                 {children}
             </Responsive>
