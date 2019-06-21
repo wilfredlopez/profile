@@ -21,10 +21,11 @@ const education = [
     { icon: 'node js', label: 'NodeJS with Express and MongoDB' },
     { icon: 'universal access', label: 'Web Accessibility' },
     { icon: 'js', label: 'Vanilla Javascript' },
-    { icon: 'sass', label: 'SASS' },
+    { icon: 'sass', label: 'SASS / CSS3' },
     { icon: 'html5', label: 'HTML 5' },
+    { icon: 'cloud', label: 'Salesforce Commerce Cloud' },
     { icon: 'calendar alternate outline', label: 'Workforce Management' },
-    { icon: 'microsoft', label: 'Microsoft Office' },
+    { icon: 'microsoft', label: 'Microsoft Office, Excel VBA' },
     { icon: 'talk', label: 'Bilingual (English, Spanish)' }
 ]
 
@@ -96,25 +97,36 @@ const HomepageLayout = () => {
                     <Grid.Row>
                         <Grid.Column width={8}>
                             <Header as='h1' style={{ fontSize: '2em' }}>
-                                Experiences
-              </Header>
+                                Experiences</Header>
                             <h3>Job Experience</h3>
 
                             <List verticalAlign='middle' animated size="small">
                                 {experienceList}
-                            </List>
-                        </Grid.Column>
+                            </List>               </Grid.Column>
                         <Grid.Column floated='right' width={6}>
-                            <h2>Skills</h2>
+
+                            <Header as='h2' style={{ fontSize: '2em' }}>
+                                Skills</Header>
                             <List divided verticalAlign='middle' animated size="large">
                                 {educationList}
                             </List>
-
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column textAlign='center'>
-                            <Button size='huge'><Link to="/projects">Peek at my Projects</Link></Button>
+                        <Grid.Column width={8}>
+                            <List size="large" as="ul">
+                                <List.Item as="li">Proficient knowledge of HTML 5, CSS 3, JavaScript.</List.Item>
+                                <List.Item as="li">Proficient and experieced with MS Excel.</List.Item>
+                                <List.Item as="li">Excellent communication skills, organization skills, and excellent attention to detail.</List.Item>
+                                <List.Item as="li">Proficient knowledge of accessibility standards (Section 508/WCAG 2.0 Level A and AA). </List.Item>
+                                <List.Item as="li">Good understanding of assistive technologies (JAWS, NVDA, VoiceOver).</List.Item>
+                                <List.Item as="li">6 years of call center and Workforce Management experience.</List.Item>
+                                <List.Item as="li">Proficient experience in QA testing methodology.</List.Item>
+                                <List.Item as="li">Proven ability to document issues and bugs.</List.Item>
+                            </List>
+                        </Grid.Column>
+                        <Grid.Column floated='right' width={6} className="text-center">
+                            <Button size='huge' ><Link to="/projects">Look at my Projects</Link></Button>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -122,7 +134,6 @@ const HomepageLayout = () => {
 
             <Segment style={{ padding: '2em 0em' }} vertical>
                 <Container text>
-                    <Header as='h3' style={{ fontSize: '2em' }} className="text-center" id="demo-projects">Demo  Projects </Header>
                     <Divider
                         as='h4'
                         className='header'
@@ -142,7 +153,7 @@ const HomepageLayout = () => {
                     <Button as='a'
                         size='large'
                         href="https://lmusic.herokuapp.com">
-                        Check it out
+                        Vape Music
                     </Button>
 
                     <Divider
@@ -166,7 +177,7 @@ const HomepageLayout = () => {
                         size='large'
                         className="mt-2"
                         href="https://lmusic.herokuapp.com">
-                        Check it out
+                        EasyTodos
                 </Button>
                 </Container>
             </Segment>

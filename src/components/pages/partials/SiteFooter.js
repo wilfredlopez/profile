@@ -6,7 +6,7 @@ import {
     List,
     Segment
 } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import SocialList from './SocialList'
 
@@ -19,9 +19,9 @@ const SiteFooter = () => {
                         <Grid.Column width={3}>
                             <Header inverted as='h4' content='Wilfred' />
                             <List link inverted>
-                                <Link to='/' className="item">Home</Link>
-                                <Link to='/projects' className="item">Projects</Link>
-                                <Link to='/about' className="item">About</Link>
+                                <NavLink to='/' exact className="item" >Home</NavLink>
+                                <NavLink to='/projects' exact className="item">Projects</NavLink>
+                                <NavLink to='/about' exact className="item">About</NavLink>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={3}>

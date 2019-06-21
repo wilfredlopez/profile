@@ -42,8 +42,8 @@ export default class SocialMediaEmbeds extends Component {
             )
         })
         return (
-            <Segment style={{ padding: '0em' }} vertical>
-                <h1 className="text-center display-4">Social Media</h1>
+            <Segment style={{ padding: '1em' }} vertical>
+                <Header as="h2" style={{ fontSize: '2.5em' }} className="text-center">Social Media</Header>
                 <Grid celled='internally' columns='equal' stackable>
                     <Ref innerRef={this.contextRef}>
                         <Grid.Row textAlign='center'>

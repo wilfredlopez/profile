@@ -46,10 +46,17 @@ const HomepageHeading = ({ mobile }) => (
                         marginTop: mobile ? '0.5em' : '0.2em',
                     }}
                 />
-                <p>QA/Web Development
+                <p><Icon name="briefcase" />Quality Assurance/Web Development
                     <br />
                     <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
                 </p>
+                <div className="row justify-content-between pb-3 m-auto">
+
+                    <p className="col-md-6 pb-0 mb-0">
+                        <Icon name="map marker alternate" /><span>Lives in </span>Garfield, NJ, USA</p>
+                    <p className="col-md-6">
+                        <Icon name="home" /> <span>From </span>Cabrera, Dominican Republic</p>
+                </div>
                 <Button primary size='huge'>
                     <Icon name='mail' />
                     <a href="mailto:cubamc@gmail.com">Contact Me</a>

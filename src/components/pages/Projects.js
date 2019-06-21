@@ -28,7 +28,7 @@ const Projects = () => {
                         fontSize: '2em', textAlign:
                             'center'
                     }}>
-                        Demo Projects
+                        Projects
               </Header>
                 </Grid.Column>
             </Grid.Row>
@@ -52,11 +52,7 @@ const Projects = () => {
                 <p>The admin can add/remove, upload image and audio directly from the site.</p>
                 <p>Songs are distributed by categories, users can sort, view individual songs and download music.</p>
             </div>
-
-
-            <Button size='large'><a href="https://lmusic.herokuapp.com">Check it out</a></Button>
-
-
+            <Button size='large'><a href="https://lmusic.herokuapp.com">Vape Music</a></Button>
             <Divider
                 as='h4'
                 className='header'
@@ -76,7 +72,7 @@ const Projects = () => {
                     All todos have a "Notes" section that can be styled and edited very easy. You can filter the list, mark a todo as completed or find a completed todo an have it listed back again.
 </p>
             </div>
-            <Button size='large'><a href="https://wilnotes.herokuapp.com" target="_blank" rel="noopener noreferrer">Check it out</a></Button>
+            <Button size='large'><a href="https://wilnotes.herokuapp.com" target="_blank" rel="noopener noreferrer">EasyTodos</a></Button>
         </Container>
     </Segment>
     </React.Fragment>

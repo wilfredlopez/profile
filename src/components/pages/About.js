@@ -4,10 +4,10 @@ import {
     Grid,
     Header,
     Segment,
-    Icon
+    Icon,
+    List
 } from 'semantic-ui-react'
 
-import SocialList from './partials/SocialList'
 import HomepageHeading from './partials/HomepageHeading'
 import getWidth from './containers/getWidth'
 import SocialMediaEmbeds from './partials/SocialMediaEmbeds'
@@ -44,7 +44,8 @@ const About = () => {
                        
               </Header>
                         <p style={{ fontSize: '1.33em' }}>
-                        Studied Tourism Bussiness Management in UAPA University. Experience in Customer Service, Web QA and Web Accessibility (Deque University Certified).
+                        Wilfred Lopez, from Dominican Republic. Studied Tourism Bussiness Management in UAPA University. 
+                        Experience in Customer Service, Web Quality Assurance and Accessibility.
                           
               </p>
                       
@@ -53,12 +54,15 @@ const About = () => {
               </p>
                     </Grid.Column>
                     <Grid.Column floated='right' width={6}>
-         
-
-                    <div style={{background: 'rgba(34, 103, 71, 0.84)', borderRadius: '1rem'}} className="p-3 mt-2">
-                    <h3 className="text-white text-center">Follow Me!</h3>
-                    <SocialList/>
-                    </div>
+                    <List>
+                        <p>Many years of Call Center experience as Customer Service and Workforce Management</p>
+                        <p>Proficient knowledge of HTML 5, CSS 3, JavaScript.</p>
+                        <p>Strong knowledge of MS Excel.</p>
+                        <p>Excellent communication skills, organization skills, and excellent attention to detail.</p>
+                        <p>Dedicated, passionate and reliable worker.</p>
+                        <p>Proficient knowledge of accessibility standards (Section 508/WCAG 2.0 Level A and AA). </p>
+                    </List>
+                   
                    
                     </Grid.Column>
                 </Grid.Row>
