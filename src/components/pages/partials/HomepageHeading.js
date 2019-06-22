@@ -29,7 +29,7 @@ const HomepageHeading = ({ mobile }) => (
         >
             <Container text>
                 <Image
-                    src='https://res.cloudinary.com/wlopez/image/upload/v1560691736/wilfred.jpg'
+                    src='https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png'
                     size='medium'
                     circular
                     alt="wilfred"
