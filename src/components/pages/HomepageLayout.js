@@ -140,7 +140,7 @@ const HomepageLayout = () => {
                         horizontal
                         style={{ margin: '1em 0em', textTransform: 'uppercase' }}
                     >
-                        <a href='https://lmusic.herokuapp.com' target="_blank" rel="noopener noreferrer">Vape Music</a>
+                        <a href='https://vapemusic.herokuapp.com' target="_blank" rel="noopener noreferrer">Vape Music</a>
                     </Divider>
                     <Header as='h3' style={{ fontSize: '2em' }}>
                         Vape Music - Latin Music Download
@@ -152,7 +152,7 @@ const HomepageLayout = () => {
                     </div>
                     <Button as='a'
                         size='large'
-                        href="https://lmusic.herokuapp.com">
+                        href="https://vapemusic.herokuapp.com">
                         Vape Music
                     </Button>
 
@@ -176,7 +176,7 @@ const HomepageLayout = () => {
                     <Button as='a'
                         size='large'
                         className="mt-2"
-                        href="https://lmusic.herokuapp.com">
+                        href="https://vapemusic.herokuapp.com">
                         EasyTodos
                 </Button>
                 </Container>

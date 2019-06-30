@@ -42,7 +42,7 @@ const Projects = () => {
                 horizontal
                 style={{ margin: '1em 0em', textTransform: 'uppercase' }}
             >
-                <a href='https://lmusic.herokuapp.com' target="_blank" rel="noopener noreferrer">Vape Music</a>
+                <a href='https://vapemusic.herokuapp.com' target="_blank" rel="noopener noreferrer">Vape Music</a>
             </Divider>
             <Header as='h3' style={{ fontSize: '2em' }}>
                 Vape Music - Latin Music Download
@@ -52,7 +52,7 @@ const Projects = () => {
                 <p>The admin can add/remove, upload image and audio directly from the site.</p>
                 <p>Songs are distributed by categories, users can sort, view individual songs and download music.</p>
             </div>
-            <Button size='large'><a href="https://lmusic.herokuapp.com">Vape Music</a></Button>
+            <Button size='large'><a href="https://vapemusic.herokuapp.com">Vape Music</a></Button>
             <Divider
                 as='h4'
                 className='header'

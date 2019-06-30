@@ -27,7 +27,7 @@ const SiteFooter = () => {
                         <Grid.Column width={3}>
                             <Header inverted as='h4' content='Projects' />
                             <List link inverted>
-                                <List.Item as='a' href="https://lmusic.herokuapp.com" target="_blank" rel="noopener noreferrer" role="link">Vape Music</List.Item>
+                                <List.Item as='a' href="https://vapemusic.herokuapp.com" target="_blank" rel="noopener noreferrer" role="link">Vape Music</List.Item>
                                 <List.Item as='a' href="https://wilnotes.herokuapp.com" target="_blank" rel="noopener noreferrer" role="link">EasyTodos</List.Item>
                             </List>
                         </Grid.Column>
