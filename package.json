@@ -43,5 +43,5 @@
     "semantic-ui-less": "^2.4.1"
   },
   "proxy": "http://localhost:5000",
-  "homepage": "https://wilfredlopez.github.io/home"
+  "homepage": "https://wilfredlopez.github.io/profile"
 }
