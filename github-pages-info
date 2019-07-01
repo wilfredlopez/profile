@@ -1,3 +1,4 @@
 TO PUSH TO GITHUB ONLY
+npm run build
 git push profile
 npm run github-deploy
