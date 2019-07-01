@@ -1,4 +1,6 @@
 TO PUSH TO GITHUB ONLY
 npm run build
-git push profile
+git add .
+git commit -am "WHATEREVER"
+git push profile master
 npm run github-deploy
