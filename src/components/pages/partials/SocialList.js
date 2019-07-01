@@ -5,6 +5,7 @@ import {
 } from 'semantic-ui-react'
 
 const socialMedia = [
+    { label: 'LinedIn', icon: 'linkedin', url: "https://www.linkedin.com/in/wilfred-lopez-a309b896/" },
     { label: 'Github', icon: 'github square', url: "https://github.com/wilfredlopez" },
     { label: 'YouTube', icon: 'youtube', url: "https://www.youtube.com/channel/UCbJgT2f4AXpLxE0f9n-GCBg?view_as=subscriber" },
     { label: 'Twitter', icon: 'twitter square', url: "https://twitter.com/wilfreddonaldlo" },
@@ -15,7 +16,7 @@ const socialMedia = [
 const SocialList = () => {
     const listItems = socialMedia.map(item => {
         return (
-            <List.Item>
+            <List.Item key={item.label}>
                 <List.Content>
                     <List.Header as='a' href={item.url} target="_blank" rel="noopener noreferrer" role="link">
                         <Icon name={item.icon} />

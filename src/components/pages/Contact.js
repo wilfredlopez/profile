@@ -10,9 +10,9 @@ import {
 
 import HomepageHeading from './partials/HomepageHeading'
 import getWidth from './containers/getWidth'
-import SocialMediaEmbeds from './partials/SocialMediaEmbeds'
 
-const About = () => {
+
+const Contact = () => {
     const [mobile, setMobile] = useState(null)
     let deviceWith = getWidth()
     useEffect(() => {
@@ -42,7 +42,7 @@ const About = () => {
                                 fontSize: '2em', textAlign:
                                     'center'
                             }}>
-                                About
+                                Contact
               </Header>
                         </Grid.Column>
                     </Grid.Row>
@@ -71,8 +71,8 @@ const About = () => {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column textAlign='center' >
-                            <div className="p-3" style={{ background: 'rgba(0, 0, 0, 0.85)', borderRadius: '1rem' }}>
-                                <h3 className="text-center text-white">Contact Me</h3>
+                            <div className="p-3">
+                                <h3 className="text-center">Contact Me</h3>
                                 <Button size='large'><a href="mailto:cubamc@gmail.com">By Email <Icon name="mail"></Icon></a></Button>
                                 <Button size='large'><a href="tel:1+5514442665">By Phone <Icon name="phone"></Icon></a></Button>
                             </div>
@@ -81,10 +81,10 @@ const About = () => {
                     </Grid.Row>
                 </Grid>
             </Segment>
-            <SocialMediaEmbeds mobile={mobile} />
+
             {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
         </React.Fragment>
     )
 }
 
-export default About
+export default Contact

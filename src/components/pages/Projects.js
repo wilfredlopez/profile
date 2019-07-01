@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import {
     Button,
-    Grid,
     Header,
     Segment,
     Container,
@@ -20,20 +19,6 @@ const Projects = () => {
     return (
 
     <React.Fragment>
-    <Segment style={{ padding: '2em 0em' }} vertical>
-        <Grid container stackable verticalAlign='middle'>
-            <Grid.Row>
-                <Grid.Column>
-                    <Header as='h3' style={{
-                        fontSize: '2em', textAlign:
-                            'center'
-                    }}>
-                        Projects
-              </Header>
-                </Grid.Column>
-            </Grid.Row>
-        </Grid>
-    </Segment>
     <Segment style={{ padding: '2em 0em' }} vertical>
         <Container text>
             <Divider

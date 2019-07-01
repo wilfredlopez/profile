@@ -21,6 +21,7 @@ const education = [
     { icon: 'node js', label: 'NodeJS with Express and MongoDB' },
     { icon: 'universal access', label: 'Web Accessibility' },
     { icon: 'js', label: 'Vanilla Javascript' },
+    { icon: 'tasks', label: 'Confluence Jira' },
     { icon: 'sass', label: 'SASS / CSS3' },
     { icon: 'html5', label: 'HTML 5' },
     { icon: 'cloud', label: 'Salesforce Commerce Cloud' },
@@ -80,7 +81,7 @@ const HomepageLayout = () => {
                 <Icon name={exp.icon} />
                 <List.Content>
                     <List.Header as='p'>
-                        <Header as="span" color={exp.isCurrent ? 'teal' : 'grey'}>
+                        <Header as="span" color={exp.isCurrent ? 'blue' : 'grey'}>
                             {exp.label} {exp.isCurrent && '(Actual)'}
                         </Header>
                     </List.Header>
@@ -116,7 +117,7 @@ const HomepageLayout = () => {
                         <Grid.Column width={8}>
                             <List size="large" as="ul" style={{ fontSize: '1.3em' }}>
                                 <List.Item as="li">Proficient knowledge of HTML 5, CSS 3, JavaScript.</List.Item>
-                                <List.Item as="li">Proficient and experieced with MS Excel.</List.Item>
+                                <List.Item as="li">Experieced with MS Excel.</List.Item>
                                 <List.Item as="li">Excellent communication skills, organization skills, and excellent attention to detail.</List.Item>
                                 <List.Item as="li">Proficient knowledge of accessibility standards (Section 508/WCAG 2.0 Level A and AA). </List.Item>
                                 <List.Item as="li">Good understanding of assistive technologies (JAWS, NVDA, VoiceOver).</List.Item>

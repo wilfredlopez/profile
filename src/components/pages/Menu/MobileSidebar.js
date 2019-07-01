@@ -20,13 +20,14 @@ const SidebarMenu = ({ handleToggle }) => {
                         </Icon.Group>
                         Github
                     </Button>
-                    <Button as='a' inverted style={{ marginLeft: '0.2em' }} href="https://twitter.com/wilfreddonaldlo" target="_blank" rel="noopener noreferrer">
+
+                    <Button as='a' inverted style={{ marginLeft: '0.2em' }} href="https://www.linkedin.com/in/wilfred-lopez-a309b896" target="_blank" rel="noopener noreferrer">
                         <Icon.Group>
-                            <Icon name='twitter' style={{ color: "#1da1f2" }} />
-                            <Icon corner name='add' style={{ color: "#1da1f2" }} />
+                            <Icon name='linkedin' style={{ color: "#1da1f2" }} />
                         </Icon.Group>
-                        @wilfreddonaldlo
-                    </Button>
+                        LinkedIn
+                </Button>
+
                 </Menu.Item>
             </Menu>
         </React.Fragment>

@@ -21,7 +21,7 @@ const SiteFooter = () => {
                             <List link inverted>
                                 <NavLink to='/' exact className="item" >Home</NavLink>
                                 <NavLink to='/projects' exact className="item">Projects</NavLink>
-                                <NavLink to='/about' exact className="item">About</NavLink>
+                                <NavLink to='/contact' exact className="item">Contact</NavLink>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={3}>
