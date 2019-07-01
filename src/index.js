@@ -12,7 +12,7 @@ import 'semantic-ui-less/semantic.less'
 const store = createStore(model)
 
 ReactDOM.render(
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/home">
         <StoreProvider store={store}>
             <App />
         </StoreProvider>
