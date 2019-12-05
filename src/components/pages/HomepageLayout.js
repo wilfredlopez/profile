@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   Container,
@@ -7,42 +7,43 @@ import {
   Header,
   Icon,
   List,
-  Segment,
-} from "semantic-ui-react"
-import Project from "../Utils/Project"
+  Segment
+} from "semantic-ui-react";
+import Project from "../Utils/Project";
 import {
   education,
   experiences,
   retailmeNowDescription,
-  vapeMusicDescription,
-  easyTodosDescription,
-} from "./constants"
-import getWidth from "./containers/getWidth"
-import HomepageHeading from "./partials/HomepageHeading"
-import SocialMediaEmbeds from "./partials/SocialMediaEmbeds"
+  vapeMusicDescription
+  // easyTodosDescription
+} from "./constants";
+import getWidth from "./containers/getWidth";
+import HomepageHeading from "./partials/HomepageHeading";
+import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 
-import vapemusicImg from "../../img/vapemusic.jpeg"
-import retailmenowImg from "../../img/retailmenow.jpeg"
+// import vapemusicImg from "../../img/vapemusic.jpeg"
+import vapemusicImg from "../../img/vapemusic2mobile.jpg";
+import retailmenowImg from "../../img/retailmenow.jpeg";
 
 const HomepageLayout = () => {
-  const [mobile, setMobile] = useState(null)
-  let deviceWith = getWidth()
+  const [mobile, setMobile] = useState(null);
+  let deviceWith = getWidth();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
-    })
-  }, [])
+      behavior: "smooth"
+    });
+  }, []);
 
   useEffect(() => {
     if (deviceWith <= 767) {
-      setMobile(true)
+      setMobile(true);
     } else {
-      setMobile(false)
+      setMobile(false);
     }
-  }, [deviceWith])
+  }, [deviceWith]);
 
   const summary = (
     <Grid.Column width={8}>
@@ -73,7 +74,7 @@ const HomepageLayout = () => {
         </List.Item>
       </List>
     </Grid.Column>
-  )
+  );
 
   const educationList = education.map(edu => {
     return (
@@ -83,8 +84,8 @@ const HomepageLayout = () => {
           <List.Header as="p">{edu.label}</List.Header>
         </List.Content>
       </List.Item>
-    )
-  })
+    );
+  });
 
   const experienceList = experiences.map(exp => {
     return (
@@ -99,8 +100,8 @@ const HomepageLayout = () => {
           {exp.location}
         </List.Content>
       </List.Item>
-    )
-  })
+    );
+  });
   return (
     <React.Fragment>
       {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
@@ -147,26 +148,26 @@ const HomepageLayout = () => {
             <div style={{ fontSize: "1.33em" }}>{retailmeNowDescription}</div>
           </Project>
           <Project
-            url="https://vapemusic.herokuapp.com"
-            name="Vape Music"
-            title="Vape Music - Latin Music Download"
+            url="https://vapemusic.club"
+            name="Vape Music 2.0"
+            title="Vape Music 2.0- Latin Music Listen & Download"
             imageSrc={vapemusicImg}
           >
             <div style={{ fontSize: "1.33em" }}>{vapeMusicDescription}</div>
           </Project>
 
-          <Project
+          {/* <Project
             url="https://wilnotes.herokuapp.com"
             name="EasyTodos"
             title="EasyTodos - Save your todo list"
           >
             <div style={{ fontSize: "1.33em" }}>{easyTodosDescription}</div>
-          </Project>
+          </Project> */}
         </Container>
       </Segment>
 
       <SocialMediaEmbeds mobile={mobile} />
     </React.Fragment>
-  )
-}
-export default HomepageLayout
+  );
+};
+export default HomepageLayout;

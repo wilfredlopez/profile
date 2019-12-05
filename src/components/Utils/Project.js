@@ -1,5 +1,12 @@
-import React from "react"
-import { Button, Header, Divider, Image } from "semantic-ui-react"
+import React from "react";
+import {
+  Button,
+  Header,
+  Divider,
+  Image,
+  Grid,
+  GridColumn
+} from "semantic-ui-react";
 
 const Project = ({ url, name, title, imageSrc, ...props }) => {
   return (
@@ -19,24 +26,30 @@ const Project = ({ url, name, title, imageSrc, ...props }) => {
           {props.children}
           {imageSrc && (
             <>
-              <br />
+              {/* <br /> */}
               <Image
                 src={imageSrc}
                 alt={`${name} Homepage`}
                 //   label="Retailme Now Homepage"
                 size="medium"
                 centered
+                style={{
+                  marginTop: 6
+                }}
               />
             </>
           )}
         </div>
       </Header>
-
-      <Button size="large">
-        <a href={url}>{name}</a>
-      </Button>
+      <Grid textAlign="right">
+        <GridColumn>
+          <Button size="large">
+            <a href={url}>{name}</a>
+          </Button>
+        </GridColumn>
+      </Grid>
     </>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

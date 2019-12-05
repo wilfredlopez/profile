@@ -1,36 +1,36 @@
-import React from "react"
+import React from "react";
 export const experiences = [
   {
     icon: "marker",
     label: "Web Production QA Analyst",
     location: "Century 21 Stores",
-    isCurrent: true,
+    isCurrent: true
   },
   {
     icon: "marker",
     label: "Suppor Center Specialist",
     location: "Century 21 Stores",
-    isCurrent: false,
+    isCurrent: false
   },
   {
     icon: "marker",
     label: "Mission Control Specialist",
     location: "Teleperformance",
-    isCurrent: false,
+    isCurrent: false
   },
   {
     icon: "marker",
     label: "Customer Service Representative",
     location: "Teleperformance",
-    isCurrent: false,
+    isCurrent: false
   },
   {
     icon: "marker",
     label: "Call Center QA Analyst",
     location: "BM Teleservices",
-    isCurrent: false,
-  },
-]
+    isCurrent: false
+  }
+];
 
 export const education = [
   { icon: "react", label: "React" },
@@ -45,8 +45,8 @@ export const education = [
   { icon: "cloud", label: "Salesforce Commerce Cloud" },
   { icon: "calendar alternate outline", label: "Workforce Management" },
   { icon: "microsoft", label: "Microsoft Office, Excel VBA" },
-  { icon: "talk", label: "Bilingual (English, Spanish)" },
-]
+  { icon: "talk", label: "Bilingual (English, Spanish)" }
+];
 
 export const retailmeNowDescription = (
   <>
@@ -56,23 +56,24 @@ export const retailmeNowDescription = (
       your shopping cart and checkout.
     </p>
   </>
-)
+);
 
 export const vapeMusicDescription = (
   <>
     <p>
-      Its a Website for promotional music download. combined with a Backend API
-      that can server song lists from a database including pagination.
+      Website for promotional music download and listening. combined with a
+      GraphQl API that can server song lists from a database. The user can Like
+      songs and added to the playlist.
     </p>
     <p>
       The admin can add/remove, upload image and audio directly from the site.
     </p>
     <p>
-      Songs are distributed by categories, users can sort, view individual songs
-      and download music.
+      Songs are distributed by genre and artists, Users can search, add songs to
+      the playlist and use the Audio Player to switch from song to song.
     </p>
   </>
-)
+);
 
 export const easyTodosDescription = (
   <>
@@ -89,4 +90,4 @@ export const easyTodosDescription = (
       an have it listed back again.
     </p>
   </>
-)
+);
