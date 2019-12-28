@@ -132,7 +132,7 @@ const HomepageLayout = () => {
             {summary}
             <Grid.Column floated="right" width={6} className="text-center">
               <Button size="huge">
-                <Link to="/projects">Look at my Projects</Link>
+                <Link to="/projects">Some of my Projects</Link>
               </Button>
             </Grid.Column>
           </Grid.Row>

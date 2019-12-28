@@ -3,8 +3,8 @@ export const experiences = [
   {
     icon: "marker",
     label: "Web Production QA Analyst",
-    location: "Century 21 Stores",
-    isCurrent: true
+    location: "Century 21 Stores"
+    // isCurrent: true
   },
   {
     icon: "marker",
