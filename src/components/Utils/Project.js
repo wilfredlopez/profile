@@ -13,7 +13,7 @@ const Project = ({ url, name, title, imageSrc, ...props }) => {
     <>
       <Divider
         as="h4"
-        className="header"
+        className="header project-tile"
         horizontal
         style={{ margin: "1em 0em", textTransform: "uppercase" }}
       >

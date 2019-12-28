@@ -2,7 +2,7 @@ TO PUSH TO GITHUB ONLY
 npm run build
 git add .
 git commit -am "WHATEREVER"
-git push profile master
+git push origin master
 npm run github-deploy
 
 

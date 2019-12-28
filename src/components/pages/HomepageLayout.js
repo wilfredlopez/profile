@@ -104,7 +104,9 @@ const HomepageLayout = () => {
   });
   return (
     <React.Fragment>
-      {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
+      <section id="welcome-section">
+        {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
+      </section>
       <Segment style={{ padding: "2em 0em" }} vertical>
         <Grid container stackable verticalAlign="middle">
           <Grid.Row>
@@ -138,7 +140,7 @@ const HomepageLayout = () => {
       </Segment>
 
       <Segment style={{ padding: "2em 0em" }} vertical>
-        <Container text>
+        <Container text id="projects">
           <Project
             url="https://shop-client.cubamc.now.sh"
             name="RetalMeNow"

@@ -1,44 +1,66 @@
-
-
-import React, { Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
-import {
-    Button,
-    Menu,
-    Icon
-} from 'semantic-ui-react'
+import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
+import { Button, Menu, Icon } from "semantic-ui-react";
 
 const MenuItems = ({ fixed }) => {
-
-    return (
-        <Fragment>
-            <NavLink to="/" className="item" exact>Home</NavLink>
-            <NavLink to="/projects" className="item" exact>Projects</NavLink>
-            <NavLink to="/contact" className="item" exact>Contact</NavLink>
-            <Menu.Item position='right'>
-                <Button as='a' inverted={!fixed} href="https://github.com/wilfredlopez" target="_blank" rel="noopener noreferrer" role="link">
-                    <Icon.Group size='large'>
-                        <Icon name='github' />
-                        <Icon corner name='add' />
-                    </Icon.Group>
-                    Github
-                </Button>
-                <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.4em' }} href="https://www.linkedin.com/in/wilfred-lopez-a309b896" target="_blank" rel="noopener noreferrer">
-                    <Icon.Group size='large'>
-                        <Icon name='linkedin' style={{ color: "#1da1f2" }} />
-                    </Icon.Group>
-                    LinkedIn
+  return (
+    <Fragment>
+      <NavLink to="/" className="item" exact>
+        Home
+      </NavLink>
+      <NavLink to="/projects" className="item" exact>
+        Projects
+      </NavLink>
+      <NavLink to="/contact" className="item" exact>
+        Contact
+      </NavLink>
+      <Menu.Item position="right">
+        <Button
+          as="a"
+          inverted={!fixed}
+          href="https://github.com/wilfredlopez"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="link"
+          id="profile-link"
+        >
+          <Icon.Group size="large">
+            <Icon name="github" />
+            <Icon corner name="add" />
+          </Icon.Group>
+          Github
         </Button>
-                <Button as='a' inverted={!fixed} style={{ marginLeft: '0.5em' }} href="https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw" rel="noopener noreferrer" target="_blank">
-                    <Icon.Group size='large'>
-                        <Icon name='twitter' style={{ color: "#1da1f2" }} />
-                        <Icon corner name='add' style={{ color: "#1da1f2" }} />
-                    </Icon.Group>
-                    @wilfreddonaldlo
-                </Button>
-            </Menu.Item>
-        </Fragment>
-    )
-}
+        <Button
+          as="a"
+          inverted={!fixed}
+          primary={fixed}
+          style={{ marginLeft: "0.4em" }}
+          href="https://www.linkedin.com/in/wilfred-lopez-a309b896"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon.Group size="large">
+            <Icon name="linkedin" style={{ color: "#1da1f2" }} />
+          </Icon.Group>
+          LinkedIn
+        </Button>
+        <Button
+          as="a"
+          inverted={!fixed}
+          style={{ marginLeft: "0.5em" }}
+          href="https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Icon.Group size="large">
+            <Icon name="twitter" style={{ color: "#1da1f2" }} />
+            <Icon corner name="add" style={{ color: "#1da1f2" }} />
+          </Icon.Group>
+          @wilfreddonaldlo
+        </Button>
+      </Menu.Item>
+    </Fragment>
+  );
+};
 
-export default MenuItems
+export default MenuItems;
