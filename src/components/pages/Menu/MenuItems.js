@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import { NavLink } from "react-router-dom";
-import { Button, Menu, Icon } from "semantic-ui-react";
+import React, { Fragment } from "react"
+import { NavLink } from "react-router-dom"
+import { Button, Menu, Icon } from "semantic-ui-react"
 
 const MenuItems = ({ fixed }) => {
   return (
@@ -9,7 +9,7 @@ const MenuItems = ({ fixed }) => {
         Home
       </NavLink>
       <NavLink to="/projects" className="item" exact>
-        Projects
+        Demo Projects
       </NavLink>
       <NavLink to="/contact" className="item" exact>
         Contact
@@ -60,7 +60,7 @@ const MenuItems = ({ fixed }) => {
         </Button>
       </Menu.Item>
     </Fragment>
-  );
-};
+  )
+}
 
-export default MenuItems;
+export default MenuItems

@@ -22,3 +22,7 @@ code {
   right: 2%;
   z-index: 5;
 } */
+
+.border-full {
+  border-radius: 100%;
+}

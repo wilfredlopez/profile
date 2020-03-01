@@ -1,8 +1,8 @@
-import React from "react";
-import { Container, Grid, Header, List, Segment } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import React from "react"
+import { Container, Grid, Header, List, Segment } from "semantic-ui-react"
+import { NavLink } from "react-router-dom"
 
-import SocialList from "./SocialList";
+import SocialList from "./SocialList"
 
 const SiteFooter = () => {
   return (
@@ -17,7 +17,7 @@ const SiteFooter = () => {
                   Home
                 </NavLink>
                 <NavLink to="/projects" exact className="item">
-                  Projects
+                  Demo Projects
                 </NavLink>
                 <NavLink to="/contact" exact className="item">
                   Contact
@@ -61,7 +61,7 @@ const SiteFooter = () => {
         </Grid>
       </Container>
     </Segment>
-  );
-};
+  )
+}
 
-export default SiteFooter;
+export default SiteFooter
