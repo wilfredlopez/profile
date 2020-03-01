@@ -50,6 +50,7 @@ const HomepageHeading = ({ mobile }) => (
         <p>
           <Icon name="briefcase" />
           Quality Assurance/Web Development
+          {""}
           <br />
           <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
         </p>
