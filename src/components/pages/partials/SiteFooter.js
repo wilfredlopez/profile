@@ -45,6 +45,15 @@ const SiteFooter = () => {
                 >
                   RetalMeNow
                 </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://wilfredexpensemanager.netlify.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  role="link"
+                >
+                  Expenses Manager
+                </List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
