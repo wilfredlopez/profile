@@ -26,3 +26,11 @@ code {
 .border-full {
   border-radius: 100%;
 }
+
+.text-white {
+  color: white;
+}
+
+.with-shadow {
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.68);
+}

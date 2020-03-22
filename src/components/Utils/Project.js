@@ -1,12 +1,12 @@
-import React from "react";
+import React from "react"
 import {
   Button,
   Header,
   Divider,
   Image,
   Grid,
-  GridColumn
-} from "semantic-ui-react";
+  GridColumn,
+} from "semantic-ui-react"
 
 const Project = ({ url, name, title, imageSrc, ...props }) => {
   return (
@@ -31,25 +31,28 @@ const Project = ({ url, name, title, imageSrc, ...props }) => {
                 src={imageSrc}
                 alt={`${name} Homepage`}
                 //   label="Retailme Now Homepage"
-                size="medium"
+                // size="medium"
                 centered
                 style={{
-                  marginTop: 6
+                  marginTop: 6,
+                  maxHeight: 600,
                 }}
               />
             </>
           )}
         </div>
       </Header>
-      <Grid textAlign="right">
+      <Grid textAlign="center">
         <GridColumn>
-          <Button size="large">
-            <a href={url}>{name}</a>
+          <Button size="small" color="secondary">
+            <a href={url} className="text-white">
+              {name}
+            </a>
           </Button>
         </GridColumn>
       </Grid>
     </>
-  );
-};
+  )
+}
 
-export default Project;
+export default Project

@@ -1,41 +1,41 @@
-import React from "react";
+import React from "react"
 export const experiences = [
   {
     icon: "marker",
     label: "Web Production QA Analyst",
-    location: "Century 21 Stores"
+    location: "Century 21 Stores",
     // isCurrent: true
   },
   {
     icon: "marker",
     label: "Suppor Center Specialist",
     location: "Century 21 Stores",
-    isCurrent: false
+    isCurrent: false,
   },
   {
     icon: "marker",
     label: "Mission Control Specialist",
     location: "Teleperformance",
-    isCurrent: false
+    isCurrent: false,
   },
   {
     icon: "marker",
     label: "Customer Service Representative",
     location: "Teleperformance",
-    isCurrent: false
+    isCurrent: false,
   },
   {
     icon: "marker",
     label: "Call Center QA Analyst",
     location: "BM Teleservices",
-    isCurrent: false
-  }
-];
+    isCurrent: false,
+  },
+]
 
 export const education = [
   { icon: "react", label: "React" },
   { icon: "js square", label: "Typescript" },
-  { icon: "database", label: "GraphQl" },
+  { icon: "database", label: "GraphQL" },
   { icon: "node js", label: "NodeJS with Express and MongoDB" },
   { icon: "universal access", label: "Web Accessibility" },
   { icon: "js", label: "Javascript" },
@@ -45,8 +45,8 @@ export const education = [
   { icon: "cloud", label: "Salesforce Commerce Cloud" },
   { icon: "calendar alternate outline", label: "Workforce Management" },
   { icon: "microsoft", label: "Microsoft Office, Excel VBA" },
-  { icon: "talk", label: "Bilingual (English, Spanish)" }
-];
+  { icon: "talk", label: "Bilingual (English, Spanish)" },
+]
 
 export const retailmeNowDescription = (
   <>
@@ -56,14 +56,28 @@ export const retailmeNowDescription = (
       your shopping cart and checkout.
     </p>
   </>
-);
+)
+
+export const expenseManagerDescription = (
+  <>
+    <p>
+      {" "}
+      Expenses Manager is a Windows/Mac/IOS, Android and Web Application that
+      helps you manage your personal finances.
+    </p>
+    <p>
+      Add your monthly plans for income and expenses. Add transactions and keep
+      track of everything.
+    </p>
+  </>
+)
 
 export const vapeMusicDescription = (
   <>
     <p>
-      Website for promotional music download and listening. combined with a
-      GraphQl API that can server song lists from a database. The user can Like
-      songs and added to the playlist.
+      Progressive Web App for listening and downloading promotional music.
+      combined with a GraphQl API that can serve song lists from the database.
+      The user can Like songs and add to the playlist/favorites.
     </p>
     <p>
       The admin can add/remove, upload image and audio directly from the site.
@@ -73,7 +87,7 @@ export const vapeMusicDescription = (
       the playlist and use the Audio Player to switch from song to song.
     </p>
   </>
-);
+)
 
 export const easyTodosDescription = (
   <>
@@ -90,4 +104,4 @@ export const easyTodosDescription = (
       an have it listed back again.
     </p>
   </>
-);
+)

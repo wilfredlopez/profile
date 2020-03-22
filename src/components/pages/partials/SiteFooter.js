@@ -25,7 +25,7 @@ const SiteFooter = () => {
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as="h4" content="Projects" />
+              <Header inverted as="h4" content="Demo Projects" />
               <List link inverted>
                 <List.Item
                   as="a"

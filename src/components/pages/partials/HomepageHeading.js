@@ -31,11 +31,18 @@ const HomepageHeading = ({ mobile }) => (
         <Image
           src={wilfredImg}
           // src="https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png"
-          size="medium"
+          // size="medium"
+          style={{
+            width: "100%",
+            height: "100%",
+            maxWidth: 500,
+            maxHeight: 500,
+          }}
           // circular
           alt="wilfred"
-          className="m-auto border-full"
+          className="m-auto border-full with-shadow"
         />
+
         <Header
           as="h1"
           content="WILFRED LOPEZ"

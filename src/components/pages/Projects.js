@@ -1,31 +1,33 @@
-import React, { useEffect } from "react";
-import { Segment, Container } from "semantic-ui-react";
-import Project from "../Utils/Project";
+import React, { useEffect } from "react"
+import { Segment, Container } from "semantic-ui-react"
+import Project from "../Utils/Project"
 import {
   retailmeNowDescription,
-  vapeMusicDescription
+  vapeMusicDescription,
+  expenseManagerDescription,
   // easyTodosDescription
-} from "./constants";
+} from "./constants"
 // import vapemusicImg from "../../img/vapemusic.jpeg";
-import vapemusicImg from "../../img/vapemusic2mobile.jpg";
-import retailmenowImg from "../../img/retailmenow.jpeg";
+import vapemusicImg from "../../img/vapemusic2mobile.jpg"
+import retailmenowImg from "../../img/retailmenow.jpeg"
+import expenseManagerImg from "../../img/expense-manager-example-4.jpg"
 
 const Projects = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth"
-    });
-  }, []);
+      behavior: "smooth",
+    })
+  }, [])
   return (
     <React.Fragment>
       <Segment style={{ padding: "2em 0em" }} vertical>
         <Container text>
           <Project
             url="https://vapemusic.club"
-            name="Vape Music 2.0"
-            title="Vape Music 2.0 - Latin Music Listen & Download"
+            name="Vape Music"
+            title="Vape Music - Latin Music Listen & Download"
             imageSrc={vapemusicImg}
           >
             {vapeMusicDescription}
@@ -38,6 +40,14 @@ const Projects = () => {
           >
             {retailmeNowDescription}
           </Project>
+          <Project
+            url="https://wilfredexpensemanager.netlify.com"
+            name="Expenses Manager"
+            title="Expenses Manager - Manage your personal finances"
+            imageSrc={expenseManagerImg}
+          >
+            {expenseManagerDescription}
+          </Project>
           {/* <Project
             url="https://wilnotes.herokuapp.com"
             name="EasyTodos"
@@ -48,7 +58,7 @@ const Projects = () => {
         </Container>
       </Segment>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

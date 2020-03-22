@@ -15,6 +15,7 @@ import {
   experiences,
   retailmeNowDescription,
   vapeMusicDescription,
+  expenseManagerDescription,
   // easyTodosDescription
 } from "./constants"
 import getWidth from "./containers/getWidth"
@@ -24,6 +25,7 @@ import SocialMediaEmbeds from "./partials/SocialMediaEmbeds"
 // import vapemusicImg from "../../img/vapemusic.jpeg"
 import vapemusicImg from "../../img/vapemusic2mobile.jpg"
 import retailmenowImg from "../../img/retailmenow.jpeg"
+import expenseManagerImg from "../../img/expense-manager-example-4.jpg"
 
 const HomepageLayout = () => {
   const [mobile, setMobile] = useState(null)
@@ -142,20 +144,32 @@ const HomepageLayout = () => {
       <Segment style={{ padding: "2em 0em" }} vertical>
         <Container text id="projects">
           <Project
+            url="https://vapemusic.club"
+            name="Vape Music"
+            title="Vape Music - Latin Music Listen & Download"
+            imageSrc={vapemusicImg}
+          >
+            <div style={{ fontSize: "1.33em" }}>{vapeMusicDescription}</div>
+          </Project>
+
+          <Project
+            url="https://wilfredexpensemanager.netlify.com"
+            name="Expenses Manager"
+            title="Expenses Manager - Manage your personal finances"
+            imageSrc={expenseManagerImg}
+          >
+            <div style={{ fontSize: "1.33em" }}>
+              {expenseManagerDescription}
+            </div>
+          </Project>
+
+          <Project
             url="https://shop-client.cubamc.now.sh"
             name="RetalMeNow"
             title="RetalMeNow - Shop Online"
             imageSrc={retailmenowImg}
           >
             <div style={{ fontSize: "1.33em" }}>{retailmeNowDescription}</div>
-          </Project>
-          <Project
-            url="https://vapemusic.club"
-            name="Vape Music 2.0"
-            title="Vape Music 2.0- Latin Music Listen & Download"
-            imageSrc={vapemusicImg}
-          >
-            <div style={{ fontSize: "1.33em" }}>{vapeMusicDescription}</div>
           </Project>
 
           {/* <Project
