@@ -24,7 +24,8 @@ code {
 } */
 
 .border-full {
-  border-radius: 100%;
+  /* border-radius: 100%; */
+  border-radius: 2rem;
 }
 
 .text-white {

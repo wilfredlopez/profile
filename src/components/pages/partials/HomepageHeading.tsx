@@ -9,7 +9,7 @@ import {
   Segment,
   Sidebar,
 } from "semantic-ui-react"
-import wilfredImg from "../../../img/wilfred.jpg"
+import wilfredImg from "../../../img/wilfred-profile.png"
 import getWidth from "../containers/getWidth"
 
 interface Props {
