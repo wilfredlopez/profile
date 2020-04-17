@@ -1,24 +1,25 @@
-import PropTypes from "prop-types"
 import React from "react"
 import {
   Button,
   Container,
   Header,
   Icon,
-  Responsive,
-  Sidebar,
-  Segment,
   Image,
+  Responsive,
+  Segment,
+  Sidebar,
 } from "semantic-ui-react"
 import wilfredImg from "../../../img/wilfred.jpg"
-
 import getWidth from "../containers/getWidth"
 
-const HomepageHeading = ({ mobile }) => (
+interface Props {
+  mobile?: boolean
+}
+const HomepageHeading: React.FC<Props> = ({ mobile }) => (
   <Responsive
     as={Sidebar.Pushable}
     getWidth={getWidth}
-    maxWidth={mobile && Responsive.onlyMobile.maxWidth}
+    maxWidth={mobile ? Responsive.onlyMobile.maxWidth : undefined}
     minWidth={!mobile ? Responsive.onlyTablet.minWidth : ""}
   >
     <Segment
@@ -78,9 +79,5 @@ const HomepageHeading = ({ mobile }) => (
     </Segment>
   </Responsive>
 )
-
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool,
-}
 
 export default HomepageHeading

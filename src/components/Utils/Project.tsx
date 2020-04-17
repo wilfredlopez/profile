@@ -8,7 +8,14 @@ import {
   GridColumn,
 } from "semantic-ui-react"
 
-const Project = ({ url, name, title, imageSrc, ...props }) => {
+interface Props {
+  url: string
+  name: string
+  title: string
+  imageSrc: string
+}
+
+const Project: React.FC<Props> = ({ url, name, title, imageSrc, ...props }) => {
   return (
     <>
       <Divider
@@ -44,7 +51,7 @@ const Project = ({ url, name, title, imageSrc, ...props }) => {
       </Header>
       <Grid textAlign="center">
         <GridColumn>
-          <Button size="small" color="secondary">
+          <Button size="small" color="youtube">
             <a href={url} className="text-white">
               {name}
             </a>

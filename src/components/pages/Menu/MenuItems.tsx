@@ -2,7 +2,10 @@ import React, { Fragment } from "react"
 import { NavLink } from "react-router-dom"
 import { Button, Menu, Icon } from "semantic-ui-react"
 
-const MenuItems = ({ fixed }) => {
+interface Props {
+  fixed: boolean
+}
+const MenuItems: React.FC<Props> = ({ fixed }) => {
   return (
     <Fragment>
       <NavLink to="/" className="item" exact>

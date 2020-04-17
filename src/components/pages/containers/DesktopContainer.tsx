@@ -1,30 +1,31 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React, { Component } from "react"
 import {
   Container,
   Menu,
   Responsive,
   Segment,
-  Visibility
-} from "semantic-ui-react";
-import getWidth from "./getWidth";
+  Visibility,
+} from "semantic-ui-react"
+import getWidth from "./getWidth"
 
 //custom
-import MenuItems from "../Menu/MenuItems";
+import MenuItems from "../Menu/MenuItems"
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
  * It can be more complicated, but you can create really flexible markup.
  */
 class DesktopContainer extends Component {
-  state = {};
+  state = {
+    fixed: true,
+  }
 
-  hideFixedMenu = () => this.setState({ fixed: false });
-  showFixedMenu = () => this.setState({ fixed: true });
+  hideFixedMenu = () => this.setState({ fixed: false })
+  showFixedMenu = () => this.setState({ fixed: true })
 
   render() {
-    const { children } = this.props;
-    const { fixed } = this.state;
+    const { children } = this.props
+    const { fixed } = this.state
 
     return (
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
@@ -42,7 +43,7 @@ class DesktopContainer extends Component {
             >
               <nav id="navbar-wrapper">
                 <Menu
-                  fixed={fixed ? "top" : null}
+                  fixed={fixed ? "top" : undefined}
                   inverted={!fixed}
                   pointing={!fixed}
                   secondary={!fixed}
@@ -60,12 +61,8 @@ class DesktopContainer extends Component {
 
         {children}
       </Responsive>
-    );
+    )
   }
 }
 
-DesktopContainer.propTypes = {
-  children: PropTypes.node
-};
-
-export default DesktopContainer;
+export default DesktopContainer

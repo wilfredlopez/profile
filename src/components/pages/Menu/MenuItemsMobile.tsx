@@ -2,7 +2,12 @@ import React, { Fragment } from "react"
 import { NavLink } from "react-router-dom"
 import { List, Icon } from "semantic-ui-react"
 
-const MenuItems = ({ fixed, handleOut }) => {
+interface Props {
+  fixed?: boolean
+  handleOut: () => void
+}
+
+const MenuItems: React.FC<Props> = ({ fixed, handleOut }) => {
   return (
     <Fragment>
       <List.Item as="a" className="mb-4 py-3" onClick={handleOut}>
