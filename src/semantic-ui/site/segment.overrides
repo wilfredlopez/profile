@@ -1,3 +1,12 @@
 /*******************************
          Site Overrides
 *******************************/
+
+
+.ui.inverted.segment, .ui.primary.inverted.segment {
+    background: #040c14;
+}
+
+.ui.menu {
+    background: #e5e5e5;
+}

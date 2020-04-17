@@ -1,0 +1,34 @@
+/*******************************
+        Import Directives
+*******************************/
+@themesFolder: "themes";
+@siteFolder: "../../src/semantic-ui/site";
+
+/*------------------
+       Theme
+-------------------*/
+
+@theme: @@element;
+
+/*--------------------
+   Site Variables
+---------------------*/
+
+/* Default site.variables */
+@import "@{siteFolder}/globals/site.variables";
+
+/*-------------------
+ Component Variables
+---------------------*/
+
+/*******************************
+             Mix-ins
+*******************************/
+
+/*------------------
+     Overrides
+-------------------*/
+
+.loadUIOverrides() {
+  @import (optional) "@{siteFolder}/@{element}.overrides";
+}
