@@ -49,14 +49,15 @@ const Contact = () => {
               <p style={{ fontSize: "1.33em" }}>
                 Wilfred D. Lopez, from Dominican Republic. Lives in Garfield,
                 NJ, USA. Studied Tourism Bussiness Management in UAPA
-                University. Experience in Customer Service, Workforce
-                Management, Web Quality Assurance and Accessibility.{" "}
+                University. Self educated in Typescript, React, NodeJS, Express,
+                MongoDB, Apollo-QraphQL, HTML, CSS and other modern Javascript
+                based languages.{" "}
               </p>
 
               <p style={{ fontSize: "1.33em" }}>
-                Currently working as a QA Analyst for a B2C Reail Store. Self
-                educated in React, NodeJS, Express, MongoDB and other modern
-                Javascript based languages.
+                Currently working as a QA Analyst for a B2C Reail Store.
+                Experience in Customer Service, Workforce Management, Web
+                Quality Assurance and Accessibility.
               </p>
             </Grid.Column>
             <Grid.Column floated="right" width={6}>
@@ -65,7 +66,10 @@ const Contact = () => {
                   Excellent communication skills, organization skills, and
                   excellent attention to detail.
                 </p>
-                <p>Strong knowledge of MS Excel.</p>
+                <p>
+                  Strong knowledge of MS Excel, Jira, Salesforce Commerce Cloud,
+                  and others.
+                </p>
                 <p>Dedicated, passionate and reliable worker.</p>
                 <p>
                   Proficient knowledge of accessibility standards (Section
