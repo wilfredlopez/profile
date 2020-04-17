@@ -8,9 +8,9 @@ import {
   // easyTodosDescription
 } from "./constants"
 // import vapemusicImg from "../../img/vapemusic.jpeg";
-import vapemusicImg from "../../img/vapemusic2mobile.jpg"
+import vapemusicImg from "../../img/vapemusic-example.jpg"
 import retailmenowImg from "../../img/retailmenow.jpeg"
-import expenseManagerImg from "../../img/expense-manager-example-4.jpg"
+import expenseManagerImg from "../../img/expense-manager-example.jpg"
 
 const Projects = () => {
   useEffect(() => {
@@ -33,7 +33,7 @@ const Projects = () => {
             {vapeMusicDescription}
           </Project>
           <Project
-            url="https://shop-client.cubamc.now.sh"
+            url="#"
             name="RetalMeNow"
             title="RetalMeNow - Shop Online"
             imageSrc={retailmenowImg}
@@ -41,7 +41,7 @@ const Projects = () => {
             {retailmeNowDescription}
           </Project>
           <Project
-            url="https://wilfredexpensemanager.netlify.com"
+            url="https://wilfredexpensemanager.netlify.app"
             name="Expenses Manager"
             title="Expenses Manager - Manage your personal finances"
             imageSrc={expenseManagerImg}

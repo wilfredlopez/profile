@@ -23,9 +23,9 @@ import HomepageHeading from "./partials/HomepageHeading"
 import SocialMediaEmbeds from "./partials/SocialMediaEmbeds"
 
 // import vapemusicImg from "../../img/vapemusic.jpeg"
-import vapemusicImg from "../../img/vapemusic2mobile.jpg"
+import vapemusicImg from "../../img/vapemusic-example.jpg"
 import retailmenowImg from "../../img/retailmenow.jpeg"
-import expenseManagerImg from "../../img/expense-manager-example-4.jpg"
+import expenseManagerImg from "../../img/expense-manager-example.jpg"
 
 const HomepageLayout = () => {
   const [mobile, setMobile] = useState(null)
@@ -78,7 +78,7 @@ const HomepageLayout = () => {
     </Grid.Column>
   )
 
-  const educationList = education.map(edu => {
+  const educationList = education.map((edu) => {
     return (
       <List.Item key={edu.label}>
         <Icon name={edu.icon} />
@@ -89,7 +89,7 @@ const HomepageLayout = () => {
     )
   })
 
-  const experienceList = experiences.map(exp => {
+  const experienceList = experiences.map((exp) => {
     return (
       <List.Item key={exp.label}>
         <Icon name={exp.icon} />
@@ -153,7 +153,7 @@ const HomepageLayout = () => {
           </Project>
 
           <Project
-            url="https://wilfredexpensemanager.netlify.com"
+            url="https://wilfredexpensemanager.netlify.app"
             name="Expenses Manager"
             title="Expenses Manager - Manage your personal finances"
             imageSrc={expenseManagerImg}
@@ -164,7 +164,7 @@ const HomepageLayout = () => {
           </Project>
 
           <Project
-            url="https://shop-client.cubamc.now.sh"
+            url="#"
             name="RetalMeNow"
             title="RetalMeNow - Shop Online"
             imageSrc={retailmenowImg}
