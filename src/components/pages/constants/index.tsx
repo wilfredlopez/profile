@@ -4,7 +4,7 @@ export const experiences = [
     icon: "marker",
     label: "Web Production QA Analyst",
     location: "Century 21 Stores",
-    // isCurrent: true
+    isCurrent: false,
   },
   {
     icon: "marker",
@@ -30,7 +30,7 @@ export const experiences = [
     location: "BM Teleservices",
     isCurrent: false,
   },
-]
+] as const
 
 export const education = [
   { icon: "react", label: "React" },
@@ -46,9 +46,9 @@ export const education = [
   { icon: "calendar alternate outline", label: "Workforce Management" },
   { icon: "microsoft", label: "Microsoft Office, Excel VBA" },
   { icon: "talk", label: "Bilingual (English, Spanish)" },
-]
+] as const
 
-export const retailmeNowDescription = (
+export const retailmeNowDescription: JSX.Element = (
   <>
     <p> RetalMeNow an online retail store.</p>
     <p>

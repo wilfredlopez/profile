@@ -28,7 +28,7 @@ import retailmenowImg from "../../img/retailmenow.jpeg"
 import expenseManagerImg from "../../img/expense-manager-example.jpg"
 
 const HomepageLayout = () => {
-  const [mobile, setMobile] = useState(null)
+  const [mobile, setMobile] = useState<boolean>(true)
   let deviceWith = getWidth()
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const HomepageLayout = () => {
   }, [])
 
   useEffect(() => {
-    if (deviceWith <= 767) {
+    if (deviceWith && deviceWith <= 767) {
       setMobile(true)
     } else {
       setMobile(false)
