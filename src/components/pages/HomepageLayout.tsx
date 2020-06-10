@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   Container,
   Grid,
-  Header,
-  Icon,
+  Typography,
+  ListItem,
   List,
-  Segment,
-} from "semantic-ui-react"
-import Project from "../Utils/Project"
+} from "@material-ui/core";
+import Project from "../Utils/Project";
 import {
   education,
   experiences,
@@ -17,132 +16,138 @@ import {
   vapeMusicDescription,
   expenseManagerDescription,
   // easyTodosDescription
-} from "./constants"
-import getWidth from "./containers/getWidth"
-import HomepageHeading from "./partials/HomepageHeading"
-import SocialMediaEmbeds from "./partials/SocialMediaEmbeds"
+} from "./constants";
+import getWidth from "./containers/getWidth";
+import HomepageHeading from "./partials/HomepageHeading";
+import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 
 // import vapemusicImg from "../../img/vapemusic.jpeg"
-import vapemusicImg from "../../img/vapemusic-example.jpg"
-import retailmenowImg from "../../img/retailmenow.jpeg"
-import expenseManagerImg from "../../img/expense-manager-example.jpg"
+import vapemusicImg from "../../img/vapemusic-example.jpg";
+import retailmenowImg from "../../img/retailmenow.jpeg";
+import expenseManagerImg from "../../img/expense-manager-example.jpg";
+import { Segment } from "components/shared";
 
 const HomepageLayout = () => {
-  const [mobile, setMobile] = useState<boolean>(true)
-  let deviceWith = getWidth()
+  const [mobile, setMobile] = useState<boolean>(true);
+  let deviceWith = getWidth();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
-    })
-  }, [])
+    });
+  }, []);
 
   useEffect(() => {
     if (deviceWith && deviceWith <= 767) {
-      setMobile(true)
+      setMobile(true);
     } else {
-      setMobile(false)
+      setMobile(false);
     }
-  }, [deviceWith])
+  }, [deviceWith]);
 
   const summary = (
-    <Grid.Column width={8}>
-      <List size="large" as="ul" style={{ fontSize: "1.3em" }}>
-        <List.Item as="li">
+    <Grid container>
+      <List style={{ fontSize: "1.3em" }}>
+        <ListItem>
           Proficient knowledge of HTML 5, CSS 3, JavaScript.
-        </List.Item>
-        <List.Item as="li">Experieced with MS Excel.</List.Item>
-        <List.Item as="li">
+        </ListItem>
+        <ListItem>Experieced with MS Excel.</ListItem>
+        <ListItem>
           Excellent communication skills, organization skills, and excellent
           attention to detail.
-        </List.Item>
-        <List.Item as="li">
+        </ListItem>
+        <ListItem>
           Proficient knowledge of accessibility standards (Section 508/WCAG 2.0
           Level A and AA).{" "}
-        </List.Item>
-        <List.Item as="li">
+        </ListItem>
+        <ListItem>
           Good understanding of assistive technologies (JAWS, NVDA, VoiceOver).
-        </List.Item>
-        <List.Item as="li">
+        </ListItem>
+        <ListItem>
           6 years of call center and Workforce Management experience.
-        </List.Item>
-        <List.Item as="li">
+        </ListItem>
+        <ListItem>
           Proficient experience in QA testing methodology.
-        </List.Item>
-        <List.Item as="li">
+        </ListItem>
+        <ListItem>
           Proven ability to document issues and bugs.
-        </List.Item>
+        </ListItem>
       </List>
-    </Grid.Column>
-  )
+    </Grid>
+  );
 
   const educationList = education.map((edu) => {
     return (
-      <List.Item key={edu.label}>
-        <Icon name={edu.icon} />
-        <List.Content>
-          <List.Header as="p">{edu.label}</List.Header>
-        </List.Content>
-      </List.Item>
-    )
-  })
+      <ListItem key={edu.label}>
+        {/* <Icon name={edu.icon} /> */}
+        <List>
+          <p>{edu.label}</p>
+        </List>
+      </ListItem>
+    );
+  });
 
   const experienceList = experiences.map((exp) => {
     return (
-      <List.Item key={exp.label}>
-        <Icon name={exp.icon} />
-        <List.Content>
-          <List.Header as="p">
-            <Header as="span" color={exp.isCurrent ? "blue" : "grey"}>
-              {exp.label} {exp.isCurrent && "(Actual)"}
-            </Header>
-          </List.Header>
+      <ListItem key={exp.label}>
+        {/* <Icon name={exp.icon} /> */}
+        <section>
+          <div>
+            <Typography
+              variant="body1"
+              style={{ color: exp.isCurrent ? "blue" : "grey" }}
+            >
+              {exp.label}
+              {exp.isCurrent && "(Actual)"}
+            </Typography>
+          </div>
           {exp.location}
-        </List.Content>
-      </List.Item>
-    )
-  })
+        </section>
+      </ListItem>
+    );
+  });
   return (
     <React.Fragment>
       <section id="welcome-section">
         {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
       </section>
-      <Segment style={{ padding: "2em 0em" }} vertical>
-        <Grid container stackable verticalAlign="middle">
-          <Grid.Row>
-            <Grid.Column width={8}>
-              <Header as="h1" style={{ fontSize: "2em" }}>
+      <Segment style={{ padding: "2em 0em" }}>
+        <Grid container>
+          <Grid>
+            <Grid item>
+              <Typography variant="h1" style={{ fontSize: "2em" }}>
                 Experiences
-              </Header>
+              </Typography>
               <h3>Job Experience</h3>
-              <List verticalAlign="middle" animated size="small">
+              <List>
                 {experienceList}
-              </List>{" "}
-            </Grid.Column>
-            <Grid.Column floated="right" width={6}>
-              <Header as="h2" style={{ fontSize: "2em" }}>
+              </List>
+              {" "}
+            </Grid>
+            <Grid item>
+              <Typography variant="h2" style={{ fontSize: "2em" }}>
                 Skills
-              </Header>
-              <List divided verticalAlign="middle" animated size="large">
+              </Typography>
+              <List>
                 {educationList}
               </List>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
+            </Grid>
+          </Grid>
+          <Grid>
             {summary}
-            <Grid.Column floated="right" width={6} className="text-center">
-              <Button size="huge">
+            <Grid item className="text-center">
+              <Button>
                 <Link to="/projects">Demo Projects</Link>
               </Button>
-            </Grid.Column>
-          </Grid.Row>
+            </Grid>
+          </Grid>
         </Grid>
       </Segment>
 
-      <Segment style={{ padding: "2em 0em" }} vertical>
-        <Container text id="projects">
+      <Segment style={{ padding: "2em 0em" }}>
+        <Container id="projects">
           <Project
             url="https://vapemusic.club"
             name="Vape Music"
@@ -184,6 +189,6 @@ const HomepageLayout = () => {
 
       <SocialMediaEmbeds mobile={mobile} />
     </React.Fragment>
-  )
-}
-export default HomepageLayout
+  );
+};
+export default HomepageLayout;

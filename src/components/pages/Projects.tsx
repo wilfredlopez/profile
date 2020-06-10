@@ -1,16 +1,17 @@
-import React, { useEffect } from "react"
-import { Segment, Container } from "semantic-ui-react"
-import Project from "../Utils/Project"
+import React, { useEffect } from "react";
+import { Container } from "@material-ui/core";
+import Project from "../Utils/Project";
 import {
   retailmeNowDescription,
   vapeMusicDescription,
   expenseManagerDescription,
   // easyTodosDescription
-} from "./constants"
+} from "./constants";
 // import vapemusicImg from "../../img/vapemusic.jpeg";
-import vapemusicImg from "../../img/vapemusic-example.jpg"
-import retailmenowImg from "../../img/retailmenow.jpeg"
-import expenseManagerImg from "../../img/expense-manager-example.jpg"
+import vapemusicImg from "../../img/vapemusic-example.jpg";
+import retailmenowImg from "../../img/retailmenow.jpeg";
+import expenseManagerImg from "../../img/expense-manager-example.jpg";
+import { Segment } from "components/shared";
 
 const Projects = () => {
   useEffect(() => {
@@ -18,12 +19,12 @@ const Projects = () => {
       top: 0,
       left: 0,
       behavior: "smooth",
-    })
-  }, [])
+    });
+  }, []);
   return (
     <React.Fragment>
-      <Segment style={{ padding: "2em 0em" }} vertical>
-        <Container text>
+      <Segment style={{ padding: "2em 0em" }}>
+        <Container>
           <Project
             url="https://vapemusic.club"
             name="Vape Music"
@@ -58,7 +59,7 @@ const Projects = () => {
         </Container>
       </Segment>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

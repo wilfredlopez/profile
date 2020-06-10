@@ -1,45 +1,43 @@
-import React from "react"
+import React from "react";
 import {
   Button,
-  Header,
-  Divider,
-  Image,
-  Grid,
-  GridColumn,
-} from "semantic-ui-react"
+  Typography,
 
+  Avatar,
+  Grid,
+} from "@material-ui/core";
+import styled from "styled-components";
 interface Props {
-  url: string
-  name: string
-  title: string
-  imageSrc: string
+  url: string;
+  name: string;
+  title: string;
+  imageSrc: string;
 }
+
+const DividerElement = styled.div``;
 
 const Project: React.FC<Props> = ({ url, name, title, imageSrc, ...props }) => {
   return (
     <>
-      <Divider
-        as="h4"
+      <DividerElement
         className="header project-tile"
-        horizontal
         style={{ margin: "1em 0em", textTransform: "uppercase" }}
       >
         <a href={url} target="_blank" rel="noopener noreferrer">
           {name}
         </a>
-      </Divider>
-      <Header as="h3" style={{ fontSize: "2em" }}>
+      </DividerElement>
+      <Typography variant="h3" style={{ fontSize: "2em" }}>
         <div style={{ fontSize: "0.5em" }}>
           {props.children}
           {imageSrc && (
             <>
               {/* <br /> */}
-              <Image
+              <Avatar
                 src={imageSrc}
                 alt={`${name} Homepage`}
                 //   label="Retailme Now Homepage"
                 // size="medium"
-                centered
                 style={{
                   marginTop: 6,
                   maxHeight: 600,
@@ -48,18 +46,18 @@ const Project: React.FC<Props> = ({ url, name, title, imageSrc, ...props }) => {
             </>
           )}
         </div>
-      </Header>
-      <Grid textAlign="center">
-        <GridColumn>
-          <Button size="small" color="youtube">
+      </Typography>
+      <Grid>
+        <Grid item>
+          <Button size="small">
             <a href={url} className="text-white">
               {name}
             </a>
           </Button>
-        </GridColumn>
+        </Grid>
       </Grid>
     </>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

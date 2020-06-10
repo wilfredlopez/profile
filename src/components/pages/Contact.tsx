@@ -1,51 +1,55 @@
-import React, { useState, useEffect } from "react"
-import { Button, Grid, Header, Segment, Icon, List } from "semantic-ui-react"
-
-import HomepageHeading from "./partials/HomepageHeading"
-import getWidth from "./containers/getWidth"
+import React, { useState, useEffect } from "react";
+import { Button, Grid, Typography, List } from "@material-ui/core";
+import {
+  MailOutline as MailIcon,
+  Phone as PhoneIcon,
+} from "@material-ui/icons";
+import HomepageHeading from "./partials/HomepageHeading";
+import getWidth from "./containers/getWidth";
+import { Segment } from "components/shared";
 
 const Contact = () => {
-  const [mobile, setMobile] = useState<boolean>(true)
-  let deviceWith = getWidth()
+  const [mobile, setMobile] = useState<boolean>(true);
+  let deviceWith = getWidth();
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
-    })
-  }, [])
+    });
+  }, []);
 
   useEffect(() => {
     if (deviceWith && deviceWith <= 767) {
-      setMobile(true)
+      setMobile(true);
     } else {
-      setMobile(false)
+      setMobile(false);
     }
-  }, [deviceWith])
+  }, [deviceWith]);
 
   return (
     <React.Fragment>
-      <Segment style={{ padding: "2em 0em" }} vertical>
-        <Grid container stackable verticalAlign="middle">
-          <Grid.Row>
-            <Grid.Column>
-              <Header
-                as="h3"
+      <Segment style={{ padding: "2em 0em" }}>
+        <Grid container>
+          <Grid>
+            <Grid item>
+              <Typography
+                variant="h3"
                 style={{
                   fontSize: "2em",
                   textAlign: "center",
                 }}
               >
                 Contact
-              </Header>
-            </Grid.Column>
-          </Grid.Row>
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
       </Segment>
-      <Segment style={{ padding: "2em 0em" }} vertical>
-        <Grid container stackable verticalAlign="middle">
-          <Grid.Row>
-            <Grid.Column width={8}>
+      <Segment style={{ padding: "2em 0em" }}>
+        <Grid container>
+          <Grid>
+            <Grid item>
               <p style={{ fontSize: "1.33em" }}>
                 Wilfred D. Lopez, from Dominican Republic. Lives in Garfield,
                 NJ, USA. Studied Tourism Bussiness Management in UAPA
@@ -59,8 +63,8 @@ const Contact = () => {
                 Experience in Customer Service, Workforce Management, Web
                 Quality Assurance and Accessibility.
               </p>
-            </Grid.Column>
-            <Grid.Column floated="right" width={6}>
+            </Grid>
+            <Grid>
               <List style={{ fontSize: "1.33em" }}>
                 <p>
                   Excellent communication skills, organization skills, and
@@ -76,31 +80,31 @@ const Contact = () => {
                   508/WCAG 2.0 Level A and AA).{" "}
                 </p>
               </List>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column textAlign="center">
+            </Grid>
+          </Grid>
+          <Grid>
+            <Grid>
               <div className="p-3">
                 <h3 className="text-center">Contact Me</h3>
                 <Button size="large">
                   <a href="mailto:cubamc@gmail.com">
-                    By Email <Icon name="mail"></Icon>
+                    By Email <MailIcon />
                   </a>
                 </Button>
                 <Button size="large">
                   <a href="tel:1+5514442665">
-                    By Phone <Icon name="phone"></Icon>
+                    By Phone <PhoneIcon />
                   </a>
                 </Button>
               </div>
-            </Grid.Column>
-          </Grid.Row>
+            </Grid>
+          </Grid>
         </Grid>
       </Segment>
 
       {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

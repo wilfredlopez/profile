@@ -1,15 +1,7 @@
-import React, { Component } from "react"
-import {
-  Container,
-  Menu,
-  Responsive,
-  Segment,
-  Visibility,
-} from "semantic-ui-react"
-import getWidth from "./getWidth"
+import React, { Component } from "react";
 
 //custom
-import MenuItems from "../Menu/MenuItems"
+import MenuItems from "../Menu/MenuItems";
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -18,51 +10,39 @@ import MenuItems from "../Menu/MenuItems"
 class DesktopContainer extends Component {
   state = {
     fixed: true,
-  }
+  };
 
-  hideFixedMenu = () => this.setState({ fixed: false })
-  showFixedMenu = () => this.setState({ fixed: true })
+  hideFixedMenu = () => this.setState({ fixed: false });
+  showFixedMenu = () => this.setState({ fixed: true });
 
   render() {
-    const { children } = this.props
-    const { fixed } = this.state
+    const { children } = this.props;
+    const { fixed } = this.state;
 
     return (
-      <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
+      <div>
         <header>
-          <Visibility
-            once={false}
-            onBottomPassed={this.showFixedMenu}
-            onBottomPassedReverse={this.hideFixedMenu}
-          >
-            <Segment
-              inverted
-              textAlign="center"
+          <span>
+            <section
               style={{ /*minHeight: 500,*/ padding: "1em 0em" }}
-              vertical
             >
               <nav id="navbar-wrapper">
-                <Menu
-                  fixed={fixed ? "top" : undefined}
-                  inverted={!fixed}
-                  pointing={!fixed}
-                  secondary={!fixed}
-                  size="large"
+                <section
                   id="navbar"
                 >
-                  <Container>
+                  <div>
                     <MenuItems fixed={fixed} />
-                  </Container>
-                </Menu>
+                  </div>
+                </section>
               </nav>
-            </Segment>
-          </Visibility>
+            </section>
+          </span>
         </header>
 
         {children}
-      </Responsive>
-    )
+      </div>
+    );
   }
 }
 
-export default DesktopContainer
+export default DesktopContainer;

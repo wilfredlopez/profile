@@ -1,5 +1,20 @@
-import React from "react"
-import { Grid, Header, Ref, Segment, Sticky } from "semantic-ui-react"
+import React, { PropsWithChildren } from "react";
+import { Grid, Typography } from "@material-ui/core";
+import { Segment } from "components/shared";
+import styled from "styled-components";
+const StickyContainer = styled.div<{ offset: number }>`
+
+`;
+
+const Sticky = (
+  props:
+    & { offset: number; context: React.Ref<HTMLDivElement> }
+    & PropsWithChildren<{}>,
+) => {
+  return <StickyContainer offset={props.offset}>
+    {props.children}
+  </StickyContainer>;
+};
 
 const facebookPostsList = [
   {
@@ -22,14 +37,14 @@ const facebookPostsList = [
       "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FWilfredDonaldLo%2Fposts%2F10162092215695497&width=500",
     height: "210",
   },
-]
+];
 
 interface Props {
-  mobile: boolean
+  mobile: boolean;
 }
 
 const SocialMediaEmbeds: React.FC<Props> = (props) => {
-  const contextRef = React.useRef(null)
+  const contextRef = React.useRef<HTMLDivElement>(null);
   const facebookPosts = facebookPostsList.map((p) => {
     return (
       <iframe
@@ -49,58 +64,66 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
         //@ts-ignore
         allowTransparency="true"
         allow="encrypted-media"
-      ></iframe>
-    )
-  })
+      >
+      </iframe>
+    );
+  });
 
   return (
-    <Segment style={{ padding: "1em" }} vertical>
-      <Header as="h2" style={{ fontSize: "2.5em" }} className="text-center">
+    <Segment style={{ padding: "1em" }}>
+      <Typography
+        variant="h2"
+        style={{ fontSize: "2.5em" }}
+        className="text-center"
+      >
         Social Media
-      </Header>
-      <Grid celled="internally" columns="equal" stackable>
-        <Ref innerRef={contextRef}>
-          <Grid.Row textAlign="center">
-            <Grid.Column
-              style={{ paddingBottom: "1em", paddingTop: "1em", zIndex: "1" }}
+      </Typography>
+      <Grid>
+        <div ref={contextRef}>
+          <Grid>
+            <Grid
+              item
+              style={{ paddingBottom: "1em", paddingTop: "1em", zIndex: 1 }}
             >
-              {!props.mobile ? (
-                <React.Fragment>
-                  <Header as="h3" style={{ fontSize: "2em" }}>
-                    <u>Facebook</u>
-                  </Header>
+              {!props.mobile
+                ? (
+                  <React.Fragment>
+                    <Typography variant="h3" style={{ fontSize: "2em" }}>
+                      <u>Facebook</u>
+                    </Typography>
 
-                  <Sticky offset={80} context={contextRef}>
+                    <Sticky offset={80} context={contextRef}>
+                      {facebookPosts}
+                    </Sticky>
+                  </React.Fragment>
+                )
+                : (
+                  <React.Fragment>
+                    <Typography variant="h3" style={{ fontSize: "2em" }}>
+                      <u>Facebook</u>
+                    </Typography>
+
                     {facebookPosts}
-                  </Sticky>
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  <Header as="h3" style={{ fontSize: "2em" }}>
-                    <u>Facebook</u>
-                  </Header>
+                  </React.Fragment>
+                )}
+            </Grid>
 
-                  {facebookPosts}
-                </React.Fragment>
-              )}
-            </Grid.Column>
-
-            <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
-              <Header as="h3" style={{ fontSize: "2em", zIndex: "0" }}>
+            <Grid item style={{ paddingBottom: "1em", paddingTop: "1em" }}>
+              <Typography variant="h3" style={{ fontSize: "2em", zIndex: 0 }}>
                 <u>Twitter</u>
-              </Header>
+              </Typography>
               <a
                 className="twitter-timeline"
                 href="https://twitter.com/WilfredDonaldLo?ref_src=twsrc%5Etfw"
               >
                 Tweets by WilfredDonaldLo
               </a>
-            </Grid.Column>
-          </Grid.Row>
-        </Ref>
+            </Grid>
+          </Grid>
+        </div>
       </Grid>
     </Segment>
-  )
-}
+  );
+};
 
-export default SocialMediaEmbeds
+export default SocialMediaEmbeds;

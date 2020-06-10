@@ -1,9 +1,12 @@
-import React, { Fragment } from "react"
-import { NavLink } from "react-router-dom"
-import { Button, Menu, Icon } from "semantic-ui-react"
-
+import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import { ListItem, IconButton } from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import TwitterIcon from "@material-ui/icons/Twitter";
 interface Props {
-  fixed: boolean
+  fixed: boolean;
 }
 const MenuItems: React.FC<Props> = ({ fixed }) => {
   return (
@@ -17,53 +20,39 @@ const MenuItems: React.FC<Props> = ({ fixed }) => {
       <NavLink to="/contact" className="item" exact>
         Contact
       </NavLink>
-      <Menu.Item position="right">
-        <Button
-          as="a"
-          inverted={!fixed}
+      <ListItem>
+        <IconButton
           href="https://github.com/wilfredlopez"
           target="_blank"
           rel="noopener noreferrer"
           role="link"
           id="profile-link"
         >
-          <Icon.Group size="large">
-            <Icon name="github" />
-            <Icon corner name="add" />
-          </Icon.Group>
+          <GitHubIcon />
           Github
-        </Button>
+        </IconButton>
         <Button
-          as="a"
-          inverted={!fixed}
-          primary={fixed}
+          color="primary"
           style={{ marginLeft: "0.4em" }}
           href="https://www.linkedin.com/in/wilfred-lopez-a309b896"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon.Group size="large">
-            <Icon name="linkedin" style={{ color: "#1da1f2" }} />
-          </Icon.Group>
+          <LinkedInIcon />
           LinkedIn
         </Button>
         <Button
-          as="a"
-          inverted={!fixed}
           style={{ marginLeft: "0.5em" }}
           href="https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Icon.Group size="large">
-            <Icon name="twitter" style={{ color: "#1da1f2" }} />
-            <Icon corner name="add" style={{ color: "#1da1f2" }} />
-          </Icon.Group>
+          <TwitterIcon />
           @wilfreddonaldlo
         </Button>
-      </Menu.Item>
+      </ListItem>
     </Fragment>
-  )
-}
+  );
+};
 
-export default MenuItems
+export default MenuItems;

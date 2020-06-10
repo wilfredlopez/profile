@@ -1,18 +1,18 @@
-import React from "react"
-import { Container, Grid, Header, List, Segment } from "semantic-ui-react"
-import { NavLink } from "react-router-dom"
-
-import SocialList from "./SocialList"
+import React from "react";
+import { Container, Grid, Typography, List } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
+import { Segment } from "../../shared";
+import SocialList from "./SocialList";
 
 const SiteFooter = () => {
   return (
-    <Segment inverted vertical style={{ padding: "5em 0em" }}>
+    <Segment style={{ padding: "5em 0em" }}>
       <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="Wilfred" />
-              <List link inverted>
+        <Grid>
+          <Grid>
+            <Grid item={true}>
+              <Typography variant="h4">Wilfred</Typography>
+              <List>
                 <NavLink to="/" exact className="item">
                   Home
                 </NavLink>
@@ -23,54 +23,48 @@ const SiteFooter = () => {
                   Contact
                 </NavLink>
               </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="Demo Projects" />
-              <List link inverted>
-                <List.Item
-                  as="a"
+            </Grid>
+            <Grid>
+              <Typography variant="h4" component="h4">Demo Projects</Typography>
+              <List>
+                <a
                   href="https://vapemusic.club"
                   target="_blank"
                   rel="noopener noreferrer"
-                  role="link"
                 >
                   Vape Music
-                </List.Item>
-                <List.Item
-                  as="a"
+                </a>
+                <a
                   href="https://shop-client.cubamc.now.sh/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  role="link"
                 >
                   RetalMeNow
-                </List.Item>
-                <List.Item
-                  as="a"
+                </a>
+                <a
                   href="https://wilfredexpensemanager.netlify.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  role="link"
                 >
                   Expenses Manager
-                </List.Item>
+                </a>
               </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as="h4" inverted>
+            </Grid>
+            <Grid>
+              <Typography variant="h4">
                 Follow Me!
-              </Header>
+              </Typography>
               <SocialList />
-            </Grid.Column>
+            </Grid>
             <h4>
               All Rights Reseved
               <p>2020 &copy; Wilfred Lopez</p>
             </h4>
-          </Grid.Row>
+          </Grid>
         </Grid>
       </Container>
     </Segment>
-  )
-}
+  );
+};
 
-export default SiteFooter
+export default SiteFooter;

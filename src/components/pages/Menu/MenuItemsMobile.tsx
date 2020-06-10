@@ -1,18 +1,18 @@
-import React, { Fragment } from "react"
-import { NavLink } from "react-router-dom"
-import { List, Icon } from "semantic-ui-react"
-
+import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
+import { ListItem } from "@material-ui/core";
+import { CloseOutlined as CloseIcon } from "@material-ui/icons";
 interface Props {
-  fixed?: boolean
-  handleOut: () => void
+  fixed?: boolean;
+  handleOut: () => void;
 }
 
 const MenuItems: React.FC<Props> = ({ fixed, handleOut }) => {
   return (
     <Fragment>
-      <List.Item as="a" className="mb-4 py-3" onClick={handleOut}>
-        <Icon name="close" inverted></Icon>
-      </List.Item>
+      <ListItem className="mb-4 py-3" onClick={handleOut}>
+        <CloseIcon />
+      </ListItem>
       <NavLink to="/" className="item" exact onClick={handleOut}>
         Home
       </NavLink>
@@ -23,7 +23,7 @@ const MenuItems: React.FC<Props> = ({ fixed, handleOut }) => {
         Contact
       </NavLink>
     </Fragment>
-  )
-}
+  );
+};
 
-export default MenuItems
+export default MenuItems;

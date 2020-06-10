@@ -1,5 +1,6 @@
-import React from "react"
-import { List, Icon } from "semantic-ui-react"
+import React from "react";
+import { List,  ListItem } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const socialMedia = [
   {
@@ -33,32 +34,32 @@ const socialMedia = [
     icon: "instagram",
     url: "https://www.instagram.com/wilfredlopez/",
   },
-] as const
+] as const;
 
 const SocialList = () => {
   const listItems = socialMedia.map((item) => {
     return (
-      <List.Item key={item.label}>
-        <List.Content>
-          <List.Header
-            as="a"
-            href={item.url}
+      <List key={item.label}>
+        <ListItem>
+          <Link
+            to={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            role="link"
           >
-            <Icon name={item.icon} />
-            {item.label}
-          </List.Header>
-        </List.Content>
-      </List.Item>
-    )
-  })
+            <>
+              {/* <Icon name={item.icon} /> */}
+              {item.label}
+            </>
+          </Link>
+        </ListItem>
+      </List>
+    );
+  });
   return (
     <React.Fragment>
-      <List inverted>{listItems}</List>
+      <List>{listItems}</List>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default SocialList
+export default SocialList;

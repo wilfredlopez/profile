@@ -1,69 +1,56 @@
-import React, { Component } from "react"
-import {
-  Container,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-} from "semantic-ui-react"
-import MenuItemsMobile from "../Menu/MenuItemsMobile"
+import React, { Component } from "react";
+
+import MenuItemsMobile from "../Menu/MenuItemsMobile";
 //custum
-import MobileSidebar from "../Menu/MobileSidebar"
-import getWidth from "./getWidth"
+import MobileSidebar from "../Menu/MobileSidebar";
+import { Responsive } from "../../shared";
+import Sidebar from "../../shared/Sidebar";
+import SidebarItem from "../../shared/SidebarItem";
+import Segment from "../../shared/Segment";
+import Container from "../../shared/Container";
 
 //custum
 
 interface State {
-  sidebarOpened: boolean
+  sidebarOpened: boolean;
 }
 interface Props {}
 class MobileContainer extends Component<Props, State> {
-  state = { sidebarOpened: false }
+  state = { sidebarOpened: false };
 
-  handleSidebarHide = () => this.setState({ sidebarOpened: false })
+  handleSidebarHide = () => this.setState({ sidebarOpened: false });
 
-  handleToggle = () => this.setState({ sidebarOpened: true })
+  handleToggle = () => this.setState({ sidebarOpened: true });
 
   barToggle = () => {
     this.setState((prevState) => {
-      return { sidebarOpened: !prevState.sidebarOpened }
-    })
-  }
+      return { sidebarOpened: !prevState.sidebarOpened };
+    });
+  };
 
   render() {
-    const { children } = this.props
-    const { sidebarOpened } = this.state
+    const { children } = this.props;
+    const { sidebarOpened } = this.state;
 
     return (
       <Responsive
-        as={Sidebar.Pushable}
-        getWidth={getWidth}
-        maxWidth={Responsive.onlyMobile.maxWidth}
+        maxWidth="950px"
       >
         <Sidebar
-          as={Menu}
-          animation="push"
-          inverted
-          onHide={this.handleSidebarHide}
-          vertical
-          visible={sidebarOpened}
+          toggleOpen={this.handleSidebarHide}
+          isOpen={sidebarOpened}
         >
           <nav>
             <MenuItemsMobile handleOut={this.barToggle} />
           </nav>
         </Sidebar>
 
-        <Sidebar.Pusher
-          dimmed={sidebarOpened}
-          style={{ minHeight: "100vh" }}
-          onClick={sidebarOpened && this.barToggle}
+        <SidebarItem
+          onClick={this.barToggle}
         >
           <header>
             <Segment
-              inverted
-              textAlign="center"
               style={{ /*minHeight: 350, */ padding: "1em 0em" }}
-              vertical
             >
               <Container>
                 <MobileSidebar handleToggle={this.barToggle} />
@@ -71,10 +58,10 @@ class MobileContainer extends Component<Props, State> {
             </Segment>
           </header>
           {children}
-        </Sidebar.Pusher>
+        </SidebarItem>
       </Responsive>
-    )
+    );
   }
 }
 
-export default MobileContainer
+export default MobileContainer;

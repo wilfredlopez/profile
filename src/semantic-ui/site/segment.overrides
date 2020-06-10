@@ -1,9 +1,0 @@
-/*******************************
-         Site Overrides
-*******************************/
-
-
-.ui.inverted.segment, .ui.primary.inverted.segment {
-    background: #040c14;
-}
-
