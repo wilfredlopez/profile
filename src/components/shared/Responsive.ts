@@ -5,7 +5,10 @@ export interface ResponsiveProps {
 }
 
 const Responsive = styled.div<ResponsiveProps>`
-  width: ${(props) => props.maxWidth ? props.maxWidth : "950px"};
+  max-width: ${(props) => props.maxWidth ? props.maxWidth : "950px"};
+  display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 export default Responsive;

@@ -1,20 +1,6 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { Segment } from "components/shared";
-import styled from "styled-components";
-const StickyContainer = styled.div<{ offset: number }>`
-
-`;
-
-const Sticky = (
-  props:
-    & { offset: number; context: React.Ref<HTMLDivElement> }
-    & PropsWithChildren<{}>,
-) => {
-  return <StickyContainer offset={props.offset}>
-    {props.children}
-  </StickyContainer>;
-};
 
 const facebookPostsList = [
   {
@@ -40,7 +26,6 @@ const facebookPostsList = [
 ];
 
 interface Props {
-  mobile: boolean;
 }
 
 const SocialMediaEmbeds: React.FC<Props> = (props) => {
@@ -85,27 +70,13 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
               item
               style={{ paddingBottom: "1em", paddingTop: "1em", zIndex: 1 }}
             >
-              {!props.mobile
-                ? (
-                  <React.Fragment>
-                    <Typography variant="h3" style={{ fontSize: "2em" }}>
-                      <u>Facebook</u>
-                    </Typography>
+              <React.Fragment>
+                <Typography variant="h3" style={{ fontSize: "2em" }}>
+                  <u>Facebook</u>
+                </Typography>
 
-                    <Sticky offset={80} context={contextRef}>
-                      {facebookPosts}
-                    </Sticky>
-                  </React.Fragment>
-                )
-                : (
-                  <React.Fragment>
-                    <Typography variant="h3" style={{ fontSize: "2em" }}>
-                      <u>Facebook</u>
-                    </Typography>
-
-                    {facebookPosts}
-                  </React.Fragment>
-                )}
+                {facebookPosts}
+              </React.Fragment>
             </Grid>
 
             <Grid item style={{ paddingBottom: "1em", paddingTop: "1em" }}>

@@ -1,14 +1,13 @@
 import React, { PropsWithChildren } from "react";
-import { ThemeProvider } from "styled-components";
-import { myTheme } from "./styles/theme";
+import { ThemeContainer } from "styles/ThemeContainer";
 interface Props {
 }
 
 const RootProvider = (props: PropsWithChildren<{}>) => {
   return (
-    <ThemeProvider theme={myTheme}>
+    <ThemeContainer>
       {props.children}
-    </ThemeProvider>
+    </ThemeContainer>
   );
 };
 

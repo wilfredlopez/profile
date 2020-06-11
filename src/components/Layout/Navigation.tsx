@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import SideDrawer from "./SideDrawer";
 import SideItems from "./SideItems";
+import { Hidden } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,15 +24,15 @@ export default function Navigation() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="transparent">
+      <AppBar position="static" color="primary">
         <Toolbar>
           <SideDrawer anchor="left" />
           <Typography variant="h6" className={classes.title}>
             Wilfred Lopez
           </Typography>
-          <div>
+          <Hidden smDown>
             <SideItems />
-          </div>
+          </Hidden>
         </Toolbar>
       </AppBar>
     </div>

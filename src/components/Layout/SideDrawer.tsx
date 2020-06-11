@@ -8,9 +8,21 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+import HomeIcon from "@material-ui/icons/Home";
+import WebIcon from "@material-ui/icons/Web";
 import clsx from "clsx";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import DragHandleIcon from "@material-ui/icons/DragHandle";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import TwitterIcon from "@material-ui/icons/Twitter";
 import React from "react";
+import { StyledHtmlLink } from "components/shared";
+
+interface Props {
+}
+
 const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
@@ -22,6 +34,53 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
 }));
+
+const StyledNavLink = styled(NavLink)`
+    color: inherit;
+    text-decoration: none;
+`;
+
+interface NavLinkItem {
+  text: string;
+  href: string;
+  Icon?: JSX.Element;
+}
+
+const SOCIAL_LINKS: NavLinkItem[] = [
+  {
+    href: "https://github.com/wilfredlopez",
+    text: "Github",
+    Icon: <GitHubIcon />,
+  },
+  {
+    href: "https://www.linkedin.com/in/wilfred-lopez-a309b896",
+    text: "LinkedIn",
+    Icon: <LinkedInIcon />,
+  },
+  {
+    href: "https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw",
+    text: "@wilfreddonaldlo",
+    Icon: <TwitterIcon />,
+  },
+];
+
+const NAV_LINKS: NavLinkItem[] = [
+  {
+    href: "/",
+    text: "Home",
+    Icon: <HomeIcon />,
+  },
+  {
+    href: "/projects",
+    text: "Demo Projects",
+    Icon: <WebIcon />,
+  },
+  {
+    href: "/contact",
+    text: "Contact",
+    Icon: <MailIcon />,
+  },
+];
 
 export type Anchor = "top" | "left" | "bottom" | "right";
 interface Props {
@@ -61,24 +120,34 @@ export default function SideDrawer({ anchor }: Props) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {NAV_LINKS.map(({ text, href, Icon }, index) => (
+          <StyledNavLink key={text} to={href}>
+            <ListItem button>
+              <ListItemIcon>
+                {Icon ? Icon : <DragHandleIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          </StyledNavLink>
         ))}
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (
+          <StyledHtmlLink
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            role="link"
+            key={text}
+          >
+            <ListItem button>
+              <ListItemIcon>
+                {Icon ? Icon : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          </StyledHtmlLink>
         ))}
       </List>
     </div>

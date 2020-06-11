@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Button, Grid, Typography, List } from "@material-ui/core";
 import {
   MailOutline as MailIcon,
   Phone as PhoneIcon,
 } from "@material-ui/icons";
 import HomepageHeading from "./partials/HomepageHeading";
-import getWidth from "./containers/getWidth";
 import { Segment } from "components/shared";
 
 const Contact = () => {
-  const [mobile, setMobile] = useState<boolean>(true);
-  let deviceWith = getWidth();
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -18,14 +15,6 @@ const Contact = () => {
       behavior: "smooth",
     });
   }, []);
-
-  useEffect(() => {
-    if (deviceWith && deviceWith <= 767) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
-  }, [deviceWith]);
 
   return (
     <React.Fragment>
@@ -102,7 +91,7 @@ const Contact = () => {
         </Grid>
       </Segment>
 
-      {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
+      <HomepageHeading />
     </React.Fragment>
   );
 };

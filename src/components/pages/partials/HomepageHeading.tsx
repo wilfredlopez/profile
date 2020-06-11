@@ -3,7 +3,7 @@ import {
   Container,
   Avatar,
   Typography,
-  IconButton,
+  Button,
 } from "@material-ui/core";
 import wilfredImg from "../../../img/wilfred-profile.png";
 import { Responsive } from "../../shared";
@@ -12,10 +12,36 @@ import WorkIcon from "@material-ui/icons/Work";
 import RoomIcon from "@material-ui/icons/Room";
 import HomeIcon from "@material-ui/icons/Home";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import styled from "styled-components";
 interface Props {
-  mobile?: boolean;
 }
-const HomepageHeading: React.FC<Props> = ({ mobile }) => (
+
+const StyledAnker = styled.a`
+  color: inherit;
+  text-decoration:none;
+`;
+const Item = styled.p`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+const PlacesGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+    & div{
+      display: flex;
+      /* display: grid;
+      grid-template-columns: 0fr 5fr;
+      grid-gap: 0;
+      justify-content: center;
+      align-items: center; */
+    }
+`;
+const HomepageHeading: React.FC<Props> = () => (
   <Responsive>
     <Segment>
       <Container>
@@ -26,8 +52,10 @@ const HomepageHeading: React.FC<Props> = ({ mobile }) => (
           style={{
             width: "100%",
             height: "100%",
-            maxWidth: 500,
-            maxHeight: 500,
+            maxWidth: 400,
+            maxHeight: 400,
+            borderRadius: "2rem",
+            margin: "auto",
           }}
           // circular
           alt="wilfred"
@@ -36,36 +64,43 @@ const HomepageHeading: React.FC<Props> = ({ mobile }) => (
 
         <Typography
           component="h1"
+          variant="h3"
           style={{
-            fontSize: mobile ? "2em" : "4em",
+            // fontSize: "2em",
             fontWeight: "normal",
             marginBottom: 0,
-            marginTop: mobile ? "0.5em" : "0.2em",
+            marginTop: "0.5em",
           }}
         >
           WILFRED LOPEZ
         </Typography>
-        <p>
+        <Item>
           <WorkIcon />
-          Quality Assurance/Web Development
-          {""}
-          <br />
-          <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
-        </p>
-        <div className="row justify-content-between pb-3 m-auto">
-          <p className="col-md-6 pb-0 mb-0">
+          <Typography>
+            Quality Assurance/Web Development
+            {""}
+            <br />
+            <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
+          </Typography>
+        </Item>
+        <PlacesGrid>
+          <div>
             <RoomIcon />
-            <span>Lives in</span>Garfield, NJ, USA
-          </p>
-          <p className="col-md-6">
+            <span>Lives in Garfield, NJ, USA.</span>
+          </div>
+          <div>
             <HomeIcon />
-            <span>From</span>Cabrera, Dominican Republic
-          </p>
-        </div>
-        <IconButton>
-          <MailOutlineIcon />
-          <a href="mailto:cubamc@gmail.com">Contact Me</a>
-        </IconButton>
+            <span>From Cabrera, Dominican Republic.</span>
+          </div>
+        </PlacesGrid>
+        <Button
+          endIcon={<MailOutlineIcon />}
+          color="secondary"
+          variant="contained"
+        >
+          {/* <MailOutlineIcon /> */}
+          <StyledAnker href="mailto:cubamc@gmail.com">Contact Me</StyledAnker>
+        </Button>
       </Container>
     </Segment>
   </Responsive>

@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import {
   Button,
   Container,
   Grid,
   Typography,
-  ListItem,
   List,
 } from "@material-ui/core";
 import Project from "../Utils/Project";
@@ -17,7 +15,6 @@ import {
   expenseManagerDescription,
   // easyTodosDescription
 } from "./constants";
-import getWidth from "./containers/getWidth";
 import HomepageHeading from "./partials/HomepageHeading";
 import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 
@@ -25,12 +22,54 @@ import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 import vapemusicImg from "../../img/vapemusic-example.jpg";
 import retailmenowImg from "../../img/retailmenow.jpeg";
 import expenseManagerImg from "../../img/expense-manager-example.jpg";
-import { Segment } from "components/shared";
+import { Segment, StyledLink } from "components/shared";
+import styled from "styled-components";
+
+const WelcomeSection = styled.section`
+  background: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primaryContrast};
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+`;
+const StyledItem = styled.li`
+  padding-top: 0;
+  padding-bottom: 2px;
+  text-align: left;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #dcd5d5;
+    transition: all 10ms ease-in-out;
+    &:hover{
+      transform: translate(10px);
+    }
+`;
+
+const SummaryLi = styled.li`
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 12px;
+    text-align: left;
+    font-size: 1.5rem;
+`;
+
+const ExperienceSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const SUMMARY_TEXTS = [
+  "Proficient knowledge of HTML 5, CSS 3, JavaScript.",
+  "Experieced with MS Excel.",
+  "Excellent communication skills, organization skills, and excellent attention to detail.",
+  "Proficient knowledge of accessibility standards (Section 508/WCAG 2.0 Level A and AA).",
+  "Good understanding of assistive technologies (JAWS, NVDA, VoiceOver).",
+  "6 years of call center and Workforce Management experience.",
+  "Proficient experience in QA testing methodology.",
+  "Proven ability to document issues and bugs.",
+];
 
 const HomepageLayout = () => {
-  const [mobile, setMobile] = useState<boolean>(true);
-  let deviceWith = getWidth();
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -39,95 +78,78 @@ const HomepageLayout = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (deviceWith && deviceWith <= 767) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
-  }, [deviceWith]);
-
   const summary = (
-    <Grid container>
-      <List style={{ fontSize: "1.3em" }}>
-        <ListItem>
-          Proficient knowledge of HTML 5, CSS 3, JavaScript.
-        </ListItem>
-        <ListItem>Experieced with MS Excel.</ListItem>
-        <ListItem>
-          Excellent communication skills, organization skills, and excellent
-          attention to detail.
-        </ListItem>
-        <ListItem>
-          Proficient knowledge of accessibility standards (Section 508/WCAG 2.0
-          Level A and AA).{" "}
-        </ListItem>
-        <ListItem>
-          Good understanding of assistive technologies (JAWS, NVDA, VoiceOver).
-        </ListItem>
-        <ListItem>
-          6 years of call center and Workforce Management experience.
-        </ListItem>
-        <ListItem>
-          Proficient experience in QA testing methodology.
-        </ListItem>
-        <ListItem>
-          Proven ability to document issues and bugs.
-        </ListItem>
+    <Grid item>
+      <List style={{ fontSize: "1.1em" }}>
+        {SUMMARY_TEXTS.map((text) => {
+          return <SummaryLi>{text}</SummaryLi>;
+        })}
       </List>
     </Grid>
   );
 
   const educationList = education.map((edu) => {
     return (
-      <ListItem key={edu.label}>
-        {/* <Icon name={edu.icon} /> */}
-        <List>
-          <p>{edu.label}</p>
-        </List>
-      </ListItem>
+      <StyledItem key={edu.label}>
+        <>
+          {/* <Icon name={edu.icon} /> */}
+
+          <Typography variant="subtitle2">{"> "}{edu.label}</Typography>
+        </>
+      </StyledItem>
     );
   });
 
   const experienceList = experiences.map((exp) => {
     return (
-      <ListItem key={exp.label}>
+      <li key={exp.label} className="mb-1">
         {/* <Icon name={exp.icon} /> */}
-        <section>
+        <ExperienceSection>
           <div>
             <Typography
-              variant="body1"
-              style={{ color: exp.isCurrent ? "blue" : "grey" }}
+              variant="h6"
+              style={{ color: exp.isCurrent ? "blue" : "#5c5959" }}
             >
               {exp.label}
               {exp.isCurrent && "(Actual)"}
             </Typography>
           </div>
           {exp.location}
-        </section>
-      </ListItem>
+        </ExperienceSection>
+      </li>
     );
   });
   return (
     <React.Fragment>
-      <section id="welcome-section">
-        {mobile ? <HomepageHeading mobile /> : <HomepageHeading />}
-      </section>
+      <WelcomeSection>
+        <HomepageHeading />
+      </WelcomeSection>
       <Segment style={{ padding: "2em 0em" }}>
-        <Grid container>
-          <Grid>
-            <Grid item>
-              <Typography variant="h1" style={{ fontSize: "2em" }}>
+        <Grid
+          container
+          spacing={0}
+          direction="row"
+          justify="flex-start"
+          alignItems="flex-start"
+        >
+          <Grid
+            container
+            item
+            direction="row"
+            justify="space-around"
+            alignItems="flex-start"
+          >
+            <Grid item sm={3}>
+              <Typography variant="h4" component="h2">
                 Experiences
               </Typography>
-              <h3>Job Experience</h3>
               <List>
                 {experienceList}
               </List>
               {" "}
             </Grid>
             <Grid item>
-              <Typography variant="h2" style={{ fontSize: "2em" }}>
+              <Typography variant="h4" component="h2">
                 Skills
               </Typography>
               <List>
@@ -135,13 +157,13 @@ const HomepageLayout = () => {
               </List>
             </Grid>
           </Grid>
-          <Grid>
+          <Grid container justify="flex-start">
             {summary}
-            <Grid item className="text-center">
-              <Button>
-                <Link to="/projects">Demo Projects</Link>
-              </Button>
-            </Grid>
+          </Grid>
+          <Grid container justify="center">
+            <Button color="primary" variant="contained">
+              <StyledLink to="/projects">Demo Projects</StyledLink>
+            </Button>
           </Grid>
         </Grid>
       </Segment>
@@ -187,7 +209,7 @@ const HomepageLayout = () => {
         </Container>
       </Segment>
 
-      <SocialMediaEmbeds mobile={mobile} />
+      <SocialMediaEmbeds />
     </React.Fragment>
   );
 };
