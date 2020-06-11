@@ -25,7 +25,7 @@ const Contact = () => {
 
   return (
     <React.Fragment>
-      <Container>
+      <Container maxWidth="md">
         <Segment style={{ padding: "2em 0em" }}>
           <Grid container justify="center" alignContent="center">
             <Typography
@@ -110,6 +110,8 @@ const Contact = () => {
           </Grid>
         </Segment>
       </Container>
+      <br />
+      <br />
       <HomepageHeading />
     </React.Fragment>
   );
