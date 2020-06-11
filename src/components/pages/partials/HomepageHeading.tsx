@@ -20,11 +20,12 @@ const StyledAnker = styled.a`
   color: inherit;
   text-decoration:none;
 `;
-const Item = styled.p`
+const Item = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1rem;
 `;
 
 const PlacesGrid = styled.div`
@@ -68,7 +69,7 @@ const HomepageHeading: React.FC<Props> = () => (
           style={{
             // fontSize: "2em",
             fontWeight: "normal",
-            marginBottom: 0,
+            marginBottom: 5,
             marginTop: "0.5em",
           }}
         >

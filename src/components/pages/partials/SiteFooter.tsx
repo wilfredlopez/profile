@@ -1,69 +1,144 @@
 import React from "react";
-import { Container, Grid, Typography, List } from "@material-ui/core";
+import { Container, Grid, Typography, List, ListItem } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
-import { Segment } from "../../shared";
+import {
+  PrimaryBackgroundSection,
+  StyledHtmlLink,
+} from "../../shared";
 import SocialList from "./SocialList";
+import styled from "styled-components";
+
+export const StyledNavLink = styled(NavLink)`
+  color: hsla(0,0%,100%,.5);
+  text-decoration: none;
+  &.item{
+    color: #ffffff;
+    font-weight: 500;
+  }
+  &:hover{
+    color: #ffffff;
+    font-weight: 500;
+  }
+`;
+
+const Title = styled(Typography)<{ component?: string }>`
+  /* text-align: center; */
+`;
+
+const NonActiveLink = styled(StyledHtmlLink)`
+    color: hsla(0,0%,100%,.5);
+    &:hover{
+    color: #ffffff;
+    font-weight: 500;
+  }
+`;
 
 const SiteFooter = () => {
   return (
-    <Segment style={{ padding: "5em 0em" }}>
+    <PrimaryBackgroundSection style={{ padding: "1em 0em" }}>
       <Container>
-        <Grid>
-          <Grid>
-            <Grid item={true}>
-              <Typography variant="h4">Wilfred</Typography>
+        <Grid
+          container
+          justify="space-around"
+          alignContent="center"
+          alignItems="flex-start"
+        >
+          <Grid
+            container
+            item
+            justify="space-around"
+            alignContent="center"
+            alignItems="flex-start"
+          >
+            <Grid item={true} xs={12} sm="auto">
               <List>
-                <NavLink to="/" exact className="item">
-                  Home
-                </NavLink>
-                <NavLink to="/projects" exact className="item">
-                  Demo Projects
-                </NavLink>
-                <NavLink to="/contact" exact className="item">
-                  Contact
-                </NavLink>
+                <ListItem>
+                  <Title variant="h6">Pages</Title>
+                </ListItem>
+                <ListItem>
+                  <StyledNavLink to="/" exact activeClassName="item">
+                    Home
+                  </StyledNavLink>
+                </ListItem>
+                <ListItem>
+                  <StyledNavLink to="/projects" exact activeClassName="item">
+                    Demo Projects
+                  </StyledNavLink>
+                </ListItem>
+                <ListItem>
+                  <StyledNavLink to="/contact" exact activeClassName="item">
+                    Contact
+                  </StyledNavLink>
+                </ListItem>
               </List>
             </Grid>
-            <Grid>
-              <Typography variant="h4" component="h4">Demo Projects</Typography>
+            <Grid item xs={12} sm="auto">
               <List>
-                <a
-                  href="https://vapemusic.club"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Vape Music
-                </a>
-                <a
-                  href="https://shop-client.cubamc.now.sh/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  RetalMeNow
-                </a>
-                <a
-                  href="https://wilfredexpensemanager.netlify.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Expenses Manager
-                </a>
+                <ListItem>
+                  <Title variant="h6" component="h4">Demo Projects</Title>
+                </ListItem>
+                <ListItem>
+                  <NonActiveLink
+                    href="https://vapemusic.club"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Vape Music
+                  </NonActiveLink>
+                </ListItem>
+                <ListItem>
+                  <NonActiveLink
+                    href="https://shop-client.cubamc.now.sh/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    RetalMeNow
+                  </NonActiveLink>
+                </ListItem>
+                <ListItem>
+                  <NonActiveLink
+                    href="https://wilfredexpensemanager.netlify.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Expenses Manager
+                  </NonActiveLink>
+                </ListItem>
               </List>
             </Grid>
-            <Grid>
-              <Typography variant="h4">
-                Follow Me!
-              </Typography>
-              <SocialList />
+            <Grid item xs={12} sm="auto">
+              <List>
+                <ListItem>
+                  <Title variant="h6">
+                    Social Media
+                  </Title>
+                </ListItem>
+                <SocialList />
+              </List>
             </Grid>
-            <h4>
-              All Rights Reseved
-              <p>2020 &copy; Wilfred Lopez</p>
-            </h4>
+            <Grid
+              container
+              item
+              xs={12}
+              sm={4}
+              justify="center"
+              alignContent="center"
+            >
+              <List>
+                <ListItem>
+                  <Typography variant="body1">
+                    All Rights Reseved
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <p>2020 &copy; Wilfred Lopez</p>
+                </ListItem>
+              </List>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
-    </Segment>
+    </PrimaryBackgroundSection>
   );
 };
 

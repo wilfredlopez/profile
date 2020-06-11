@@ -39,3 +39,7 @@ code {
 .mb-1 {
   margin-bottom: 1rem;
 }
+
+.text-center {
+  text-align: center;
+}

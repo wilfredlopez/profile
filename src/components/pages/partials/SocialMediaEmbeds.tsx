@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
-import { Segment } from "components/shared";
+import { DividerElement } from "components/Utils/Project";
 
 const facebookPostsList = [
   {
@@ -47,7 +47,7 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
         scrolling="no"
         frameBorder="0"
         //@ts-ignore
-        allowTransparency="true"
+        allowtransparency="true"
         allow="encrypted-media"
       >
       </iframe>
@@ -55,23 +55,36 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
   });
 
   return (
-    <Segment style={{ padding: "1em" }}>
-      <Typography
-        variant="h2"
-        style={{ fontSize: "2.5em" }}
-        className="text-center"
+    <div style={{ padding: "1em" }}>
+      <DividerElement>
+        <Typography
+          variant="h2"
+          style={{ fontSize: "2.5em" }}
+          className="text-center"
+        >
+          Social Media
+        </Typography>
+      </DividerElement>
+      <Grid
+        container
+        justify="center"
+        alignContent="center"
+        alignItems="center"
       >
-        Social Media
-      </Typography>
-      <Grid>
         <div ref={contextRef}>
-          <Grid>
+          <Grid
+            item
+            sm={10}
+            style={{
+              margin: "auto",
+            }}
+          >
             <Grid
               item
               style={{ paddingBottom: "1em", paddingTop: "1em", zIndex: 1 }}
             >
               <React.Fragment>
-                <Typography variant="h3" style={{ fontSize: "2em" }}>
+                <Typography variant="h6" component="h3" align="center">
                   <u>Facebook</u>
                 </Typography>
 
@@ -80,7 +93,12 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
             </Grid>
 
             <Grid item style={{ paddingBottom: "1em", paddingTop: "1em" }}>
-              <Typography variant="h3" style={{ fontSize: "2em", zIndex: 0 }}>
+              <Typography
+                variant="h6"
+                component="h3"
+                align="center"
+                style={{ zIndex: 0 }}
+              >
                 <u>Twitter</u>
               </Typography>
               <a
@@ -93,7 +111,7 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
           </Grid>
         </div>
       </Grid>
-    </Segment>
+    </div>
   );
 };
 

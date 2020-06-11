@@ -9,6 +9,7 @@ const Responsive = styled.div<ResponsiveProps>`
   display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 `;
 
 export default Responsive;

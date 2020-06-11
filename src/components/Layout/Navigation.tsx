@@ -5,7 +5,6 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import SideDrawer from "./SideDrawer";
 import SideItems from "./SideItems";
-import { Hidden } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,9 +29,7 @@ export default function Navigation() {
           <Typography variant="h6" className={classes.title}>
             Wilfred Lopez
           </Typography>
-          <Hidden smDown>
-            <SideItems />
-          </Hidden>
+          <SideItems />
         </Toolbar>
       </AppBar>
     </div>

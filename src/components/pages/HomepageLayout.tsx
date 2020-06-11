@@ -22,16 +22,13 @@ import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 import vapemusicImg from "../../img/vapemusic-example.jpg";
 import retailmenowImg from "../../img/retailmenow.jpeg";
 import expenseManagerImg from "../../img/expense-manager-example.jpg";
-import { Segment, StyledLink } from "components/shared";
+import {
+  Segment,
+  StyledLink,
+  PrimaryBackgroundSection,
+} from "components/shared";
 import styled from "styled-components";
 
-const WelcomeSection = styled.section`
-  background: ${(props) => props.theme.colors.primary};
-  color: ${(props) => props.theme.colors.primaryContrast};
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-`;
 const StyledItem = styled.li`
   padding-top: 0;
   padding-bottom: 2px;
@@ -49,13 +46,20 @@ const SummaryLi = styled.li`
     padding-bottom: 2px;
     padding-left: 12px;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.16rem;
+    &::before{
+      content: "• ";
+    }
 `;
 
 const ExperienceSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+`;
+
+const Title = styled(Typography)<{ component: string }>`
+  text-decoration: underline;
 `;
 
 const SUMMARY_TEXTS = [
@@ -82,7 +86,7 @@ const HomepageLayout = () => {
     <Grid item>
       <List style={{ fontSize: "1.1em" }}>
         {SUMMARY_TEXTS.map((text) => {
-          return <SummaryLi>{text}</SummaryLi>;
+          return <SummaryLi key={text}>{text}</SummaryLi>;
         })}
       </List>
     </Grid>
@@ -94,7 +98,7 @@ const HomepageLayout = () => {
         <>
           {/* <Icon name={edu.icon} /> */}
 
-          <Typography variant="subtitle2">{"> "}{edu.label}</Typography>
+          <Typography variant="subtitle1">{"> "}{edu.label}</Typography>
         </>
       </StyledItem>
     );
@@ -121,9 +125,9 @@ const HomepageLayout = () => {
   });
   return (
     <React.Fragment>
-      <WelcomeSection>
+      <PrimaryBackgroundSection>
         <HomepageHeading />
-      </WelcomeSection>
+      </PrimaryBackgroundSection>
       <Segment style={{ padding: "2em 0em" }}>
         <Grid
           container
@@ -139,19 +143,19 @@ const HomepageLayout = () => {
             justify="space-around"
             alignItems="flex-start"
           >
-            <Grid item sm={3}>
-              <Typography variant="h4" component="h2">
+            <Grid item xs={12} sm={4}>
+              <Title variant="h4" component="h2">
                 Experiences
-              </Typography>
+              </Title>
               <List>
                 {experienceList}
               </List>
               {" "}
             </Grid>
-            <Grid item>
-              <Typography variant="h4" component="h2">
+            <Grid item xs={10} sm={4}>
+              <Title variant="h4" component="h2">
                 Skills
-              </Typography>
+              </Title>
               <List>
                 {educationList}
               </List>

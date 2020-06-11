@@ -1,4 +1,4 @@
-import { ListItem, List } from "@material-ui/core";
+import { List, Hidden } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -24,6 +24,7 @@ export const LinkedInButton = styled(Button)`
 export const GithubButton = styled(Button)`
   background-color: #c4c7c9;
   color:  #24292e;
+
   /* border-radius: 6px; */
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   /* padding: 7px 14px; */
@@ -57,7 +58,7 @@ const SideItems: React.FC<Props> = () => {
   return (
     <Fragment>
       <List>
-        <ListItem>
+        <Hidden only="xs">
           <GithubButton
             href="https://github.com/wilfredlopez"
             //@ts-ignore
@@ -72,20 +73,22 @@ const SideItems: React.FC<Props> = () => {
               Github
             </span>
           </GithubButton>
-          <LinkedInButton
-            role="link"
-            variant="text"
-            style={{ marginLeft: "0.4em" }}
-            href="https://www.linkedin.com/in/wilfred-lopez-a309b896"
-            //@ts-ignore
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedInIcon />
-            <span className="text-inner">
-              LinkedIn
-            </span>
-          </LinkedInButton>
+        </Hidden>
+        <LinkedInButton
+          role="link"
+          variant="text"
+          style={{ marginLeft: "0.4em" }}
+          href="https://www.linkedin.com/in/wilfred-lopez-a309b896"
+          //@ts-ignore
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedInIcon />
+          <span className="text-inner">
+            LinkedIn
+          </span>
+        </LinkedInButton>
+        <Hidden smDown>
           <TwitterButton
             style={{ marginLeft: "0.5em" }}
             href="https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw"
@@ -97,7 +100,7 @@ const SideItems: React.FC<Props> = () => {
             <TwitterIcon />
             @wilfreddonaldlo
           </TwitterButton>
-        </ListItem>
+        </Hidden>
       </List>
     </Fragment>
   );
