@@ -32,6 +32,9 @@ import styled from "styled-components";
 const StyledItem = styled.li`
   padding-top: 0;
   padding-bottom: 2px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
   text-align: left;
     font-size: 1.5rem;
     border-bottom: 1px solid #dcd5d5;
@@ -45,7 +48,7 @@ const SummaryLi = styled.li`
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 12px;
-    text-align: left;
+    text-align: start;
     font-size: 1.16rem;
     &::before{
       content: "• ";
@@ -92,13 +95,15 @@ const HomepageLayout = () => {
     </Grid>
   );
 
-  const educationList = education.map((edu) => {
+  const educationList = education.map(({ label, Icon }) => {
     return (
-      <StyledItem key={edu.label}>
+      <StyledItem key={label}>
         <>
-          {/* <Icon name={edu.icon} /> */}
-
-          <Typography variant="subtitle1">{"> "}{edu.label}</Typography>
+          <Typography variant="subtitle1">
+            {Icon}
+            <span>{" "}</span>
+            {label}
+          </Typography>
         </>
       </StyledItem>
     );
@@ -162,7 +167,9 @@ const HomepageLayout = () => {
             </Grid>
           </Grid>
           <Grid container justify="flex-start">
-            {summary}
+            <Container>
+              {summary}
+            </Container>
           </Grid>
           <Grid container justify="center">
             <Button color="primary" variant="contained">

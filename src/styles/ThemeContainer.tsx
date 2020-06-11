@@ -12,6 +12,8 @@ const PRIMARY_COLOR = primary[900];
 const PRIMARY_COLOR_CONTRAST = common["white"];
 const SECONDARY_COLOR = secondary[700];
 const SECONDARY_COLOR_CONTRAST = common["white"];
+const DARK_COLOR = "#040c14";
+const LIGHT_COLOR = common["white"];
 
 const styledComponentsTheme: DefaultTheme = {
   borderRadius: "5px",
@@ -21,8 +23,8 @@ const styledComponentsTheme: DefaultTheme = {
     primaryContrast: PRIMARY_COLOR_CONTRAST,
     secondary: SECONDARY_COLOR,
     secondaryContrast: SECONDARY_COLOR_CONTRAST,
-    dark: common["black"],
-    light: common["white"],
+    dark: DARK_COLOR,
+    light: LIGHT_COLOR,
   },
 };
 

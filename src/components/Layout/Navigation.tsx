@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import SideDrawer from "./SideDrawer";
 import SideItems from "./SideItems";
+import styled from "styled-components";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,12 +19,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const StyledAppBar = styled(AppBar)`
+    background: ${(props) => props.theme.colors.dark};
+`;
+
 export default function Navigation() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="primary">
+      <StyledAppBar position="static">
         <Toolbar>
           <SideDrawer anchor="left" />
           <Typography variant="h6" className={classes.title}>
@@ -31,7 +36,7 @@ export default function Navigation() {
           </Typography>
           <SideItems />
         </Toolbar>
-      </AppBar>
+      </StyledAppBar>
     </div>
   );
 }

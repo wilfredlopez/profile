@@ -1,62 +1,81 @@
-import React from "react"
+import React from "react";
+import {
+  FaReact,
+  FaMicrosoft,
+  FaSalesforce,
+  FaJira,
+  FaUniversalAccess,
+  FaDatabase,
+} from "react-icons/fa/index";
+
+import {
+  IoLogoJavascript,
+  IoLogoSass,
+  IoLogoHtml5,
+  IoLogoNodejs,
+  IoMdCalendar,
+  IoMdChatboxes,
+} from "react-icons/io";
+import TypescriptIcon from "./TypescriptIcon";
+
 export const experiences = [
   {
-    icon: "marker",
+    Icon: "marker",
     label: "Web Production QA Analyst",
     location: "Century 21 Stores",
     isCurrent: false,
   },
   {
-    icon: "marker",
+    Icon: "marker",
     label: "Suppor Center Specialist",
     location: "Century 21 Stores",
     isCurrent: false,
   },
   {
-    icon: "marker",
+    Icon: "marker",
     label: "Mission Control Specialist",
     location: "Teleperformance",
     isCurrent: false,
   },
   {
-    icon: "marker",
+    Icon: "marker",
     label: "Customer Service Representative",
     location: "Teleperformance",
     isCurrent: false,
   },
   {
-    icon: "marker",
+    Icon: "marker",
     label: "Call Center QA Analyst",
     location: "BM Teleservices",
     isCurrent: false,
   },
-] as const
+] as const;
 
 export const education = [
-  { icon: "react", label: "React" },
-  { icon: "js square", label: "Typescript" },
-  { icon: "database", label: "GraphQL" },
-  { icon: "node js", label: "NodeJS with Express and MongoDB" },
-  { icon: "universal access", label: "Web Accessibility" },
-  { icon: "js", label: "Javascript" },
-  { icon: "tasks", label: "Confluence Jira" },
-  { icon: "sass", label: "SASS / CSS3" },
-  { icon: "html5", label: "HTML 5" },
-  { icon: "cloud", label: "Salesforce Commerce Cloud" },
-  { icon: "calendar alternate outline", label: "Workforce Management" },
-  { icon: "microsoft", label: "Microsoft Office, Excel VBA" },
-  { icon: "talk", label: "Bilingual (English, Spanish)" },
-] as const
+  { Icon: <FaReact />, label: "React" },
+  { Icon: <TypescriptIcon sizeInPx="20px" />, label: "Typescript" },
+  { Icon: <FaDatabase />, label: "GraphQL" },
+  { Icon: <IoLogoNodejs />, label: "NodeJS with Express and MongoDB" },
+  { Icon: <FaUniversalAccess />, label: "Web Accessibility" },
+  { Icon: <IoLogoJavascript />, label: "Javascript" },
+  { Icon: <FaJira />, label: "Confluence Jira" },
+  { Icon: <IoLogoSass />, label: "SASS / CSS3" },
+  { Icon: <IoLogoHtml5 />, label: "HTML 5" },
+  { Icon: <FaSalesforce />, label: "Salesforce Commerce Cloud" },
+  { Icon: <IoMdCalendar />, label: "Workforce Management" },
+  { Icon: <FaMicrosoft />, label: "Microsoft Office, Excel VBA" },
+  { Icon: <IoMdChatboxes />, label: "Bilingual (English, Spanish)" },
+] as const;
 
 export const retailmeNowDescription: JSX.Element = (
   <>
-    <p> RetalMeNow an online retail store.</p>
+    <p>RetalMeNow an online retail store.</p>
     <p>
       Shop Cloathing and other items at a low price. Create your account, add to
       your shopping cart and checkout.
     </p>
   </>
-)
+);
 
 export const expenseManagerDescription = (
   <>
@@ -70,7 +89,7 @@ export const expenseManagerDescription = (
       track of everything.
     </p>
   </>
-)
+);
 
 export const vapeMusicDescription = (
   <>
@@ -87,7 +106,7 @@ export const vapeMusicDescription = (
       the playlist and use the Audio Player to switch from song to song.
     </p>
   </>
-)
+);
 
 export const easyTodosDescription = (
   <>
@@ -104,4 +123,4 @@ export const easyTodosDescription = (
       an have it listed back again.
     </p>
   </>
-)
+);

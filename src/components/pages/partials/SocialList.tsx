@@ -8,10 +8,39 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import styled from "styled-components";
+
+const FacebookIconStyled = styled(FacebookIcon)`
+  border: 1px outset rgb(59, 89, 152);
+  fill: #3b5998;
+    border-radius: 6px;
+    background: white;
+`;
+
+const LinkedInIconStyled = styled(LinkedInIcon)`
+      fill: #2867B2;
+    background: white;
+    border: 1px outset rgb(40, 103, 178);
+    border-radius: 6px;
+`;
+
+const InstagramIconStyled = styled(InstagramIcon)`
+   /* fill: #d836a6;
+    background: #512c05; */
+    display: inline-block;
+  text-align: center;
+  border-radius: 40px;
+  color: #fff;
+  line-height: 250px;
+  vertical-align: middle;
+    background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+  `;
+
 const socialMedia = [
   {
     label: "LinedIn",
-    Icon: <LinkedInIcon style={{ color: "#2867B2" }} />,
+    Icon: <LinkedInIconStyled />,
 
     url: "https://www.linkedin.com/in/wilfred-lopez-a309b896/",
   },
@@ -33,17 +62,12 @@ const socialMedia = [
   },
   {
     label: "Facebook",
-    Icon: <FacebookIcon style={{ color: "#3b5998", background: "#f8fbfd" }} />,
+    Icon: <FacebookIconStyled />,
     url: "https://www.facebook.com/WilfredDonaldLo",
   },
   {
     label: "Instagram",
-    Icon: <InstagramIcon
-      style={{
-        color: "#d836a6",
-        background: "#512c05",
-      }}
-    />,
+    Icon: <InstagramIconStyled />,
     url: "https://www.instagram.com/wilfredlopez/",
   },
 ] as const;

@@ -1,4 +1,4 @@
-import { IconButton } from "@material-ui/core";
+import { IconButton, Typography } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
@@ -6,19 +6,19 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
-import MailIcon from "@material-ui/icons/Mail";
-import MenuIcon from "@material-ui/icons/Menu";
-import HomeIcon from "@material-ui/icons/Home";
-import WebIcon from "@material-ui/icons/Web";
-import clsx from "clsx";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 import DragHandleIcon from "@material-ui/icons/DragHandle";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import HomeIcon from "@material-ui/icons/Home";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import MailIcon from "@material-ui/icons/Mail";
+import MenuIcon from "@material-ui/icons/Menu";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import React from "react";
+import WebIcon from "@material-ui/icons/Web";
+import clsx from "clsx";
 import { StyledHtmlLink } from "components/shared";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 interface Props {
 }
@@ -132,7 +132,13 @@ export default function SideDrawer({ anchor }: Props) {
         ))}
       </List>
       <Divider />
+
       <List>
+        <ListItem>
+          <Typography variant="h6">
+            Social Media
+          </Typography>
+        </ListItem>
         {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (
           <StyledHtmlLink
             href={href}
