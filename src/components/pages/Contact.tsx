@@ -7,6 +7,7 @@ import {
 import HomepageHeading from "./partials/HomepageHeading";
 import { Segment, StyledHtmlLink } from "components/shared";
 import styled from "styled-components";
+import { usePagesContext } from "context/PagesContext";
 
 const Centerer = styled.span`
       display: flex;
@@ -22,6 +23,11 @@ const Paragraph = styled.p`
 `;
 
 const Contact = () => {
+  const { changePage } = usePagesContext();
+  useEffect(() => {
+    changePage("Contact");
+  }, [changePage]);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -37,6 +43,7 @@ const Contact = () => {
           <Grid container justify="center" alignContent="center">
             <Typography
               variant="h3"
+              component="h2"
               style={{
                 fontSize: "2em",
                 textAlign: "center",
@@ -91,7 +98,10 @@ const Contact = () => {
               <Grid item xs={6}>
                 <div style={{ textAlign: "right" }}>
                   <Button size="large" color="secondary">
-                    <StyledHtmlLink href="mailto:cubamc@gmail.com">
+                    <StyledHtmlLink
+                      href="mailto:cubamc@gmail.com"
+                      title="By Email"
+                    >
                       <Centerer>
                         <span>
                           By Email
@@ -108,7 +118,7 @@ const Contact = () => {
                   size="large"
                   color="secondary"
                 >
-                  <StyledHtmlLink href="tel:1+5514442665">
+                  <StyledHtmlLink href="tel:1+5514442665" title="By Phone">
                     <Centerer>
                       <span>
                         By Phone

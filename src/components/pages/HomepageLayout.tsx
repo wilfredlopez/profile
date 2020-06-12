@@ -21,6 +21,7 @@ import {
 } from "components/shared";
 import styled from "styled-components";
 import AllProjects from "./partials/AllProjects";
+import { usePagesContext } from "context/PagesContext";
 
 const StyledItem = styled.li`
   padding-top: 0;
@@ -70,6 +71,10 @@ const SUMMARY_TEXTS = [
 ];
 
 const HomepageLayout = () => {
+  const { changePage } = usePagesContext();
+  useEffect(() => {
+    changePage("Home");
+  }, [changePage]);
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -92,7 +97,7 @@ const HomepageLayout = () => {
     return (
       <StyledItem key={label}>
         <>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" component="h3">
             {Icon}
             <span>{" "}</span>
             {label}
@@ -110,6 +115,7 @@ const HomepageLayout = () => {
           <div>
             <Typography
               variant="h6"
+              component="h3"
               style={{ color: exp.isCurrent ? "blue" : "#5c5959" }}
             >
               {exp.label}

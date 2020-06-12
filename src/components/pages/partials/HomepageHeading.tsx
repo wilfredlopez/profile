@@ -101,7 +101,9 @@ const HomepageHeading: React.FC<Props> = () => (
           variant="contained"
         >
           {/* <MailOutlineIcon /> */}
-          <StyledAnker href="mailto:cubamc@gmail.com">Contact Me</StyledAnker>
+          <StyledAnker href="mailto:cubamc@gmail.com" title="contact me">
+            Contact Me
+          </StyledAnker>
         </Button>
       </Container>
     </Segment>

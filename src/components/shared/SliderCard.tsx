@@ -152,7 +152,7 @@ function SliderCard({ imageData }: Props) {
   return (
     <div className={classes.root}>
       <Paper square elevation={0} className={classes.header}>
-        <Typography variant="subtitle2">
+        <Typography variant="subtitle2" component="h4">
           {imageData[activeStep].label}
         </Typography>
       </Paper>

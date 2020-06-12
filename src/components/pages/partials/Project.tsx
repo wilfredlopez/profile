@@ -53,7 +53,12 @@ const Project: React.FC<Props> = ({ url, name, title, ...props }) => {
         className="header project-tile"
         style={{ margin: "1em 0em", textTransform: "uppercase" }}
       >
-        <TitleLink href={url} target="_blank" rel="noopener noreferrer">
+        <TitleLink
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={name}
+        >
           {name}
         </TitleLink>
       </DividerElement>
@@ -73,7 +78,7 @@ const Project: React.FC<Props> = ({ url, name, title, ...props }) => {
       >
         <Grid item>
           <Button size="small" color="primary" variant="outlined">
-            <StyledHtmlLink href={url} className="text-white">
+            <StyledHtmlLink href={url} className="text-white" title={name}>
               {name}
             </StyledHtmlLink>
           </Button>

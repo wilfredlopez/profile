@@ -6,6 +6,8 @@ import React from "react";
 import SideDrawer from "./SideDrawer";
 import SideItems from "./SideItems";
 import styled from "styled-components";
+import { usePagesContext } from "context/PagesContext";
+import { Hidden } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,15 +27,21 @@ const StyledAppBar = styled(AppBar)`
 
 export default function Navigation() {
   const classes = useStyles();
+  const { page } = usePagesContext();
 
   return (
     <div className={classes.root}>
       <StyledAppBar position="fixed">
         <Toolbar>
           <SideDrawer anchor="left" />
-          <Typography variant="h6" className={classes.title}>
-            Wilfred Lopez
+          <Typography variant="h6" component="h1" className={classes.title}>
+            {page}
           </Typography>
+          <Hidden only="xs">
+            <Typography variant="caption" className={classes.title}>
+              WilfredLopez.Net
+            </Typography>
+          </Hidden>
           <SideItems />
         </Toolbar>
       </StyledAppBar>

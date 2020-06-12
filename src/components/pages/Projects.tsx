@@ -2,8 +2,13 @@ import React, { useEffect } from "react";
 import { Container, Typography } from "@material-ui/core";
 import { Segment } from "components/shared";
 import AllProjects from "./partials/AllProjects";
+import { usePagesContext } from "context/PagesContext";
 
 const Projects = () => {
+  const { changePage } = usePagesContext();
+  useEffect(() => {
+    changePage("Projects");
+  }, [changePage]);
   useEffect(() => {
     window.scrollTo({
       top: 0,

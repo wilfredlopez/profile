@@ -142,6 +142,7 @@ export default function SideDrawer({ anchor }: Props) {
         {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (
           <StyledHtmlLink
             href={href}
+            title={text}
             target="_blank"
             rel="noopener noreferrer"
             role="link"

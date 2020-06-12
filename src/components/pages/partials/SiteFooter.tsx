@@ -53,7 +53,7 @@ const SiteFooter = () => {
             <Grid item={true} xs={12} sm="auto">
               <List>
                 <ListItem>
-                  <Title variant="h6">Pages</Title>
+                  <Title variant="h6" component="h1">Pages</Title>
                 </ListItem>
                 <ListItem>
                   <StyledNavLink to="/" exact activeClassName="item">
@@ -75,13 +75,14 @@ const SiteFooter = () => {
             <Grid item xs={12} sm="auto">
               <List>
                 <ListItem>
-                  <Title variant="h6" component="h4">Demo Projects</Title>
+                  <Title variant="h6" component="h2">Demo Projects</Title>
                 </ListItem>
                 <ListItem>
                   <NonActiveLink
                     href="https://vapemusic.club"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title="Vape Music"
                   >
                     Vape Music
                   </NonActiveLink>
@@ -109,7 +110,7 @@ const SiteFooter = () => {
             <Grid item xs={12} sm="auto">
               <List>
                 <ListItem>
-                  <Title variant="h6">
+                  <Title variant="h6" component="h2">
                     Social Media
                   </Title>
                 </ListItem>

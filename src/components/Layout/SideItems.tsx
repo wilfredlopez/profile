@@ -60,6 +60,7 @@ const SideItems: React.FC<Props> = () => {
       <List>
         <Hidden only="xs">
           <GithubButton
+            title="Github"
             href="https://github.com/wilfredlopez"
             //@ts-ignore
             target="_blank"
@@ -76,6 +77,7 @@ const SideItems: React.FC<Props> = () => {
         </Hidden>
         <LinkedInButton
           role="link"
+          title="LinkedIn"
           variant="text"
           style={{ marginLeft: "0.4em" }}
           href="https://www.linkedin.com/in/wilfred-lopez-a309b896"
@@ -96,6 +98,7 @@ const SideItems: React.FC<Props> = () => {
             rel="noopener noreferrer"
             //@ts-ignore
             target="_blank"
+            title="Twitter @WilfredonaldLo"
           >
             <TwitterIcon />
             @wilfreddonaldlo
