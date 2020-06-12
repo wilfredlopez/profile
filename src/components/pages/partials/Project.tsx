@@ -4,14 +4,16 @@ import {
   Typography,
 
   Grid,
+  Container,
 } from "@material-ui/core";
 import styled from "styled-components";
 import { StyledHtmlLink } from "components/shared";
+import SliderCard, { ImageToSlider } from "components/shared/SliderCard";
 interface Props {
   url: string;
+  images: ImageToSlider[];
   name: string;
   title: string;
-  imageSrc: string;
 }
 
 export const DividerElement = styled.div`
@@ -44,7 +46,7 @@ export const TitleLink = styled(StyledHtmlLink)`
   font-weight: 500;
 `;
 
-const Project: React.FC<Props> = ({ url, name, title, imageSrc, ...props }) => {
+const Project: React.FC<Props> = ({ url, name, title, ...props }) => {
   return (
     <>
       <DividerElement
@@ -55,24 +57,12 @@ const Project: React.FC<Props> = ({ url, name, title, imageSrc, ...props }) => {
           {name}
         </TitleLink>
       </DividerElement>
-      <Typography variant="h3" style={{ fontSize: "2em" }}>
-        <div style={{ fontSize: "0.5em" }}>
-          {props.children}
-          {imageSrc && (
-            <>
-              {/* <br /> */}
-              <img
-                src={imageSrc}
-                alt={`${name} Homepage`}
-                //   label="Retailme Now Homepage"
-                // size="medium"
-                style={{
-                  marginTop: 6,
-                  maxHeight: 600,
-                }}
-              />
-            </>
-          )}
+      <Typography variant="body1" component="div">
+        <div>
+          <Container maxWidth="sm">
+            {props.children}
+          </Container>
+          <SliderCard imageData={props.images} />
         </div>
       </Typography>
       <Grid

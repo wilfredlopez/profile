@@ -6,28 +6,21 @@ import {
   Typography,
   List,
 } from "@material-ui/core";
-import Project from "../Utils/Project";
+
 import {
   education,
   experiences,
-  retailmeNowDescription,
-  vapeMusicDescription,
-  expenseManagerDescription,
-  // easyTodosDescription
 } from "./constants";
 import HomepageHeading from "./partials/HomepageHeading";
 import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 
-// import vapemusicImg from "../../img/vapemusic.jpeg"
-import vapemusicImg from "../../img/vapemusic-example.jpg";
-import retailmenowImg from "../../img/retailmenow.jpeg";
-import expenseManagerImg from "../../img/expense-manager-example.jpg";
 import {
   Segment,
   StyledLink,
   PrimaryBackgroundSection,
 } from "components/shared";
 import styled from "styled-components";
+import AllProjects from "./partials/AllProjects";
 
 const StyledItem = styled.li`
   padding-top: 0;
@@ -181,42 +174,7 @@ const HomepageLayout = () => {
 
       <Segment style={{ padding: "2em 0em" }}>
         <Container id="projects">
-          <Project
-            url="https://vapemusic.club"
-            name="Vape Music"
-            title="Vape Music - Latin Music Listen & Download"
-            imageSrc={vapemusicImg}
-          >
-            <div style={{ fontSize: "1.33em" }}>{vapeMusicDescription}</div>
-          </Project>
-
-          <Project
-            url="https://wilfredexpensemanager.netlify.app"
-            name="Expenses Manager"
-            title="Expenses Manager - Manage your personal finances"
-            imageSrc={expenseManagerImg}
-          >
-            <div style={{ fontSize: "1.33em" }}>
-              {expenseManagerDescription}
-            </div>
-          </Project>
-
-          <Project
-            url="#"
-            name="RetalMeNow"
-            title="RetalMeNow - Shop Online"
-            imageSrc={retailmenowImg}
-          >
-            <div style={{ fontSize: "1.33em" }}>{retailmeNowDescription}</div>
-          </Project>
-
-          {/* <Project
-            url="https://wilnotes.herokuapp.com"
-            name="EasyTodos"
-            title="EasyTodos - Save your todo list"
-          >
-            <div style={{ fontSize: "1.33em" }}>{easyTodosDescription}</div>
-          </Project> */}
+          <AllProjects />
         </Container>
       </Segment>
 

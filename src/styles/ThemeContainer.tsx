@@ -8,9 +8,9 @@ import secondary from "@material-ui/core/colors/teal";
 import { ThemeProvider as StyledComponentsThemeProvider } from "styled-components";
 import { common, red } from "@material-ui/core/colors";
 
-const PRIMARY_COLOR = primary[900];
+export const PRIMARY_COLOR = primary[900];
 const PRIMARY_COLOR_CONTRAST = common["white"];
-const SECONDARY_COLOR = secondary[700];
+export const SECONDARY_COLOR = secondary[700];
 const SECONDARY_COLOR_CONTRAST = common["white"];
 const DARK_COLOR = "#040c14";
 const LIGHT_COLOR = common["white"];

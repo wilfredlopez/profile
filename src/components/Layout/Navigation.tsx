@@ -28,7 +28,7 @@ export default function Navigation() {
 
   return (
     <div className={classes.root}>
-      <StyledAppBar position="static">
+      <StyledAppBar position="fixed">
         <Toolbar>
           <SideDrawer anchor="left" />
           <Typography variant="h6" className={classes.title}>

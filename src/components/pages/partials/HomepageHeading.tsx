@@ -10,7 +10,7 @@ import { Responsive } from "../../shared";
 import Segment from "../../shared/Segment";
 import WorkIcon from "@material-ui/icons/Work";
 import RoomIcon from "@material-ui/icons/Room";
-import HomeIcon from "@material-ui/icons/Home";
+// import HomeIcon from "@material-ui/icons/Home";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import styled from "styled-components";
 interface Props {
@@ -28,20 +28,15 @@ const Item = styled.div`
     margin-bottom: 1rem;
 `;
 
-const PlacesGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    margin-bottom: 1rem;
-    & div{
-      display: flex;
-      /* display: grid;
-      grid-template-columns: 0fr 5fr;
-      grid-gap: 0;
-      justify-content: center;
-      align-items: center; */
-    }
-`;
+// const PlacesGrid = styled.div`
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     grid-gap: 1rem;
+//     margin-bottom: 1rem;
+//     & div{
+//       display: flex;
+//     }
+// `;
 const HomepageHeading: React.FC<Props> = () => (
   <Responsive>
     <Segment>
@@ -84,16 +79,22 @@ const HomepageHeading: React.FC<Props> = () => (
             <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
           </Typography>
         </Item>
-        <PlacesGrid>
+        <Item>
+          <RoomIcon />
+          <div>
+            <span>Garfield, NJ, USA.</span>
+          </div>
+        </Item>
+        {/* <PlacesGrid>
           <div>
             <RoomIcon />
-            <span>Lives in Garfield, NJ, USA.</span>
+            <span>Garfield, NJ, USA.</span>
           </div>
           <div>
             <HomeIcon />
             <span>From Cabrera, Dominican Republic.</span>
           </div>
-        </PlacesGrid>
+        </PlacesGrid> */}
         <Button
           endIcon={<MailOutlineIcon />}
           color="secondary"

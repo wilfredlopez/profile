@@ -14,6 +14,13 @@ const Centerer = styled.span`
     align-items: center;
 `;
 
+const Paragraph = styled.p`
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.33em;
+  text-align:left;
+`;
+
 const Contact = () => {
   useEffect(() => {
     window.scrollTo({
@@ -43,35 +50,37 @@ const Contact = () => {
           <Grid container>
             <Grid>
               <Grid item>
-                <p style={{ fontSize: "1.33em" }}>
+                <Paragraph>
                   Wilfred D. Lopez, from Dominican Republic. Lives in Garfield,
                   NJ, USA. Studied Tourism Bussiness Management in UAPA
                   University. Self educated in Typescript, React, NodeJS,
                   Express, MongoDB, Apollo-QraphQL, HTML, CSS and other modern
                   Javascript based languages.{" "}
-                </p>
+                </Paragraph>
 
-                <p style={{ fontSize: "1.33em" }}>
+                <Paragraph>
                   Currently working as a QA Analyst for a B2C Reail Store.
                   Experience in Customer Service, Workforce Management, Web
                   Quality Assurance and Accessibility.
-                </p>
+                </Paragraph>
               </Grid>
               <Grid>
-                <List style={{ fontSize: "1.33em" }}>
-                  <p>
+                <List>
+                  <Paragraph>
                     Excellent communication skills, organization skills, and
                     excellent attention to detail.
-                  </p>
-                  <p>
+                  </Paragraph>
+                  <Paragraph>
                     Strong knowledge of MS Excel, Jira, Salesforce Commerce
                     Cloud, and others.
-                  </p>
-                  <p>Dedicated, passionate and reliable worker.</p>
-                  <p>
+                  </Paragraph>
+                  <Paragraph>
+                    Dedicated, passionate and reliable worker.
+                  </Paragraph>
+                  <Paragraph>
                     Proficient knowledge of accessibility standards (Section
                     508/WCAG 2.0 Level A and AA).{" "}
-                  </p>
+                  </Paragraph>
                 </List>
               </Grid>
             </Grid>
@@ -80,7 +89,7 @@ const Contact = () => {
             </div>
             <Grid container>
               <Grid item xs={6}>
-                <div>
+                <div style={{ textAlign: "right" }}>
                   <Button size="large" color="secondary">
                     <StyledHtmlLink href="mailto:cubamc@gmail.com">
                       <Centerer>
@@ -94,8 +103,11 @@ const Contact = () => {
                   </Button>
                 </div>
               </Grid>
-              <Grid item xs={6}>
-                <Button size="large" color="secondary">
+              <Grid item xs={6} style={{ textAlign: "left" }}>
+                <Button
+                  size="large"
+                  color="secondary"
+                >
                   <StyledHtmlLink href="tel:1+5514442665">
                     <Centerer>
                       <span>
