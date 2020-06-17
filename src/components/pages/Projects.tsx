@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Typography } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { Segment } from "components/shared";
 import AllProjects from "./partials/AllProjects";
 import { usePagesContext } from "context/PagesContext";
@@ -7,7 +7,7 @@ import { usePagesContext } from "context/PagesContext";
 const Projects = () => {
   const { changePage } = usePagesContext();
   useEffect(() => {
-    changePage("Projects");
+    changePage("Demo Projects");
   }, [changePage]);
   useEffect(() => {
     window.scrollTo({
@@ -20,7 +20,7 @@ const Projects = () => {
     <React.Fragment>
       <Segment style={{ padding: "2em 0em" }}>
         <Container>
-          <Typography variant="h4" component="h1">Demo Projects</Typography>
+          {/* <Typography variant="h4" component="h1">Demo Projects</Typography> */}
           <AllProjects />
         </Container>
       </Segment>

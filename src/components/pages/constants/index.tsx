@@ -5,6 +5,7 @@ import {
   FaSalesforce,
   FaJira,
   FaUniversalAccess,
+  FaBriefcase,
   // FaDatabase,
 } from "react-icons/fa/index";
 
@@ -20,33 +21,35 @@ import TypescriptIcon from "./TypescriptIcon";
 import GraphQlIcon from "./GraphQLIcon";
 import { SECONDARY_COLOR } from "styles/ThemeContainer";
 
+const ExpIcon = <FaBriefcase color="#00796b" />;
+
 export const experiences = [
   {
-    Icon: "marker",
+    Icon: ExpIcon,
     label: "Web Production QA Analyst",
     location: "Century 21 Stores",
     isCurrent: false,
   },
   {
-    Icon: "marker",
+    Icon: ExpIcon,
     label: "Suppor Center Specialist",
     location: "Century 21 Stores",
     isCurrent: false,
   },
   {
-    Icon: "marker",
+    Icon: ExpIcon,
     label: "Mission Control Specialist",
     location: "Teleperformance",
     isCurrent: false,
   },
   {
-    Icon: "marker",
+    Icon: ExpIcon,
     label: "Customer Service Representative",
     location: "Teleperformance",
     isCurrent: false,
   },
   {
-    Icon: "marker",
+    Icon: ExpIcon,
     label: "Call Center QA Analyst",
     location: "BM Teleservices",
     isCurrent: false,

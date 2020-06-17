@@ -107,26 +107,29 @@ const HomepageLayout = () => {
     );
   });
 
-  const experienceList = experiences.map((exp) => {
-    return (
-      <li key={exp.label} className="mb-1">
-        {/* <Icon name={exp.icon} /> */}
-        <ExperienceSection>
-          <div>
-            <Typography
-              variant="h6"
-              component="h3"
-              style={{ color: exp.isCurrent ? "blue" : "#5c5959" }}
-            >
-              {exp.label}
-              {exp.isCurrent && "(Actual)"}
-            </Typography>
-          </div>
-          {exp.location}
-        </ExperienceSection>
-      </li>
-    );
-  });
+  const experienceList = experiences.map(
+    ({ Icon, isCurrent, label, location }) => {
+      return (
+        <li key={label} className="mb-1">
+          {/* <Icon name={exp.icon} /> */}
+          {Icon}
+          <ExperienceSection>
+            <div>
+              <Typography
+                variant="h6"
+                component="h3"
+                style={{ color: isCurrent ? "blue" : "#5c5959" }}
+              >
+                {label}
+                {isCurrent && "(Actual)"}
+              </Typography>
+            </div>
+            {location}
+          </ExperienceSection>
+        </li>
+      );
+    },
+  );
   return (
     <React.Fragment>
       <PrimaryBackgroundSection>
