@@ -51,7 +51,7 @@ const SiteFooter = () => {
             alignItems="flex-start"
           >
             <Grid item={true} xs={12} sm="auto">
-              <List>
+              <List id="navbar">
                 <ListItem>
                   <Title variant="h6" component="h1">Pages</Title>
                 </ListItem>

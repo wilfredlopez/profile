@@ -173,6 +173,7 @@ export default function SideDrawer({ anchor }: Props) {
           <MenuIcon />
         </IconButton>
         <Drawer
+          // id="navbar"
           anchor={anchor}
           open={state[anchor]}
           onClose={toggleDrawer(anchor, false)}

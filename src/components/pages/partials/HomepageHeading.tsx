@@ -40,7 +40,7 @@ const Item = styled.div`
 const HomepageHeading: React.FC<Props> = () => (
   <Responsive>
     <Segment>
-      <Container>
+      <Container id="welcome-section" style={{ height: "100vh" }}>
         <Avatar
           src={wilfredImg}
           // src="https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png"
