@@ -6,6 +6,12 @@ const index = () => {
     <>
       <Head>
         <title key="title">Web Development | Wilfred Lopez</title>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charSet="utf-8"
+        >
+        </script>
       </Head>
       <HomepageLayout />
     </>

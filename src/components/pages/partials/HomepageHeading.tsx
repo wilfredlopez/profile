@@ -5,7 +5,7 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
-import wilfredImg from "../../../img/wilfred-profile.png";
+import wilfredImg from "@root/img/wilfred-profile.png";
 import { Responsive } from "../../shared";
 import Segment from "../../shared/Segment";
 import WorkIcon from "@material-ui/icons/Work";
