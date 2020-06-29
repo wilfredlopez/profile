@@ -37,10 +37,14 @@ export default function MyApp(props: any) {
           name="keywords"
           content="react, typescript, GraphQL, NodeJS, MongoDB, Web Accessibility, Javascript, css, html"
         />
+        <meta
+          name="keywords"
+          content="wilfred lopez, Wilfred, Lopez, Developer"
+        />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff"
-          http-equiv="Content-Type"
+          httpEquiv="Content-Type"
         >
         </meta>
       </Head>
