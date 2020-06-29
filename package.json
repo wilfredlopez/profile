@@ -27,18 +27,18 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start:next": "next start",
-    "start": "node server/server.js",
+    "start": "next start",
+    "start:express": "node server/server.js",
     "dev:RS": "react-scripts start",
     "build:RS": "react-scripts build",
-    "github-deploy:old": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "github-deploy:old": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
     "buildAndDeploy": "npm run build && npm run github-deploy",
-    "github-deploy:next-server": "gh-pages --repo git@github.com:wilfredlopez/profile.git -d .next",
+    "github-deploy": "npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
     "export": "next export -o build",
-    "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && gh-pages -d out -t true",
-    "github-deploy": "npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build"
+    "predeploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll",
+    "deploy": "gh-pages -d out -t true"
   },
   "eslintConfig": {
     "extends": "react-app"
