@@ -22,15 +22,16 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start:next": "next start",
-    "start": "node server/server.js",
+    "start": "next start",
+    "start:old": "node server/server.js",
     "dev:RS": "react-scripts start",
     "build:RS": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "export": "next export -o build",
     "github-deploy:old": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
-    "github-deploy": "npm run build && npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build"
+    "github-deploy": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d .next",
+    "github-deploy:static": "npm run build && npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,7 +53,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "babel-plugin-styled-components": "^1.10.7",
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^3.1.0"
   },
   "proxy": "http://localhost:3000",
   "homepage": "https://wilfredlopez.github.io"
