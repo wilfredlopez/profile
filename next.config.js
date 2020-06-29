@@ -1,7 +1,7 @@
 const withImages = require("next-images");
 module.exports = withImages({
   esModule: true,
-  useFileSystemPublicRoutes: false,
+  // useFileSystemPublicRoutes: false,
   webpack(config, options) {
     // Fixes npm packages that depend on `fs` module
     config.node = {
