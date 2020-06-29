@@ -32,8 +32,8 @@
     "buildAndDeploy": "npm run build && npm run github-deploy",
     "github-deploy:next-server": "gh-pages --repo git@github.com:wilfredlopez/profile.git -d .next",
     "export": "next export -o build",
-    "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.wilfredlopez && gh-pages -d out -t true",
-    "deploy:domain": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.wilfredlopez && touch out/CNAME && echo \"wilfredlopez.net\" >> out/CNAME && gh-pages -d out",
+    "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && gh-pages -d out -t true",
+    "deploy:domain": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && touch out/CNAME && echo \"wilfredlopez.net\" >> out/CNAME && gh-pages -d out",
     "github-deploy": "npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build"
   },
   "eslintConfig": {
