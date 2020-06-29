@@ -32,6 +32,7 @@
     "buildAndDeploy": "npm run build && npm run github-deploy",
     "github-deploy:next-server": "gh-pages --repo git@github.com:wilfredlopez/profile.git -d .next",
     "export": "next export -o build",
+    "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.wilfredlopez && gh-pages -d out -t true",
     "github-deploy": "npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build"
   },
   "eslintConfig": {
@@ -54,7 +55,9 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "babel-plugin-styled-components": "^1.10.7",
-    "gh-pages": "^3.1.0"
+    "babel-plugin-transform-define": "^2.0.0",
+    "gh-pages": "^3.1.0",
+    "rimraf": "^3.0.2"
   },
   "proxy": "http://localhost:3000",
   "homepage": "https://wilfredlopez.github.io"
