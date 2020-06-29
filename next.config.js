@@ -10,7 +10,7 @@ module.exports = withImages({
       "/contact": { page: "/contact" },
     };
   },
-  assetPrefix: !debug ? "/profile/" : "",
+  // assetPrefix: !debug ? "/profile/" : "",
   webpack(config, options) {
     // Fixes npm packages that depend on `fs` module
     config.node = {
