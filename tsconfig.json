@@ -3,6 +3,7 @@
     "target": "es5",
     "lib": [
       "dom",
+      "es2017",
       "dom.iterable",
       "esnext"
     ],
@@ -29,4 +30,11 @@
     },
     "jsx": "preserve"
   },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
