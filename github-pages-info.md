@@ -7,3 +7,7 @@ git push origin master
 npm run github-deploy
 
 https://wilfredlopez.github.io/profile
+
+
+## NextJS | Push your “out” folder as the root of your gh-pages branch
+git subtree push --prefix out origin gh-pages

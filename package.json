@@ -2,6 +2,11 @@
   "name": "wilfred-portf",
   "version": "2.0.0",
   "private": true,
+  "author": {
+    "email": "cubamc@gmail.com",
+    "name": "Wilfred Lopez",
+    "url": "http://wilfredlopez.net"
+  },
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
