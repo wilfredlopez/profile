@@ -22,7 +22,7 @@ import {
 import styled from "styled-components";
 import AllProjects from "./partials/AllProjects";
 import { usePagesContext } from "context/PagesContext";
-
+import Link from "next/link";
 const StyledItem = styled.li`
   padding-top: 0;
   padding-bottom: 2px;
@@ -175,7 +175,9 @@ const HomepageLayout = () => {
           </Grid>
           <Grid container justify="center">
             <Button color="primary" variant="contained">
-              <StyledLink to="/projects">Demo Projects</StyledLink>
+              <Link href="/projects">
+                <StyledLink>Demo Projects</StyledLink>
+              </Link>
             </Button>
           </Grid>
         </Grid>

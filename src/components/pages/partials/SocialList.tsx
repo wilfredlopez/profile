@@ -11,13 +11,13 @@ import styled from "styled-components";
 
 const FacebookIconStyled = styled(FacebookIcon)`
   border: 1px outset rgb(59, 89, 152);
-  fill: #3b5998;
+  fill: #3b5998 !important;
     border-radius: 6px;
     background: white;
 `;
 
 const LinkedInIconStyled = styled(LinkedInIcon)`
-      fill: #2867B2;
+      fill: #2867B2 !important;
     background: white;
     border: 1px outset rgb(40, 103, 178);
     border-radius: 6px;
@@ -85,7 +85,7 @@ const SocialList = () => {
     return (
       <ListItem key={label}>
         <StyledLink
-          to={url}
+          href={url}
           target="_blank"
           rel="noopener noreferrer"
         >

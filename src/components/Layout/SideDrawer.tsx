@@ -17,7 +17,8 @@ import WebIcon from "@material-ui/icons/Web";
 import clsx from "clsx";
 import { StyledHtmlLink } from "components/shared";
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
+import NavLink from "next/link";
 import styled from "styled-components";
 
 interface Props {
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled.a`
     color: inherit;
     text-decoration: none;
 `;
@@ -121,14 +122,16 @@ export default function SideDrawer({ anchor }: Props) {
     >
       <List>
         {NAV_LINKS.map(({ text, href, Icon }, index) => (
-          <StyledNavLink key={text} to={href}>
-            <ListItem button>
-              <ListItemIcon>
-                {Icon ? Icon : <DragHandleIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          </StyledNavLink>
+          <NavLink key={text} href={href}>
+            <StyledNavLink>
+              <ListItem button>
+                <ListItemIcon>
+                  {Icon ? Icon : <DragHandleIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            </StyledNavLink>
+          </NavLink>
         ))}
       </List>
       <Divider />

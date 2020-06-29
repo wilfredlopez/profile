@@ -1,8 +1,8 @@
 import React from "react";
 import Routes from "./Routes";
 import SiteFooter from "./components/pages/partials/SiteFooter";
-import Navigation from "components/Layout/Navigation";
-import { ScrollTop } from "components/Layout/BackToTop";
+import Navigation from "./components/Layout/Navigation";
+import { ScrollTop } from "./components/Layout/BackToTop";
 import { Fab, Toolbar } from "@material-ui/core";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 

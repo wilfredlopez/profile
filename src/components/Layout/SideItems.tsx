@@ -7,31 +7,31 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 export const LinkedInButton = styled(Button)`
-  background-color: #2867B2;
-  color: white;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: #2867B2 !important;;
+  color: white !important;;
+  border-radius: 6px !important;;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;;
   /* padding: 7px 14px; */
-  padding: 6px 8px;
-    font-size: 0.81rem;
+  padding: 6px 8px !important;;
+    font-size: 0.81rem !important;;
   &:hover {
-    background-color: #2c5789;
+    background-color: #2c5789 !important;;
   }
   & span .text-inner{
-    margin-top: 2px;
+    margin-top: 2px !important;;
   }
 `;
 export const GithubButton = styled(Button)`
-  background-color: #c4c7c9;
-  color:  #24292e;
+  background-color: #c4c7c9 !important;
+  color:  #24292e !important;;
 
   /* border-radius: 6px; */
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;;
   /* padding: 7px 14px; */
-  padding: 6px 8px;
-    font-size: 0.81rem;
+  padding: 6px 8px !important;;
+    font-size: 0.81rem !important;;
   &:hover {
-    background-color: #8f9498;
+    background-color: #8f9498 !important;;
   }
   & span{
       margin-left: 3px;
@@ -40,15 +40,15 @@ export const GithubButton = styled(Button)`
 `;
 
 export const TwitterButton = styled(Button)`
-  background-color: #078bdc;
-  color: #f8f8f8;
+  background-color: #078bdc !important;;
+  color: #f8f8f8 !important;;
   /* border-radius: 6px; */
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;;
   /* padding: 7px 14px; */
-  padding: 6px 8px;
-    font-size: 0.81rem;
+  padding: 6px 8px !important;;
+    font-size: 0.81rem !important;;
   &:hover {
-    background-color: #1DA1F2;
+    background-color: #1DA1F2 !important;;
   }
 `;
 

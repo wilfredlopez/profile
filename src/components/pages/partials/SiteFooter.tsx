@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Grid, Typography, List, ListItem } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
+import NavLink from "next/link";
 import {
   PrimaryBackgroundSection,
   StyledHtmlLink,
@@ -8,7 +9,7 @@ import {
 import SocialList from "./SocialList";
 import styled from "styled-components";
 
-export const StyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled.a`
   color: hsla(0,0%,100%,.5);
   text-decoration: none;
   &.item{
@@ -56,19 +57,25 @@ const SiteFooter = () => {
                   <Title variant="h6" component="h1">Pages</Title>
                 </ListItem>
                 <ListItem>
-                  <StyledNavLink to="/" exact activeClassName="item">
-                    Home
-                  </StyledNavLink>
+                  <NavLink href="/">
+                    <StyledNavLink className="item">
+                      Home
+                    </StyledNavLink>
+                  </NavLink>
                 </ListItem>
                 <ListItem>
-                  <StyledNavLink to="/projects" exact activeClassName="item">
-                    Demo Projects
-                  </StyledNavLink>
+                  <NavLink href="/projects">
+                    <StyledNavLink>
+                      Demo Projects
+                    </StyledNavLink>
+                  </NavLink>
                 </ListItem>
                 <ListItem>
-                  <StyledNavLink to="/contact" exact activeClassName="item">
-                    Contact
-                  </StyledNavLink>
+                  <NavLink href="/contact">
+                    <StyledNavLink>
+                      Contact
+                    </StyledNavLink>
+                  </NavLink>
                 </ListItem>
               </List>
             </Grid>
