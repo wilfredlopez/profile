@@ -22,14 +22,15 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "start:old": "node server/server.js",
+    "start:next": "next start",
+    "start": "node server/server.js",
     "dev:RS": "react-scripts start",
     "build:RS": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "export": "next export -o build",
     "github-deploy:old": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
-    "github-deploy": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d .next"
+    "github-deploy": "npm run build && npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
