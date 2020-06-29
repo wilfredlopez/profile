@@ -34,19 +34,23 @@ export default function MyApp(props: any) {
           content="Wilfred Lopez Quality Assurance and Web Development curriculum"
         />
         <meta
-          name="keywords"
-          content="react, typescript, GraphQL, NodeJS, MongoDB, Web Accessibility, Javascript, css, html"
+          property="og:description"
+          content="Wilfred Lopez Quality Assurance and Web Development curriculum"
         />
         <meta
           name="keywords"
-          content="wilfred lopez, Wilfred, Lopez, Developer"
+          content="react, typescript, wilfred lopez, Wilfred, Lopez, Developer, GraphQL, profile, NodeJS, MongoDB, Web Accessibility, Javascript, css, html"
         />
+
+        <meta name="author" content="Wilfred Lopez" />
+        <meta property="og:type" content="developer" />
+        <meta property="og:title" content="Wilfred Lopez - Web Development" />
+        <meta property="og:site_name" content="wilfredlopez" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff"
           httpEquiv="Content-Type"
-        >
-        </meta>
+        />
       </Head>
       <RootProvider>
         <>

@@ -10,6 +10,7 @@ const contact = () => {
           name="keywords"
           content="web development, projects"
         />
+        <link rel="canonical" href="https://wilfredlopez.net/contact" />
       </Head>
 
       <Contact />

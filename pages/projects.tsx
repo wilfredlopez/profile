@@ -7,6 +7,7 @@ const projects = () => {
     <>
       <Head>
         <title key="title">Demo Projects | Wilfred Lopez</title>
+        <link rel="canonical" href="https://wilfredlopez.net/projects" />
       </Head>
       <Projects />
     </>

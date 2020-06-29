@@ -6,6 +6,12 @@ const index = () => {
     <>
       <Head>
         <title key="title">Web Development | Wilfred Lopez</title>
+        <meta
+          name="description"
+          content="Web Development | Wilfred Lopez"
+        >
+        </meta>
+        <link rel="canonical" href="https://wilfredlopez.net/" />
         <script
           async
           src="https://platform.twitter.com/widgets.js"
