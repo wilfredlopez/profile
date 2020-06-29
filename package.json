@@ -1,6 +1,6 @@
 {
   "name": "wilfred-portf",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.10.1",
@@ -22,16 +22,17 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start:next": "next start",
-    "start": "node server/server.js",
+    "start": "next start",
+    "start:static": "node server/server.js",
     "dev:RS": "react-scripts start",
     "build:RS": "react-scripts build",
+    "github-deploy:old": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "buildAndDeploy": "npm run build && npm run github-deploy",
+    "github-deploy": "gh-pages --repo git@github.com:wilfredlopez/profile.git -d dist",
     "export": "next export -o build",
-    "github-deploy:old": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
-    "github-deploy": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d .next",
-    "github-deploy:static": "npm run build && npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build"
+    "github-deploy:static": "npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
