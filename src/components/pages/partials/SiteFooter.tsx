@@ -12,6 +12,7 @@ import styled from "styled-components";
 export const StyledNavLink = styled.a`
   color: hsla(0,0%,100%,.5);
   text-decoration: none;
+  cursor: pointer;
   &.item{
     color: #ffffff;
     font-weight: 500;
