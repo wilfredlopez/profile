@@ -6,7 +6,7 @@ import React from "react";
 import SideDrawer from "./SideDrawer";
 import SideItems from "./SideItems";
 import styled from "styled-components";
-import { usePagesContext } from "context/PagesContext";
+import { usePagesContext } from "@root/context/PagesContext";
 import { Hidden } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

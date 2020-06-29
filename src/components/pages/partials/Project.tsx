@@ -7,8 +7,8 @@ import {
   Container,
 } from "@material-ui/core";
 import styled from "styled-components";
-import { StyledHtmlLink } from "components/shared";
-import SliderCard, { ImageToSlider } from "components/shared/SliderCard";
+import { StyledHtmlLink } from "@components/shared";
+import SliderCard, { ImageToSlider } from "@components/shared/SliderCard";
 interface Props {
   url: string;
   images: ImageToSlider[];

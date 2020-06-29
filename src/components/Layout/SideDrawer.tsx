@@ -15,7 +15,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import WebIcon from "@material-ui/icons/Web";
 import clsx from "clsx";
-import { StyledHtmlLink } from "components/shared";
+import { StyledHtmlLink } from "@components/shared";
 import React from "react";
 // import { NavLink } from "react-router-dom";
 import NavLink from "next/link";

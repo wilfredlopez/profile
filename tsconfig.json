@@ -18,7 +18,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "rootDir": "src",
-    "baseUrl": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@root/*": [
+        "./src/*"
+      ],
+    },
     "jsx": "preserve"
   },
 }

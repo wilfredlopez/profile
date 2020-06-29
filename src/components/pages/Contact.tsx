@@ -5,9 +5,9 @@ import {
   Phone as PhoneIcon,
 } from "@material-ui/icons";
 import HomepageHeading from "./partials/HomepageHeading";
-import { Segment, StyledHtmlLink } from "components/shared";
+import { Segment, StyledHtmlLink } from "@components/shared";
 import styled from "styled-components";
-import { usePagesContext } from "context/PagesContext";
+import { usePagesContext } from "@root/context/PagesContext";
 
 const Centerer = styled.span`
       display: flex;

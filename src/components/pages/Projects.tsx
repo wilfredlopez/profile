@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Container } from "@material-ui/core";
-import { Segment } from "components/shared";
+import { Segment } from "@components/shared";
 import AllProjects from "./partials/AllProjects";
-import { usePagesContext } from "context/PagesContext";
+import { usePagesContext } from "@root/context/PagesContext";
 
 const Projects = () => {
   const { changePage } = usePagesContext();

@@ -1,9 +1,14 @@
 import React from "react";
-import HomepageLayout from "../src/components/pages/HomepageLayout";
-
+import HomepageLayout from "@components/pages/HomepageLayout";
+import Head from "next/head";
 const index = () => {
   return (
-    <HomepageLayout />
+    <>
+      <Head>
+        <title key="title">Web Development | Wilfred Lopez</title>
+      </Head>
+      <HomepageLayout />
+    </>
   );
 };
 

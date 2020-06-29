@@ -18,10 +18,10 @@ import {
   Segment,
   StyledLink,
   PrimaryBackgroundSection,
-} from "components/shared";
+} from "@components/shared";
 import styled from "styled-components";
 import AllProjects from "./partials/AllProjects";
-import { usePagesContext } from "context/PagesContext";
+import { usePagesContext } from "@root/context/PagesContext";
 import Link from "next/link";
 const StyledItem = styled.li`
   padding-top: 0;

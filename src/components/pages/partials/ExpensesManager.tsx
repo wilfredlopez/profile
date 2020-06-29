@@ -4,7 +4,7 @@ import { expenseManagerDescription } from "../constants";
 import expenseManagerImg from "../../../img/expenses-manager-home.png";
 import exLogin from "../../../img/expenses-manager-login.png";
 import transPage from "../../../img/expenses-manager-transactions.png";
-import { ImageToSlider } from "components/shared/SliderCard";
+import { ImageToSlider } from "@components/shared/SliderCard";
 interface Props {
 }
 

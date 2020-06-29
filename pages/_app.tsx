@@ -1,12 +1,12 @@
 import React from "react";
 import Head from "next/head";
-import RootProvider from "../src/RootProvider";
-import Navigation from "../src/components/Layout/Navigation";
+import RootProvider from "@root/RootProvider";
+import Navigation from "@components/Layout/Navigation";
 import { Fab, Toolbar } from "@material-ui/core";
-import SiteFooter from "../src/components/pages/partials/SiteFooter";
-import { ScrollTop } from "../src/components/Layout/BackToTop";
+import SiteFooter from "@components/pages/partials/SiteFooter";
+import { ScrollTop } from "@components/Layout/BackToTop";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import "../src/index.css";
+import "@root/index.css";
 
 export default function MyApp(props: any) {
   const { Component, pageProps } = props;
@@ -24,11 +24,25 @@ export default function MyApp(props: any) {
   return (
     <React.Fragment>
       <Head>
-        <title>Web Development | Wilfred Lopez</title>
+        <title key="title">Web Development | Wilfred Lopez</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <meta
+          name="description"
+          content="Wilfred Lopez Quality Assurance and Web Development curriculum"
+        />
+        <meta
+          name="keywords"
+          content="react, typescript, GraphQL, NodeJS, MongoDB, Web Accessibility, Javascript, css, html"
+        />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff"
+          http-equiv="Content-Type"
+        >
+        </meta>
       </Head>
       <RootProvider>
         <>

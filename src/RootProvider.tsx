@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
-import { ThemeContainer } from "styles/ThemeContainer";
-import { PagesContextProvider } from "context/PagesContext";
+import { ThemeContainer } from "@root/styles/ThemeContainer";
+import { PagesContextProvider } from "@root/context/PagesContext";
 interface Props {
 }
 

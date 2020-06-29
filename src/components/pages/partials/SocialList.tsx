@@ -1,6 +1,6 @@
 import React from "react";
 import { ListItem } from "@material-ui/core";
-import { StyledLink } from "components/shared";
+import { StyledLink } from "@components/shared";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
