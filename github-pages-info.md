@@ -5,13 +5,14 @@ npm run export
 node server/server.js
 ```
 # TO PUSH TO GITHUB ONLY
-
+```bash
 npm run build
 git add .
 git commit -am "WHATEREVER"
 git push origin master
-npm run deploy
-
+# npm run deploy
+git subtree push --prefix out origin gh-pages
+```
 https://wilfredlopez.github.io/profile
 
 
