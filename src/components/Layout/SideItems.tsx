@@ -94,7 +94,7 @@ const SideItems: React.FC<Props> = () => {
             LinkedIn
           </span>
         </LinkedInButton>
-        <Hidden smDown>
+        <Hidden xsDown>
           <TwitterButton
             style={{ marginLeft: "0.5em" }}
             href="https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw"

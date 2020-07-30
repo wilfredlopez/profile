@@ -34,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     // marginRight: theme.spacing(0.5),
     // marginLeft: theme.spacing(0.5),
-    width: "100%",
-    height: "100%",
+    flex: 1,
+    flexGrow: 1,
     minHeight: 50,
     minWidth: 50,
     zIndex: 1001,
@@ -66,8 +66,7 @@ const SOCIAL_LINKS: NavLinkItem[] = [
   },
   {
     href: "https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw",
-    // text: "@wilfreddonaldlo",
-    text: "@",
+    text: "@wilfreddonaldlo",
     Icon: <TwitterIcon />,
   },
 ];
@@ -187,26 +186,24 @@ export default function SideDrawer({ anchor }: Props) {
   );
 
   return (
-    <div>
-      <React.Fragment key={anchor}>
-        <IconButton
-          onClick={toggleDrawer(anchor, true)}
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
-        >
-          <MenuIcon />
-        </IconButton>
+    <React.Fragment key={anchor}>
+      <IconButton
+        onClick={toggleDrawer(anchor, true)}
+        className={classes.menuButton}
+        color="inherit"
+        aria-label="menu"
+      >
+        <MenuIcon />
+      </IconButton>
 
-        <Drawer
-          id="navbar-drawer"
-          anchor={anchor}
-          open={state[anchor]}
-          onClose={toggleDrawer(anchor, false)}
-        >
-          {list(anchor)}
-        </Drawer>
-      </React.Fragment>
-    </div>
+      <Drawer
+        id="navbar-drawer"
+        anchor={anchor}
+        open={state[anchor]}
+        onClose={toggleDrawer(anchor, false)}
+      >
+        {list(anchor)}
+      </Drawer>
+    </React.Fragment>
   );
 }

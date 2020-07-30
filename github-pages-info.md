@@ -9,10 +9,14 @@ node server/server.js
 git add .
 git commit -am "WHATEREVER"
 git push origin master
+npm run deploy
+```
+
+## Test Locally
+```
 npm run build
 npm run export
 node server/server.js #test locally
-npm run deploy
 ```
 https://wilfredlopez.github.io/profile
 

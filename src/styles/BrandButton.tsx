@@ -206,7 +206,7 @@ const styles = (theme: Theme) => ({
   root: {
     borderRadius: theme.shape.borderRadius,
     border: 0,
-
+    alignItems: "center",
     height: styledBySize("size", {
       default: "40px",
       large: "48px",
