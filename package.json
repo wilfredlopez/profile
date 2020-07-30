@@ -28,8 +28,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "start:express": "node server/server.js",
+    "start:next": "next start",
+    "start": "node server/server.js",
     "dev:RS": "react-scripts start",
     "build:RS": "react-scripts build",
     "test": "react-scripts test",
