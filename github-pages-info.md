@@ -1,3 +1,9 @@
+# Test Locally 
+```bash
+npm run build
+npm run export
+node server/server.js
+```
 # TO PUSH TO GITHUB ONLY
 
 npm run build
