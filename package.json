@@ -36,8 +36,8 @@
     "eject": "react-scripts eject",
     "github-deploy:old": "npm run build && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
     "buildAndDeploy": "npm run build && npm run github-deploy",
-    "github-deploy": "npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d build",
-    "export": "next export -o build",
+    "github-deploy": "npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d out",
+    "export": "next export -o out",
     "predeploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll",
     "deploy": "gh-pages -d out -t true"
   },

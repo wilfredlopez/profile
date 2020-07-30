@@ -10,7 +10,7 @@ npm run build
 git add .
 git commit -am "WHATEREVER"
 git push origin master
-npm run github-deploy
+npm run deploy
 
 https://wilfredlopez.github.io/profile
 
@@ -23,5 +23,5 @@ git subtree push --prefix out origin gh-pages
 
 ```bash
 git push origin --delete gh-pages
-git subtree push --prefix build origin gh-pages
+git subtree push --prefix out origin gh-pages
 ```

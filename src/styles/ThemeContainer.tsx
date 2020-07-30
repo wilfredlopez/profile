@@ -7,10 +7,10 @@ import {
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
+// Configure JSS
+
 // const generateClassName = createGenerateClassName({
-//   productionPrefix: "UI",
-//   //startingletter
-//   seed: "Wil",
+//   productionPrefix: "Wilfred",
 // });
 import { ThemeProvider as StyledComponentsThemeProvider } from "styled-components";
 import getTheme, { styledComponentsTheme } from "./getTheme";
@@ -25,12 +25,10 @@ export function ThemeContainer(props: PropsWithChildren<{}>) {
 
   return (
     <StyledComponentsThemeProvider theme={styledComponentsTheme}>
-      {/* <StylesProvider generateClassName={generateClassName}> */}
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {props.children}
       </ThemeProvider>
-      {/* </StylesProvider> */}
     </StyledComponentsThemeProvider>
   );
 }

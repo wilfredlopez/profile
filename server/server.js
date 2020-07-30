@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 
 //"out" |'build'
-let BUILD_DIR = "build";
+let BUILD_DIR = "out";
 
 const app = express();
 
