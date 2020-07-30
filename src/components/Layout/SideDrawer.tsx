@@ -153,7 +153,7 @@ export default function SideDrawer({ anchor }: Props) {
             role="link"
             key={text}
           >
-            <ListItem button divider>
+            <ListItem button>
               <ListItemIcon style={{ color: "inherit" }}>
                 {Icon ? Icon : <MailIcon />}
               </ListItemIcon>
