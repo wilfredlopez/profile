@@ -23,7 +23,7 @@ declare module "@material-ui/core/styles/createMuiTheme" {
       danger: React.CSSProperties["color"];
     };
     classes: {
-      imageBackDrop: CreateCSSProperties;
+      textContrast: CreateCSSProperties;
     };
   }
   interface ThemeOptions {
@@ -31,7 +31,7 @@ declare module "@material-ui/core/styles/createMuiTheme" {
       danger: React.CSSProperties["color"];
     };
     classes: {
-      imageBackdrop: CreateCSSProperties;
+      textContrast: CreateCSSProperties;
     };
   }
 }

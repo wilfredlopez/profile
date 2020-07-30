@@ -8,6 +8,7 @@ interface Props {
 const RetailMeNow = (props: Props) => {
   return (
     <Project
+      classKey="shop"
       images={[
         { label: "PDP", imgPath: retailmenowImg },
       ]}

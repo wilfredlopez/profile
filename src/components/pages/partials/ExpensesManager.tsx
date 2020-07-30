@@ -26,6 +26,7 @@ const Images: ImageToSlider[] = [
 const ExpensesManager = (props: Props) => {
   return (
     <Project
+      classKey="expense"
       images={Images}
       url="https://wilfredexpensemanager.netlify.app"
       name="Expenses Manager"

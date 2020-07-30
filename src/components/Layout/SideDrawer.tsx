@@ -20,7 +20,6 @@ import React from "react";
 // import { NavLink } from "react-router-dom";
 import NavLink from "next/link";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 interface Props {
 }
@@ -139,20 +138,14 @@ export default function SideDrawer({ anchor }: Props) {
         {NAV_LINKS.map(({ text, href, Icon }, index) => (
           <NavLink key={text} href={href}>
             <StyledNavLink>
-              <motion.div
-                animate={state[anchor] ? "open" : "closed"}
-                initial="closed"
-                variants={listItemVariants}
+              <ListItem
+                button
               >
-                <ListItem
-                  button
-                >
-                  <ListItemIcon style={{ color: "inherit" }}>
-                    {Icon ? Icon : <DragHandleIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              </motion.div>
+                <ListItemIcon style={{ color: "inherit" }}>
+                  {Icon ? Icon : <DragHandleIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
             </StyledNavLink>
           </NavLink>
         ))}
@@ -160,17 +153,11 @@ export default function SideDrawer({ anchor }: Props) {
       <Divider />
 
       <List>
-        <motion.div
-          animate={state[anchor] ? "open" : "closed"}
-          initial="closed"
-          variants={listItemVariants}
-        >
-          <ListItem button={false}>
-            <Typography variant="h6">
-              Social Media
-            </Typography>
-          </ListItem>
-        </motion.div>
+        <ListItem button={false}>
+          <Typography variant="h6">
+            Social Media
+          </Typography>
+        </ListItem>
         {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (
           <StyledHtmlLink
             href={href}
@@ -180,18 +167,12 @@ export default function SideDrawer({ anchor }: Props) {
             role="link"
             key={text}
           >
-            <motion.div
-              animate={state[anchor] ? "open" : "closed"}
-              initial="closed"
-              variants={listItemVariants}
-            >
-              <ListItem button>
-                <ListItemIcon style={{ color: "inherit" }}>
-                  {Icon ? Icon : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            </motion.div>
+            <ListItem button>
+              <ListItemIcon style={{ color: "inherit" }}>
+                {Icon ? Icon : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
           </StyledHtmlLink>
         ))}
       </List>
@@ -208,14 +189,7 @@ export default function SideDrawer({ anchor }: Props) {
           color="inherit"
           aria-label="menu"
         >
-          <motion.div
-            animate={state[anchor] ? "closed" : "open"}
-            variants={variants}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 1.2 }}
-          >
-            <MenuIcon />
-          </motion.div>
+          <MenuIcon />
         </IconButton>
 
         <Drawer

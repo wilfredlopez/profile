@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     // paddingLeft: theme.spacing(4),
     // backgroundColor: theme.palette.background.default,
     backgroundColor: theme.palette.background.default,
+    color: theme.palette.getContrastText(theme.palette.background.default),
     // borderTopLeftRadius: BORDER_RADIUS,
     // borderTopRightRadius: BORDER_RADIUS,
     // border: `1px outset ${theme.palette.background.paper}`,
@@ -85,6 +86,7 @@ const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: BORDER_RADIUS,
     borderBottomRightRadius: BORDER_RADIUS,
     opacity: 0.9,
+    color: theme.palette.background.default,
     background: theme.palette.getContrastText(theme.palette.background.default),
   },
   focusVisible: {},
@@ -223,21 +225,24 @@ function SliderCard({ imageData }: Props) {
           activeStep={activeStep}
           nextButton={<IconButton
             size="small"
+            color="inherit"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
           >
             {/* Next */}
             {theme.direction === "rtl"
-              ? <KeyboardArrowLeft />
-              : <KeyboardArrowRight />}
+              ? <KeyboardArrowLeft color="inherit" />
+              : <KeyboardArrowRight color="inherit" />}
           </IconButton>}
           backButton={<IconButton
             size="small"
+            color="inherit"
             onClick={handleBack}
             disabled={activeStep === 0}
           >
-            {theme.direction === "rtl" ? <KeyboardArrowRight />
-            : <KeyboardArrowLeft />}
+            {theme.direction === "rtl"
+              ? <KeyboardArrowRight color="inherit" />
+              : <KeyboardArrowLeft color="inherit" />}
             {/* Back */}
           </IconButton>}
         />}

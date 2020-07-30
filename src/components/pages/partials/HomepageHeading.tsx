@@ -14,7 +14,6 @@ import RoomIcon from "@material-ui/icons/Room";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import styled from "styled-components";
 import { BrandButton } from "@root/styles/Custom";
-import { motion, transform } from "framer-motion";
 interface Props {
 }
 
@@ -74,17 +73,10 @@ const HomepageHeading: React.FC<Props> = () => (
         </Typography>
         <Item>
           <WorkIcon />
-          <motion.div
-            animate={{
-              scale: [0, 1, 1, 0.5, 1],
-              rotate: [0, 0, 270, 270, 0],
-              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-            }}
-          >
-            <Typography>
-              Quality Assurance/Web Development
-            </Typography>
-          </motion.div>
+
+          <Typography>
+            Quality Assurance/Web Development
+          </Typography>
           <small>
             React, Nodejs, Express, MongoDB, Web Accessibility
           </small>
@@ -105,21 +97,18 @@ const HomepageHeading: React.FC<Props> = () => (
             <span>From Cabrera, Dominican Republic.</span>
           </div>
         </PlacesGrid> */}
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-        >
-          <Button
-            endIcon={<MailOutlineIcon />}
-            color="secondary"
-            variant="contained"
-          >
-            {/* <MailOutlineIcon /> */}
 
-            <StyledAnker href="mailto:cubamc@gmail.com" title="contact me">
-              Contact Me
-            </StyledAnker>
-          </Button>
-        </motion.div>
+        <Button
+          endIcon={<MailOutlineIcon />}
+          color="secondary"
+          variant="contained"
+        >
+          {/* <MailOutlineIcon /> */}
+
+          <StyledAnker href="mailto:cubamc@gmail.com" title="contact me">
+            Contact Me
+          </StyledAnker>
+        </Button>
       </Container>
     </Segment>
   </Responsive>

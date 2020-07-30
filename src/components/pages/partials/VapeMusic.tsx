@@ -8,6 +8,7 @@ interface Props {
 const VapeMusic = (props: Props) => {
   return (
     <Project
+      classKey="vape"
       images={[{
         label: "VapeMusic HomePage",
         imgPath: vapemusicImg,

@@ -14,24 +14,18 @@ export const DARK_COLOR = "#040c14";
 export const LIGHT_COLOR = common["white"];
 const BORDER_RADIOUS = 4;
 
+//Cool Green /#38b584
 export default function getTheme(prefersDarkMode = false) {
-  PRIMARY_COLOR = prefersDarkMode ? "#60a0c7" : primary[900];
+  // PRIMARY_COLOR = prefersDarkMode ? "#319ddf" : primary[900];
+  PRIMARY_COLOR = prefersDarkMode ? "#040c14" : primary[900];
 
   const theme = createMuiTheme({
     status: {
       danger: red[500],
     },
     classes: {
-      imageBackdrop: {
-        position: "absolute",
-        left: 0,
-        borderRadius: BORDER_RADIOUS,
-        right: 0,
-        top: 0,
-        bottom: 0,
-        backgroundColor: common["black"],
-        opacity: 0.4,
-        // transition: theme.transitions.create("opacity"),
+      textContrast: {
+        color: common["white"],
       },
     },
     palette: {
@@ -57,7 +51,7 @@ export default function getTheme(prefersDarkMode = false) {
       },
       background: {
         // default: "#303030",
-        default: "#fff",
+        default: prefersDarkMode ? "#272525" : "#fff",
       },
     },
     shape: {

@@ -8,7 +8,6 @@ import {
   useMediaQuery,
   Paper,
 } from "@material-ui/core";
-import { motion } from "framer-motion";
 
 import {
   education,
@@ -109,11 +108,9 @@ const HomepageLayout = () => {
       <StyledItem key={label}>
         <>
           <Typography variant="subtitle1" component="h3">
-            <motion.div key={label} whileHover={{ scale: 1.1 }}>
-              {Icon}
-              <span>{" "}</span>
-              {label}
-            </motion.div>
+            {Icon}
+            <span>{" "}</span>
+            {label}
           </Typography>
         </>
       </StyledItem>
@@ -127,24 +124,22 @@ const HomepageLayout = () => {
           {/* <Icon name={exp.icon} /> */}
           {Icon}
           <ExperienceSection>
-            <motion.div key={label} whileHover={{ scale: 1.1 }}>
-              <div>
-                <Typography
-                  variant="h6"
-                  component="h3"
-                  style={{
-                    color: isCurrent
-                      ? "blue"
-                      : prefersDarkMode
-                      ? "#c8c8c8"
-                      : "#fcfcfc",
-                  }}
-                >
-                  {label}
-                  {isCurrent && "(Actual)"}
-                </Typography>
-              </div>
-            </motion.div>
+            <div>
+              <Typography
+                variant="h6"
+                component="h3"
+                style={{
+                  color: isCurrent
+                    ? "blue"
+                    : prefersDarkMode
+                    ? "#c8c8c8"
+                    : "#fcfcfc",
+                }}
+              >
+                {label}
+                {isCurrent && "(Actual)"}
+              </Typography>
+            </div>
             <em>{location}</em>
           </ExperienceSection>
         </li>
@@ -196,15 +191,13 @@ const HomepageLayout = () => {
               </Container>
             </Grid>
             <Grid container justify="center">
-              <motion.div whileHover={{ scale: 1.1 }}>
-                <BrandButton color="primary" size="large">
-                  {/* <Button color="secondary" variant="contained"> */}
-                  <Link href="/projects">
-                    <StyledLink>Showcase Projects</StyledLink>
-                  </Link>
-                  {/* </Button> */}
-                </BrandButton>
-              </motion.div>
+              <BrandButton color="primary" size="large">
+                {/* <Button color="secondary" variant="contained"> */}
+                <Link href="/projects">
+                  <StyledLink>{"Showcase Projects".toUpperCase()}</StyledLink>
+                </Link>
+                {/* </Button> */}
+              </BrandButton>
             </Grid>
           </Grid>
         </Segment>

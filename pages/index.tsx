@@ -13,12 +13,12 @@ const index = () => {
         >
         </meta>
         <link rel="canonical" href="https://wilfredlopez.net/" />
-        <script
+        {/* <script
           async
           src="https://platform.twitter.com/widgets.js"
           charSet="utf-8"
         >
-        </script>
+        </script> */}
       </Head>
       <Paper>
         <HomepageLayout />
