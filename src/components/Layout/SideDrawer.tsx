@@ -1,4 +1,12 @@
-import { IconButton, Typography } from "@material-ui/core";
+import {
+  Button,
+  Hidden,
+  IconButton,
+  Theme,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
@@ -16,11 +24,13 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import WebIcon from "@material-ui/icons/Web";
 import clsx from "clsx";
 import { StyledHtmlLink } from "@components/shared";
-import React from "react";
+import React, { useRef } from "react";
 // import { NavLink } from "react-router-dom";
 import NavLink from "next/link";
 import styled from "styled-components";
-
+import { PRIMARY_COLOR, SECONDARY_COLOR } from "@root/styles/getTheme";
+import { usePagesContext } from "@root/context/PagesContext";
+import { useRouter } from "next/router";
 interface Props {
 }
 
@@ -34,17 +44,16 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     // marginRight: theme.spacing(0.5),
     // marginLeft: theme.spacing(0.5),
-    flex: 1,
-    flexGrow: 1,
     minHeight: 50,
     minWidth: 50,
     zIndex: 1001,
   },
 }));
 
-const StyledNavLink = styled.a`
-    color: inherit;
+const StyledNavLink = styled.a<{ isActive?: boolean }>`
+    color: ${(props) => props.isActive ? SECONDARY_COLOR : "inherit"} ;
     text-decoration: none;
+   
 `;
 
 interface NavLinkItem {
@@ -109,6 +118,16 @@ const listItemVariants = {
 
 export default function SideDrawer({ anchor }: Props) {
   const classes = useStyles();
+
+  const router = useRouter();
+
+  // const theme = useTheme()
+  const isBreakpoint = useMediaQuery(
+    (theme: Theme) => theme.breakpoints.up("md"),
+    {
+      defaultMatches: true,
+    },
+  );
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -143,7 +162,7 @@ export default function SideDrawer({ anchor }: Props) {
       <List>
         {NAV_LINKS.map(({ text, href, Icon }, index) => (
           <NavLink key={text} href={href}>
-            <StyledNavLink>
+            <StyledNavLink isActive={href === router.pathname}>
               <ListItem
                 button
               >
@@ -185,21 +204,38 @@ export default function SideDrawer({ anchor }: Props) {
     </div>
   );
 
+  const isOpen = state[anchor] || isBreakpoint;
+
   return (
     <React.Fragment key={anchor}>
-      <IconButton
-        onClick={toggleDrawer(anchor, true)}
-        className={classes.menuButton}
-        color="inherit"
-        aria-label="menu"
-      >
-        <MenuIcon />
-      </IconButton>
+      <Hidden mdUp initialWidth="sm">
+        <IconButton
+          edge="start"
+          onClick={toggleDrawer(anchor, true)}
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+        >
+          <MenuIcon />
+        </IconButton>
+      </Hidden>
 
       <Drawer
         id="navbar-drawer"
         anchor={anchor}
-        open={state[anchor]}
+        open={isOpen}
+        PaperProps={{
+          style: {
+            width: 240,
+          },
+        }}
+        SlideProps={{
+          timeout: {
+            exit: 300,
+            enter: 250,
+          },
+        }}
+        hideBackdrop={isBreakpoint}
         onClose={toggleDrawer(anchor, false)}
       >
         {list(anchor)}

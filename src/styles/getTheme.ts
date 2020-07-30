@@ -91,7 +91,7 @@ export default function getTheme(prefersDarkMode = false) {
       },
       MuiAppBar: {
         positionFixed: {
-          zIndex: 1000,
+          zIndex: 1100,
         },
       },
       MuiToolbar: {

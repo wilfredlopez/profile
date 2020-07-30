@@ -25,7 +25,10 @@ export const LinkedInButton = styled(Button)`
 export const GithubButton = styled(Button)`
   background-color: #c4c7c9 !important;
   color:  #24292e !important;
-  @media (max-width:420px){
+  /* @media (max-width:420px){
+    display: none !important;
+  } */
+   @media (max-width:299px){
     display: none !important;
   }
   /* border-radius: 6px; */
@@ -105,8 +108,7 @@ const SideItems: React.FC<Props> = () => {
             title="Twitter @WilfredonaldLo"
           >
             <TwitterIcon />
-            {/* @wilfreddonaldlo */}
-            @wilfr...
+            @wilfreddonaldlo
           </TwitterButton>
         </Hidden>
       </List>

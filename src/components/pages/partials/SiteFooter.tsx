@@ -97,7 +97,7 @@ const SiteFooter = () => {
                 </ListItem>
                 <ListItem>
                   <NonActiveLink
-                    href="https://shop-client.cubamc.now.sh/"
+                    href="https://wilfredlopez.net/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

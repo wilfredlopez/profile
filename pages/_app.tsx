@@ -69,7 +69,7 @@ export default function MyApp(props: any) {
         <>
           <Navigation />
           {/* //Needed for the scroll top to work. also margin to account for the fixed position of the Navigation.  */}
-          <Toolbar
+          <div
             id="back-to-top-anchor"
             style={{ minHeight: 0, marginBottom: "3rem" }}
           />

@@ -11,6 +11,15 @@ import { usePagesContext } from "@root/context/PagesContext";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    display: "flex",
+  },
+  toolbar: {
+    transition: "width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "calc(100% - 240px)",
+    },
   },
   title: {
     flexGrow: 1,
@@ -18,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
   spacer: {
     flexGrow: 2,
+  },
+  separator: {
+    flex: "1 1 auto",
   },
 }));
 
@@ -27,16 +39,16 @@ const StyledAppBar = styled(AppBar)`
 
 export default function Navigation() {
   const classes = useStyles();
-  const { page } = usePagesContext();
 
   return (
     <div className={classes.root}>
-      <StyledAppBar position="fixed">
+      <StyledAppBar position="fixed" className={classes.toolbar}>
         <Toolbar>
           <SideDrawer anchor="left" />
-          <Typography variant="h6" component="h1" className={classes.title}>
+          <div className={classes.separator} />
+          {/* <Typography variant="h6" component="h1" className={classes.title}>
             {page}
-          </Typography>
+          </Typography> */}
           <div className={classes.spacer} />
           {/* <Hidden only="xs">
             <Typography variant="caption" className={classes.title}>
