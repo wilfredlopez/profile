@@ -7,6 +7,8 @@ node server/server.js
 # TO PUSH TO GITHUB ONLY
 ```bash
 npm run build
+npm run export
+node server/server.js #test locally
 git add .
 git commit -am "WHATEREVER"
 git push origin master
