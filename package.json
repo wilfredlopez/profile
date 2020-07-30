@@ -39,7 +39,7 @@
     "github-deploy": "npm run export && gh-pages --repo git@github.com:wilfredlopez/profile.git -d out",
     "gh": "gh-pages --repo git@github.com:wilfredlopez/profile.git -d out -t true",
     "export": "next export -o out",
-    "___predeploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll",
+    "predeploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll",
     "deploy": "gh-pages -d out -t true"
   },
   "eslintConfig": {

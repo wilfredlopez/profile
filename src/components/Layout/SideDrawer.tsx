@@ -201,22 +201,22 @@ export default function SideDrawer({ anchor }: Props) {
   return (
     <div>
       <React.Fragment key={anchor}>
-        <motion.div
-          animate={state[anchor] ? "closed" : "open"}
-          variants={variants}
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 1.2 }}
+        <IconButton
+          onClick={toggleDrawer(anchor, true)}
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
         >
-          <IconButton
-            onClick={toggleDrawer(anchor, true)}
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
+          <motion.div
+            animate={state[anchor] ? "closed" : "open"}
+            variants={variants}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1.2 }}
           >
             <MenuIcon />
-          </IconButton>
-        </motion.div>
+          </motion.div>
+        </IconButton>
 
         <Drawer
           // id="navbar"

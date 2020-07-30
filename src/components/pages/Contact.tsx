@@ -8,6 +8,26 @@ import HomepageHeading from "./partials/HomepageHeading";
 import { Segment, StyledHtmlLink } from "@components/shared";
 import styled from "styled-components";
 import { usePagesContext } from "@root/context/PagesContext";
+import { motion } from "framer-motion";
+
+const transition = {
+  duration: 1,
+  ease: [0.43, 0.13, 0.23, 0.96],
+};
+
+const imageVariants = {
+  exit: { y: "50%", opacity: 0, transition },
+  enter: {
+    y: "0%",
+    opacity: 1,
+    transition,
+  },
+};
+
+const backVariants = {
+  exit: { x: 100, opacity: 0, transition },
+  enter: { x: 0, opacity: 1, transition: { delay: 1, ...transition } },
+};
 
 const Centerer = styled.span`
       display: flex;
@@ -38,103 +58,109 @@ const Contact = () => {
 
   return (
     <React.Fragment>
-      <Container maxWidth="md">
-        <Segment style={{ padding: "2em 0em" }}>
-          <Grid container justify="center" alignContent="center">
-            <Typography
-              variant="h3"
-              component="h2"
-              style={{
-                fontSize: "2em",
-                textAlign: "center",
-              }}
-            >
-              Contact
-            </Typography>
-          </Grid>
-        </Segment>
-        <Segment style={{ padding: "0em 0em" }}>
-          <Grid container>
-            <Grid>
-              <Grid item>
-                <Paragraph>
-                  Wilfred D. Lopez, from Dominican Republic. Lives in Garfield,
-                  NJ, USA. Studied Tourism Bussiness Management in UAPA
-                  University. Self educated in Typescript, React, NodeJS,
-                  Express, MongoDB, Apollo-QraphQL, HTML, CSS and other modern
-                  Javascript based languages.{" "}
-                </Paragraph>
-
-                <Paragraph>
-                  Currently working as a QA Analyst for a B2C Reail Store.
-                  Experience in Customer Service, Workforce Management, Web
-                  Quality Assurance and Accessibility.
-                </Paragraph>
-              </Grid>
-              <Grid>
-                <List>
-                  <Paragraph>
-                    Excellent communication skills, organization skills, and
-                    excellent attention to detail.
-                  </Paragraph>
-                  <Paragraph>
-                    Strong knowledge of MS Excel, Jira, Salesforce Commerce
-                    Cloud, and others.
-                  </Paragraph>
-                  <Paragraph>
-                    Dedicated, passionate and reliable worker.
-                  </Paragraph>
-                  <Paragraph>
-                    Proficient knowledge of accessibility standards (Section
-                    508/WCAG 2.0 Level A and AA).{" "}
-                  </Paragraph>
-                </List>
-              </Grid>
-            </Grid>
-            <div style={{ width: "100%" }}>
-              <h3 className="text-center">Contact Me</h3>
-            </div>
-            <Grid container>
-              <Grid item xs={6}>
-                <div style={{ textAlign: "right" }}>
-                  <Button size="large" color="secondary">
-                    <StyledHtmlLink
-                      href="mailto:cubamc@gmail.com"
-                      title="By Email"
-                    >
-                      <Centerer>
-                        <span>
-                          By Email
-                        </span>
-
-                        <MailIcon />
-                      </Centerer>
-                    </StyledHtmlLink>
-                  </Button>
-                </div>
-              </Grid>
-              <Grid item xs={6} style={{ textAlign: "left" }}>
-                <Button
-                  size="large"
-                  color="secondary"
+      <motion.div className="single" initial="exit" animate="enter" exit="exit">
+        <Container maxWidth="md">
+          <motion.div
+            variants={imageVariants}
+          >
+            <Segment style={{ padding: "2em 0em" }}>
+              <Grid container justify="center" alignContent="center">
+                <Typography
+                  variant="h3"
+                  component="h2"
+                  style={{
+                    fontSize: "2em",
+                    textAlign: "center",
+                  }}
                 >
-                  <StyledHtmlLink href="tel:1+5514442665" title="By Phone">
-                    <Centerer>
-                      <span>
-                        By Phone
-                      </span>
-                      <PhoneIcon />
-                    </Centerer>
-                  </StyledHtmlLink>
-                </Button>
+                  Contact
+                </Typography>
               </Grid>
-            </Grid>
-          </Grid>
-        </Segment>
-      </Container>
-      <br />
-      <br />
-      <HomepageHeading />
+            </Segment>
+            <Segment style={{ padding: "0em 0em" }}>
+              <Grid container>
+                <Grid>
+                  <Grid item>
+                    <Paragraph>
+                      Wilfred D. Lopez, from Dominican Republic. Lives in
+                      Garfield, NJ, USA. Studied Tourism Bussiness Management in
+                      UAPA University. Self educated in Typescript, React,
+                      NodeJS, Express, MongoDB, Apollo-QraphQL, HTML, CSS and
+                      other modern Javascript based languages.{" "}
+                    </Paragraph>
+
+                    <Paragraph>
+                      Currently working as a QA Analyst for a B2C Reail Store.
+                      Experience in Customer Service, Workforce Management, Web
+                      Quality Assurance and Accessibility.
+                    </Paragraph>
+                  </Grid>
+                  <Grid>
+                    <List>
+                      <Paragraph>
+                        Excellent communication skills, organization skills, and
+                        excellent attention to detail.
+                      </Paragraph>
+                      <Paragraph>
+                        Strong knowledge of MS Excel, Jira, Salesforce Commerce
+                        Cloud, and others.
+                      </Paragraph>
+                      <Paragraph>
+                        Dedicated, passionate and reliable worker.
+                      </Paragraph>
+                      <Paragraph>
+                        Proficient knowledge of accessibility standards (Section
+                        508/WCAG 2.0 Level A and AA).{" "}
+                      </Paragraph>
+                    </List>
+                  </Grid>
+                </Grid>
+                <div style={{ width: "100%" }}>
+                  <h3 className="text-center">Contact Me</h3>
+                </div>
+                <Grid container>
+                  <Grid item xs={6}>
+                    <div style={{ textAlign: "right" }}>
+                      <Button size="large" color="secondary">
+                        <StyledHtmlLink
+                          href="mailto:cubamc@gmail.com"
+                          title="By Email"
+                        >
+                          <Centerer>
+                            <span>
+                              By Email
+                            </span>
+
+                            <MailIcon />
+                          </Centerer>
+                        </StyledHtmlLink>
+                      </Button>
+                    </div>
+                  </Grid>
+                  <Grid item xs={6} style={{ textAlign: "left" }}>
+                    <Button
+                      size="large"
+                      color="secondary"
+                    >
+                      <StyledHtmlLink href="tel:1+5514442665" title="By Phone">
+                        <Centerer>
+                          <span>
+                            By Phone
+                          </span>
+                          <PhoneIcon />
+                        </Centerer>
+                      </StyledHtmlLink>
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Segment>
+          </motion.div>
+        </Container>
+        <br />
+        <br />
+        <HomepageHeading />
+      </motion.div>
     </React.Fragment>
   );
 };

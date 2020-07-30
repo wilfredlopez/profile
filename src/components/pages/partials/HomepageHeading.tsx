@@ -74,23 +74,20 @@ const HomepageHeading: React.FC<Props> = () => (
         </Typography>
         <Item>
           <WorkIcon />
-          <Typography>
-            <motion.div
-              animate={{
-                scale: [0, 1, 1, 0.5, 1],
-                rotate: [0, 0, 270, 270, 0],
-                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-              }}
-            >
+          <motion.div
+            animate={{
+              scale: [0, 1, 1, 0.5, 1],
+              rotate: [0, 0, 270, 270, 0],
+              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+            }}
+          >
+            <Typography>
               Quality Assurance/Web Development
-              {""}
-              <br />
-            </motion.div>
-
-            <small>
-              React, Nodejs, Express, MongoDB, Web Accessibility
-            </small>
-          </Typography>
+            </Typography>
+          </motion.div>
+          <small>
+            React, Nodejs, Express, MongoDB, Web Accessibility
+          </small>
         </Item>
         <Item>
           <RoomIcon />

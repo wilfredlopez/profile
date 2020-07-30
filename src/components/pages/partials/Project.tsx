@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { ImageButton } from "@root/styles/Custom";
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
@@ -47,66 +48,88 @@ export const TitleLink = styled(StyledHtmlLink)`
   color: ${(props) => props.theme.colors.secondary};
   font-weight: 500;
 `;
+const transition = {
+  duration: 1,
+  ease: [0.43, 0.13, 0.23, 0.96],
+};
+
+const imageVariants = {
+  exit: { y: "50%", opacity: 0, transition },
+  enter: {
+    y: "0%",
+    opacity: 1,
+    transition,
+  },
+};
 
 const Project: React.FC<Props> = ({ url, name, title, ...props }) => {
   return (
     <>
-      <DividerElement
-        className="header project-tile"
-        style={{ margin: "1em 0em", textTransform: "uppercase" }}
-      >
-        <TitleLink
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={name}
+      <motion.div className="single" initial="exit" animate="enter" exit="exit">
+        <DividerElement
+          className="header project-tile"
+          style={{ margin: "1em 0em", textTransform: "uppercase" }}
         >
-          {name}
-        </TitleLink>
-      </DividerElement>
-
-      <Typography variant="body1" component="div">
-        <div>
-          <Container maxWidth="sm">
-            {props.children}
-          </Container>
-          {props.images.length > 1 &&
-            <SliderCard imageData={props.images} />}
-        </div>
-      </Typography>
-      {props.images.length === 1 &&
-        <div style={{ marginBottom: "1rem" }}>
-          <StyledHtmlLink
+          <TitleLink
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              marginBottom: "1rem",
-            }}
+            title={name}
           >
-            <ImageButton
-              title={title}
-              url={props.images[0].imgPath}
-              width={520}
-              minHeight={500}
-              buttomProps={{}}
-            />
-          </StyledHtmlLink>
-        </div>}
-      <Grid
-        container
-        alignItems="center"
-        justify="center"
-        style={{ paddingBottom: "1rem" }}
-      >
-        <Grid item>
-          <Button size="small" color="primary" variant="outlined">
-            <StyledHtmlLink href={url} className="text-white" title={name}>
-              {name}
-            </StyledHtmlLink>
-          </Button>
+            {name}
+          </TitleLink>
+        </DividerElement>
+        <motion.div
+          variants={imageVariants}
+        >
+          <Typography variant="body1" component="div">
+            <div>
+              <Container maxWidth="sm">
+                {props.children}
+              </Container>
+              {props.images.length > 1 &&
+                <SliderCard imageData={props.images} />}
+            </div>
+          </Typography>
+        </motion.div>
+        <motion.div
+          variants={imageVariants}
+        >
+          {props.images.length === 1 &&
+            <div style={{ marginBottom: "1rem" }}>
+              <StyledHtmlLink
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  marginBottom: "1rem",
+                }}
+              >
+                <ImageButton
+                  title={title}
+                  url={props.images[0].imgPath}
+                  width={520}
+                  minHeight={500}
+                  buttomProps={{}}
+                />
+              </StyledHtmlLink>
+            </div>}
+        </motion.div>
+        <Grid
+          container
+          alignItems="center"
+          justify="center"
+          style={{ paddingBottom: "1rem" }}
+        >
+          <Grid item>
+            <Button size="small" color="primary" variant="outlined">
+              <StyledHtmlLink href={url} className="text-white" title={name}>
+                {name}
+              </StyledHtmlLink>
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
+      </motion.div>
     </>
   );
 };

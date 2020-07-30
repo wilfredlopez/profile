@@ -1,6 +1,7 @@
 import React from "react";
 import Contact from "@components/pages/Contact";
 import Head from "next/head";
+
 const contact = () => {
   return (
     <>

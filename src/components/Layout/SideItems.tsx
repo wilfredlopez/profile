@@ -25,8 +25,10 @@ export const LinkedInButton = styled(Button)`
 `;
 export const GithubButton = styled(Button)`
   background-color: #c4c7c9 !important;
-  color:  #24292e !important;;
-
+  color:  #24292e !important;
+  @media (max-width:420px){
+    display: none !important;
+  }
   /* border-radius: 6px; */
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;;
   /* padding: 7px 14px; */

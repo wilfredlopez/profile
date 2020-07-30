@@ -6,11 +6,20 @@ import { Fab, Toolbar } from "@material-ui/core";
 import SiteFooter from "@components/pages/partials/SiteFooter";
 import { ScrollTop } from "@components/Layout/BackToTop";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import { AnimatePresence } from "framer-motion";
 import "@root/index.css";
+
+import { useRouter } from "next/router";
+
+function handleExitComplete() {
+  if (typeof window !== "undefined") {
+    window.scrollTo({ top: 0 });
+  }
+}
 
 export default function MyApp(props: any) {
   const { Component, pageProps } = props;
-
+  const router = useRouter();
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side") as
@@ -66,27 +75,33 @@ export default function MyApp(props: any) {
           httpEquiv="Content-Type"
         />
       </Head>
-      <RootProvider>
-        <>
-          <Navigation />
-          {/* //Needed for the scroll top to work. also margin to account for the fixed position of the Navigation.  */}
-          <Toolbar
-            id="back-to-top-anchor"
-            style={{ minHeight: 0, marginBottom: "3rem" }}
-          />
-          <main>
-            <Component {...pageProps} />
-          </main>
-          <footer>
-            <SiteFooter />
-          </footer>
-          <ScrollTop {...props}>
-            <Fab color="secondary" size="small" aria-label="scroll back to top">
-              <KeyboardArrowUpIcon />
-            </Fab>
-          </ScrollTop>
-        </>
-      </RootProvider>
+      <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
+        <RootProvider>
+          <>
+            <Navigation />
+            {/* //Needed for the scroll top to work. also margin to account for the fixed position of the Navigation.  */}
+            <Toolbar
+              id="back-to-top-anchor"
+              style={{ minHeight: 0, marginBottom: "3rem" }}
+            />
+            <main>
+              <Component {...pageProps} />
+            </main>
+            <footer>
+              <SiteFooter />
+            </footer>
+            <ScrollTop {...props}>
+              <Fab
+                color="secondary"
+                size="small"
+                aria-label="scroll back to top"
+              >
+                <KeyboardArrowUpIcon />
+              </Fab>
+            </ScrollTop>
+          </>
+        </RootProvider>
+      </AnimatePresence>
     </React.Fragment>
   );
 }
