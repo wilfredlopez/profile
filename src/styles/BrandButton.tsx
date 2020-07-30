@@ -108,9 +108,9 @@ const styles = (theme: Theme) => ({
   },
   colorOutline: {
     color: styledByColor("color", {
-      default: "#00796b",
+      default: "rgb(20, 20, 20)",
       blue: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
-      primary: theme.palette.primary.dark,
+      primary: theme.palette.primary.main,
       secondary: theme.palette.secondary.main,
       success: theme.palette.success.main,
       error: theme.palette.error.main,
@@ -121,12 +121,28 @@ const styles = (theme: Theme) => ({
       expense: "#2e9e7a",
       shop: "rgb(20, 20, 20)",
     }),
+    ["&:hover a, &:hover"]: {
+      color: styledByColor("color", {
+        default: "rgb(20, 20, 20)",
+        blue: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
+        primary: theme.palette.primary.dark,
+        secondary: theme.palette.secondary.dark,
+        success: theme.palette.success.dark,
+        error: theme.palette.error.dark,
+        warning: theme.palette.warning.dark,
+        tertiary: theme.palette.tertiary.dark,
+        text: "inherit",
+        vape: "#ff1f00",
+        expense: "#2e9e7a",
+        shop: "rgb(20, 20, 20)",
+      }),
+    },
   },
   background: {
     background: styledByColor("color", {
-      default: "#00796b",
+      default: "#000",
       blue: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
-      primary: theme.palette.primary.dark,
+      primary: theme.palette.primary.main,
       secondary: theme.palette.secondary.main,
       success: theme.palette.success.main,
       error: theme.palette.error.main,
@@ -139,9 +155,9 @@ const styles = (theme: Theme) => ({
     }),
     ["&:hover"]: {
       background: styledByColor("color", {
-        default: "rgb(0, 84, 74)",
+        default: "rgb(20, 20, 20)",
         blue: "linear-gradient(45deg, rgb(0 137 247) 30%, rgb(10 138 168) 90%)",
-        primary: theme.palette.primary.main,
+        primary: theme.palette.primary.dark,
         secondary: theme.palette.secondary.dark,
         success: theme.palette.success.dark,
         error: theme.palette.error.dark,
@@ -156,9 +172,9 @@ const styles = (theme: Theme) => ({
   },
   backgroundOutline: {
     border: styledByColor("color", {
-      default: borderStart + "#00796b",
+      default: borderStart + "#000",
       blue: borderStart + "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
-      primary: borderStart + theme.palette.primary.dark,
+      primary: borderStart + theme.palette.primary.main,
       secondary: borderStart + theme.palette.secondary.main,
       success: borderStart + theme.palette.success.main,
       error: borderStart + theme.palette.error.main,
@@ -170,11 +186,11 @@ const styles = (theme: Theme) => ({
       shop: borderStart + "rgb(20, 20, 20)",
     }),
     ["&:hover"]: {
-      boder: styledByColor("color", {
-        default: borderStart + "rgb(0, 84, 74)",
+      border: styledByColor("color", {
+        default: borderStart + "rgb(20, 20, 20)",
         blue: borderStart +
           "linear-gradient(45deg, rgb(0 137 247) 30%, rgb(10 138 168) 90%)",
-        primary: borderStart + theme.palette.primary.main,
+        primary: borderStart + theme.palette.primary.dark,
         secondary: borderStart + theme.palette.secondary.dark,
         success: borderStart + theme.palette.success.dark,
         error: borderStart + theme.palette.error.dark,
@@ -204,7 +220,7 @@ const styles = (theme: Theme) => ({
     cursor: "pointer",
 
     boxShadow: styledByColor("color", {
-      default: DEFAULT_SHADOW,
+      default: theme.shadows[1],
       blue: "rgba(33, 203, 243, 0.3) 1px 2px 1px 1px",
       primary: theme.shadows[1],
       secondary: theme.shadows[2],

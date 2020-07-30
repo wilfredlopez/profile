@@ -35,9 +35,9 @@ const StyledItem = styled.li`
   text-align: left;
     font-size: 1.5rem;
     border-bottom: 1px solid #dcd5d5;
-    /* transition: all 10ms ease-in-out; */
+    transition: all 100ms ease-in-out;
     &:hover{
-      /* transform: translate(10px); */
+      transform: translate(10px);
     }
 `;
 
@@ -191,8 +191,8 @@ const HomepageLayout = () => {
               </Container>
             </Grid>
             <Grid container justify="center">
-              <BrandButton color="primary" size="large">
-                {/* <Button color="secondary" variant="contained"> */}
+              <BrandButton color="default" size="large">
+                {/* <Button color="primary" variant="contained"> */}
                 <Link href="/projects">
                   <StyledLink>{"Showcase Projects".toUpperCase()}</StyledLink>
                 </Link>

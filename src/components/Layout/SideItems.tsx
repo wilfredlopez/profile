@@ -105,7 +105,8 @@ const SideItems: React.FC<Props> = () => {
             title="Twitter @WilfredonaldLo"
           >
             <TwitterIcon />
-            @wilfreddonaldlo
+            {/* @wilfreddonaldlo */}
+            @wilfr...
           </TwitterButton>
         </Hidden>
       </List>

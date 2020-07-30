@@ -32,7 +32,13 @@ const useStyles = makeStyles((theme) => ({
     width: "auto",
   },
   menuButton: {
-    // marginRight: theme.spacing(2),
+    // marginRight: theme.spacing(0.5),
+    // marginLeft: theme.spacing(0.5),
+    width: "100%",
+    height: "100%",
+    minHeight: 50,
+    minWidth: 50,
+    zIndex: 1001,
   },
 }));
 
@@ -60,7 +66,8 @@ const SOCIAL_LINKS: NavLinkItem[] = [
   },
   {
     href: "https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw",
-    text: "@wilfreddonaldlo",
+    // text: "@wilfreddonaldlo",
+    text: "@",
     Icon: <TwitterIcon />,
   },
 ];
@@ -184,7 +191,6 @@ export default function SideDrawer({ anchor }: Props) {
       <React.Fragment key={anchor}>
         <IconButton
           onClick={toggleDrawer(anchor, true)}
-          edge="start"
           className={classes.menuButton}
           color="inherit"
           aria-label="menu"
@@ -193,7 +199,7 @@ export default function SideDrawer({ anchor }: Props) {
         </IconButton>
 
         <Drawer
-          // id="navbar"
+          id="navbar-drawer"
           anchor={anchor}
           open={state[anchor]}
           onClose={toggleDrawer(anchor, false)}
