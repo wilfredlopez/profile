@@ -35,6 +35,7 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
       <iframe
         key={p.url}
         title="Facebook Post"
+        className="facebook-posts"
         src={p.url}
         width="500"
         height={p.height}

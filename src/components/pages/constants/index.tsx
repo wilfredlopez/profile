@@ -19,7 +19,7 @@ import {
 } from "react-icons/io";
 import TypescriptIcon from "./TypescriptIcon";
 import GraphQlIcon from "./GraphQLIcon";
-import { SECONDARY_COLOR } from "@root/styles/ThemeContainer";
+import { SECONDARY_COLOR } from "@root/styles/getTheme";
 
 const ExpIcon = <FaBriefcase color="#00796b" />;
 
@@ -97,8 +97,7 @@ export const retailmeNowDescription: JSX.Element = (
   <>
     <p>RetalMeNow an online retail store.</p>
     <p>
-      Shop Cloathing and other items at a low price. Create your account, add to
-      your shopping cart and checkout.
+      Technologies: NextJS, GraphQL, NodeJS, Material-IU.
     </p>
   </>
 );
@@ -111,8 +110,10 @@ export const expenseManagerDescription = (
       helps you manage your personal finances.
     </p>
     <p>
-      Add your monthly plans for income and expenses. Add transactions and keep
-      track of everything.
+      Keep track of you income and expenses.
+    </p>
+    <p>
+      Technologies: Ionic, GraphQL, NodeJS.
     </p>
   </>
 );
@@ -121,16 +122,17 @@ export const vapeMusicDescription = (
   <>
     <p>
       Progressive Web App for listening and downloading promotional music.
-      combined with a GraphQl API that can serve song lists from the database.
-      The user can Like songs and add to the playlist/favorites.
     </p>
     <p>
+      Technologies: GraphQL, NodeJS, React, Apollo, Ionic.
+    </p>
+    {/* <p>
       The admin can add/remove, upload image and audio directly from the site.
     </p>
     <p>
       Songs are distributed by genre and artists, Users can search, add songs to
       the playlist and use the Audio Player to switch from song to song.
-    </p>
+    </p> */}
   </>
 );
 

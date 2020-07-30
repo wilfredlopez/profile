@@ -3,10 +3,10 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import MobileStepper from "@material-ui/core/MobileStepper";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import styled, { keyframes } from "styled-components";
+import { IconButton } from "@material-ui/core";
 
 const rotate = keyframes`
   from {
@@ -70,14 +70,24 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     height: 50,
     // paddingLeft: theme.spacing(4),
+    // backgroundColor: theme.palette.background.default,
     backgroundColor: theme.palette.background.default,
-    borderTopLeftRadius: BORDER_RADIUS,
-    borderTopRightRadius: BORDER_RADIUS,
-    border: "1px outset",
+    // borderTopLeftRadius: BORDER_RADIUS,
+    // borderTopRightRadius: BORDER_RADIUS,
+    // border: `1px outset ${theme.palette.background.paper}`,
+
     borderBottom: 0,
     borderRight: 0,
+    borderLeft: 0,
     position: "relative",
   },
+  stepper: {
+    borderBottomLeftRadius: BORDER_RADIUS,
+    borderBottomRightRadius: BORDER_RADIUS,
+    opacity: 0.9,
+    background: theme.palette.getContrastText(theme.palette.background.default),
+  },
+  focusVisible: {},
   img: {
     height: "100%",
     // maxHeight: MAX_HEIGHT,
@@ -87,10 +97,28 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     position: "relative",
     transition: "all 200ms ease-in-out",
+
+    [theme.breakpoints.down("xs")]: {
+      width: "100% !important", // Overrides inline-style
+      height: 100,
+    },
+    "&:hover, &$focusVisible": {
+      zIndex: 1,
+      "& $imageBackdrop": {
+        opacity: 0,
+      },
+    },
   },
-  stepper: {
-    borderBottomLeftRadius: BORDER_RADIUS,
-    borderBottomRightRadius: BORDER_RADIUS,
+  imageBackdrop: {
+    position: "absolute",
+    left: 0,
+    borderRadius: theme.shape.borderRadius,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: theme.palette.common.black,
+    opacity: 0.15,
+    transition: theme.transitions.create("opacity"),
   },
 }));
 
@@ -151,18 +179,21 @@ function SliderCard({ imageData }: Props) {
 
   return (
     <div className={classes.root}>
-      <Paper square elevation={0} className={classes.header}>
+      <Paper square elevation={3} className={classes.header}>
         <Typography variant="subtitle2" component="h4">
           {imageData[activeStep].label}
         </Typography>
       </Paper>
+
       <>
         <ShowHideImage show={true}>
           <Img
             url={imageData[activeStep].imgPath}
             title={imageData[activeStep].label}
             role="img"
+            className={classes.img}
           >
+            <span className={classes.imageBackdrop} />
           </Img>
           {/* <img
             className={classes.img}
@@ -182,29 +213,33 @@ function SliderCard({ imageData }: Props) {
       </>
       {maxSteps > 1 &&
         <MobileStepper
+          className={classes.stepper}
           steps={maxSteps}
           position="static"
-          variant="text"
+          variant="progress"
+          LinearProgressProps={{
+            color: "secondary",
+          }}
           activeStep={activeStep}
-          nextButton={<Button
+          nextButton={<IconButton
             size="small"
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
           >
-            Next
+            {/* Next */}
             {theme.direction === "rtl"
               ? <KeyboardArrowLeft />
               : <KeyboardArrowRight />}
-          </Button>}
-          backButton={<Button
+          </IconButton>}
+          backButton={<IconButton
             size="small"
             onClick={handleBack}
             disabled={activeStep === 0}
           >
             {theme.direction === "rtl" ? <KeyboardArrowRight />
             : <KeyboardArrowLeft />}
-            Back
-          </Button>}
+            {/* Back */}
+          </IconButton>}
         />}
     </div>
   );

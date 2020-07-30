@@ -73,7 +73,7 @@ const NAV_LINKS: NavLinkItem[] = [
   },
   {
     href: "/projects",
-    text: "Demo Projects",
+    text: "Showcase Projects",
     Icon: <WebIcon />,
   },
   {
@@ -124,8 +124,10 @@ export default function SideDrawer({ anchor }: Props) {
         {NAV_LINKS.map(({ text, href, Icon }, index) => (
           <NavLink key={text} href={href}>
             <StyledNavLink>
-              <ListItem button>
-                <ListItemIcon>
+              <ListItem
+                button
+              >
+                <ListItemIcon style={{ color: "inherit" }}>
                   {Icon ? Icon : <DragHandleIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
@@ -137,7 +139,7 @@ export default function SideDrawer({ anchor }: Props) {
       <Divider />
 
       <List>
-        <ListItem>
+        <ListItem button={false}>
           <Typography variant="h6">
             Social Media
           </Typography>
@@ -151,8 +153,8 @@ export default function SideDrawer({ anchor }: Props) {
             role="link"
             key={text}
           >
-            <ListItem button>
-              <ListItemIcon>
+            <ListItem button divider>
+              <ListItemIcon style={{ color: "inherit" }}>
                 {Icon ? Icon : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />

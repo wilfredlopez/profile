@@ -18,8 +18,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "rootDir": "src",
-    "baseUrl": ".",
+    "rootDir": "./",
+    "baseUrl": "./",
     "paths": {
       "@components/*": [
         "./src/components/*"

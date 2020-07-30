@@ -25,6 +25,20 @@ export default function MyApp(props: any) {
     <React.Fragment>
       <Head>
         <title key="title">Web Development | Wilfred Lopez</title>
+        <meta charSet="utf-8" />
+        <link rel="shortcut icon" href="./favicon.ico" />
+        <link rel="manifest" href="./manifest.json" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content={"#263238"} />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -58,7 +72,7 @@ export default function MyApp(props: any) {
           {/* //Needed for the scroll top to work. also margin to account for the fixed position of the Navigation.  */}
           <Toolbar
             id="back-to-top-anchor"
-            style={{ minHeight: 0, marginBottom: "3.3rem" }}
+            style={{ minHeight: 0, marginBottom: "3rem" }}
           />
           <main>
             <Component {...pageProps} />

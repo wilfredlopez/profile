@@ -1,6 +1,7 @@
 import React from "react";
 import HomepageLayout from "@components/pages/HomepageLayout";
 import Head from "next/head";
+import { Paper } from "@material-ui/core";
 const index = () => {
   return (
     <>
@@ -19,7 +20,9 @@ const index = () => {
         >
         </script>
       </Head>
-      <HomepageLayout />
+      <Paper>
+        <HomepageLayout />
+      </Paper>
     </>
   );
 };

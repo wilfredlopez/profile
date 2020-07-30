@@ -13,6 +13,8 @@ import RoomIcon from "@material-ui/icons/Room";
 // import HomeIcon from "@material-ui/icons/Home";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import styled from "styled-components";
+import { BrandButton } from "@root/styles/Custom";
+import { motion, transform } from "framer-motion";
 interface Props {
 }
 
@@ -40,52 +42,61 @@ const Item = styled.div`
 const HomepageHeading: React.FC<Props> = () => (
   <Responsive>
     <Segment>
-      <Container id="welcome-section" style={{ height: "100vh" }}>
-        <Avatar
-          src={wilfredImg}
-          // src="https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png"
-          // size="medium"
-          style={{
-            width: "100%",
-            height: "100%",
-            maxWidth: 400,
-            maxHeight: 400,
-            borderRadius: "2rem",
-            margin: "auto",
-          }}
-          // circular
-          alt="wilfred"
-          className="m-auto border-full with-shadow"
-        />
+      <motion.div
+        animate={{ y: 0 }}
+        initial={{ y: "-120%" }}
+        transition={{
+          ease: "easeOut",
+          duration: 2,
+          staggerChildren: 2,
+        }}
+      >
+        <Container id="welcome-section" style={{ height: "100vh" }}>
+          <Avatar
+            src={wilfredImg}
+            // src="https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png"
+            // size="medium"
+            style={{
+              width: "100%",
+              height: "100%",
+              maxWidth: 400,
+              maxHeight: 400,
+              borderRadius: "2rem",
+              margin: "auto",
+            }}
+            // circular
+            alt="wilfred"
+            className="m-auto border-full with-shadow"
+          />
 
-        <Typography
-          component="h1"
-          variant="h3"
-          style={{
-            // fontSize: "2em",
-            fontWeight: "normal",
-            marginBottom: 5,
-            marginTop: "0.5em",
-          }}
-        >
-          WILFRED LOPEZ
-        </Typography>
-        <Item>
-          <WorkIcon />
-          <Typography>
-            Quality Assurance/Web Development
-            {""}
-            <br />
-            <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
+          <Typography
+            component="h1"
+            variant="h3"
+            style={{
+              // fontSize: "2em",
+              fontWeight: "normal",
+              marginBottom: 5,
+              marginTop: "0.5em",
+            }}
+          >
+            WILFRED LOPEZ
           </Typography>
-        </Item>
-        <Item>
-          <RoomIcon />
-          <div>
-            <span>Garfield, NJ, USA.</span>
-          </div>
-        </Item>
-        {/* <PlacesGrid>
+          <Item>
+            <WorkIcon />
+            <Typography>
+              Quality Assurance/Web Development
+              {""}
+              <br />
+              <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
+            </Typography>
+          </Item>
+          <Item>
+            <RoomIcon />
+            <div>
+              <span>Garfield, NJ, USA.</span>
+            </div>
+          </Item>
+          {/* <PlacesGrid>
           <div>
             <RoomIcon />
             <span>Garfield, NJ, USA.</span>
@@ -95,17 +106,23 @@ const HomepageHeading: React.FC<Props> = () => (
             <span>From Cabrera, Dominican Republic.</span>
           </div>
         </PlacesGrid> */}
-        <Button
-          endIcon={<MailOutlineIcon />}
-          color="secondary"
-          variant="contained"
-        >
-          {/* <MailOutlineIcon /> */}
-          <StyledAnker href="mailto:cubamc@gmail.com" title="contact me">
-            Contact Me
-          </StyledAnker>
-        </Button>
-      </Container>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+          >
+            <Button
+              endIcon={<MailOutlineIcon />}
+              color="secondary"
+              variant="contained"
+            >
+              {/* <MailOutlineIcon /> */}
+
+              <StyledAnker href="mailto:cubamc@gmail.com" title="contact me">
+                Contact Me
+              </StyledAnker>
+            </Button>
+          </motion.div>
+        </Container>
+      </motion.div>
     </Segment>
   </Responsive>
 );

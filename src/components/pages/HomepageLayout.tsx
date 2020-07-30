@@ -5,14 +5,17 @@ import {
   Grid,
   Typography,
   List,
+  useMediaQuery,
+  Paper,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 
 import {
   education,
   experiences,
 } from "./constants";
 import HomepageHeading from "./partials/HomepageHeading";
-import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
+// import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 
 import {
   Segment,
@@ -23,18 +26,19 @@ import styled from "styled-components";
 import AllProjects from "./partials/AllProjects";
 import { usePagesContext } from "@root/context/PagesContext";
 import Link from "next/link";
+import { BrandButton } from "@root/styles/Custom";
 const StyledItem = styled.li`
   padding-top: 0;
-  padding-bottom: 2px;
+  padding-bottom: 6px;
   display: flex;
   justify-content:flex-start;
   align-items: center;
   text-align: left;
     font-size: 1.5rem;
     border-bottom: 1px solid #dcd5d5;
-    transition: all 10ms ease-in-out;
+    /* transition: all 10ms ease-in-out; */
     &:hover{
-      transform: translate(10px);
+      /* transform: translate(10px); */
     }
 `;
 
@@ -70,8 +74,15 @@ const SUMMARY_TEXTS = [
   "Proven ability to document issues and bugs.",
 ];
 
+const variants = {
+  hidden: { opacity: 0.5 },
+  visible: { opacity: 1 },
+};
+
 const HomepageLayout = () => {
   const { changePage } = usePagesContext();
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
   useEffect(() => {
     changePage("Home");
   }, [changePage]);
@@ -98,9 +109,11 @@ const HomepageLayout = () => {
       <StyledItem key={label}>
         <>
           <Typography variant="subtitle1" component="h3">
-            {Icon}
-            <span>{" "}</span>
-            {label}
+            <motion.div key={label} whileHover={{ scale: 1.1 }}>
+              {Icon}
+              <span>{" "}</span>
+              {label}
+            </motion.div>
           </Typography>
         </>
       </StyledItem>
@@ -114,17 +127,25 @@ const HomepageLayout = () => {
           {/* <Icon name={exp.icon} /> */}
           {Icon}
           <ExperienceSection>
-            <div>
-              <Typography
-                variant="h6"
-                component="h3"
-                style={{ color: isCurrent ? "blue" : "#5c5959" }}
-              >
-                {label}
-                {isCurrent && "(Actual)"}
-              </Typography>
-            </div>
-            {location}
+            <motion.div key={label} whileHover={{ scale: 1.1 }}>
+              <div>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  style={{
+                    color: isCurrent
+                      ? "blue"
+                      : prefersDarkMode
+                      ? "#c8c8c8"
+                      : "#fcfcfc",
+                  }}
+                >
+                  {label}
+                  {isCurrent && "(Actual)"}
+                </Typography>
+              </div>
+            </motion.div>
+            <em>{location}</em>
           </ExperienceSection>
         </li>
       );
@@ -135,61 +156,66 @@ const HomepageLayout = () => {
       <PrimaryBackgroundSection>
         <HomepageHeading />
       </PrimaryBackgroundSection>
-      <Segment style={{ padding: "2em 0em" }}>
-        <Grid
-          container
-          spacing={0}
-          direction="row"
-          justify="flex-start"
-          alignItems="flex-start"
-        >
+      <Paper>
+        <Segment style={{ padding: "2em 0em" }}>
           <Grid
             container
-            item
+            spacing={0}
             direction="row"
-            justify="space-around"
+            justify="flex-start"
             alignItems="flex-start"
           >
-            <Grid item xs={12} sm={4}>
-              <Title variant="h4" component="h2">
-                Experiences
-              </Title>
-              <List>
-                {experienceList}
-              </List>
-              {" "}
+            <Grid
+              container
+              item
+              direction="row"
+              justify="space-around"
+              alignItems="flex-start"
+            >
+              <Grid item xs={12} sm={4}>
+                <Title variant="h4" component="h2">
+                  Experiences
+                </Title>
+                <List>
+                  {experienceList}
+                </List>
+                {" "}
+              </Grid>
+              <Grid item xs={10} sm={4}>
+                <Title variant="h4" component="h2">
+                  Skills
+                </Title>
+                <List>
+                  {educationList}
+                </List>
+              </Grid>
             </Grid>
-            <Grid item xs={10} sm={4}>
-              <Title variant="h4" component="h2">
-                Skills
-              </Title>
-              <List>
-                {educationList}
-              </List>
+            <Grid container justify="flex-start">
+              <Container>
+                {summary}
+              </Container>
+            </Grid>
+            <Grid container justify="center">
+              <motion.div whileHover={{ scale: 1.1 }}>
+                <BrandButton color="primary" size="large">
+                  {/* <Button color="secondary" variant="contained"> */}
+                  <Link href="/projects">
+                    <StyledLink>Showcase Projects</StyledLink>
+                  </Link>
+                  {/* </Button> */}
+                </BrandButton>
+              </motion.div>
             </Grid>
           </Grid>
-          <Grid container justify="flex-start">
-            <Container>
-              {summary}
-            </Container>
-          </Grid>
-          <Grid container justify="center">
-            <Button color="primary" variant="contained">
-              <Link href="/projects">
-                <StyledLink>Demo Projects</StyledLink>
-              </Link>
-            </Button>
-          </Grid>
-        </Grid>
-      </Segment>
+        </Segment>
 
-      <Segment style={{ padding: "2em 0em" }}>
-        <Container id="projects">
-          <AllProjects />
-        </Container>
-      </Segment>
-
-      <SocialMediaEmbeds />
+        <Segment style={{ padding: "2em 0em" }}>
+          <Container id="projects">
+            <AllProjects />
+          </Container>
+        </Segment>
+      </Paper>
+      {/* <SocialMediaEmbeds /> */}
     </React.Fragment>
   );
 };

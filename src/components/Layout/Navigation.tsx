@@ -37,11 +37,11 @@ export default function Navigation() {
           <Typography variant="h6" component="h1" className={classes.title}>
             {page}
           </Typography>
-          <Hidden only="xs">
+          {/* <Hidden only="xs">
             <Typography variant="caption" className={classes.title}>
               WilfredLopez.Net
             </Typography>
-          </Hidden>
+          </Hidden> */}
           <SideItems />
         </Toolbar>
       </StyledAppBar>

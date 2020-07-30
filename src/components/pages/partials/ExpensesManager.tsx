@@ -8,16 +8,20 @@ import { ImageToSlider } from "@components/shared/SliderCard";
 interface Props {
 }
 
-const Images: ImageToSlider[] = [{
-  label: "Login Page",
-  imgPath: exLogin,
-}, {
-  label: "HomePage",
-  imgPath: expenseManagerImg,
-}, {
-  label: "Transactions",
-  imgPath: transPage,
-}];
+const Images: ImageToSlider[] = [
+  {
+    label: "HomePage",
+    imgPath: expenseManagerImg,
+  },
+  {
+    label: "Login Page",
+    imgPath: exLogin,
+  },
+  {
+    label: "Transactions",
+    imgPath: transPage,
+  },
+];
 
 const ExpensesManager = (props: Props) => {
   return (

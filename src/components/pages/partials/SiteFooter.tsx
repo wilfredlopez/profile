@@ -67,7 +67,7 @@ const SiteFooter = () => {
                 <ListItem>
                   <NavLink href="/projects">
                     <StyledNavLink>
-                      Demo Projects
+                      Showcase Projects
                     </StyledNavLink>
                   </NavLink>
                 </ListItem>
@@ -83,7 +83,7 @@ const SiteFooter = () => {
             <Grid item xs={12} sm="auto">
               <List>
                 <ListItem>
-                  <Title variant="h6" component="h2">Demo Projects</Title>
+                  <Title variant="h6" component="h2">Showcase Projects</Title>
                 </ListItem>
                 <ListItem>
                   <NonActiveLink

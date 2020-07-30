@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
+
 import React, { Fragment } from "react";
 import styled from "styled-components";
 
@@ -58,23 +59,23 @@ const SideItems: React.FC<Props> = () => {
   return (
     <Fragment>
       <List>
-        <Hidden only="xs">
-          <GithubButton
-            title="Github"
-            href="https://github.com/wilfredlopez"
-            //@ts-ignore
-            target="_blank"
-            rel="noopener noreferrer"
-            role="link"
-            id="profile-link"
-          >
-            <GitHubIcon />
-            {" "}
-            <span>
-              Github
-            </span>
-          </GithubButton>
-        </Hidden>
+        {/* <Hidden only="xs"> */}
+        <GithubButton
+          title="Github"
+          href="https://github.com/wilfredlopez"
+          //@ts-ignore
+          target="_blank"
+          rel="noopener noreferrer"
+          role="link"
+          id="profile-link"
+        >
+          <GitHubIcon />
+          {" "}
+          <span>
+            Github
+          </span>
+        </GithubButton>
+        {/* </Hidden> */}
         <LinkedInButton
           role="link"
           title="LinkedIn"

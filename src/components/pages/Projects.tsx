@@ -7,7 +7,7 @@ import { usePagesContext } from "@root/context/PagesContext";
 const Projects = () => {
   const { changePage } = usePagesContext();
   useEffect(() => {
-    changePage("Demo Projects");
+    changePage("Showcase Projects");
   }, [changePage]);
   useEffect(() => {
     window.scrollTo({
@@ -20,7 +20,7 @@ const Projects = () => {
     <React.Fragment>
       <Segment style={{ padding: "2em 0em" }}>
         <Container>
-          {/* <Typography variant="h4" component="h1">Demo Projects</Typography> */}
+          {/* <Typography variant="h4" component="h1">Showcase Projects</Typography> */}
           <AllProjects />
         </Container>
       </Segment>

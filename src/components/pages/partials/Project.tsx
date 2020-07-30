@@ -1,14 +1,16 @@
-import React from "react";
-import {
-  Button,
-  Typography,
-
-  Grid,
-  Container,
-} from "@material-ui/core";
-import styled from "styled-components";
 import { StyledHtmlLink } from "@components/shared";
 import SliderCard, { ImageToSlider } from "@components/shared/SliderCard";
+import {
+  Button,
+
+  Container,
+  Grid,
+  Typography,
+} from "@material-ui/core";
+import { ImageButton } from "@root/styles/Custom";
+import React from "react";
+import styled from "styled-components";
+
 interface Props {
   url: string;
   images: ImageToSlider[];
@@ -62,14 +64,26 @@ const Project: React.FC<Props> = ({ url, name, title, ...props }) => {
           {name}
         </TitleLink>
       </DividerElement>
+
       <Typography variant="body1" component="div">
         <div>
           <Container maxWidth="sm">
             {props.children}
           </Container>
-          <SliderCard imageData={props.images} />
+          {props.images.length > 1 &&
+            <SliderCard imageData={props.images} />}
         </div>
       </Typography>
+      {props.images.length === 1 &&
+        <StyledHtmlLink href={url} target="_blank" rel="noopener noreferrer">
+          <ImageButton
+            title={title}
+            url={props.images[0].imgPath}
+            width={520}
+            minHeight={500}
+            buttomProps={{}}
+          />
+        </StyledHtmlLink>}
       <Grid
         container
         alignItems="center"
