@@ -7,7 +7,7 @@ import { usePagesContext } from "@root/context/PagesContext";
 const Projects = () => {
   const { changePage } = usePagesContext();
   useEffect(() => {
-    changePage("Showcase Projects");
+    changePage("Showcase");
   }, [changePage]);
   useEffect(() => {
     window.scrollTo({

@@ -75,15 +75,24 @@ const Project: React.FC<Props> = ({ url, name, title, ...props }) => {
         </div>
       </Typography>
       {props.images.length === 1 &&
-        <StyledHtmlLink href={url} target="_blank" rel="noopener noreferrer">
-          <ImageButton
-            title={title}
-            url={props.images[0].imgPath}
-            width={520}
-            minHeight={500}
-            buttomProps={{}}
-          />
-        </StyledHtmlLink>}
+        <div style={{ marginBottom: "1rem" }}>
+          <StyledHtmlLink
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              marginBottom: "1rem",
+            }}
+          >
+            <ImageButton
+              title={title}
+              url={props.images[0].imgPath}
+              width={520}
+              minHeight={500}
+              buttomProps={{}}
+            />
+          </StyledHtmlLink>
+        </div>}
       <Grid
         container
         alignItems="center"

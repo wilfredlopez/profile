@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    marginLeft: theme.spacing(1),
   },
   spacer: {
     flexGrow: 2,
@@ -37,6 +38,7 @@ export default function Navigation() {
           <Typography variant="h6" component="h1" className={classes.title}>
             {page}
           </Typography>
+          <div className={classes.spacer} />
           {/* <Hidden only="xs">
             <Typography variant="caption" className={classes.title}>
               WilfredLopez.Net

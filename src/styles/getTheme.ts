@@ -56,7 +56,8 @@ export default function getTheme(prefersDarkMode = false) {
         main: "#689f38",
       },
       background: {
-        default: "#303030",
+        // default: "#303030",
+        default: "#fff",
       },
     },
     shape: {

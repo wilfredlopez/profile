@@ -20,6 +20,7 @@ import React from "react";
 // import { NavLink } from "react-router-dom";
 import NavLink from "next/link";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface Props {
 }
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     width: "auto",
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    // marginRight: theme.spacing(2),
   },
 }));
 
@@ -87,6 +88,20 @@ export type Anchor = "top" | "left" | "bottom" | "right";
 interface Props {
   anchor: Anchor;
 }
+
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" },
+};
+
+const listItemVariants = {
+  open: {
+    opacity: 1,
+    y: 0,
+  },
+  closed: { opacity: 0, y: "-100%" },
+};
+
 export default function SideDrawer({ anchor }: Props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -124,14 +139,20 @@ export default function SideDrawer({ anchor }: Props) {
         {NAV_LINKS.map(({ text, href, Icon }, index) => (
           <NavLink key={text} href={href}>
             <StyledNavLink>
-              <ListItem
-                button
+              <motion.div
+                animate={state[anchor] ? "open" : "closed"}
+                initial="closed"
+                variants={listItemVariants}
               >
-                <ListItemIcon style={{ color: "inherit" }}>
-                  {Icon ? Icon : <DragHandleIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
+                <ListItem
+                  button
+                >
+                  <ListItemIcon style={{ color: "inherit" }}>
+                    {Icon ? Icon : <DragHandleIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItem>
+              </motion.div>
             </StyledNavLink>
           </NavLink>
         ))}
@@ -139,11 +160,17 @@ export default function SideDrawer({ anchor }: Props) {
       <Divider />
 
       <List>
-        <ListItem button={false}>
-          <Typography variant="h6">
-            Social Media
-          </Typography>
-        </ListItem>
+        <motion.div
+          animate={state[anchor] ? "open" : "closed"}
+          initial="closed"
+          variants={listItemVariants}
+        >
+          <ListItem button={false}>
+            <Typography variant="h6">
+              Social Media
+            </Typography>
+          </ListItem>
+        </motion.div>
         {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (
           <StyledHtmlLink
             href={href}
@@ -153,12 +180,18 @@ export default function SideDrawer({ anchor }: Props) {
             role="link"
             key={text}
           >
-            <ListItem button>
-              <ListItemIcon style={{ color: "inherit" }}>
-                {Icon ? Icon : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+            <motion.div
+              animate={state[anchor] ? "open" : "closed"}
+              initial="closed"
+              variants={listItemVariants}
+            >
+              <ListItem button>
+                <ListItemIcon style={{ color: "inherit" }}>
+                  {Icon ? Icon : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            </motion.div>
           </StyledHtmlLink>
         ))}
       </List>
@@ -168,15 +201,23 @@ export default function SideDrawer({ anchor }: Props) {
   return (
     <div>
       <React.Fragment key={anchor}>
-        <IconButton
-          onClick={toggleDrawer(anchor, true)}
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
+        <motion.div
+          animate={state[anchor] ? "closed" : "open"}
+          variants={variants}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 1.2 }}
         >
-          <MenuIcon />
-        </IconButton>
+          <IconButton
+            onClick={toggleDrawer(anchor, true)}
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+          >
+            <MenuIcon />
+          </IconButton>
+        </motion.div>
+
         <Drawer
           // id="navbar"
           anchor={anchor}
