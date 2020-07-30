@@ -19,7 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "rootDir": ".",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@components/*": [
         "./src/components/*"
