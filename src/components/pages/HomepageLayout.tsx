@@ -26,6 +26,7 @@ import AllProjects from "./partials/AllProjects";
 import { usePagesContext } from "@root/context/PagesContext";
 import Link from "next/link";
 import { BrandButton } from "@root/styles/Custom";
+import PageWrapper from "@components/PageWrapper";
 const StyledItem = styled.li`
   padding-top: 0;
   padding-bottom: 6px;
@@ -151,6 +152,7 @@ const HomepageLayout = () => {
       <PrimaryBackgroundSection>
         <HomepageHeading />
       </PrimaryBackgroundSection>
+
       <Paper>
         <Segment style={{ padding: "2em 0em" }}>
           <Grid

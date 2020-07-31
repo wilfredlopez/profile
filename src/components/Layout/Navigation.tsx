@@ -15,11 +15,10 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     transition: "width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "calc(100% - 240px)",
-    },
+    // width: "100%",
+    // [theme.breakpoints.up("md")]: {
+    //   width: "calc(100% - 240px)",
+    // },
   },
   title: {
     flexGrow: 1,

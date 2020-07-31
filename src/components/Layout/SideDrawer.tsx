@@ -1,11 +1,8 @@
+import { StyledHtmlLink } from "@components/shared";
 import {
   Button,
-  Hidden,
-  IconButton,
-  Theme,
+
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
@@ -22,15 +19,13 @@ import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import WebIcon from "@material-ui/icons/Web";
+import { SECONDARY_COLOR } from "@root/styles/getTheme";
 import clsx from "clsx";
-import { StyledHtmlLink } from "@components/shared";
-import React, { useRef } from "react";
 // import { NavLink } from "react-router-dom";
 import NavLink from "next/link";
-import styled from "styled-components";
-import { PRIMARY_COLOR, SECONDARY_COLOR } from "@root/styles/getTheme";
-import { usePagesContext } from "@root/context/PagesContext";
 import { useRouter } from "next/router";
+import React from "react";
+import styled from "styled-components";
 interface Props {
 }
 
@@ -121,13 +116,12 @@ export default function SideDrawer({ anchor }: Props) {
 
   const router = useRouter();
 
-  // const theme = useTheme()
-  const isBreakpoint = useMediaQuery(
-    (theme: Theme) => theme.breakpoints.up("md"),
-    {
-      defaultMatches: true,
-    },
-  );
+  // const isBreakpoint = useMediaQuery(
+  //   (theme: Theme) => theme.breakpoints.up("md"),
+  //   {
+  //     defaultMatches: true,
+  //   },
+  // );
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -204,30 +198,36 @@ export default function SideDrawer({ anchor }: Props) {
     </div>
   );
 
-  const isOpen = state[anchor] || isBreakpoint;
+  // const isOpen = state[anchor] || isBreakpoint;
+  const isOpen = state[anchor];
 
   return (
     <React.Fragment key={anchor}>
-      <Hidden mdUp initialWidth="sm">
-        <IconButton
-          edge="start"
-          onClick={toggleDrawer(anchor, true)}
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
-        >
-          <MenuIcon />
-        </IconButton>
-      </Hidden>
+      {/* <Hidden mdUp initialWidth="sm"> */}
+      <Button
+        // edge="start"
+        onClick={toggleDrawer(anchor, true)}
+        className={classes.menuButton}
+        color="inherit"
+        aria-label="menu"
+      >
+        <MenuIcon />
+      </Button>
+      {/* </Hidden> */}
 
       <Drawer
         id="navbar-drawer"
         anchor={anchor}
+        // variant={isBreakpoint ? "permanent" : undefined}
         open={isOpen}
+        // ModalProps={{
+        //   disableScrollLock: isBreakpoint,
+        //   style: {
+        //     position: isBreakpoint ? "relative" : "fixed",
+        //   },
+        // }}
         PaperProps={{
-          style: {
-            width: 240,
-          },
+          style: { width: 240 },
         }}
         SlideProps={{
           timeout: {
@@ -235,7 +235,7 @@ export default function SideDrawer({ anchor }: Props) {
             enter: 250,
           },
         }}
-        hideBackdrop={isBreakpoint}
+        // hideBackdrop={isBreakpoint}
         onClose={toggleDrawer(anchor, false)}
       >
         {list(anchor)}

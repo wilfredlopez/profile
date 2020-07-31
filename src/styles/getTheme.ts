@@ -23,11 +23,6 @@ export default function getTheme(prefersDarkMode = false) {
     status: {
       danger: red[500],
     },
-    classes: {
-      textContrast: {
-        color: common["white"],
-      },
-    },
     palette: {
       type: prefersDarkMode ? "dark" : "light",
       primary: {

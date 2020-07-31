@@ -1,12 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import RootProvider from "@root/RootProvider";
-import Navigation from "@components/Layout/Navigation";
-import { Fab, Toolbar } from "@material-ui/core";
-import SiteFooter from "@components/pages/partials/SiteFooter";
-import { ScrollTop } from "@components/Layout/BackToTop";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import "@root/index.css";
+import RootProvider from "@root/RootProvider";
 
 export default function MyApp(props: any) {
   const { Component, pageProps } = props;
@@ -66,29 +61,7 @@ export default function MyApp(props: any) {
         />
       </Head>
       <RootProvider>
-        <>
-          <Navigation />
-          {/* //Needed for the scroll top to work. also margin to account for the fixed position of the Navigation.  */}
-          <div
-            id="back-to-top-anchor"
-            style={{ minHeight: 0, marginBottom: "3rem" }}
-          />
-          <main>
-            <Component {...pageProps} />
-          </main>
-          <footer>
-            <SiteFooter />
-          </footer>
-          <ScrollTop {...props}>
-            <Fab
-              color="secondary"
-              size="small"
-              aria-label="scroll back to top"
-            >
-              <KeyboardArrowUpIcon />
-            </Fab>
-          </ScrollTop>
-        </>
+        <Component {...pageProps} />
       </RootProvider>
     </React.Fragment>
   );

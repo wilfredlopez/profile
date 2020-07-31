@@ -1,8 +1,11 @@
 import React from "react";
 import HomepageLayout from "@components/pages/HomepageLayout";
 import Head from "next/head";
-import { Paper } from "@material-ui/core";
+import { Paper, useTheme } from "@material-ui/core";
+import PageWrapper from "@components/PageWrapper";
+import useSharedStyles from "@root/styles/useSharedStyles";
 const index = () => {
+
   return (
     <>
       <Head>
@@ -20,9 +23,12 @@ const index = () => {
         >
         </script> */}
       </Head>
-      <Paper>
-        <HomepageLayout />
-      </Paper>
+
+      <PageWrapper>
+        <Paper>
+          <HomepageLayout />
+        </Paper>
+      </PageWrapper>
     </>
   );
 };

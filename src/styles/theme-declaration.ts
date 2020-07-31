@@ -22,16 +22,10 @@ declare module "@material-ui/core/styles/createMuiTheme" {
     status: {
       danger: React.CSSProperties["color"];
     };
-    classes: {
-      textContrast: CreateCSSProperties;
-    };
   }
   interface ThemeOptions {
     status: {
       danger: React.CSSProperties["color"];
-    };
-    classes: {
-      textContrast: CreateCSSProperties;
     };
   }
 }
