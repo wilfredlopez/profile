@@ -132,9 +132,6 @@ const Contact = () => {
           </Grid>
         </Segment>
       </Container>
-      <br />
-      <br />
-      <HomepageHeading />
     </React.Fragment>
   );
 };

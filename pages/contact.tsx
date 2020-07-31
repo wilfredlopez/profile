@@ -2,6 +2,8 @@ import React from "react";
 import Contact from "@components/pages/Contact";
 import Head from "next/head";
 import PageWrapper from "@components/PageWrapper";
+import Instagram from "@components/shared/Instagram";
+import HomepageHeading from "@components/pages/partials/HomepageHeading";
 
 const contact = () => {
   return (
@@ -16,6 +18,10 @@ const contact = () => {
       </Head>
       <PageWrapper>
         <Contact />
+        <Instagram />
+        <br />
+        <br />
+        <HomepageHeading />
       </PageWrapper>
     </>
   );

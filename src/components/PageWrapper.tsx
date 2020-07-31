@@ -1,18 +1,16 @@
-import { Fab, useTheme } from "@material-ui/core";
+import { Fab } from "@material-ui/core";
 import React, { PropsWithChildren } from "react";
 import { ScrollTop } from "./Layout/BackToTop";
 import Navigation from "./Layout/Navigation";
 import SiteFooter from "./pages/partials/SiteFooter";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import useSharedStyles from "@root/styles/useSharedStyles";
 
 interface Props {
 }
 
 const PageWrapper = (props: PropsWithChildren<Props>) => {
-  const classes = useSharedStyles();
   return (
-    <div>
+    <>
       <Navigation />
       {/* //Needed for the scroll top to work. also margin to account for the fixed position of the Navigation.  */}
       <div
@@ -35,7 +33,7 @@ const PageWrapper = (props: PropsWithChildren<Props>) => {
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
-    </div>
+    </>
   );
 };
 

@@ -4,14 +4,16 @@ import RetailMeNow from "./RetailMeNow";
 import ExpensesManager from "./ExpensesManager";
 
 interface Props {
+  showSliderControls?: boolean;
+  loop?: boolean;
 }
 
-const AllProjects = (props: Props) => {
+const AllProjects = ({ showSliderControls = true, loop }: Props) => {
   return (
     <>
-      <VapeMusic />
-      <RetailMeNow />
-      <ExpensesManager />
+      <VapeMusic showSliderControls={showSliderControls} loop={loop} />
+      <RetailMeNow showSliderControls={showSliderControls} loop={loop} />
+      <ExpensesManager showSliderControls={showSliderControls} loop={loop} />
     </>
   );
 };

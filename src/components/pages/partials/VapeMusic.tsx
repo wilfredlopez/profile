@@ -1,26 +1,19 @@
 import React from "react";
 import Project from "./Project";
 import { vapeMusicDescription } from "../constants";
-import vapemusicImg from "../../../img/vapemusic-example.jpg";
+import { PROJECT_IMAGES } from "../constants/projectImages";
 interface Props {
+  showSliderControls?: boolean;
+  loop?: boolean;
 }
 
-const VapeMusic = (props: Props) => {
+const VapeMusic = ({ showSliderControls = true, loop }: Props) => {
   return (
     <Project
+      loop={loop}
+      showSliderControls={showSliderControls}
       classKey="vape"
-      images={[{
-        label: "VapeMusic HomePage",
-        imgPath: vapemusicImg,
-      }, {
-        label: "VapeMusic Menu",
-        imgPath:
-          "https://res.cloudinary.com/wlopez/image/upload/v1591918889/vapemusic2/vapemusic-menu.jpg",
-      }, {
-        imgPath:
-          "https://res.cloudinary.com/wlopez/image/upload/v1591921388/vapemusic2/vapemusic-pdp.jpg",
-        label: "Audio Player",
-      }]}
+      images={PROJECT_IMAGES.vapeMusic}
       url="https://vapemusic.club"
       name="Vape Music"
       title="Vape Music - Latin Music Listen & Download"

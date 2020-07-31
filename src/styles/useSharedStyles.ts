@@ -5,6 +5,19 @@ export default makeStyles((theme: Theme) =>
     root: {
       backgroundColor: theme.palette.common.black,
     },
+    noPaddingX: {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
+    minPaddingX: {
+      paddingLeft: theme.spacing(0.5),
+      paddingRight: theme.spacing(0.5),
+    },
+    flexCenter: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
     constrainedSection: {
       marginLeft: "auto",
       [theme.breakpoints.only("md")]: {

@@ -1,33 +1,20 @@
 import React from "react";
 import Project from "./Project";
 import { expenseManagerDescription } from "../constants";
-import expenseManagerImg from "../../../img/expenses-manager-home.png";
-import exLogin from "../../../img/expenses-manager-login.png";
-import transPage from "../../../img/expenses-manager-transactions.png";
-import { ImageToSlider } from "@components/shared/SliderCard";
+
+import { PROJECT_IMAGES } from "../constants/projectImages";
 interface Props {
+  showSliderControls?: boolean;
+  loop?: boolean;
 }
 
-const Images: ImageToSlider[] = [
-  {
-    label: "HomePage",
-    imgPath: expenseManagerImg,
-  },
-  {
-    label: "Login Page",
-    imgPath: exLogin,
-  },
-  {
-    label: "Transactions",
-    imgPath: transPage,
-  },
-];
-
-const ExpensesManager = (props: Props) => {
+const ExpensesManager = ({ showSliderControls = true, loop }: Props) => {
   return (
     <Project
+      loop={loop}
+      showSliderControls={showSliderControls}
       classKey="expense"
-      images={Images}
+      images={PROJECT_IMAGES.ExpenseManger}
       url="https://wilfredexpensemanager.netlify.app"
       name="Expenses Manager"
       title="Expenses Manager - Manage your personal finances"

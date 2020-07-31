@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
-import { Container } from "@material-ui/core";
-import { Segment } from "@components/shared";
-import AllProjects from "./partials/AllProjects";
 import { usePagesContext } from "@root/context/PagesContext";
+import React, { useEffect } from "react";
+import AllProjects from "./partials/AllProjects";
 
 const Projects = () => {
   const { changePage } = usePagesContext();
@@ -18,12 +16,9 @@ const Projects = () => {
   }, []);
   return (
     <React.Fragment>
-      <Segment style={{ padding: "2em 0em" }}>
-        <Container>
-          {/* <Typography variant="h4" component="h1">Showcase Projects</Typography> */}
-          <AllProjects />
-        </Container>
-      </Segment>
+      <div style={{ marginTop: "5rem" }} />
+      {/* <Typography variant="h4" component="h1">Showcase Projects</Typography> */}
+      <AllProjects showSliderControls={true} />
     </React.Fragment>
   );
 };

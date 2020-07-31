@@ -1,17 +1,19 @@
 import React from "react";
 import Project from "./Project";
 import { retailmeNowDescription } from "../constants";
-import retailmenowImg from "../../../img/retailmenow.jpeg";
+import { PROJECT_IMAGES } from "../constants/projectImages";
 interface Props {
+  showSliderControls?: boolean;
+  loop?: boolean;
 }
 
-const RetailMeNow = (props: Props) => {
+const RetailMeNow = ({ showSliderControls = true, loop }: Props) => {
   return (
     <Project
+      loop={loop}
       classKey="shop"
-      images={[
-        { label: "PDP", imgPath: retailmenowImg },
-      ]}
+      showSliderControls={showSliderControls}
+      images={PROJECT_IMAGES.retailMeNow}
       url="#"
       name="RetalMeNow"
       title="RetalMeNow - Shop Online"

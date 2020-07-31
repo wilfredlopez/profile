@@ -1,8 +1,9 @@
 import React from "react";
 import HomepageLayout from "@components/pages/HomepageLayout";
 import Head from "next/head";
-import { Paper, useTheme } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import PageWrapper from "@components/PageWrapper";
+
 const index = () => {
   return (
     <>

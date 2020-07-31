@@ -26,7 +26,9 @@ import AllProjects from "./partials/AllProjects";
 import { usePagesContext } from "@root/context/PagesContext";
 import Link from "next/link";
 import { BrandButton } from "@root/styles/Custom";
-import PageWrapper from "@components/PageWrapper";
+
+import useSharedStyles from "@root/styles/useSharedStyles";
+
 const StyledItem = styled.li`
   padding-top: 0;
   padding-bottom: 6px;
@@ -61,6 +63,12 @@ const ExperienceSection = styled.section`
 
 const Title = styled(Typography)<{ component: string }>`
   text-decoration: underline;
+  margin-bottom: 30px !important;
+`;
+
+const SectionGridStyled = styled(Grid)`
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
 `;
 
 const SUMMARY_TEXTS = [
@@ -82,7 +90,7 @@ const variants = {
 const HomepageLayout = () => {
   const { changePage } = usePagesContext();
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
+  const classes = useSharedStyles();
   useEffect(() => {
     changePage("Home");
   }, [changePage]);
@@ -123,8 +131,8 @@ const HomepageLayout = () => {
       return (
         <li key={label} className="mb-1">
           {/* <Icon name={exp.icon} /> */}
-          {Icon}
           <ExperienceSection>
+            {Icon}
             <div>
               <Typography
                 variant="h6"
@@ -154,61 +162,78 @@ const HomepageLayout = () => {
       </PrimaryBackgroundSection>
 
       <Paper>
-        <Segment style={{ padding: "2em 0em" }}>
+        <Grid
+          container
+          spacing={0}
+          direction="row"
+          justify="flex-start"
+          alignItems="flex-start"
+        >
           <Grid
             container
-            spacing={0}
+            item
             direction="row"
-            justify="flex-start"
+            justify="space-around"
             alignItems="flex-start"
           >
-            <Grid
-              container
+            <SectionGridStyled
               item
-              direction="row"
-              justify="space-around"
-              alignItems="flex-start"
+              xs={12}
+              sm={4}
             >
-              <Grid item xs={12} sm={4}>
-                <Title variant="h4" component="h2">
-                  Experiences
-                </Title>
-                <List>
-                  {experienceList}
-                </List>
-                {" "}
-              </Grid>
-              <Grid item xs={10} sm={4}>
-                <Title variant="h4" component="h2">
-                  Skills
-                </Title>
-                <List>
-                  {educationList}
-                </List>
-              </Grid>
-            </Grid>
-            <Grid container justify="flex-start">
-              <Container>
-                {summary}
-              </Container>
-            </Grid>
-            <Grid container justify="center">
-              <BrandButton color="default" size="large">
-                {/* <Button color="primary" variant="contained"> */}
-                <Link href="/projects">
-                  <StyledLink>{"Showcase Projects".toUpperCase()}</StyledLink>
-                </Link>
-                {/* </Button> */}
-              </BrandButton>
-            </Grid>
+              <Title
+                variant="h4"
+                component="h2"
+                align="center"
+              >
+                Experiences
+              </Title>
+              <List>
+                {experienceList}
+              </List>
+              {" "}
+            </SectionGridStyled>
+            <SectionGridStyled
+              item
+              xs={10}
+              sm={4}
+            >
+              <Title variant="h4" component="h2" align="center">
+                Skills
+              </Title>
+              <List>
+                {educationList}
+              </List>
+            </SectionGridStyled>
           </Grid>
-        </Segment>
+          <Grid container justify="flex-start">
+            <Container
+              classes={{
+                root: classes.minPaddingX,
+              }}
+            >
+              {summary}
+            </Container>
+          </Grid>
+          <SectionGridStyled container justify="center">
+            <BrandButton color="default" size="large">
+              {/* <Button color="primary" variant="contained"> */}
+              <Link href="/projects">
+                <StyledLink>{"Showcase Projects".toUpperCase()}</StyledLink>
+              </Link>
+              {/* </Button> */}
+            </BrandButton>
+          </SectionGridStyled>
+        </Grid>
 
-        <Segment style={{ padding: "2em 0em" }}>
-          <Container id="projects">
-            <AllProjects />
-          </Container>
-        </Segment>
+        <Container
+          id="projects"
+          classes={{
+            root: classes.minPaddingX,
+          }}
+        >
+          <AllProjects showSliderControls={false} loop={false} />
+        </Container>
       </Paper>
       {/* <SocialMediaEmbeds /> */}
     </React.Fragment>
