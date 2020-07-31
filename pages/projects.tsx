@@ -1,6 +1,7 @@
 import React from "react";
 import Projects from "@components/pages/Projects";
 import Head from "next/head";
+import PageWrapper from "@components/PageWrapper";
 
 const projects = () => {
   return (
@@ -9,7 +10,9 @@ const projects = () => {
         <title key="title">Showcase Projects | Wilfred Lopez</title>
         <link rel="canonical" href="https://wilfredlopez.net/projects" />
       </Head>
-      <Projects />
+      <PageWrapper>
+        <Projects />
+      </PageWrapper>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import Contact from "@components/pages/Contact";
 import Head from "next/head";
+import PageWrapper from "@components/PageWrapper";
 
 const contact = () => {
   return (
@@ -13,8 +14,9 @@ const contact = () => {
         />
         <link rel="canonical" href="https://wilfredlopez.net/contact" />
       </Head>
-
-      <Contact />
+      <PageWrapper>
+        <Contact />
+      </PageWrapper>
     </>
   );
 };

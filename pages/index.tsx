@@ -3,9 +3,7 @@ import HomepageLayout from "@components/pages/HomepageLayout";
 import Head from "next/head";
 import { Paper, useTheme } from "@material-ui/core";
 import PageWrapper from "@components/PageWrapper";
-import useSharedStyles from "@root/styles/useSharedStyles";
 const index = () => {
-
   return (
     <>
       <Head>

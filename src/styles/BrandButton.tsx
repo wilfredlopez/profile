@@ -17,9 +17,9 @@ interface ColorsMapping {
 }
 
 interface SizesMapping {
-  default: string;
-  small: string;
-  large: string;
+  default: string | number;
+  small: string | number;
+  large: string | number;
   [key: string]: any;
 }
 export type PaletteColorKeys =
@@ -31,6 +31,7 @@ export type PaletteColorKeys =
   | "success";
 
 interface ButtonStyles extends WithStyles<typeof styles> {
+  ref?: any;
   color:
     | "vape"
     | "expense"
@@ -39,7 +40,7 @@ interface ButtonStyles extends WithStyles<typeof styles> {
     | "text"
     | "blue"
     | PaletteColorKeys;
-  size?: "small" | "default" | "large";
+  size?: "medium" | "large" | "small" | "default";
   /**
          * The content of the button.
          */
@@ -205,14 +206,14 @@ const styles = (theme: Theme) => ({
     border: 0,
     alignItems: "center",
     height: styledBySize("size", {
-      default: "40px",
-      large: "48px",
-      small: "20px",
+      default: 40,
+      large: 48,
+      small: 20,
     }),
     padding: styledBySize("size", {
-      default: theme.spacing(0.5, 1),
-      large: theme.spacing(1.5, 1.5),
-      small: theme.spacing(1, 0.5),
+      default: theme.spacing(1.6, 1.4),
+      large: theme.spacing(2, 1.5),
+      small: theme.spacing(1.1, 0.6),
     }),
     cursor: "pointer",
 
@@ -226,7 +227,7 @@ const styles = (theme: Theme) => ({
       warning: theme.shadows[2],
       tertiary: theme.shadows[2],
       text: theme.shadows[2],
-      vape: theme.shadows[3],
+      vape: theme.shadows[1],
     }),
   },
 });
@@ -246,6 +247,8 @@ export const BrandButton = withStyles(styles)((
         { [classes.backgroundOutline]: isOutlined },
         { [classes.background]: !isOutlined },
       ])}
+      variant={variant}
+      size={size === "default" ? undefined : size}
       {...other}
     >
       {children}

@@ -8,9 +8,11 @@ import {
 } from "../../shared";
 import SocialList from "./SocialList";
 import styled from "styled-components";
+import { useRouter } from "next/router";
+import { SECONDARY_COLOR } from "@root/styles/getTheme";
 
-export const StyledNavLink = styled.a`
-  color: hsla(0,0%,100%,.5);
+export const StyledNavLink = styled.a<{ isActive?: boolean }>`
+  color: ${(props) => props.isActive ? SECONDARY_COLOR : "hsla(0,0%,100%,.5)"};
   text-decoration: none;
   cursor: pointer;
   &.item{
@@ -36,6 +38,7 @@ const NonActiveLink = styled(StyledHtmlLink)`
 `;
 
 const SiteFooter = () => {
+  const { pathname } = useRouter();
   return (
     <PrimaryBackgroundSection style={{ padding: "1em 0em" }}>
       <Container>
@@ -59,21 +62,21 @@ const SiteFooter = () => {
                 </ListItem>
                 <ListItem>
                   <NavLink href="/">
-                    <StyledNavLink className="item">
+                    <StyledNavLink isActive={pathname === "/"}>
                       Home
                     </StyledNavLink>
                   </NavLink>
                 </ListItem>
                 <ListItem>
                   <NavLink href="/projects">
-                    <StyledNavLink>
+                    <StyledNavLink isActive={pathname === "/projects"}>
                       Showcase Projects
                     </StyledNavLink>
                   </NavLink>
                 </ListItem>
                 <ListItem>
                   <NavLink href="/contact">
-                    <StyledNavLink>
+                    <StyledNavLink isActive={pathname === "/contact"}>
                       Contact
                     </StyledNavLink>
                   </NavLink>
