@@ -26,6 +26,8 @@ import NavLink from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
+import { NAV_LINKS, NavLinkItem, SOCIAL_LINKS } from "./navlinks";
+
 interface Props {
 }
 
@@ -47,51 +49,13 @@ const useStyles = makeStyles((theme) => ({
 
 const StyledNavLink = styled.a<{ isActive?: boolean }>`
     color: ${(props) => props.isActive ? SECONDARY_COLOR : "inherit"} ;
+    font-weight: ${(props) => props.isActive ? "bold" : "normal"};
     text-decoration: none;
+    &:hover{
+      color: ${SECONDARY_COLOR}
+    }
    
 `;
-
-interface NavLinkItem {
-  text: string;
-  href: string;
-  Icon?: JSX.Element;
-}
-
-const SOCIAL_LINKS: NavLinkItem[] = [
-  {
-    href: "https://github.com/wilfredlopez",
-    text: "Github",
-    Icon: <GitHubIcon />,
-  },
-  {
-    href: "https://www.linkedin.com/in/wilfred-lopez-a309b896",
-    text: "LinkedIn",
-    Icon: <LinkedInIcon />,
-  },
-  {
-    href: "https://twitter.com/wilfreddonaldlo?ref_src=twsrc%5Etfw",
-    text: "@wilfreddonaldlo",
-    Icon: <TwitterIcon />,
-  },
-];
-
-const NAV_LINKS: NavLinkItem[] = [
-  {
-    href: "/",
-    text: "Home",
-    Icon: <HomeIcon />,
-  },
-  {
-    href: "/projects",
-    text: "Showcase Projects",
-    Icon: <WebIcon />,
-  },
-  {
-    href: "/contact",
-    text: "Contact",
-    Icon: <MailIcon />,
-  },
-];
 
 export type Anchor = "top" | "left" | "bottom" | "right";
 interface Props {
@@ -174,7 +138,7 @@ export default function SideDrawer({ anchor }: Props) {
       <List>
         <ListItem button={false}>
           <Typography variant="h6">
-            Social Media
+            Social
           </Typography>
         </ListItem>
         {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (

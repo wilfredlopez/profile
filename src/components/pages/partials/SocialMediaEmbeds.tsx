@@ -63,7 +63,7 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
           style={{ fontSize: "2.5em" }}
           className="text-center"
         >
-          Social Media
+          Social
         </Typography>
       </DividerElement>
       <Grid

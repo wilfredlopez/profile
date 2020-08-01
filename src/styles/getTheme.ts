@@ -5,7 +5,8 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 import { DefaultTheme } from "styled-components";
-export const SECONDARY_COLOR = secondary[500];
+// export const SECONDARY_COLOR = secondary[500];
+export const SECONDARY_COLOR = secondary[400];
 export const SECONDARY_COLOR_CONTRAST = common["white"];
 export let PRIMARY_COLOR: string = primary[900];
 export const TOOLBAR_MIN_HEIGHT = 15;

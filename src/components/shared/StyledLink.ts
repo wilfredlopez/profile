@@ -1,3 +1,4 @@
+import { SECONDARY_COLOR } from "@root/styles/getTheme";
 import styled from "styled-components";
 // import { Link } from "react-router-dom";
 
@@ -5,7 +6,7 @@ const StyledLink = styled.a`
     color: inherit;
     text-decoration: none;
     &:hover{
-       color: #c5c5c5;
+       color: ${SECONDARY_COLOR}
     }
 `;
 

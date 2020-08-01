@@ -1,6 +1,8 @@
 import { Container, Typography } from "@material-ui/core";
+
 import React from "react";
 import styled from "styled-components";
+import BounceComponent from "./BounceComponent";
 
 const InstagramImage = styled.img`
     width: 100%;
@@ -14,12 +16,15 @@ const InstagramImage = styled.img`
 `;
 
 interface Props {
+  percentBounce?: number;
 }
 
-const Instagram = (props: Props) => {
+const Instagram = ({ percentBounce = 12 }: Props) => {
   return (
     <Container maxWidth="md">
-      <InstagramImage src="/INSTAGRAM_WILFRED_LOPEZ.jpg" />
+      <BounceComponent percentBounce={percentBounce}>
+        <InstagramImage src="/INSTAGRAM_WILFRED_LOPEZ.jpg" />
+      </BounceComponent>
       <Typography align="center" variant="subtitle1">
         Follow me on Instagram
       </Typography>

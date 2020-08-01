@@ -14,6 +14,8 @@ import RoomIcon from "@material-ui/icons/Room";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import styled from "styled-components";
 import { BrandButton } from "@root/styles/Custom";
+import ScaleUpDownComponent from "@components/shared/ScaleUpDownComponent";
+import { motion } from "framer-motion";
 interface Props {
 }
 
@@ -42,22 +44,30 @@ const HomepageHeading: React.FC<Props> = () => (
   <Responsive>
     <Segment>
       <Container id="welcome-section" style={{ height: "100vh" }}>
-        <Avatar
-          src={wilfredImg}
-          // src="https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png"
-          // size="medium"
-          style={{
-            width: "100%",
-            height: "100%",
-            maxWidth: 400,
-            maxHeight: 400,
-            borderRadius: "2rem",
-            margin: "auto",
+        <motion.div
+          initial={{ scale: 1 }}
+          animate={{ scale: [1.3, 1] }}
+          transition={{
+            type: "spring",
           }}
-          // circular
-          alt="wilfred"
-          className="m-auto border-full with-shadow"
-        />
+        >
+          <Avatar
+            src={wilfredImg}
+            // src="https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png"
+            // size="medium"
+            style={{
+              width: "100%",
+              height: "100%",
+              maxWidth: 400,
+              maxHeight: 400,
+              borderRadius: "2rem",
+              margin: "auto",
+            }}
+            // circular
+            alt="wilfred"
+            className="m-auto border-full with-shadow"
+          />
+        </motion.div>
 
         <Typography
           component="h1"
@@ -69,7 +79,9 @@ const HomepageHeading: React.FC<Props> = () => (
             marginTop: "0.5em",
           }}
         >
-          WILFRED LOPEZ
+          <ScaleUpDownComponent>
+            WILFRED LOPEZ
+          </ScaleUpDownComponent>
         </Typography>
         <Item>
           <WorkIcon />
@@ -98,17 +110,19 @@ const HomepageHeading: React.FC<Props> = () => (
           </div>
         </PlacesGrid> */}
 
-        <Button
-          endIcon={<MailOutlineIcon />}
-          color="secondary"
-          variant="contained"
-        >
-          {/* <MailOutlineIcon /> */}
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Button
+            endIcon={<MailOutlineIcon />}
+            color="secondary"
+            variant="contained"
+          >
+            {/* <MailOutlineIcon /> */}
 
-          <StyledAnker href="mailto:cubamc@gmail.com" title="contact me">
-            Contact Me
-          </StyledAnker>
-        </Button>
+            <StyledAnker href="mailto:cubamc@gmail.com" title="contact me">
+              Contact Me
+            </StyledAnker>
+          </Button>
+        </motion.div>
       </Container>
     </Segment>
   </Responsive>

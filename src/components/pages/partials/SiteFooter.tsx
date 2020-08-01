@@ -11,16 +11,17 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import { SECONDARY_COLOR } from "@root/styles/getTheme";
 
-export const StyledNavLink = styled.a<{ isActive?: boolean }>`
-  color: ${(props) => props.isActive ? SECONDARY_COLOR : "hsla(0,0%,100%,.5)"};
+export const FooterNavLink = styled.a<{ isActive?: boolean }>`
+  color: ${(props) => props.isActive ? SECONDARY_COLOR : "inherit"};
+  font-weight: ${(props) => props.isActive ? "bold" : "normal"};
   text-decoration: none;
   cursor: pointer;
   &.item{
-    color: #ffffff;
+    color:${SECONDARY_COLOR};
     font-weight: 500;
   }
   &:hover{
-    color: #ffffff;
+    color: ${SECONDARY_COLOR};
     font-weight: 500;
   }
 `;
@@ -30,9 +31,9 @@ const Title = styled(Typography)<{ component?: string }>`
 `;
 
 const NonActiveLink = styled(StyledHtmlLink)`
-    color: hsla(0,0%,100%,.5);
+    color: 'inherit';
     &:hover{
-    color: #ffffff;
+    color: ${SECONDARY_COLOR};
     font-weight: 500;
   }
 `;
@@ -62,23 +63,23 @@ const SiteFooter = () => {
                 </ListItem>
                 <ListItem>
                   <NavLink href="/">
-                    <StyledNavLink isActive={pathname === "/"}>
+                    <FooterNavLink isActive={pathname === "/"}>
                       Home
-                    </StyledNavLink>
+                    </FooterNavLink>
                   </NavLink>
                 </ListItem>
                 <ListItem>
                   <NavLink href="/projects">
-                    <StyledNavLink isActive={pathname === "/projects"}>
+                    <FooterNavLink isActive={pathname === "/projects"}>
                       Showcase Projects
-                    </StyledNavLink>
+                    </FooterNavLink>
                   </NavLink>
                 </ListItem>
                 <ListItem>
                   <NavLink href="/contact">
-                    <StyledNavLink isActive={pathname === "/contact"}>
+                    <FooterNavLink isActive={pathname === "/contact"}>
                       Contact
-                    </StyledNavLink>
+                    </FooterNavLink>
                   </NavLink>
                 </ListItem>
               </List>
@@ -122,7 +123,7 @@ const SiteFooter = () => {
               <List>
                 <ListItem>
                   <Title variant="h6" component="h2">
-                    Social Media
+                    Social
                   </Title>
                 </ListItem>
                 <SocialList />
