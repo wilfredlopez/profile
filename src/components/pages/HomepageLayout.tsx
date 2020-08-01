@@ -17,8 +17,7 @@ import HomepageHeading from "./partials/HomepageHeading";
 // import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 
 import {
-  Segment,
-  StyledLink,
+  NonStyledAnchor,
   PrimaryBackgroundSection,
 } from "@components/shared";
 import styled from "styled-components";
@@ -28,6 +27,7 @@ import Link from "next/link";
 import { BrandButton } from "@root/styles/Custom";
 
 import useSharedStyles from "@root/styles/useSharedStyles";
+import { motion } from "framer-motion";
 
 const StyledItem = styled.li`
   padding-top: 0;
@@ -38,10 +38,10 @@ const StyledItem = styled.li`
   text-align: left;
     font-size: 1.5rem;
     border-bottom: 1px solid #dcd5d5;
-    transition: all 100ms ease-in-out;
-    &:hover{
+    /* transition: all 100ms ease-in-out; */
+    /* &:hover{
       transform: translate(10px);
-    }
+    } */
 `;
 
 const SummaryLi = styled.li`
@@ -116,11 +116,13 @@ const HomepageLayout = () => {
     return (
       <StyledItem key={label}>
         <>
-          <Typography variant="subtitle1" component="h3">
-            {Icon}
-            <span>{" "}</span>
-            {label}
-          </Typography>
+          <motion.div whileHover={{ scale: 1.2 }}>
+            <Typography variant="subtitle1" component="h3">
+              {Icon}
+              <span>{" "}</span>
+              {label}
+            </Typography>
+          </motion.div>
         </>
       </StyledItem>
     );
@@ -216,13 +218,17 @@ const HomepageLayout = () => {
             </Container>
           </Grid>
           <SectionGridStyled container justify="center">
-            <BrandButton color="default" size="large">
-              {/* <Button color="primary" variant="contained"> */}
-              <Link href="/projects">
-                <StyledLink>{"Showcase Projects".toUpperCase()}</StyledLink>
-              </Link>
-              {/* </Button> */}
-            </BrandButton>
+            <motion.div whileHover={{ scale: 1.3 }}>
+              <BrandButton color="default" size="large">
+                <Link href="/projects">
+                  <NonStyledAnchor>
+                    {"Showcase Projects".toUpperCase()}
+                  </NonStyledAnchor>
+                  {/* <Button color="primary" variant="contained"> */}
+                  {/* </Button> */}
+                </Link>
+              </BrandButton>
+            </motion.div>
           </SectionGridStyled>
         </Grid>
 

@@ -202,6 +202,7 @@ const styles = (theme: Theme) => ({
     },
   },
   root: {
+    textDecoration: "none",
     borderRadius: theme.shape.borderRadius,
     border: 0,
     alignItems: "center",
@@ -233,7 +234,7 @@ const styles = (theme: Theme) => ({
 });
 
 export const BrandButton = withStyles(styles)((
-  { classes, variant, size, children, color, ...other }: PropsWithChildren<
+  { classes, variant, size, children, color, ref, ...other }: PropsWithChildren<
     ButtonStyles
   >,
 ) => {
@@ -241,6 +242,7 @@ export const BrandButton = withStyles(styles)((
   return (
     <Button
       className={clsx([
+        { ...classes },
         classes.root,
         { [classes.colorOutline]: isOutlined },
         { [classes.color]: !isOutlined },
@@ -249,11 +251,11 @@ export const BrandButton = withStyles(styles)((
       ])}
       variant={variant}
       size={size === "default" ? undefined : size}
+      ref={ref}
       {...other}
     >
       {children}
     </Button>
   );
 });
-
 BrandButton.displayName = "BrandButton";
