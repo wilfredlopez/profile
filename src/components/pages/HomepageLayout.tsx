@@ -82,11 +82,6 @@ const SUMMARY_TEXTS = [
   "Proven ability to document issues and bugs.",
 ];
 
-const variants = {
-  hidden: { opacity: 0.5 },
-  visible: { opacity: 1 },
-};
-
 const HomepageLayout = () => {
   const { changePage } = usePagesContext();
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -112,11 +107,14 @@ const HomepageLayout = () => {
     </Grid>
   );
 
-  const educationList = education.map(({ label, Icon }) => {
+  const educationList = education.map(({ label, Icon }, index) => {
     return (
-      <StyledItem key={label}>
+      <StyledItem key={label + "-" + index}>
         <>
-          <motion.div whileHover={{ scale: 1.2 }}>
+          <motion.div
+            whileTap={{ scale: 1.2 }}
+            whileHover={{ scale: 1.2 }}
+          >
             <Typography variant="subtitle1" component="h3">
               {Icon}
               <span>{" "}</span>
@@ -162,7 +160,6 @@ const HomepageLayout = () => {
       <PrimaryBackgroundSection>
         <HomepageHeading />
       </PrimaryBackgroundSection>
-
       <Paper>
         <Grid
           container
@@ -203,6 +200,7 @@ const HomepageLayout = () => {
               <Title variant="h4" component="h2" align="center">
                 Skills
               </Title>
+
               <List>
                 {educationList}
               </List>
@@ -219,7 +217,10 @@ const HomepageLayout = () => {
           </Grid>
           <SectionGridStyled container justify="center">
             <motion.div whileHover={{ scale: 1.3 }}>
-              <BrandButton color="default" size="large">
+              <BrandButton
+                color="default"
+                size="large"
+              >
                 <Link href="/projects">
                   <NonStyledAnchor>
                     {"Showcase Projects".toUpperCase()}

@@ -126,7 +126,7 @@ const Project: React.FC<Props> = (
         style={{ paddingBottom: "1rem" }}
       >
         <Grid item>
-          <BrandButton color={props.classKey} size="small" variant="contained">
+          <BrandButton color={props.classKey} size="medium" variant="contained">
             <StyledHtmlLink href={url} className="text-white" title={name}>
               {name.toUpperCase()}
             </StyledHtmlLink>

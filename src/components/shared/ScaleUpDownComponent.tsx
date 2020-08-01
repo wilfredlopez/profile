@@ -1,4 +1,8 @@
-import { PRIMARY_COLOR, SECONDARY_COLOR } from "@root/styles/getTheme";
+import {
+  PRIMARY_COLOR,
+  SECONDARY_COLOR,
+  TERTIARY_COLOR,
+} from "@root/styles/getTheme";
 import { motion } from "framer-motion";
 import React, { PropsWithChildren } from "react";
 
@@ -31,7 +35,7 @@ const scaleTransition = {
 
 const ScaleUpDownComponent = (
   {
-    backgrounds = [PRIMARY_COLOR, SECONDARY_COLOR],
+    backgrounds = [TERTIARY_COLOR, SECONDARY_COLOR],
     scaleTo = 1,
     children,
   }: PropsWithChildren<Props>,

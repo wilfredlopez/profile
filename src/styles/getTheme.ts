@@ -13,6 +13,9 @@ export const TOOLBAR_MIN_HEIGHT = 15;
 export const PRIMARY_COLOR_CONTRAST = common["white"];
 export const DARK_COLOR = "#040c14";
 export const LIGHT_COLOR = common["white"];
+export const TERTIARY_COLOR = "#c47070";
+export const TERTIARY_COLOR_CONTRAST = common["white"];
+
 const BORDER_RADIOUS = 4;
 
 //Cool Green /#38b584
@@ -36,10 +39,10 @@ export default function getTheme(prefersDarkMode = false) {
         contrastText: SECONDARY_COLOR_CONTRAST,
       },
       tertiary: {
-        main: "#c47070",
+        main: TERTIARY_COLOR,
         dark: "#914345",
         light: "#f9a09e",
-        contrastText: PRIMARY_COLOR_CONTRAST,
+        contrastText: TERTIARY_COLOR_CONTRAST,
       },
       success: {
         ...green,
