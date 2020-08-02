@@ -6,6 +6,8 @@ import {
   List,
   useMediaQuery,
   Paper,
+  Box,
+  Hidden,
 } from "@material-ui/core";
 
 import {
@@ -97,11 +99,13 @@ const HomepageLayout = () => {
 
   const summary = (
     <Grid item>
-      <List style={{ fontSize: "1.1em" }}>
-        {SUMMARY_TEXTS.map((text) => {
-          return <SummaryLi key={text}>{text}</SummaryLi>;
-        })}
-      </List>
+      <Container maxWidth="md">
+        <List style={{ fontSize: "1.1em" }}>
+          {SUMMARY_TEXTS.map((text) => {
+            return <SummaryLi key={text}>{text}</SummaryLi>;
+          })}
+        </List>
+      </Container>
     </Grid>
   );
 
@@ -158,7 +162,7 @@ const HomepageLayout = () => {
       <PrimaryBackgroundSection>
         <HomepageHeading />
       </PrimaryBackgroundSection>
-      <Paper>
+      <Paper square>
         <Grid
           container
           spacing={0}
@@ -190,11 +194,19 @@ const HomepageLayout = () => {
               </List>
               {" "}
             </SectionGridStyled>
-            <SectionGridStyled
+
+            <Grid
               item
               xs={10}
               sm={4}
             >
+              <Hidden xsDown>
+                <Box
+                  css={{
+                    marginTop: 50,
+                  }}
+                />
+              </Hidden>
               <Title variant="h4" component="h2" align="center">
                 Skills
               </Title>
@@ -202,14 +214,20 @@ const HomepageLayout = () => {
               <List>
                 {educationList}
               </List>
-            </SectionGridStyled>
+            </Grid>
           </Grid>
+
           <Grid container justify="flex-start">
             <Container
               classes={{
                 root: classes.minPaddingX,
               }}
             >
+              <Box
+                css={{
+                  marginTop: 25,
+                }}
+              />
               {summary}
             </Container>
           </Grid>

@@ -49,7 +49,7 @@ const Project: React.FC<Props> = (
       </DividerElement>
 
       <Container
-        maxWidth="md"
+        maxWidth="sm"
         style={{
           alignItems: "center",
           justifyContent: "center",

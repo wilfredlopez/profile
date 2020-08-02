@@ -1,13 +1,12 @@
 import { ImageToSlider } from "@components/shared/SliderCard";
-import expenseManagerImg from "../../../img/expenses-manager-home.png";
-import transPage from "../../../img/expenses-manager-transactions.png";
 import retailmenowImg from "../../../img/retailmenow.jpeg";
 import vapemusicImg from "../../../img/vapemusic-example.jpg";
 
 const ExpenseMangerImages: ImageToSlider[] = [
   {
-    label: "HomePage",
-    imgPath: expenseManagerImg,
+    label: "Login Page",
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1596385412/wilfredlopez-profile-page/expense-manager-login.jpg",
   },
   {
     imgPath:
@@ -18,10 +17,6 @@ const ExpenseMangerImages: ImageToSlider[] = [
     imgPath:
       "https://res.cloudinary.com/wlopez/image/upload/v1596227495/EXPENSE-MANAGER-SHOWCASE_2.jpg",
     label: "Monthly Summary",
-  },
-  {
-    label: "Transactions",
-    imgPath: transPage,
   },
 ];
 
