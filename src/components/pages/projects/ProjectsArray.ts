@@ -54,8 +54,8 @@ const expenseManager: Project = {
 };
 
 export const projects: Project[] = [
-  expenseManager,
   vapeMusic,
+  expenseManager,
   corona,
   retailmeNow,
 ];

@@ -1,13 +1,4 @@
 import React from "react";
-import {
-  FaReact,
-  FaMicrosoft,
-  FaSalesforce,
-  FaJira,
-  FaUniversalAccess,
-  FaBriefcase,
-  // FaDatabase,
-} from "react-icons/fa/index";
 
 export const retailmeNowDescription: JSX.Element = (
   <>
@@ -21,12 +12,9 @@ export const retailmeNowDescription: JSX.Element = (
 export const expenseManagerDescription = (
   <>
     <p>
-      {" "}
       Expenses Manager is a Windows/Mac/IOS, Android and Web Application that
-      helps you manage your personal finances.
-    </p>
-    <p>
-      Keep track of you income and expenses.
+      helps you manage your personal finances and keeping track of your income
+      and expenses.
     </p>
     <p>
       Technologies: Ionic, GraphQL, NodeJS.
@@ -55,18 +43,12 @@ export const vapeMusicDescription = (
 export const coronaVirusDescription = (
   <>
     <p>
-      Progressive Web App for listening and downloading promotional music.
+      Updated information about COVID-19.
     </p>
     <p>
-      Technologies: GraphQL, NodeJS, React, Apollo, Ionic.
+      Technologies: Apollo Server/Client, Typeorm, MongoDB, TypeGraphQL, Ionic,
+      React, NodeJS, Express.
     </p>
-    {/* <p>
-      The admin can add/remove, upload image and audio directly from the site.
-    </p>
-    <p>
-      Songs are distributed by genre and artists, Users can search, add songs to
-      the playlist and use the Audio Player to switch from song to song.
-    </p> */}
   </>
 );
 
