@@ -6,42 +6,22 @@ import {
   Box,
   Container,
   Grid,
-
   Hidden,
   List,
-
   Paper,
   Typography,
-
-  useMediaQuery,
 } from "@material-ui/core";
 import { usePagesContext } from "@root/context/PagesContext";
 import useSharedStyles from "@root/theme/useSharedStyles";
-import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import {
-  education,
-  experiences,
-} from "../custom-icons";
+  ExperienceList,
+} from "./ExperienceList";
+import { EducationList } from "./EducationList";
 import HomepageHeading from "../partials/HomepageHeading";
 import HomeProjectGrid from "./HomeProjectGrid";
 import ShowCaseProjectButton from "./ShowCaseProjectButton";
-
-const StyledItem = styled.li`
-  padding-top: 0;
-  padding-bottom: 6px;
-  display: flex;
-  justify-content:flex-start;
-  align-items: center;
-  text-align: left;
-    font-size: 1.5rem;
-    border-bottom: 1px solid #dcd5d5;
-    /* transition: all 100ms ease-in-out; */
-    /* &:hover{
-      transform: translate(10px);
-    } */
-`;
 
 const SummaryLi = styled.li`
     padding-top: 2px;
@@ -52,12 +32,6 @@ const SummaryLi = styled.li`
     &::before{
       content: "• ";
     }
-`;
-
-const ExperienceSection = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 `;
 
 const Title = styled(Typography)<{ component: string }>`
@@ -83,7 +57,6 @@ const SUMMARY_TEXTS = [
 
 const HomepageLayout = () => {
   const { changePage } = usePagesContext();
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const classes = useSharedStyles();
   useEffect(() => {
     changePage("Home");
@@ -108,54 +81,6 @@ const HomepageLayout = () => {
     </Grid>
   );
 
-  const educationList = education.map(({ label, Icon }, index) => {
-    return (
-      <StyledItem key={label + "-" + index}>
-        <>
-          <motion.div
-            whileTap={{ scale: 1.2 }}
-            whileHover={{ scale: 1.3 }}
-          >
-            <Typography variant="subtitle1" component="h3">
-              {Icon}
-              <span>{" "}</span>
-              {label}
-            </Typography>
-          </motion.div>
-        </>
-      </StyledItem>
-    );
-  });
-
-  const experienceList = experiences.map(
-    ({ Icon, isCurrent, label, location }) => {
-      return (
-        <li key={label} className="mb-1">
-          {/* <Icon name={exp.icon} /> */}
-          <ExperienceSection>
-            {Icon}
-            <div>
-              <Typography
-                variant="h6"
-                component="h3"
-                style={{
-                  color: isCurrent
-                    ? "blue"
-                    : prefersDarkMode
-                    ? "#c8c8c8"
-                    : "#fcfcfc",
-                }}
-              >
-                {label}
-                {isCurrent && "(Actual)"}
-              </Typography>
-            </div>
-            <em>{location}</em>
-          </ExperienceSection>
-        </li>
-      );
-    },
-  );
   return (
     <React.Fragment>
       <PrimaryBackgroundSection>
@@ -188,9 +113,7 @@ const HomepageLayout = () => {
               >
                 Experiences
               </Title>
-              <List>
-                {experienceList}
-              </List>
+              <ExperienceList />
               {" "}
             </SectionGridStyled>
 
@@ -210,9 +133,7 @@ const HomepageLayout = () => {
                 Skills
               </Title>
 
-              <List>
-                {educationList}
-              </List>
+              <EducationList />
             </Grid>
           </Grid>
 

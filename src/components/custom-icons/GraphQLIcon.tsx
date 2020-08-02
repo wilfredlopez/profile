@@ -4,7 +4,6 @@ interface Props {
   sizeInPx?: string;
 }
 
-//style={{ fill: "#E10098" }}
 const GraphQlIcon = ({ sizeInPx = "48px" }: Props) => {
   return (
     <svg

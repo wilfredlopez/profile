@@ -5,8 +5,7 @@ import {
   FaSalesforce,
   FaJira,
   FaUniversalAccess,
-  FaBriefcase,
-  // FaDatabase,
+  // FaBriefcase,
 } from "react-icons/fa";
 
 import {
@@ -17,47 +16,15 @@ import {
   IoMdCalendar,
   IoMdChatboxes,
 } from "react-icons/io";
-import TypescriptIcon from "./TypescriptIcon";
-import GraphQlIcon from "./GraphQLIcon";
+import TypescriptIcon from "../custom-icons/TypescriptIcon";
+import GraphQlIcon from "../custom-icons/GraphQLIcon";
 import { SECONDARY_COLOR } from "@root/theme/getTheme";
-
-const ExpIcon = <FaBriefcase color="#00796b" />;
-
-export const experiences = [
-  {
-    Icon: ExpIcon,
-    label: "Web Production QA Analyst",
-    location: "Century 21 Stores",
-    isCurrent: false,
-  },
-  {
-    Icon: ExpIcon,
-    label: "Suppor Center Specialist",
-    location: "Century 21 Stores",
-    isCurrent: false,
-  },
-  {
-    Icon: ExpIcon,
-    label: "Mission Control Specialist",
-    location: "Teleperformance",
-    isCurrent: false,
-  },
-  {
-    Icon: ExpIcon,
-    label: "Customer Service Representative",
-    location: "Teleperformance",
-    isCurrent: false,
-  },
-  {
-    Icon: ExpIcon,
-    label: "Call Center QA Analyst",
-    location: "BM Teleservices",
-    isCurrent: false,
-  },
-] as const;
+import { List, Typography } from "@material-ui/core";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 const SIZE = "24px";
 
-export const education = [
+export const educationIcons = [
   { Icon: <FaReact style={{ fill: "#61dafb" }} size={SIZE} />, label: "React" },
   { Icon: <TypescriptIcon sizeInPx={SIZE} />, label: "Typescript" },
   { Icon: <GraphQlIcon sizeInPx={SIZE} />, label: "GraphQL" },
@@ -93,3 +60,41 @@ export const education = [
     label: "Bilingual (English, Spanish)",
   },
 ] as const;
+
+const StyledItem = styled.li`
+  padding-top: 0;
+  padding-bottom: 6px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  text-align: left;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #dcd5d5;
+    /* transition: all 100ms ease-in-out; */
+    /* &:hover{
+      transform: translate(10px);
+    } */
+`;
+
+export const EducationList = () => {
+  return <List>
+    {educationIcons.map(({ label, Icon }, index) => {
+      return (
+        <StyledItem key={label + "-" + index}>
+          <>
+            <motion.div
+              whileTap={{ scale: 1.2 }}
+              whileHover={{ scale: 1.3 }}
+            >
+              <Typography variant="subtitle1" component="h3">
+                {Icon}
+                <span>{" "}</span>
+                {label}
+              </Typography>
+            </motion.div>
+          </>
+        </StyledItem>
+      );
+    })}
+  </List>;
+};

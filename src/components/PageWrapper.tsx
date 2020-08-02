@@ -2,7 +2,7 @@ import { Fab } from "@material-ui/core";
 import React, { PropsWithChildren } from "react";
 import { ScrollTop } from "./Layout/BackToTop";
 import Navigation from "./Layout/Navigation";
-import SiteFooter from "./partials/SiteFooter";
+import SiteFooter from "./footer/SiteFooter";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 interface Props {

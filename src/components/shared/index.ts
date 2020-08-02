@@ -6,6 +6,7 @@ export {
   default as StyledLink,
   StyledHtmlLink,
   NonStyledAnchor,
+  NonActiveLink,
 } from "./StyledLink";
 export { StyledButton, CircleButton } from "./StyledButton";
 export { PrimaryBackgroundSection } from "./multi-use";

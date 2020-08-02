@@ -4,12 +4,12 @@ import { Container, Grid, Typography, List, ListItem } from "@material-ui/core";
 import NavLink from "next/link";
 import {
   PrimaryBackgroundSection,
-  StyledHtmlLink,
 } from "../shared";
-import SocialList from "./SocialList";
+import SocialList from "../partials/SocialList";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { SECONDARY_COLOR } from "@root/theme/getTheme";
+import ProjectLinks from "./ProjectLinks";
 
 export const FooterNavLink = styled.a<{ isActive?: boolean }>`
   color: ${(props) => props.isActive ? SECONDARY_COLOR : "inherit"};
@@ -26,16 +26,8 @@ export const FooterNavLink = styled.a<{ isActive?: boolean }>`
   }
 `;
 
-const Title = styled(Typography)<{ component?: string }>`
+const FooterTitle = styled(Typography)<{ component?: string }>`
   /* text-align: center; */
-`;
-
-const NonActiveLink = styled(StyledHtmlLink)`
-    color: 'inherit';
-    &:hover{
-    color: ${SECONDARY_COLOR};
-    font-weight: 500;
-  }
 `;
 
 const SiteFooter = () => {
@@ -59,7 +51,7 @@ const SiteFooter = () => {
             <Grid item={true} xs={12} sm="auto">
               <List id="navbar">
                 <ListItem>
-                  <Title variant="h6" component="h1">Pages</Title>
+                  <FooterTitle variant="h6" component="h1">Pages</FooterTitle>
                 </ListItem>
                 <ListItem>
                   <NavLink href="/">
@@ -87,44 +79,19 @@ const SiteFooter = () => {
             <Grid item xs={12} sm="auto">
               <List>
                 <ListItem>
-                  <Title variant="h6" component="h2">Showcase Projects</Title>
+                  <FooterTitle variant="h6" component="h2">
+                    Showcase Projects
+                  </FooterTitle>
                 </ListItem>
-                <ListItem>
-                  <NonActiveLink
-                    href="https://vapemusic.club"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Vape Music"
-                  >
-                    Vape Music
-                  </NonActiveLink>
-                </ListItem>
-                <ListItem>
-                  <NonActiveLink
-                    href="https://wilfredlopez.net/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    RetalMeNow
-                  </NonActiveLink>
-                </ListItem>
-                <ListItem>
-                  <NonActiveLink
-                    href="https://wilfredexpensemanager.netlify.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Expenses Manager
-                  </NonActiveLink>
-                </ListItem>
+                <ProjectLinks />
               </List>
             </Grid>
             <Grid item xs={12} sm="auto">
               <List>
                 <ListItem>
-                  <Title variant="h6" component="h2">
+                  <FooterTitle variant="h6" component="h2">
                     Social
-                  </Title>
+                  </FooterTitle>
                 </ListItem>
                 <SocialList />
               </List>

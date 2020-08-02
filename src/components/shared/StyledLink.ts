@@ -23,4 +23,12 @@ export const StyledHtmlLink = styled.a<{ color?: string }>`
     text-decoration: none;
 `;
 
+export const NonActiveLink = styled(StyledHtmlLink)`
+    color: 'inherit';
+    &:hover{
+    color: ${SECONDARY_COLOR};
+    font-weight: 500;
+  }
+`;
+
 export default StyledLink;
