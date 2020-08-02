@@ -1,0 +1,33 @@
+export interface NnmPackage {
+  name: string;
+  url: string;
+  description: string;
+  command?: string;
+}
+export const NPM_PACKAGES: NnmPackage[] = [
+  {
+    name: "React-utils",
+    url: "https://www.npmjs.com/package/@wilfredlopez/react-utils",
+    description: "Javascript Utilify Functions, Classes and Typescript types.",
+    command: "npm i @wilfredlopez/react-utils",
+  },
+  {
+    name: "wl-components/react",
+    url: "https://www.npmjs.com/package/@wilfredlopez/react",
+    description:
+      "React specific building blocks on top of @wilfredlopez/wl-componets UI Library.",
+    command: "npm install @wilfredlopez/react",
+  },
+  {
+    name: "wl-components",
+    url: "https://www.npmjs.com/package/@wilfredlopez/wl-components",
+    description: "Web Components UI Library",
+    command: "npm i @wilfredlopez/wl-components",
+  },
+  {
+    name: "youtube-api-search-typed",
+    url: "https://www.npmjs.com/package/youtube-api-search-typed",
+    description: "Makes Easy the search for videos on Youtube using their API.",
+    command: "npm i youtube-api-search-typed",
+  },
+];

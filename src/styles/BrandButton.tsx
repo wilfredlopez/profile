@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { CSSProperties, PropsWithChildren } from "react";
 import {
   createStyles,
   makeStyles,
@@ -33,9 +33,13 @@ type CustomColor =
 type ButtonStylesColor = CustomColor | RegularButtonColor;
 
 interface ButtonStyles {
+  onClick?:
+    | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
+    | undefined;
   ref?: React.Ref<HTMLButtonElement>;
   color?: ButtonStylesColor;
   className?: string;
+  style?: CSSProperties;
   size?: "medium" | "large" | "small" | "default";
   /**
          * The content of the button.

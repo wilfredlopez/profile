@@ -8,10 +8,10 @@ const index = () => {
   return (
     <>
       <Head>
-        <title key="title">Web Development | Wilfred Lopez</title>
+        <title key="title">Home | Wilfred Lopez</title>
         <meta
           name="description"
-          content="Web Development | Wilfred Lopez"
+          content="Home | Wilfred Lopez"
         >
         </meta>
         <link rel="canonical" href="https://wilfredlopez.net/" />

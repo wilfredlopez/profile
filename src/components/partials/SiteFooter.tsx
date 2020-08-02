@@ -5,7 +5,7 @@ import NavLink from "next/link";
 import {
   PrimaryBackgroundSection,
   StyledHtmlLink,
-} from "../../shared";
+} from "../shared";
 import SocialList from "./SocialList";
 import styled from "styled-components";
 import { useRouter } from "next/router";

@@ -2,7 +2,7 @@ import { Container, Typography } from "@material-ui/core";
 
 import React from "react";
 import styled from "styled-components";
-import BounceComponent from "./BounceComponent";
+import BounceComponent from "../shared/BounceComponent";
 
 const InstagramImage = styled.img`
     width: 100%;

@@ -4,7 +4,7 @@ import { PagesContextProvider } from "@root/context/PagesContext";
 interface Props {
 }
 
-const RootProvider = (props: PropsWithChildren<{}>) => {
+const RootProvider = (props: PropsWithChildren<Props>) => {
   return (
     <ThemeContainer>
       <PagesContextProvider>

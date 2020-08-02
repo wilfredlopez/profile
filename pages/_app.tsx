@@ -41,21 +41,21 @@ export default function MyApp(props: AppProps) {
         />
         <meta
           name="description"
-          content="Wilfred Lopez Quality Assurance and Web Development curriculum"
+          content="Wilfred Donald Lopez, Quality Assurance and Web Development curriculum"
         />
         <meta
           property="og:description"
-          content="Wilfred Lopez Quality Assurance and Web Development curriculum"
+          content="Wilfred Donald Lopez, Quality Assurance and Web Development curriculum"
         />
         <meta
           name="keywords"
-          content="react, typescript, wilfred lopez, Wilfred, Lopez, Developer, GraphQL, profile, NodeJS, MongoDB, Web Accessibility, Javascript, css, html"
+          content="Wilfred Donald Lopez, react, typescript, wilfred lopez, Wilfred, Lopez, Developer, GraphQL, profile, NodeJS, MongoDB, Web Accessibility, Javascript, css, html"
         />
 
         <meta name="author" content="Wilfred Lopez" />
         <meta property="og:type" content="developer" />
         <meta property="og:title" content="Wilfred Lopez - Web Development" />
-        <meta property="og:site_name" content="wilfredlopez" />
+        <meta property="og:site_name" content="wilfredlopez.net" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff"

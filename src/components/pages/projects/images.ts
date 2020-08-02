@@ -1,10 +1,10 @@
 import { ImageToSlider } from "@components/shared/SliderCard";
-import vapemusicImg from "../../../img/vapemusic-example.jpg";
-import retailmenowImg from "../../../img/retailmenow.jpeg";
 import expenseManagerImg from "../../../img/expenses-manager-home.png";
 import transPage from "../../../img/expenses-manager-transactions.png";
+import retailmenowImg from "../../../img/retailmenow.jpeg";
+import vapemusicImg from "../../../img/vapemusic-example.jpg";
 
-const ExpenseManger: ImageToSlider[] = [
+const ExpenseMangerImages: ImageToSlider[] = [
   {
     label: "HomePage",
     imgPath: expenseManagerImg,
@@ -25,7 +25,7 @@ const ExpenseManger: ImageToSlider[] = [
   },
 ];
 
-const vapeMusic: ImageToSlider[] = [{
+const vapeMusicImages: ImageToSlider[] = [{
   label: "VapeMusic HomePage",
   imgPath:
     "https://res.cloudinary.com/wlopez/image/upload/v1596223814/VAPEMUSIC_SHOWCASE_1.jpg",
@@ -42,12 +42,26 @@ const vapeMusic: ImageToSlider[] = [{
   imgPath: vapemusicImg,
 }];
 
-const retailMeNow: ImageToSlider[] = [
+const retailMeNowImages: ImageToSlider[] = [
   { label: "PDP", imgPath: retailmenowImg },
 ];
 
+const coronaVirusImages: ImageToSlider[] = [
+  {
+    label: "HomePage",
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1596335173/wilfredlopez-profile-page/corona-home-page.jpg",
+  },
+  {
+    label: "Cases Per Country",
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1596335144/wilfredlopez-profile-page/Corona-countries.jpg",
+  },
+];
+
 export const PROJECT_IMAGES = {
-  vapeMusic,
-  retailMeNow,
-  ExpenseManger,
+  vapeMusic: vapeMusicImages,
+  retailMeNow: retailMeNowImages,
+  ExpenseManger: ExpenseMangerImages,
+  coronaVirus: coronaVirusImages,
 };

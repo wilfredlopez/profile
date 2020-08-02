@@ -1,9 +1,11 @@
 import React from "react";
-import Projects from "@components/pages/Projects";
+// import Projects from "@components/pages/Projects";
+import Projects from "@components/pages/projects/index";
 import Head from "next/head";
 import PageWrapper from "@components/PageWrapper";
 import { motion } from "framer-motion";
-import { fadeInUp } from "animation";
+import { fadeInUp } from "@root/animation";
+import NpmPackages from "@components/npm-package/NpmPackages";
 
 // import SliderCard from "@components/shared/SliderCard";
 // import { PROJECT_IMAGES } from "@components/pages/constants/projectImages";
@@ -34,6 +36,7 @@ const projects = () => {
           <PageWrapper>
             <motion.div variants={fadeInUp}>
               <Projects />
+              <NpmPackages />
             </motion.div>
             {/* <SliderCard
           imageData={allImages}

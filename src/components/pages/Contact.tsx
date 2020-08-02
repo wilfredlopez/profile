@@ -4,7 +4,6 @@ import {
   MailOutline as MailIcon,
   Phone as PhoneIcon,
 } from "@material-ui/icons";
-import HomepageHeading from "./partials/HomepageHeading";
 import { Segment, StyledHtmlLink } from "@components/shared";
 import styled from "styled-components";
 import { usePagesContext } from "@root/context/PagesContext";
@@ -66,7 +65,6 @@ const Contact = () => {
                 </Paragraph>
 
                 <Paragraph>
-                  Currently working as a QA Analyst for a B2C Reail Store.
                   Experience in Customer Service, Workforce Management, Web
                   Quality Assurance and Accessibility.
                 </Paragraph>

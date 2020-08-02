@@ -3,7 +3,7 @@ import {
   SECONDARY_COLOR,
   TERTIARY_COLOR,
 } from "@root/styles/getTheme";
-import { motion } from "framer-motion";
+import { AnimationProps, motion } from "framer-motion";
 import React, { PropsWithChildren } from "react";
 
 interface Props {
@@ -40,14 +40,17 @@ const ScaleUpDownComponent = (
     children,
   }: PropsWithChildren<Props>,
 ) => {
+  let animate: AnimationProps["animate"] = {
+    scale: [0.9, scaleTo],
+  };
+  if (backgrounds.length > 0) {
+    animate.backgroundColor = backgrounds;
+  }
   return (
     <motion.div
       style={{ marginTop: 20, marginBottom: 20, borderRadius: 6 }}
       transition={scaleTransition}
-      animate={{
-        scale: [0.9, scaleTo],
-        backgroundColor: backgrounds,
-      }}
+      animate={animate}
     >
       {children}
     </motion.div>

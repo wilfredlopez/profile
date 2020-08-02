@@ -1,7 +1,6 @@
 import { StyledHtmlLink } from "@components/shared";
 import {
   Button,
-
   Typography,
 } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
@@ -12,21 +11,15 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
 import DragHandleIcon from "@material-ui/icons/DragHandle";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import HomeIcon from "@material-ui/icons/Home";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import WebIcon from "@material-ui/icons/Web";
 import { SECONDARY_COLOR } from "@root/styles/getTheme";
 import clsx from "clsx";
-// import { NavLink } from "react-router-dom";
 import NavLink from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-import { NAV_LINKS, NavLinkItem, SOCIAL_LINKS } from "./navlinks";
+import { NAV_LINKS, SOCIAL_LINKS } from "./navlinks";
 
 interface Props {
 }

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import {
-  Button,
   Container,
   Grid,
   Typography,
@@ -12,8 +11,8 @@ import {
 import {
   education,
   experiences,
-} from "./constants";
-import HomepageHeading from "./partials/HomepageHeading";
+} from "../custom-icons";
+import HomepageHeading from "../partials/HomepageHeading";
 // import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 
 import {
@@ -21,11 +20,10 @@ import {
   PrimaryBackgroundSection,
 } from "@components/shared";
 import styled from "styled-components";
-import AllProjects from "./partials/AllProjects";
 import { usePagesContext } from "@root/context/PagesContext";
 import Link from "next/link";
 import { BrandButton } from "@root/styles/Custom";
-
+import AllProjects from "../pages/projects/index";
 import useSharedStyles from "@root/styles/useSharedStyles";
 import { motion } from "framer-motion";
 
@@ -215,8 +213,12 @@ const HomepageLayout = () => {
               {summary}
             </Container>
           </Grid>
-          <SectionGridStyled container justify="center">
-            <motion.div whileHover={{ scale: 1.3 }}>
+          <Grid
+            container
+            justify="center"
+            style={{ marginTop: 25, marginBottom: 25 }}
+          >
+            <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 1.3 }}>
               <BrandButton
                 color="default"
                 size="large"
@@ -225,12 +227,10 @@ const HomepageLayout = () => {
                   <NonStyledAnchor>
                     {"Showcase Projects".toUpperCase()}
                   </NonStyledAnchor>
-                  {/* <Button color="primary" variant="contained"> */}
-                  {/* </Button> */}
                 </Link>
               </BrandButton>
             </motion.div>
-          </SectionGridStyled>
+          </Grid>
         </Grid>
 
         <Container
@@ -239,7 +239,12 @@ const HomepageLayout = () => {
             root: classes.minPaddingX,
           }}
         >
-          <AllProjects showSliderControls={false} loop={false} />
+          <AllProjects
+            addMarginTop={false}
+            showSliderControls={false}
+            loop={false}
+            limitTo={2}
+          />
         </Container>
       </Paper>
       {/* <SocialMediaEmbeds /> */}

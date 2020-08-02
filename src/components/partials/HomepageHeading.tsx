@@ -6,8 +6,8 @@ import {
   Button,
 } from "@material-ui/core";
 import wilfredImg from "@root/img/wilfred-profile.png";
-import { Responsive } from "../../shared";
-import Segment from "../../shared/Segment";
+import { Responsive } from "../shared";
+import Segment from "../shared/Segment";
 import WorkIcon from "@material-ui/icons/Work";
 import RoomIcon from "@material-ui/icons/Room";
 // import HomeIcon from "@material-ui/icons/Home";
@@ -79,7 +79,7 @@ const HomepageHeading: React.FC<Props> = () => (
             marginTop: "0.5em",
           }}
         >
-          <ScaleUpDownComponent>
+          <ScaleUpDownComponent backgrounds={[] as any}>
             WILFRED LOPEZ
           </ScaleUpDownComponent>
         </Typography>
@@ -128,14 +128,12 @@ const HomepageHeading: React.FC<Props> = () => (
           </div>
         </PlacesGrid> */}
 
-        <motion.div whileHover={{ scale: 1.1 }}>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.1 }}>
           <Button
             endIcon={<MailOutlineIcon />}
             color="secondary"
             variant="contained"
           >
-            {/* <MailOutlineIcon /> */}
-
             <StyledAnker href="mailto:cubamc@gmail.com" title="contact me">
               Contact Me
             </StyledAnker>
