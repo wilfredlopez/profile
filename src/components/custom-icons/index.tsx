@@ -19,7 +19,7 @@ import {
 } from "react-icons/io";
 import TypescriptIcon from "./TypescriptIcon";
 import GraphQlIcon from "./GraphQLIcon";
-import { SECONDARY_COLOR } from "@root/styles/getTheme";
+import { SECONDARY_COLOR } from "@root/theme/getTheme";
 
 const ExpIcon = <FaBriefcase color="#00796b" />;
 

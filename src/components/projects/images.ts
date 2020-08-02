@@ -1,6 +1,6 @@
 import { ImageToSlider } from "@components/shared/SliderCard";
-import retailmenowImg from "../../../img/retailmenow.jpeg";
-import vapemusicImg from "../../../img/vapemusic-example.jpg";
+import retailmenowImg from "../../img/retailmenow.jpeg";
+import vapemusicImg from "../../img/vapemusic-example.jpg";
 
 const ExpenseMangerImages: ImageToSlider[] = [
   {
@@ -17,6 +17,11 @@ const ExpenseMangerImages: ImageToSlider[] = [
     imgPath:
       "https://res.cloudinary.com/wlopez/image/upload/v1596227495/EXPENSE-MANAGER-SHOWCASE_2.jpg",
     label: "Monthly Summary",
+  },
+  {
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1596385392/wilfredlopez-profile-page/expense-manager-register.jpg",
+    label: "Register Page",
   },
 ];
 
@@ -43,14 +48,14 @@ const retailMeNowImages: ImageToSlider[] = [
 
 const coronaVirusImages: ImageToSlider[] = [
   {
-    label: "HomePage",
-    imgPath:
-      "https://res.cloudinary.com/wlopez/image/upload/v1596335173/wilfredlopez-profile-page/corona-home-page.jpg",
-  },
-  {
     label: "Cases Per Country",
     imgPath:
       "https://res.cloudinary.com/wlopez/image/upload/v1596335144/wilfredlopez-profile-page/Corona-countries.jpg",
+  },
+  {
+    label: "HomePage",
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1596335173/wilfredlopez-profile-page/corona-home-page.jpg",
   },
 ];
 

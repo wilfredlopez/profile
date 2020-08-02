@@ -13,7 +13,7 @@ import RoomIcon from "@material-ui/icons/Room";
 // import HomeIcon from "@material-ui/icons/Home";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import styled from "styled-components";
-import { BrandButton } from "@root/styles/Custom";
+import { BrandButton } from "@root/theme/Custom";
 import ScaleUpDownComponent from "@components/shared/ScaleUpDownComponent";
 import { motion } from "framer-motion";
 interface Props {
@@ -128,7 +128,7 @@ const HomepageHeading: React.FC<Props> = () => (
           </div>
         </PlacesGrid> */}
 
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.1 }}>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.3 }}>
           <Button
             endIcon={<MailOutlineIcon />}
             color="secondary"

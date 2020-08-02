@@ -1,11 +1,12 @@
-import { SECONDARY_COLOR } from "@root/styles/getTheme";
+import { SECONDARY_COLOR } from "@root/theme/getTheme";
 import styled from "styled-components";
 
 export const NonStyledAnchor = styled.a`
     color: inherit;
     text-decoration: none;
     &:hover{
-       color: 'inherit'
+       color: 'inherit';
+       text-decoration: none;
     }
 `;
 

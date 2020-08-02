@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "@components/pages/Contact";
+import Contact from "@components/contact/Contact";
 import Head from "next/head";
 import PageWrapper from "@components/PageWrapper";
 import Instagram from "@components/partials/Instagram";

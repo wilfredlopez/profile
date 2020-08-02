@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { ThemeContainer } from "@root/styles/ThemeContainer";
+import { ThemeContainer } from "@root/theme/ThemeContainer";
 import { PagesContextProvider } from "@root/context/PagesContext";
 interface Props {
 }

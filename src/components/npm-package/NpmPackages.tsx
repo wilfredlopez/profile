@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { NnmPackage, NPM_PACKAGES } from "./NPM_PACKAGES";
-import { BrandButton } from "@root/styles/Custom";
+import { BrandButton } from "@root/theme/Custom";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import { DividerElement } from "../shared";
@@ -57,10 +57,10 @@ const NpmPackages = (props: Props) => {
     }
   };
   return (
-    <Box mb={2}>
+    <Box>
       <Paper className={classes.wrapper} elevation={0}>
         <Container>
-          <Box my={2}>
+          <Box mb={2} pt={2}>
             <DividerElement>
               <Typography align="center">NPM Packages</Typography>
             </DividerElement>
@@ -85,6 +85,7 @@ const NpmPackages = (props: Props) => {
             })}
           </Grid>
         </Container>
+        <Box pb={2} />
       </Paper>
     </Box>
   );

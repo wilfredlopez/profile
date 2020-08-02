@@ -2,7 +2,7 @@ import {
   PRIMARY_COLOR,
   SECONDARY_COLOR,
   TERTIARY_COLOR,
-} from "@root/styles/getTheme";
+} from "@root/theme/getTheme";
 import { AnimationProps, motion } from "framer-motion";
 import React, { PropsWithChildren } from "react";
 

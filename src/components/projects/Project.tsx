@@ -5,8 +5,8 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
-import { BrandButton, ImageButton } from "@root/styles/Custom";
-import useSharedStyles from "@root/styles/useSharedStyles";
+import { BrandButton, ImageButton } from "@root/theme/Custom";
+import useSharedStyles from "@root/theme/useSharedStyles";
 import React from "react";
 import styled from "styled-components";
 import { DividerElement } from "@components/shared";

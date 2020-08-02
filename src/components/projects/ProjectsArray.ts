@@ -53,11 +53,11 @@ const expenseManager: Project = {
   description: expenseManagerDescription,
 };
 
-export const projects: Project[] = [
+export const ProjectsArray: Project[] = [
   vapeMusic,
   expenseManager,
   corona,
   retailmeNow,
 ];
 
-export default projects;
+export default ProjectsArray;

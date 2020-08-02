@@ -9,7 +9,7 @@ import {
 import SocialList from "./SocialList";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import { SECONDARY_COLOR } from "@root/styles/getTheme";
+import { SECONDARY_COLOR } from "@root/theme/getTheme";
 
 export const FooterNavLink = styled.a<{ isActive?: boolean }>`
   color: ${(props) => props.isActive ? SECONDARY_COLOR : "inherit"};

@@ -1,33 +1,32 @@
-import React, { useEffect } from "react";
+// import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
 import {
+  PrimaryBackgroundSection,
+} from "@components/shared";
+import {
+  Box,
   Container,
   Grid,
-  Typography,
-  List,
-  useMediaQuery,
-  Paper,
-  Box,
-  Hidden,
-} from "@material-ui/core";
 
+  Hidden,
+  List,
+
+  Paper,
+  Typography,
+
+  useMediaQuery,
+} from "@material-ui/core";
+import { usePagesContext } from "@root/context/PagesContext";
+import useSharedStyles from "@root/theme/useSharedStyles";
+import { motion } from "framer-motion";
+import React, { useEffect } from "react";
+import styled from "styled-components";
 import {
   education,
   experiences,
 } from "../custom-icons";
 import HomepageHeading from "../partials/HomepageHeading";
-// import SocialMediaEmbeds from "./partials/SocialMediaEmbeds";
-
-import {
-  NonStyledAnchor,
-  PrimaryBackgroundSection,
-} from "@components/shared";
-import styled from "styled-components";
-import { usePagesContext } from "@root/context/PagesContext";
-import Link from "next/link";
-import { BrandButton } from "@root/styles/Custom";
-import AllProjects from "../pages/projects/index";
-import useSharedStyles from "@root/styles/useSharedStyles";
-import { motion } from "framer-motion";
+import HomeProjectGrid from "./HomeProjectGrid";
+import ShowCaseProjectButton from "./ShowCaseProjectButton";
 
 const StyledItem = styled.li`
   padding-top: 0;
@@ -115,7 +114,7 @@ const HomepageLayout = () => {
         <>
           <motion.div
             whileTap={{ scale: 1.2 }}
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.3 }}
           >
             <Typography variant="subtitle1" component="h3">
               {Icon}
@@ -162,7 +161,7 @@ const HomepageLayout = () => {
       <PrimaryBackgroundSection>
         <HomepageHeading />
       </PrimaryBackgroundSection>
-      <Paper square>
+      <Paper square elevation={0}>
         <Grid
           container
           spacing={0}
@@ -231,27 +230,10 @@ const HomepageLayout = () => {
               {summary}
             </Container>
           </Grid>
-          <Grid
-            container
-            justify="center"
-            style={{ marginTop: 25, marginBottom: 25 }}
-          >
-            <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 1.3 }}>
-              <BrandButton
-                color="default"
-                size="large"
-              >
-                <Link href="/projects">
-                  <NonStyledAnchor>
-                    {"Showcase Projects".toUpperCase()}
-                  </NonStyledAnchor>
-                </Link>
-              </BrandButton>
-            </motion.div>
-          </Grid>
+          {/* <ShowCaseProjectButton /> */}
         </Grid>
 
-        <Container
+        {/* <Container
           id="projects"
           classes={{
             root: classes.minPaddingX,
@@ -263,6 +245,20 @@ const HomepageLayout = () => {
             loop={false}
             limitTo={2}
           />
+        </Container> */}
+      </Paper>
+      <Box pb={2} />
+      <Paper square>
+        <Box pt={1} />
+
+        <ShowCaseProjectButton color="inherit" variant="outlined" />
+        <Container
+          id="projects"
+          classes={{
+            root: classes.minPaddingX,
+          }}
+        >
+          <HomeProjectGrid />
         </Container>
       </Paper>
       {/* <SocialMediaEmbeds /> */}

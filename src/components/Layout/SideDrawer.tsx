@@ -13,7 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import DragHandleIcon from "@material-ui/icons/DragHandle";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import { SECONDARY_COLOR } from "@root/styles/getTheme";
+import { SECONDARY_COLOR } from "@root/theme/getTheme";
 import clsx from "clsx";
 import NavLink from "next/link";
 import { useRouter } from "next/router";

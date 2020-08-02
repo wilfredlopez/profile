@@ -1,6 +1,6 @@
 import React from "react";
 // import Projects from "@components/pages/Projects";
-import Projects from "@components/pages/projects/index";
+import Projects from "@components/projects/index";
 import Head from "next/head";
 import PageWrapper from "@components/PageWrapper";
 import { motion } from "framer-motion";

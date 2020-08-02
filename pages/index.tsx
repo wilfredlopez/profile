@@ -1,5 +1,5 @@
 import React from "react";
-import HomepageLayout from "@components/pages/HomepageLayout";
+import HomepageLayout from "@components/home/HomepageLayout";
 import Head from "next/head";
 import { Paper } from "@material-ui/core";
 import PageWrapper from "@components/PageWrapper";
