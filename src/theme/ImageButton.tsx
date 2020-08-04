@@ -1,8 +1,8 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { Theme, makeStyles, createStyles } from "@material-ui/core/styles";
 import ButtonBase, { ButtonBaseProps } from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
-
+import { NonStyledAnchor } from "@components/shared";
 const BORDER_RADIOUS = 2;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -98,44 +98,76 @@ const useStyles = makeStyles((theme: Theme) =>
 interface ImageButtonProps {
   title: string;
   width: number;
-  url: string;
+  backgroundUrl: string;
   minHeight?: number;
   buttomProps?: ButtonBaseProps;
+  linkUrl?: string;
+  linkTarget?: string;
 }
 
 export function ImageButton(
-  { title, width, url, minHeight = 250, buttomProps = {} }: ImageButtonProps,
+  {
+    title,
+    width,
+    backgroundUrl,
+    minHeight = 250,
+    buttomProps = {},
+    linkUrl,
+    linkTarget = "_blank",
+  }: ImageButtonProps,
 ) {
   const classes = useStyles();
+  const Wrapper = linkUrl ? WithLink : WithSpan;
 
-  return <ButtonBase
-    focusRipple
-    key={title}
-    className={classes.image}
-    focusVisibleClassName={classes.focusVisible}
-    style={{
-      width: width,
-      minHeight: minHeight,
-    }}
-    {...buttomProps}
-  >
-    <span
-      className={classes.imageSrc}
+  return <Wrapper linkTarget={linkTarget} linkUrl={linkUrl || ""}>
+    <ButtonBase
+      focusRipple
+      key={title}
+      className={classes.image}
+      focusVisibleClassName={classes.focusVisible}
       style={{
-        backgroundImage: `url(${url})`,
+        width: width,
+        minHeight: minHeight,
       }}
-    />
-    <span className={classes.imageBackdrop} />
-    <span className={classes.imageButton}>
-      <Typography
-        component="span"
-        variant="subtitle1"
-        color="inherit"
-        className={classes.imageTitle}
-      >
-        {title}
-        <span className={classes.imageMarked} />
-      </Typography>
-    </span>
-  </ButtonBase>;
+      {...buttomProps}
+    >
+      <span
+        className={classes.imageSrc}
+        style={{
+          backgroundImage: `url(${backgroundUrl})`,
+        }}
+      />
+      <span className={classes.imageBackdrop} />
+      <span className={classes.imageButton}>
+        <Typography
+          component="span"
+          variant="subtitle1"
+          color="inherit"
+          className={classes.imageTitle}
+        >
+          {title}
+
+          <span className={classes.imageMarked} />
+        </Typography>
+      </span>
+    </ButtonBase>
+  </Wrapper>;
 }
+
+const WithLink = (
+  { linkTarget, linkUrl, children }: PropsWithChildren<
+    { linkUrl: string; linkTarget: string }
+  >,
+) => {
+  return <NonStyledAnchor
+    href={linkUrl}
+    target={linkTarget}
+    rel={linkTarget === "_blank" ? "noopener noreferrer" : undefined}
+  >
+    {children}
+  </NonStyledAnchor>;
+};
+
+const WithSpan = ({ children }: PropsWithChildren<{}>) => (<span>
+  {children}
+</span>);

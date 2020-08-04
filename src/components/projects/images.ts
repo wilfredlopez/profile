@@ -59,9 +59,20 @@ const coronaVirusImages: ImageToSlider[] = [
   },
 ];
 
+const TwoDealImages: ImageToSlider[] = [{
+  imgPath:
+    "https://res.cloudinary.com/wlopez/image/upload/v1596505955/wilfredlopez-profile-page/2deal-pagination.jpg",
+  label: "Product Pagination",
+}, {
+  imgPath:
+    "https://res.cloudinary.com/wlopez/image/upload/v1596505946/wilfredlopez-profile-page/2-deal-cart.jpg",
+  label: "Products In Cart",
+}];
+
 export const PROJECT_IMAGES = {
   vapeMusic: vapeMusicImages,
   retailMeNow: retailMeNowImages,
   ExpenseManger: ExpenseMangerImages,
   coronaVirus: coronaVirusImages,
+  TwoDeal: TwoDealImages,
 };

@@ -41,6 +41,7 @@ interface ButtonStyles {
   className?: string;
   style?: CSSProperties;
   size?: "medium" | "large" | "small" | "default";
+  type?: "button" | "submit" | "reset";
   /**
          * The content of the button.
          */

@@ -5,6 +5,7 @@ import {
   expenseManagerDescription,
   retailmeNowDescription,
   vapeMusicDescription,
+  twoDealDescription,
 } from "./descriptions";
 import { PROJECT_IMAGES } from "./images";
 
@@ -53,7 +54,17 @@ const expenseManager: Project = {
   description: expenseManagerDescription,
 };
 
+const twoDeal: Project = {
+  classKey: "shop",
+  images: PROJECT_IMAGES.TwoDeal,
+  url: "https://twodeal.herokuapp.com/",
+  name: "Two Deal",
+  title: "Online Store",
+  description: twoDealDescription,
+};
+
 export const ProjectsArray: Project[] = [
+  twoDeal,
   vapeMusic,
   expenseManager,
   corona,

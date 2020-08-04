@@ -68,3 +68,14 @@ export const easyTodosDescription = (
     </p>
   </>
 );
+
+export const twoDealDescription = (
+  <>
+    <p>
+      Online Retail Store
+    </p>
+    <p>
+      Technologies: Express, Rest API, Stripe Checkout, NextJS, Material-UI.
+    </p>
+  </>
+);

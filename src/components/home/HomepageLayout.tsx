@@ -179,7 +179,7 @@ const HomepageLayout = () => {
             root: classes.minPaddingX,
           }}
         >
-          <HomeProjectGrid />
+          <HomeProjectGrid limit={4} />
         </Container>
       </Paper>
       {/* <SocialMediaEmbeds /> */}

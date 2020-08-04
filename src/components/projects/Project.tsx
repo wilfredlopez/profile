@@ -85,8 +85,9 @@ const Project: React.FC<Props> = (
             }}
           >
             <ImageButton
+              linkUrl={url}
               title={title}
-              url={props.images[0].imgPath}
+              backgroundUrl={props.images[0].imgPath}
               width={520}
               minHeight={500}
               buttomProps={{}}
