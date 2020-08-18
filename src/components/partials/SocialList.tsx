@@ -1,41 +1,13 @@
 import React from "react";
 import { ListItem } from "@material-ui/core";
 import { StyledLink } from "@components/shared";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
+
 import GitHubIcon from "@material-ui/icons/GitHub";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import FacebookIcon from "@material-ui/icons/Facebook";
 import styled from "styled-components";
+import { FacebookIconStyled, InstagramIconStyled, LinkedInIconStyled } from '../Layout/SideItems'
 
-const FacebookIconStyled = styled(FacebookIcon)`
-  border: 1px outset rgb(59, 89, 152);
-  fill: #3b5998 !important;
-    border-radius: 6px;
-    background: white;
-`;
-
-const LinkedInIconStyled = styled(LinkedInIcon)`
-      fill: #2867B2 !important;
-    background: white;
-    border: 1px outset rgb(40, 103, 178);
-    border-radius: 6px;
-`;
-
-const InstagramIconStyled = styled(InstagramIcon)`
-   /* fill: #d836a6;
-    background: #512c05; */
-    display: inline-block;
-  text-align: center;
-  border-radius: 40px;
-  color: #fff;
-  line-height: 250px;
-  vertical-align: middle;
-    background: #d6249f;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
-  `;
 
 const socialMedia = [
   {
@@ -49,12 +21,7 @@ const socialMedia = [
     Icon: <GitHubIcon style={{ color: "#8f9498" }} />,
     url: "https://github.com/wilfredlopez",
   },
-  {
-    label: "YouTube",
-    Icon: <YouTubeIcon style={{ color: "#FF0000" }} />,
-    url:
-      "https://www.youtube.com/channel/UCbJgT2f4AXpLxE0f9n-GCBg?view_as=subscriber",
-  },
+
   {
     label: "Twitter",
     Icon: <TwitterIcon style={{ color: "#1DA1F2" }} />,
@@ -69,6 +36,12 @@ const socialMedia = [
     label: "Instagram",
     Icon: <InstagramIconStyled />,
     url: "https://www.instagram.com/wilfredlopez/",
+  },
+  {
+    label: "YouTube",
+    Icon: <YouTubeIcon style={{ color: "#FF0000" }} />,
+    url:
+      "https://www.youtube.com/channel/UCbJgT2f4AXpLxE0f9n-GCBg?view_as=subscriber",
   },
 ] as const;
 

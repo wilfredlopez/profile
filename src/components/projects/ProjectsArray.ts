@@ -6,6 +6,7 @@ import {
   retailmeNowDescription,
   vapeMusicDescription,
   twoDealDescription,
+  xyMusicDescription,
 } from "./descriptions";
 import { PROJECT_IMAGES } from "./images";
 
@@ -25,6 +26,15 @@ const corona: Project = {
   name: "COVID-19 Status",
   title: "COVID-19 - Coronavirus Status",
   description: coronaVirusDescription,
+};
+
+const xyMusic: Project = {
+  classKey: "vape",
+  images: PROJECT_IMAGES.xyMusic,
+  url: "https://xymusic.netlify.app/",
+  name: "XYMusic",
+  title: "XY Music - Search and Listen.",
+  description: xyMusicDescription,
 };
 
 const vapeMusic: Project = {
@@ -67,6 +77,7 @@ export const ProjectsArray: Project[] = [
   twoDeal,
   vapeMusic,
   expenseManager,
+  xyMusic,
   corona,
   retailmeNow,
 ];

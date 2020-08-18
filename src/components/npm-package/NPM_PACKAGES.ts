@@ -25,6 +25,13 @@ export const NPM_PACKAGES: NnmPackage[] = [
     command: "npm i @wilfredlopez/wl-components",
   },
   {
+    name: "react-use-light",
+    url: "https://www.npmjs.com/package/react-use-light",
+    description:
+      "Collection of essential React Hooks. Partial react-use library (by streamich) without external dependencies and other hooks.",
+    command: "npm i react-use-light",
+  },
+  {
     name: "youtube-api-search-typed",
     url: "https://www.npmjs.com/package/youtube-api-search-typed",
     description: "Makes Easy the search for videos on Youtube using their API.",

@@ -69,10 +69,34 @@ const TwoDealImages: ImageToSlider[] = [{
   label: "Products In Cart",
 }];
 
+const xyMusic: ImageToSlider[] = [
+  {
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1597766596/wilfredlopez-profile-page/XYMUSIC-EXAMPLE-1.jpg",
+    label: "Homepage",
+  },
+  {
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1597766648/wilfredlopez-profile-page/XYMUSIC-EXAMPLE-2.jpg",
+    label: "Music Player",
+  },
+  {
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1597766563/wilfredlopez-profile-page/XYMUSIC-EXAMPLE-3.jpg",
+    label: "Search Page",
+  },
+  {
+    imgPath:
+      "https://res.cloudinary.com/wlopez/image/upload/v1597766563/wilfredlopez-profile-page/XYMUSIC-EXAMPLE-4.jpg",
+    label: "User Library",
+  },
+];
+
 export const PROJECT_IMAGES = {
   vapeMusic: vapeMusicImages,
   retailMeNow: retailMeNowImages,
   ExpenseManger: ExpenseMangerImages,
   coronaVirus: coronaVirusImages,
   TwoDeal: TwoDealImages,
+  xyMusic,
 };

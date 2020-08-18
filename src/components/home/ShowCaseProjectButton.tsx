@@ -7,19 +7,19 @@ import Link from "next/link";
 
 interface Props {
   color?:
-    | "text"
-    | "inherit"
-    | "default"
-    | "vape"
-    | "expense"
-    | "shop"
-    | "blue"
-    | "error"
-    | "warning"
-    | "tertiary"
-    | "success"
-    | "primary"
-    | "secondary";
+  | "text"
+  | "inherit"
+  | "default"
+  | "vape"
+  | "expense"
+  | "shop"
+  | "blue"
+  | "error"
+  | "warning"
+  | "tertiary"
+  | "success"
+  | "primary"
+  | "secondary";
   size?: "default" | "medium" | "large" | "small";
   variant?: "text" | "outlined" | "contained";
 }
@@ -41,7 +41,7 @@ const ShowCaseProjectButton = (
         >
           <Link href="/projects">
             <NonStyledAnchor>
-              {"Showcase Projects".toUpperCase()}
+              {"More Projects".toUpperCase()}
             </NonStyledAnchor>
           </Link>
         </BrandButton>

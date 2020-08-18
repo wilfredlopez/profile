@@ -22,6 +22,17 @@ export const expenseManagerDescription = (
   </>
 );
 
+export const xyMusicDescription = (
+  <>
+    <p>
+      Mobile and Desktop App for Searching and Listening to music.
+    </p>
+    <p>
+      Technologies: Ionic React, GraphQL & Apollo Client.
+    </p>
+  </>
+);
+
 export const vapeMusicDescription = (
   <>
     <p>

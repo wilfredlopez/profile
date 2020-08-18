@@ -74,25 +74,18 @@ const Project: React.FC<Props> = (
         </Typography>
       </Container>
       {props.images.length === 1 &&
-        <div>
-          <StyledHtmlLink
-            className={classes.minPaddingX.concat(" " + classes.flexCenter)}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              marginBottom: "1rem",
-            }}
-          >
-            <ImageButton
-              linkUrl={url}
-              title={title}
-              backgroundUrl={props.images[0].imgPath}
-              width={520}
-              minHeight={500}
-              buttomProps={{}}
-            />
-          </StyledHtmlLink>
+        <div style={{
+          marginBottom: "1rem",
+        }} className={classes.minPaddingX.concat(" " + classes.flexCenter)}>
+          <ImageButton
+            linkUrl={url}
+            title={title}
+            backgroundUrl={props.images[0].imgPath}
+            width={520}
+            minHeight={500}
+            buttomProps={{}}
+          />
+
         </div>}
 
       <div style={{ marginBottom: "1rem" }} />

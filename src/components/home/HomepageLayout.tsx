@@ -34,7 +34,7 @@ const SummaryLi = styled.li`
     }
 `;
 
-const Title = styled(Typography)<{ component: string }>`
+const Title = styled(Typography) <{ component: string }>`
   text-decoration: underline;
   margin-bottom: 30px !important;
 `;
@@ -172,7 +172,8 @@ const HomepageLayout = () => {
       <Paper square>
         <Box pt={1} />
 
-        <ShowCaseProjectButton color="inherit" variant="outlined" />
+        <Typography align="center" variant="h4" component="h2">Showcase Projects</Typography>
+
         <Container
           id="projects"
           classes={{
@@ -181,6 +182,8 @@ const HomepageLayout = () => {
         >
           <HomeProjectGrid limit={4} />
         </Container>
+        <ShowCaseProjectButton color="inherit" variant="outlined" />
+        <Box pb={2} />
       </Paper>
       {/* <SocialMediaEmbeds /> */}
     </React.Fragment>
