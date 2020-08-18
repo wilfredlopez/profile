@@ -12,12 +12,7 @@ git push origin master
 npm run deploy
 ```
 
-## Test Locally
-```
-npm run build
-npm run export
-node server/server.js #test locally
-```
+
 https://wilfredlopez.github.io/profile
 
 
