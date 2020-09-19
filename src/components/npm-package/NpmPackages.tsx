@@ -14,10 +14,13 @@ import { NnmPackage, NPM_PACKAGES } from "./NPM_PACKAGES";
 import { BrandButton } from "@root/theme/Custom";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
-import { DividerElement } from "../shared";
+import { DividerElement, StyledHtmlLink } from "../shared";
 import { findIndex, Position, move } from "../shared/find-index";
+import { DARK_BACKGROUND_COLOR } from "@root/theme/getTheme";
+import { throttle } from '@wilfredlopez/react-utils';
 
 interface Props {
+  dark?:boolean
 }
 
 const spring = {
@@ -48,8 +51,9 @@ const NpmPackages = (props: Props) => {
   const classes = useNpmStyles();
   const positions = useRef<Position[]>([]).current;
   const [items, setItems] = React.useState(NPM_PACKAGES);
-  const setPosition = (i: number, offset: Position) => (positions[i] = offset);
-
+  function setPosition(i: number, offset: Position){
+   positions[i] = offset
+  } 
   const moveItem = (i: number, dragOffset: number) => {
     const targetIndex = findIndex(i, dragOffset, positions);
     if (targetIndex !== i) {
@@ -58,7 +62,12 @@ const NpmPackages = (props: Props) => {
   };
   return (
     <Box>
-      <Paper className={classes.wrapper} elevation={0}>
+      <Paper
+      style={props.dark ? {
+        background: DARK_BACKGROUND_COLOR,
+        color: 'white'
+      }:{}}
+      className={classes.wrapper} elevation={0}>
         <Container>
           <Box mb={2} pt={2}>
             <DividerElement>
@@ -110,18 +119,25 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
   const [isDragging, setDragging] = React.useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const [copyMessageOpen, setCopyMessageOpenTo] = React.useState(false);
-  // Update the measured position of the item so we can calculate when we should rearrange.
-  React.useEffect(() => {
+ const _setPosition =  throttle( function(){
     setPosition(i, {
       height: ref.current!.offsetHeight,
       top: ref.current!.offsetTop,
     });
+  },100)
+
+  // Update the measured position of the item so we can calculate when we should rearrange.
+  React.useEffect(() => {
+    _setPosition()
   });
 
   return (<>
     <Snackbar
       open={copyMessageOpen}
       autoHideDuration={1000}
+      style={{
+        position:'relative'
+      }}
       onClose={() => {
         setCopyMessageOpenTo(false);
       }}
@@ -155,6 +171,7 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
       <Card
         className={classes.cardRoot}
         style={{
+          position:'relative',
           background: i === (totalItems - 1)
             ? "rgba(247,247, 247,.83)"
             : "white",
@@ -185,6 +202,18 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
         <CardContent>
           <Typography variant="body2">
             {data.description}
+
+            <StyledHtmlLink
+             href={data.url} 
+            title={data.name + " npm home"}
+             color="blue"
+             style={{
+               display: 'block'
+             }}
+             target="_blank"
+             rel="noopener noreferrer"
+             role="link"
+             >{data.name}</StyledHtmlLink>
           </Typography>
         </CardContent>
       </Card>

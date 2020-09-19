@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
-import "@root/index.css";
 import RootProvider from "@root/RootProvider";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -34,6 +33,10 @@ export default function MyApp(props: AppProps) {
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+             <link
+          rel="stylesheet"
+          href="index.css"
         />
         <meta
           name="viewport"

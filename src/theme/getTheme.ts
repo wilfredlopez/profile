@@ -15,7 +15,7 @@ export const DARK_COLOR = "#040c14";
 export const LIGHT_COLOR = common["white"];
 export const TERTIARY_COLOR = "#c47070";
 export const TERTIARY_COLOR_CONTRAST = common["white"];
-
+export const DARK_BACKGROUND_COLOR = '#303030'
 const BORDER_RADIOUS = 4;
 
 //Cool Green /#38b584
@@ -77,7 +77,7 @@ export default function getTheme(prefersDarkMode = false) {
       MuiPaper: {
         root: {
           color: prefersDarkMode ? "#d2d2d2" : common["white"],
-          backgroundColor: prefersDarkMode ? "#2c2c2c" : "#303030",
+          backgroundColor: prefersDarkMode ? "#2c2c2c" : DARK_BACKGROUND_COLOR
         },
       },
       MuiMobileStepper: {

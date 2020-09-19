@@ -3,7 +3,8 @@ import HomepageLayout from "@components/home/HomepageLayout";
 import Head from "next/head";
 import { Paper } from "@material-ui/core";
 import PageWrapper from "@components/PageWrapper";
-const isBrowser = typeof window !== "undefined";
+// const isBrowser = typeof window !== "undefined";
+import NpmPackages from "@components/npm-package/NpmPackages";
 
 const index = () => {
   return (
@@ -27,6 +28,7 @@ const index = () => {
       <PageWrapper>
         <Paper style={{ overflow: "hidden" }} square>
           <HomepageLayout />
+          <NpmPackages dark />
         </Paper>
       </PageWrapper>
     </>

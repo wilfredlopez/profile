@@ -1,4 +1,5 @@
-import { clamp, distance } from "@popmotion/popcorn";
+// import { clamp, distance } from "@popmotion/popcorn";
+import { clamp, distance } from "./popcorn";
 
 export interface Position {
   top: number;
