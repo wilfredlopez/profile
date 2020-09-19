@@ -179,6 +179,11 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
       >
         <CardHeader
           title={data.name}
+          titleTypographyProps={{
+            style: {
+              fontSize: '1.2rem'
+            }
+          }}
           subheader={data.command}
           action={<Box width="100%" justifyContent="flex-end">
             <BrandButton
