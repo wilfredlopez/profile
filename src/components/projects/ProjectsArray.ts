@@ -1,4 +1,4 @@
-import { ImageToSlider } from "@components/shared/SliderCard";
+import { ImageToSlider } from '@components/shared/SliderCard'
 
 import {
   coronaVirusDescription,
@@ -7,71 +7,71 @@ import {
   vapeMusicDescription,
   twoDealDescription,
   xyMusicDescription,
-} from "./descriptions";
-import { PROJECT_IMAGES } from "./images";
+} from './descriptions'
+import { PROJECT_IMAGES } from './images'
 
 export interface Project {
-  classKey: "shop" | "vape" | "expense";
-  images: ImageToSlider[];
-  url: string;
-  name: string;
-  title: string;
-  description: JSX.Element;
+  classKey: 'shop' | 'vape' | 'expense'
+  images: ImageToSlider[]
+  url: string
+  name: string
+  title: string
+  description: JSX.Element
 }
 
 const corona: Project = {
-  classKey: "shop",
+  classKey: 'shop',
   images: PROJECT_IMAGES.coronaVirus,
-  url: "https://status-coronavirus.netlify.app/global",
-  name: "COVID-19 Status",
-  title: "COVID-19 - Coronavirus Status",
+  url: 'https://status-coronavirus.netlify.app/global',
+  name: 'COVID-19 Status',
+  title: 'COVID-19 - Coronavirus Status',
   description: coronaVirusDescription,
-};
+}
 
 const xyMusic: Project = {
-  classKey: "vape",
+  classKey: 'vape',
   images: PROJECT_IMAGES.xyMusic,
-  url: "https://xymusic.netlify.app/",
-  name: "XYMusic",
-  title: "XY Music - Search and Listen.",
+  url: 'https://vapemusic-ion.netlify.app/',
+  name: 'XYMusic',
+  title: 'XY Music - Search and Listen.',
   description: xyMusicDescription,
-};
+}
 
 const vapeMusic: Project = {
-  classKey: "vape",
+  classKey: 'vape',
   images: PROJECT_IMAGES.vapeMusic,
-  url: "https://vapemusic.club",
-  name: "Vape Music",
-  title: "Vape Music - Latin Music Listen & Download",
+  url: 'https://vapemusic.club',
+  name: 'Vape Music',
+  title: 'Vape Music - Latin Music Listen & Download',
   description: vapeMusicDescription,
-};
+}
 
 const retailmeNow: Project = {
-  classKey: "shop",
+  classKey: 'shop',
   images: PROJECT_IMAGES.retailMeNow,
-  url: "#",
-  name: "RetalMeNow",
-  title: "RetalMeNow - Shop Online",
+  url: '#',
+  name: 'RetalMeNow',
+  title: 'RetalMeNow - Shop Online',
   description: retailmeNowDescription,
-};
+}
 
 const expenseManager: Project = {
-  classKey: "expense",
+  classKey: 'expense',
   images: PROJECT_IMAGES.ExpenseManger,
-  url: "https://wilfredexpensemanager.netlify.app",
-  name: "Expenses Manager",
-  title: "Expenses Manager - Manage your personal finances",
+  url: 'https://wilfredexpensemanager.netlify.app',
+  name: 'Expenses Manager',
+  title: 'Expenses Manager - Manage your personal finances',
   description: expenseManagerDescription,
-};
+}
 
 const twoDeal: Project = {
-  classKey: "shop",
+  classKey: 'shop',
   images: PROJECT_IMAGES.TwoDeal,
-  url: "https://twodeal.herokuapp.com/",
-  name: "Two Deal",
-  title: "Online Store",
+  url: 'https://twodeal.herokuapp.com/',
+  name: 'Two Deal',
+  title: 'Online Store',
   description: twoDealDescription,
-};
+}
 
 export const ProjectsArray: Project[] = [
   twoDeal,
@@ -80,6 +80,6 @@ export const ProjectsArray: Project[] = [
   xyMusic,
   corona,
   retailmeNow,
-];
+]
 
-export default ProjectsArray;
+export default ProjectsArray
