@@ -1,34 +1,34 @@
-import { common, green, red } from "@material-ui/core/colors";
-import primary from "@material-ui/core/colors/blueGrey";
-import secondary from "@material-ui/core/colors/teal";
-import {
-  createMuiTheme,
-} from "@material-ui/core/styles";
-import { DefaultTheme } from "styled-components";
-// export const SECONDARY_COLOR = secondary[500];
-export const SECONDARY_COLOR = secondary[400];
-export const SECONDARY_COLOR_CONTRAST = common["white"];
-export let PRIMARY_COLOR: string = primary[900];
-export const TOOLBAR_MIN_HEIGHT = 15;
-export const PRIMARY_COLOR_CONTRAST = common["white"];
-export const DARK_COLOR = "#040c14";
-export const LIGHT_COLOR = common["white"];
-export const TERTIARY_COLOR = "#c47070";
-export const TERTIARY_COLOR_CONTRAST = common["white"];
+import { common, green, red } from '@material-ui/core/colors'
+// import primary from '@material-ui/core/colors/blueGrey'
+import secondary from '@material-ui/core/colors/teal'
+import { createMuiTheme } from '@material-ui/core/styles'
+import { DefaultTheme } from 'styled-components'
+export const SECONDARY_COLOR = secondary[700]
+export const SECONDARY_COLOR_CONTRAST = common['white']
+// export let PRIMARY_COLOR: string = primary['900']
+export let PRIMARY_COLOR: string = '#032e4e'
+
+// export const TOOLBAR_MIN_HEIGHT = 15
+export const TOOLBAR_MIN_HEIGHT = 50
+export const PRIMARY_COLOR_CONTRAST = common['white']
+export const DARK_COLOR = '#040c14'
+export const LIGHT_COLOR = common['white']
+export const TERTIARY_COLOR = '#20bfad'
+export const TERTIARY_COLOR_CONTRAST = common['white']
 export const DARK_BACKGROUND_COLOR = '#303030'
-const BORDER_RADIOUS = 4;
+const BORDER_RADIOUS = 4
 
 //Cool Green /#38b584
 export default function getTheme(prefersDarkMode = false) {
   // PRIMARY_COLOR = prefersDarkMode ? "#319ddf" : primary[900];
-  PRIMARY_COLOR = prefersDarkMode ? "#040c14" : primary[900];
+  PRIMARY_COLOR = prefersDarkMode ? '#040c14' : PRIMARY_COLOR
 
   const theme = createMuiTheme({
     status: {
       danger: red[500],
     },
     palette: {
-      type: prefersDarkMode ? "dark" : "light",
+      type: prefersDarkMode ? 'dark' : 'light',
       primary: {
         main: PRIMARY_COLOR,
         contrastText: PRIMARY_COLOR_CONTRAST,
@@ -40,17 +40,17 @@ export default function getTheme(prefersDarkMode = false) {
       },
       tertiary: {
         main: TERTIARY_COLOR,
-        dark: "#914345",
-        light: "#f9a09e",
+        dark: '#914345',
+        light: '#f9a09e',
         contrastText: TERTIARY_COLOR_CONTRAST,
       },
       success: {
         ...green,
-        main: "#689f38",
+        main: '#316503',
       },
       background: {
         // default: "#303030",
-        default: prefersDarkMode ? "#272525" : "#fff",
+        default: prefersDarkMode ? '#272525' : '#fff',
       },
     },
     shape: {
@@ -76,16 +76,16 @@ export default function getTheme(prefersDarkMode = false) {
     overrides: {
       MuiPaper: {
         root: {
-          color: prefersDarkMode ? "#d2d2d2" : common["white"],
-          backgroundColor: prefersDarkMode ? "#2c2c2c" : DARK_BACKGROUND_COLOR
+          color: prefersDarkMode ? '#d2d2d2' : common['white'],
+          backgroundColor: prefersDarkMode ? '#2c2c2c' : DARK_BACKGROUND_COLOR,
         },
       },
       MuiMobileStepper: {
         root: {
-          backgroundColor: "transparent",
+          backgroundColor: 'transparent',
         },
         positionBottom: {
-          position: "absolute",
+          position: 'absolute',
         },
       },
       MuiAppBar: {
@@ -96,58 +96,60 @@ export default function getTheme(prefersDarkMode = false) {
       MuiToolbar: {
         gutters: {
           minHeight: TOOLBAR_MIN_HEIGHT,
-          "@media (min-width: 600px)": {
+          '@media (min-width: 600px)': {
             minHeight: TOOLBAR_MIN_HEIGHT,
           },
         },
         regular: {
           minHeight: TOOLBAR_MIN_HEIGHT,
-          "@media (min-width: 600px)": {
+          '@media (min-width: 600px)': {
             minHeight: TOOLBAR_MIN_HEIGHT,
           },
         },
         root: {
           minHeight: TOOLBAR_MIN_HEIGHT,
-          "@media (min-width: 600px)": {
+          '@media (min-width: 600px)': {
             minHeight: TOOLBAR_MIN_HEIGHT,
           },
         },
       },
       MuiFilledInput: {
         root: {
-          backgroundColor: "transparent",
+          backgroundColor: 'transparent',
         },
       },
       MuiInputLabel: {
         root: {
-          backgroundColor: "transparent",
+          backgroundColor: 'transparent',
         },
       },
       MuiButton: {
         root: {
-          textTransform: "none",
+          textTransform: 'none',
         },
       },
     },
-  });
+  })
 
   theme.palette.tertiary = theme.palette.augmentColor({
-    main: "#c47070",
-    dark: "#914345",
-    light: "#f9a09e",
+    main: '#c47070',
+    dark: '#914345',
+    light: '#f9a09e',
     contrastText: PRIMARY_COLOR_CONTRAST,
-  });
-  return theme;
+  })
+  return theme
 }
 
 export const styledComponentsTheme: DefaultTheme = {
-  borderRadius: "5px",
+  borderRadius: '5px',
   colors: {
     primary: PRIMARY_COLOR,
     primaryContrast: PRIMARY_COLOR_CONTRAST,
     secondary: SECONDARY_COLOR,
     secondaryContrast: SECONDARY_COLOR_CONTRAST,
+    tertiary: TERTIARY_COLOR,
+    tertiaryContrast: TERTIARY_COLOR_CONTRAST,
     dark: DARK_COLOR,
     light: LIGHT_COLOR,
   },
-};
+}

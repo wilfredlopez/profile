@@ -1,34 +1,34 @@
-import { SECONDARY_COLOR } from "@root/theme/getTheme";
-import styled from "styled-components";
+import { SECONDARY_COLOR } from '@root/theme/getTheme'
+import styled from 'styled-components'
 
 export const NonStyledAnchor = styled.a`
-    color: inherit;
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: 'inherit';
     text-decoration: none;
-    &:hover{
-       color: 'inherit';
-       text-decoration: none;
-    }
-`;
+  }
+`
 
 export const StyledLink = styled.a<{ color?: string }>`
-    color:  ${(props) => props.color ? props.color : "inherit"};
-    text-decoration: none;
-    &:hover{
-       color: ${SECONDARY_COLOR}
-    }
-`;
+  color: ${props => (props.color ? props.color : 'inherit')};
+  text-decoration: none;
+  &:hover {
+    color: ${props => props.theme.colors.tertiary};
+  }
+`
 
 export const StyledHtmlLink = styled.a<{ color?: string }>`
-    color: ${(props) => props.color ? props.color : "inherit"};
-    text-decoration: none;
-`;
+  color: ${props => (props.color ? props.color : 'inherit')};
+  text-decoration: none;
+`
 
 export const NonActiveLink = styled(StyledHtmlLink)`
-    color: 'inherit';
-    &:hover{
-    color: ${SECONDARY_COLOR};
+  color: 'inherit';
+  &:hover {
+    color: ${props => props.theme.colors.tertiary};
     font-weight: 500;
   }
-`;
+`
 
-export default StyledLink;
+export default StyledLink

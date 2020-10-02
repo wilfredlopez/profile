@@ -1,95 +1,94 @@
-import React from "react";
-import { Container, Grid, Typography, List, ListItem } from "@material-ui/core";
+import React from 'react'
+import { Container, Grid, Typography, List, ListItem } from '@material-ui/core'
 // import { NavLink } from "react-router-dom";
-import NavLink from "next/link";
-import {
-  PrimaryBackgroundSection,
-} from "../shared";
-import SocialList from "../partials/SocialList";
-import styled from "styled-components";
-import { useRouter } from "next/router";
-import { SECONDARY_COLOR } from "@root/theme/getTheme";
-import ProjectLinks from "./ProjectLinks";
+import NavLink from 'next/link'
+import { PrimaryBackgroundSection } from '../shared'
+import SocialList from '../partials/SocialList'
+import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import ProjectLinks from './ProjectLinks'
 
 export const FooterNavLink = styled.a<{ isActive?: boolean }>`
-  color: ${(props) => props.isActive ? SECONDARY_COLOR : "inherit"};
-  font-weight: ${(props) => props.isActive ? "bold" : "normal"};
+  color: ${props => (props.isActive ? props.theme.colors.tertiary : 'inherit')};
+  font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
   text-decoration: none;
   cursor: pointer;
-  &.item{
-    color:${SECONDARY_COLOR};
+  &.item {
+    color: ${props => props.theme.colors.tertiary};
     font-weight: 500;
   }
-  &:hover{
-    color: ${SECONDARY_COLOR};
+  &:hover {
+    color: ${props => props.theme.colors.tertiary};
     font-weight: 500;
   }
-`;
+`
 
 const FooterTitle = styled(Typography)<{ component?: string }>`
   /* text-align: center; */
-`;
+`
 
 const SiteFooter = () => {
-  const { pathname } = useRouter();
+  const { pathname } = useRouter()
   return (
-    <PrimaryBackgroundSection style={{ padding: "1em 0em" }}>
+    <PrimaryBackgroundSection style={{ padding: '1em 0em' }}>
       <Container>
         <Grid
           container
-          justify="space-around"
-          alignContent="center"
-          alignItems="flex-start"
+          justify='space-around'
+          alignContent='center'
+          alignItems='flex-start'
         >
           <Grid
             container
             item
-            justify="space-around"
-            alignContent="center"
-            alignItems="flex-start"
+            justify='space-around'
+            alignContent='center'
+            alignItems='flex-start'
           >
-            <Grid item={true} xs={12} sm="auto">
-              <List id="navbar">
+            <Grid item={true} xs={12} sm='auto'>
+              <List id='navbar'>
                 <ListItem>
-                  <FooterTitle variant="h6" component="h1">Pages</FooterTitle>
+                  <FooterTitle variant='h6' component='h1'>
+                    Pages
+                  </FooterTitle>
                 </ListItem>
                 <ListItem>
-                  <NavLink href="/">
-                    <FooterNavLink isActive={pathname === "/"}>
+                  <NavLink href='/'>
+                    <FooterNavLink isActive={pathname === '/'}>
                       Home
                     </FooterNavLink>
                   </NavLink>
                 </ListItem>
                 <ListItem>
-                  <NavLink href="/projects">
-                    <FooterNavLink isActive={pathname === "/projects"}>
+                  <NavLink href='/projects'>
+                    <FooterNavLink isActive={pathname === '/projects'}>
                       Showcase Projects
                     </FooterNavLink>
                   </NavLink>
                 </ListItem>
                 <ListItem>
-                  <NavLink href="/contact">
-                    <FooterNavLink isActive={pathname === "/contact"}>
+                  <NavLink href='/contact'>
+                    <FooterNavLink isActive={pathname === '/contact'}>
                       Contact
                     </FooterNavLink>
                   </NavLink>
                 </ListItem>
               </List>
             </Grid>
-            <Grid item xs={12} sm="auto">
+            <Grid item xs={12} sm='auto'>
               <List>
                 <ListItem>
-                  <FooterTitle variant="h6" component="h2">
+                  <FooterTitle variant='h6' component='h2'>
                     Showcase Projects
                   </FooterTitle>
                 </ListItem>
                 <ProjectLinks />
               </List>
             </Grid>
-            <Grid item xs={12} sm="auto">
+            <Grid item xs={12} sm='auto'>
               <List>
                 <ListItem>
-                  <FooterTitle variant="h6" component="h2">
+                  <FooterTitle variant='h6' component='h2'>
                     Social
                   </FooterTitle>
                 </ListItem>
@@ -101,14 +100,12 @@ const SiteFooter = () => {
               item
               xs={12}
               sm={4}
-              justify="center"
-              alignContent="center"
+              justify='center'
+              alignContent='center'
             >
               <List>
                 <ListItem>
-                  <Typography variant="body1">
-                    All Rights Reseved
-                  </Typography>
+                  <Typography variant='body1'>All Rights Reseved</Typography>
                 </ListItem>
                 <ListItem>
                   <p>2020 &copy; Wilfred Lopez</p>
@@ -119,7 +116,7 @@ const SiteFooter = () => {
         </Grid>
       </Container>
     </PrimaryBackgroundSection>
-  );
-};
+  )
+}
 
-export default SiteFooter;
+export default SiteFooter

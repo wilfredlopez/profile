@@ -1,40 +1,42 @@
-import { CreateCSSProperties } from "@material-ui/core/styles/withStyles";
+// import { CreateCSSProperties } from "@material-ui/core/styles/withStyles";
 // import original module declarations
-import "styled-components";
+import 'styled-components'
 
 // and extend them!
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
-    borderRadius: string;
+    borderRadius: string
     colors: {
-      primary: string;
-      primaryContrast: string;
-      secondary: string;
-      secondaryContrast: string;
-      light: string;
-      dark: string;
-    };
+      primary: string
+      primaryContrast: string
+      secondary: string
+      secondaryContrast: string
+      tertiary: string
+      tertiaryContrast: string
+      light: string
+      dark: string
+    }
   }
 }
 
-declare module "@material-ui/core/styles/createMuiTheme" {
+declare module '@material-ui/core/styles/createMuiTheme' {
   interface Theme {
     status: {
-      danger: React.CSSProperties["color"];
-    };
+      danger: React.CSSProperties['color']
+    }
   }
   interface ThemeOptions {
     status: {
-      danger: React.CSSProperties["color"];
-    };
+      danger: React.CSSProperties['color']
+    }
   }
 }
 
-declare module "@material-ui/core/styles/createPalette" {
+declare module '@material-ui/core/styles/createPalette' {
   export interface Palette {
-    tertiary: PaletteColor;
+    tertiary: PaletteColor
   }
   export interface PaletteOptions {
-    tertiary: PaletteColorOptions;
+    tertiary: PaletteColorOptions
   }
 }
