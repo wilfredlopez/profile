@@ -11,7 +11,9 @@ import styled from 'styled-components'
 // import { BrandButton } from "@root/theme/Custom";
 import ScaleUpDownComponent from '@components/shared/ScaleUpDownComponent'
 import { motion } from 'framer-motion'
-interface Props {}
+interface Props {
+  height?: string
+}
 
 const StyledAnker = styled.a`
   color: inherit;
@@ -34,10 +36,10 @@ const Item = styled.div`
 //       display: flex;
 //     }
 // `;
-const HomepageHeading: React.FC<Props> = () => (
+const HomepageHeading: React.FC<Props> = ({ height = '80vh' }) => (
   <Responsive>
     <Segment>
-      <Container id='welcome-section' style={{ height: '100vh' }}>
+      <Container id='welcome-section' style={{ height }}>
         <motion.div
           initial={{ scale: 1 }}
           animate={{ scale: [1.3, 1] }}

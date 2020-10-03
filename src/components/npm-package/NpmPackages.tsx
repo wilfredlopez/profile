@@ -9,6 +9,7 @@ import {
   Paper,
   Snackbar,
   Typography,
+  useTheme,
 } from '@material-ui/core'
 import { NnmPackage, NPM_PACKAGES } from './NPM_PACKAGES'
 import { BrandButton } from '@root/theme/Custom'
@@ -18,9 +19,11 @@ import { DividerElement, StyledHtmlLink } from '../shared'
 import { findIndex, Position, move } from '../shared/find-index'
 import { DARK_BACKGROUND_COLOR } from '@root/theme/getTheme'
 import { throttle } from '@wilfredlopez/react-utils'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 interface Props {
   dark?: boolean
+  limit?: number
 }
 
 const spring = {
@@ -49,8 +52,11 @@ const useNpmStyles = makeStyles(theme => {
 
 const NpmPackages = (props: Props) => {
   const classes = useNpmStyles()
+
   const positions = useRef<Position[]>([]).current
-  const [items, setItems] = React.useState(NPM_PACKAGES)
+  const [items, setItems] = React.useState(
+    props.limit ? NPM_PACKAGES.slice(0, props.limit) : NPM_PACKAGES
+  )
   function setPosition(i: number, offset: Position) {
     positions[i] = offset
   }
@@ -125,6 +131,8 @@ const flat = {
 function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
   const classes = useNpmStyles()
   const [isDragging, setDragging] = React.useState(false)
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.up('sm'))
   const ref = useRef<HTMLDivElement>(null)
   const [copyMessageOpen, setCopyMessageOpenTo] = React.useState(false)
   const _setPosition = throttle(function () {
@@ -162,7 +170,7 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
         </Box>
       </Snackbar>
       <motion.div
-        drag={true}
+        drag={matches}
         ref={ref}
         layout
         animate={isDragging ? onTop : flat}

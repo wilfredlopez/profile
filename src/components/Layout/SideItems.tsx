@@ -23,6 +23,8 @@ export const LinkedInIconStyled = styled(LinkedInIcon)`
   border-radius: 6px;
 `
 
+export const INSTAGRAM_COLOR = '#d6249f'
+
 export const InstagramIconStyled = styled(InstagramIcon)`
   display: inline-block;
   text-align: center;
@@ -30,7 +32,7 @@ export const InstagramIconStyled = styled(InstagramIcon)`
   color: #fff;
   line-height: 250px;
   vertical-align: middle;
-  background: #d6249f;
+  background: ${INSTAGRAM_COLOR};
   background: radial-gradient(
     circle at 30% 107%,
     #fdf497 0%,

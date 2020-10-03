@@ -1,16 +1,11 @@
+import { Hidden } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import { makeStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
-import SideDrawer, { StyledNavLink } from './SideDrawer'
+import SideDrawer from './SideDrawer'
 import SideItems from './SideItems'
-import styled from 'styled-components'
-import { usePagesContext } from '@root/context/PagesContext'
-import Link from 'next/link'
-import { NAV_LINKS } from './navlinks'
-import { List, ListItem, Hidden } from '@material-ui/core'
-import { useRouter } from 'next/router'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,6 +14,8 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     transition: 'width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+    background: theme.palette.secondary.dark,
+    color: theme.palette.secondary.contrastText,
     // width: "100%",
     // [theme.breakpoints.up("md")]: {
     //   width: "calc(100% - 240px)",
@@ -47,22 +44,17 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const StyledAppBar = styled(AppBar)`
-  color: ${props => props.theme.colors.light} !important;
-`
-
 export default function Navigation() {
   const classes = useStyles()
-  const router = useRouter()
 
   return (
     <div className={classes.root}>
-      <StyledAppBar position='fixed' className={classes.toolbar}>
+      <AppBar position='fixed' className={classes.toolbar}>
         <Toolbar>
           <SideDrawer anchor='left' />
 
           <Hidden only='xs'>
-            <Typography variant='h6' component='h1' className={classes.title}>
+            <Typography variant='h6' component='h1'>
               WilfredLopez
             </Typography>
           </Hidden>
@@ -74,7 +66,7 @@ export default function Navigation() {
           </Hidden> */}
           <SideItems />
         </Toolbar>
-      </StyledAppBar>
+      </AppBar>
     </div>
   )
 }

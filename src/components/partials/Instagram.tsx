@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import BounceComponent from '../shared/BounceComponent'
 import { NonStyledAnchor } from '../shared/StyledLink'
+import { INSTAGRAM_COLOR } from '@components/Layout/SideItems'
 
 const InstagramImage = styled.img`
   width: 100%;
@@ -31,7 +32,12 @@ const Instagram = ({ percentBounce = 12 }: Props) => {
           <InstagramImage src='/INSTAGRAM_WILFRED_LOPEZ.jpg' />
         </BounceComponent>
 
-        <Typography align='center' variant='h6'>
+        <Typography
+          align='center'
+          variant='subtitle1'
+          component='h6'
+          style={{ color: INSTAGRAM_COLOR }}
+        >
           Follow me on Instagram
         </Typography>
       </NonStyledAnchor>

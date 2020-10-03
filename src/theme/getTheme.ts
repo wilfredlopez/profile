@@ -3,10 +3,11 @@ import { common, green, red } from '@material-ui/core/colors'
 import secondary from '@material-ui/core/colors/teal'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { DefaultTheme } from 'styled-components'
-export const SECONDARY_COLOR = secondary[700]
+export let SECONDARY_COLOR: string = secondary[700]
 export const SECONDARY_COLOR_CONTRAST = common['white']
 // export let PRIMARY_COLOR: string = primary['900']
 export let PRIMARY_COLOR: string = '#032e4e'
+// export let PRIMARY_COLOR: string = '#00463e' || '#032e4e'
 
 // export const TOOLBAR_MIN_HEIGHT = 15
 export const TOOLBAR_MIN_HEIGHT = 50
@@ -22,7 +23,7 @@ const BORDER_RADIOUS = 4
 export default function getTheme(prefersDarkMode = false) {
   // PRIMARY_COLOR = prefersDarkMode ? "#319ddf" : primary[900];
   PRIMARY_COLOR = prefersDarkMode ? '#040c14' : PRIMARY_COLOR
-
+  SECONDARY_COLOR = prefersDarkMode ? 'rgb(1 51 45)' : SECONDARY_COLOR
   const theme = createMuiTheme({
     status: {
       danger: red[500],
@@ -153,3 +154,5 @@ export const styledComponentsTheme: DefaultTheme = {
     light: LIGHT_COLOR,
   },
 }
+
+export type StyledComponentColorKey = keyof DefaultTheme['colors']

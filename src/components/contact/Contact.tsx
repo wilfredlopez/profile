@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Button, Grid, Typography, List, Container } from '@material-ui/core'
 import { MailOutline as MailIcon, Phone as PhoneIcon } from '@material-ui/icons'
-import { Segment, StyledHtmlLink } from '@components/shared'
+import { Segment, StyledHtmlLink, DividerElement } from '@components/shared'
 import styled from 'styled-components'
 import { usePagesContext } from '@root/context/PagesContext'
 
@@ -36,18 +36,20 @@ const Contact = () => {
     <React.Fragment>
       <Container maxWidth='md'>
         <Segment style={{ padding: '2em 0em' }}>
-          <Grid container justify='center' alignContent='center'>
-            <Typography
-              variant='h3'
-              component='h2'
-              style={{
-                fontSize: '2em',
-                textAlign: 'center',
-              }}
-            >
-              Contact
-            </Typography>
-          </Grid>
+          <DividerElement>
+            <Grid container justify='center' alignContent='center'>
+              <Typography
+                variant='h3'
+                component='h2'
+                style={{
+                  fontSize: '2em',
+                  textAlign: 'center',
+                }}
+              >
+                Contact
+              </Typography>
+            </Grid>
+          </DividerElement>
         </Segment>
         <Segment style={{ padding: '0em 0em' }}>
           <Grid container>

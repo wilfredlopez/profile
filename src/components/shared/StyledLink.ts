@@ -21,6 +21,9 @@ export const StyledLink = styled.a<{ color?: string }>`
 export const StyledHtmlLink = styled.a<{ color?: string }>`
   color: ${props => (props.color ? props.color : 'inherit')};
   text-decoration: none;
+  &:hover {
+    color: ${props => props.theme.colors.tertiary};
+  }
 `
 
 export const NonActiveLink = styled(StyledHtmlLink)`
