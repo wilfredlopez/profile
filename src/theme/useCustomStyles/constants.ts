@@ -8,4 +8,5 @@ export const COLORS = [
   'primary',
   'secondary',
   'inherit',
+  'default',
 ] as const

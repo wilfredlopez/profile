@@ -7,16 +7,19 @@ export interface ButtonFlexProps extends Omit<ButtonProps, 'color'> {
     disableUppercase?: boolean
 }
 
+
 const ButtonFlex = ({ color, children, disableUppercase, ...buttonProps }: ButtonFlexProps) => {
     const classes = useCustomStyles()
     const className = color ? classes[color] : ""
     const variant = matchToVariant(color)
     let styles: React.CSSProperties = {
-
+        textTransform: 'uppercase'
     }
     if (disableUppercase) {
         styles.textTransform = 'inherit'
     }
+
+
     return (
         <Button variant={variant} {...buttonProps} className={`${className} ${buttonProps.className || ''}`}
             style={

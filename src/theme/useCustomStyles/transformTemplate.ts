@@ -5,10 +5,10 @@ import {
 } from '@material-ui/core/styles/withStyles'
 import { fade, Theme, darken } from '@material-ui/core'
 import { Variant, ColorTypes } from './types'
-
-const isOutlined = (v: Variant) => v === 'outlined'
-const isContained = (v: Variant) => v === 'contained'
-const isInherit = (c: ColorTypes): c is 'inherit' => c === 'inherit'
+export const isOutlined = (v: Variant) => v === 'outlined'
+export const isContained = (v: Variant) => v === 'contained'
+export const isInherit = (c: ColorTypes): c is 'inherit' => c === 'inherit'
+export const isDefault = (c: ColorTypes): c is 'default' => c === 'default'
 
 function transformTemplate(
   variant: Variant,
@@ -22,7 +22,7 @@ function transformTemplate(
 
   let darkColor = darken(maincolor, theme.palette.action.hoverOpacity)
 
-  if (!isInherit(color)) {
+  if (!isInherit(color) && !isDefault(color)) {
     maincolor = theme.palette[color].main
     contrastText = theme.palette[color].contrastText
     darkColor = theme.palette[color].dark
@@ -43,7 +43,13 @@ function transformTemplate(
 
   if (isOutlined(variant)) {
     props.border = '1px solid'
-    props.borderColor = fade(maincolor, 0.5)
+    props.borderColor = darken(maincolor, 0.2)
+    hoverProps.borderColor = fade(maincolor, 0.3)
+    // hoverProps.border = '1px solid'
+
+    props['@media (hover: none)'] = {
+      backgroundColor: 'transparent',
+    }
     hoverProps.backgroundColor = fade(
       maincolor,
       theme.palette.action.hoverOpacity
@@ -53,13 +59,13 @@ function transformTemplate(
   if (isContained(variant)) {
     hoverProps.backgroundColor = darkColor
   }
-  if (isOutlined(variant)) {
-    hoverProps.border = '1px solid'
-    hoverProps.borderColor = maincolor
 
-    props['@media (hover: none)'] = {
-      backgroundColor: 'transparent',
-    }
+  if (isDefault(color)) {
+    props.color = undefined
+    props.backgroundColor = undefined
+    hoverProps.borderColor = undefined
+    hoverProps.backgroundColor = undefined
+    props['@media (hover: none)'] = undefined
   }
   props['&:hover'] = hoverProps
   return props

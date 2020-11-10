@@ -5,15 +5,15 @@ import { MatchedVariants, Variant } from './types'
 
 export * from './types'
 
-export function isContained(variant: MatchedVariants) {
+export function isContainedMatch(variant: MatchedVariants) {
   return variant && variant.includes('contained')
 }
 
-export function isOutlined(variant: MatchedVariants) {
+export function isOutlinedMatch(variant: MatchedVariants) {
   return variant && variant.includes('outlined')
 }
 
-export function isText(variant: MatchedVariants) {
+export function isTextMatch(variant: MatchedVariants) {
   return variant && variant.includes('text')
 }
 
@@ -21,13 +21,13 @@ export function matchToVariant(variant?: MatchedVariants): Variant | undefined {
   if (!variant) {
     return undefined
   }
-  if (isOutlined(variant)) {
+  if (isOutlinedMatch(variant)) {
     return 'outlined'
   }
-  if (isContained(variant)) {
+  if (isContainedMatch(variant)) {
     return 'contained'
   }
-  if (isText(variant)) {
+  if (isTextMatch(variant)) {
     return 'text'
   }
   return undefined
