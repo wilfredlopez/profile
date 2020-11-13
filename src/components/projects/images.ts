@@ -25,18 +25,18 @@ const ExpenseMangerImages: ImageToSlider[] = [
   },
 ]
 
-import vmimage from './vapemusic.jpg'
-import vapemusicabout from './vapemusic-about.jpg'
+import vmHpmepage from './vm-homepage.png'
+import vapemusicplayer from './vm-player.png'
 import vmdark from './vm-dark.png'
 
 const vapeMusicImages: ImageToSlider[] = [
   {
     label: 'VapeMusic HomePage',
-    imgPath: vmimage,
+    imgPath: vmHpmepage,
   },
   {
-    label: 'VapeMusic About',
-    imgPath: vapemusicabout,
+    label: 'VapeMusic AudioPlayer',
+    imgPath: vapemusicplayer,
   },
   {
     imgPath: vmdark,
