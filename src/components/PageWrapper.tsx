@@ -5,7 +5,7 @@ import Navigation from './Layout/Navigation'
 import SiteFooter from './footer/SiteFooter'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 
-interface Props {}
+interface Props { }
 
 const PageWrapper = (props: PropsWithChildren<Props>) => {
   return (
@@ -24,7 +24,7 @@ const PageWrapper = (props: PropsWithChildren<Props>) => {
       </footer>
 
       <ScrollTop {...props}>
-        <Fab color='secondary' size='small' aria-label='scroll back to top'>
+        <Fab color='primary' size='small' aria-label='scroll back to top'>
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

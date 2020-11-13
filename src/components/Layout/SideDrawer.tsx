@@ -18,7 +18,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { NAV_LINKS, SOCIAL_LINKS } from './navlinks'
 
-interface Props {}
+interface Props { }
 
 const useStyles = makeStyles(theme => ({
   list: {
@@ -132,7 +132,7 @@ export default function SideDrawer({ anchor }: Props) {
             target='_blank'
             rel='noopener noreferrer'
             role='link'
-            key={text}
+            key={text + index}
           >
             <ListItem button>
               <ListItemIcon style={{ color: 'inherit' }}>

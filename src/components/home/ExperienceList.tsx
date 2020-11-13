@@ -1,6 +1,10 @@
 import React from 'react'
 import { FaBriefcase } from 'react-icons/fa'
-import { List, Typography, useMediaQuery } from '@material-ui/core'
+import {
+  List,
+  // useMediaQuery ,
+  Typography,
+} from '@material-ui/core'
 import styled from 'styled-components'
 import { SECONDARY_COLOR } from '../../theme/getTheme'
 
@@ -46,7 +50,7 @@ const ExperienceSection = styled.section`
 `
 
 export const ExperienceList = () => {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
   return (
     <List>
       {experiencesIcons.map(({ Icon, isCurrent, label, location }) => {
@@ -61,10 +65,10 @@ export const ExperienceList = () => {
                   component='h3'
                   style={{
                     color: isCurrent
-                      ? 'blue'
-                      : prefersDarkMode
-                      ? '#c8c8c8'
-                      : '#fcfcfc',
+                      ? 'blue' : '#fff'
+                    // : prefersDarkMode
+                    // ? '#c8c8c8'
+                    // : '#fcfcfc',
                   }}
                 >
                   {label}

@@ -20,6 +20,7 @@ import { findIndex, Position, move } from '../shared/find-index'
 import { DARK_BACKGROUND_COLOR } from '@root/theme/getTheme'
 import { throttle } from '@wilfredlopez/react-utils'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { PRIMARY_COLOR, TERTIARY_COLOR, SECONDARY_COLOR } from '../../theme/getTheme'
 
 interface Props {
   dark?: boolean
@@ -72,9 +73,9 @@ const NpmPackages = (props: Props) => {
         style={
           props.dark
             ? {
-                background: DARK_BACKGROUND_COLOR,
-                color: 'white',
-              }
+              background: DARK_BACKGROUND_COLOR,
+              color: 'white',
+            }
             : {}
         }
         className={classes.wrapper}
@@ -195,9 +196,17 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
           <CardHeader
             title={data.name}
             titleTypographyProps={{
+              component: "h1",
               style: {
-                fontSize: '1.2rem',
+                fontSize: '1.3rem',
               },
+            }}
+            subheaderTypographyProps={{
+              color: 'inherit',
+              style: {
+                color: 'gray'
+              },
+              variant: 'caption'
             }}
             subheader={data.command}
             action={
@@ -227,7 +236,7 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
               <StyledHtmlLink
                 href={data.url}
                 title={data.name + ' npm home'}
-                color='blue'
+                color={SECONDARY_COLOR}
                 style={{
                   display: 'block',
                 }}

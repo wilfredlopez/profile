@@ -7,6 +7,11 @@ import React from 'react'
 import SideDrawer from './SideDrawer'
 import SideItems from './SideItems'
 
+
+// const GRADIANT = 'linear-gradient(0deg, #2f946d 40%, #30a275 50%, #298a64 100%)'
+const GRADIANT = 'linear-gradient(0deg, #e6491d 40%, #d6431a 50%, #9a2f11 100%)' // 'linear-gradient(180deg, rgb(132 78 0) 45%, rgb(255 157 4) 100%)' // 'linear-gradient(180deg, rgb(35 35 35) 45%, rgb(191 115 1) 100%)'
+const GRADIANT_DARK = 'linear-gradient(0deg, #982f11 40%, #922d11 50%, #4c1709 100%)'
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -14,8 +19,8 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     transition: 'width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-    background: theme.palette.secondary.dark,
-    color: theme.palette.secondary.contrastText,
+    background: theme.palette.type === 'dark' ? GRADIANT_DARK : GRADIANT,//'#af6800', //'#1b1f29', //theme.palette.grey[100],
+    color: theme.palette.common.white, //theme.palette.secondary.contrastText,
     // width: "100%",
     // [theme.breakpoints.up("md")]: {
     //   width: "calc(100% - 240px)",
@@ -54,7 +59,7 @@ export default function Navigation() {
           <SideDrawer anchor='left' />
 
           <Hidden only='xs'>
-            <Typography variant='h6' component='h1'>
+            <Typography className={classes.title} variant='h6' component='h1'>
               WilfredLopez
             </Typography>
           </Hidden>

@@ -18,11 +18,12 @@ export const StyledLink = styled.a<{ color?: string }>`
   }
 `
 
-export const StyledHtmlLink = styled.a<{ color?: string }>`
+export const StyledHtmlLink = styled.a<{ color?: string; noHover?: boolean }>`
   color: ${props => (props.color ? props.color : 'inherit')};
   text-decoration: none;
   &:hover {
-    color: ${props => props.theme.colors.tertiary};
+    color: ${props =>
+      props.noHover ? 'inherit' : props.theme.colors.tertiary};
   }
 `
 

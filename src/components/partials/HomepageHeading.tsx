@@ -11,6 +11,8 @@ import styled from 'styled-components'
 // import { BrandButton } from "@root/theme/Custom";
 import ScaleUpDownComponent from '@components/shared/ScaleUpDownComponent'
 import { motion } from 'framer-motion'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { Theme } from '@material-ui/core/styles'
 interface Props {
   height?: string
 }
@@ -36,94 +38,102 @@ const Item = styled.div`
 //       display: flex;
 //     }
 // `;
-const HomepageHeading: React.FC<Props> = ({ height = '80vh' }) => (
-  <Responsive>
-    <Segment>
-      <Container id='welcome-section' style={{ height }}>
-        <motion.div
-          initial={{ scale: 1 }}
-          animate={{ scale: [1.3, 1] }}
-          transition={{
-            type: 'spring',
-          }}
-        >
-          <Avatar
-            src={wilfredImg}
-            // src="https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png"
-            // size="medium"
-            style={{
-              width: '100%',
-              height: '100%',
-              maxWidth: 400,
-              maxHeight: 400,
-              borderRadius: '2rem',
-              margin: 'auto',
-            }}
-            // circular
-            alt='wilfred'
-            className='m-auto border-full with-shadow'
-          />
-        </motion.div>
+const HomepageHeading: React.FC<Props> = ({ height = '80vh' }) => {
 
-        <Typography
-          component='h1'
-          variant='h3'
-          style={{
-            // fontSize: "2em",
-            fontWeight: 'normal',
-            marginBottom: 5,
-            marginTop: '0.5em',
-          }}
-        >
-          <ScaleUpDownComponent backgrounds={[] as any}>
-            WILFRED LOPEZ
-          </ScaleUpDownComponent>
-        </Typography>
-        <Item>
+  const isSm = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+
+  return (
+
+    <Responsive style={{
+      paddingBottom: isSm ? '4rem' : '0'
+    }}>
+      <Segment>
+        <Container id='welcome-section' style={{ height }}>
           <motion.div
-            initial='hidden'
-            animate='visible'
-            variants={{
-              hidden: {
-                scale: 0.8,
-                opacity: 0,
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 0.4,
-                },
-              },
+            initial={{ scale: 1 }}
+            animate={{ scale: [1.3, 1] }}
+            transition={{
+              type: 'spring',
             }}
           >
-            <WorkIcon />
-
-            <Typography>Quality Assurance/Web Development</Typography>
-            <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
+            <Avatar
+              src={wilfredImg}
+              // src="https://res.cloudinary.com/wlopez/image/upload/v1561207949/wilfredZoomed.png"
+              // size="medium"
+              style={{
+                width: '100%',
+                height: '100%',
+                maxWidth: 400,
+                maxHeight: 400,
+                borderRadius: '2rem',
+                margin: 'auto',
+              }}
+              // circular
+              alt='wilfred'
+              className='m-auto border-full with-shadow'
+            />
           </motion.div>
-        </Item>
-        <Item>
-          <RoomIcon />
-          <div>
-            <span>Garfield, NJ, USA.</span>
-          </div>
-        </Item>
 
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.2 }}>
-          <Button
-            endIcon={<MailOutlineIcon />}
-            color='secondary'
-            variant='contained'
+          <Typography
+            component='h1'
+            variant='h3'
+            style={{
+              // fontSize: "2em",
+              fontWeight: 'normal',
+              marginBottom: 5,
+              marginTop: '0.5em',
+            }}
           >
-            <StyledAnker href='mailto:cubamc@gmail.com' title='contact me'>
-              Contact Me
-            </StyledAnker>
-          </Button>
-        </motion.div>
-      </Container>
-    </Segment>
-  </Responsive>
-)
+            <ScaleUpDownComponent backgrounds={[] as any}>
+              WILFRED LOPEZ
+          </ScaleUpDownComponent>
+          </Typography>
+          <Item>
+            <motion.div
+              initial='hidden'
+              animate='visible'
+              variants={{
+                hidden: {
+                  scale: 0.8,
+                  opacity: 0,
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 0.4,
+                  },
+                },
+              }}
+            >
+              <WorkIcon />
 
+              <Typography>Quality Assurance/Web Development</Typography>
+              <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
+            </motion.div>
+          </Item>
+          <Item>
+            <RoomIcon />
+            <div>
+              <span>Garfield, NJ, USA.</span>
+            </div>
+            <motion.div style={{ margin: '1rem 0' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.2 }}>
+              <Button
+                endIcon={<MailOutlineIcon />}
+                color="primary"
+                variant='contained'
+              >
+                <StyledAnker href='mailto:cubamc@gmail.com' title='contact me'>
+                  Contact Me
+            </StyledAnker>
+              </Button>
+            </motion.div>
+          </Item>
+
+
+        </Container>
+      </Segment>
+    </Responsive>
+  )
+}
 export default HomepageHeading

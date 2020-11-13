@@ -1,9 +1,9 @@
-import React, { PropsWithChildren } from "react";
-import { Theme, makeStyles, createStyles } from "@material-ui/core/styles";
-import ButtonBase, { ButtonBaseProps } from "@material-ui/core/ButtonBase";
-import Typography from "@material-ui/core/Typography";
-import { NonStyledAnchor } from "@components/shared";
-const BORDER_RADIOUS = 2;
+import React, { PropsWithChildren } from "react"
+import { Theme, makeStyles, createStyles } from "@material-ui/core/styles"
+import ButtonBase, { ButtonBaseProps } from "@material-ui/core/ButtonBase"
+import Typography from "@material-ui/core/Typography"
+import { NonStyledAnchor } from "@components/shared"
+const BORDER_RADIOUS = 2
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
           opacity: 0,
         },
         "& $imageTitle": {
-          color: theme.palette.secondary.main,
+          color: theme.palette.primary.main,
           background: "rgb(255 255 255 / 93%)",
           border: "3px solid currentColor",
           transition: theme.transitions.create("opacity"),
@@ -93,16 +93,16 @@ const useStyles = makeStyles((theme: Theme) =>
       transition: theme.transitions.create("opacity"),
     },
   })
-);
+)
 
 interface ImageButtonProps {
-  title: string;
-  width: number;
-  backgroundUrl: string;
-  minHeight?: number;
-  buttomProps?: ButtonBaseProps;
-  linkUrl?: string;
-  linkTarget?: string;
+  title: string
+  width: number
+  backgroundUrl: string
+  minHeight?: number
+  buttomProps?: ButtonBaseProps
+  linkUrl?: string
+  linkTarget?: string
 }
 
 export function ImageButton(
@@ -116,8 +116,8 @@ export function ImageButton(
     linkTarget = "_blank",
   }: ImageButtonProps,
 ) {
-  const classes = useStyles();
-  const Wrapper = linkUrl ? WithLink : WithSpan;
+  const classes = useStyles()
+  const Wrapper = linkUrl ? WithLink : WithSpan
 
   return <Wrapper linkTarget={linkTarget} linkUrl={linkUrl || ""}>
     <ButtonBase
@@ -151,7 +151,7 @@ export function ImageButton(
         </Typography>
       </span>
     </ButtonBase>
-  </Wrapper>;
+  </Wrapper>
 }
 
 const WithLink = (
@@ -165,9 +165,9 @@ const WithLink = (
     rel={linkTarget === "_blank" ? "noopener noreferrer" : undefined}
   >
     {children}
-  </NonStyledAnchor>;
-};
+  </NonStyledAnchor>
+}
 
 const WithSpan = ({ children }: PropsWithChildren<{}>) => (<span>
   {children}
-</span>);
+</span>)

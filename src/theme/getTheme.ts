@@ -1,31 +1,32 @@
 import { common, green, red } from '@material-ui/core/colors'
-// import primary from '@material-ui/core/colors/blueGrey'
-import secondary from '@material-ui/core/colors/teal'
+// import primary from '@material-ui/core/colors/teal'
+import secondary from '@material-ui/core/colors/blue'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { DefaultTheme } from 'styled-components'
-export let SECONDARY_COLOR: string = secondary[700]
-export const SECONDARY_COLOR_CONTRAST = common['white']
-// export let PRIMARY_COLOR: string = primary['900']
-export let PRIMARY_COLOR: string = '#032e4e'
-// export let PRIMARY_COLOR: string = '#00463e' || '#032e4e'
 
-// export const TOOLBAR_MIN_HEIGHT = 15
-export const TOOLBAR_MIN_HEIGHT = 50
+export let SECONDARY_COLOR: string = secondary['500'] // common['white'] //
+export const SECONDARY_COLOR_CONTRAST = common['black']
+
+export let PRIMARY_COLOR: string = '#f25022' //'#af6800' //'#b73e35' // primary[700] // '#032e4e'
 export const PRIMARY_COLOR_CONTRAST = common['white']
+
+export const TOOLBAR_MIN_HEIGHT = 50
 export const DARK_COLOR = '#040c14'
 export const LIGHT_COLOR = common['white']
-export const TERTIARY_COLOR = '#20bfad'
+export const TERTIARY_COLOR = '#ff6c42' //'#ff9800' // '#76b9ff' // '#8c2f2f' // '#20bfad'
 export const TERTIARY_COLOR_CONTRAST = common['white']
-export const DARK_BACKGROUND_COLOR = '#303030'
+export const DARK_BACKGROUND_COLOR = '#424242' //'#303030'
 const BORDER_RADIOUS = 4
 
-//Cool Green /#38b584
+//Cool Green #38b584 or #76b9ff
 export default function getTheme(prefersDarkMode = false) {
-  // PRIMARY_COLOR = prefersDarkMode ? "#319ddf" : primary[900];
+  // const prefersDarkMode = true
   PRIMARY_COLOR = prefersDarkMode ? '#040c14' : PRIMARY_COLOR
-  SECONDARY_COLOR = prefersDarkMode ? 'rgb(1 51 45)' : SECONDARY_COLOR
+  SECONDARY_COLOR = prefersDarkMode ? 'rgb(145 45 17)' : SECONDARY_COLOR
+
   const theme = createMuiTheme({
     status: {
+      ...red,
       danger: red[500],
     },
     palette: {

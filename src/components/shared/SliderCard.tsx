@@ -1,16 +1,16 @@
-import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import MobileStepper from "@material-ui/core/MobileStepper";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-import { AnimateSharedLayout } from "framer-motion";
+import React from "react"
+import { makeStyles, useTheme } from "@material-ui/core/styles"
+import MobileStepper from "@material-ui/core/MobileStepper"
+import Paper from "@material-ui/core/Paper"
+import Typography from "@material-ui/core/Typography"
+import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft"
+import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight"
+import { AnimateSharedLayout } from "framer-motion"
 // import styled, {
 //    keyframes
 //   } from "styled-components";
-import { IconButton } from "@material-ui/core";
-import { motion, useAnimation } from "framer-motion";
+import { IconButton } from "@material-ui/core"
+import { motion, useAnimation } from "framer-motion"
 
 // const rotate = keyframes`
 //   from {
@@ -32,25 +32,25 @@ import { motion, useAnimation } from "framer-motion";
 // `;
 
 export interface ImageToSlider {
-  label?: string;
-  imgPath: string;
+  label?: string
+  imgPath: string
 }
 
 interface Props {
-  imageData: ImageToSlider[];
-  height?: number;
-  width?: number;
-  loop?: boolean;
-  showControls?: boolean;
-  showBackdrop?: boolean;
-  showControlsInTitle?: boolean;
-  showTitle?: boolean;
-  imageContainerClass?: string;
+  imageData: ImageToSlider[]
+  height?: number
+  width?: number
+  loop?: boolean
+  showControls?: boolean
+  showBackdrop?: boolean
+  showControlsInTitle?: boolean
+  showTitle?: boolean
+  imageContainerClass?: string
 }
 
 // const MAX_HEIGHT = 600;
-const MIN_WIDTH = 500;
-const BORDER_RADIUS = 6;
+const MIN_WIDTH = 500
+const BORDER_RADIUS = 6
 
 // const Img = styled.div<{ url: string }>`
 //         height:100%;
@@ -115,6 +115,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     position: "relative",
     transition: "all 200ms ease-in-out",
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+
 
     [theme.breakpoints.down("xs")]: {
       width: "100% !important", // Overrides inline-style
@@ -145,7 +148,7 @@ const useStyles = makeStyles((theme) => ({
     opacity: 0.15,
     transition: theme.transitions.create("opacity"),
   },
-}));
+}))
 
 function SliderCard(
   {
@@ -159,11 +162,11 @@ function SliderCard(
     showBackdrop = false,
   }: Props,
 ) {
-  const classes = useStyles();
-  const controls = useAnimation();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [goingBack, setGoingBack] = React.useState(false);
-  const maxSteps = imageData.length;
+  const classes = useStyles()
+  const controls = useAnimation()
+  const [activeStep, setActiveStep] = React.useState(0)
+  const [goingBack, setGoingBack] = React.useState(false)
+  const maxSteps = imageData.length
 
   React.useEffect(() => {
     // controls.set({
@@ -175,76 +178,76 @@ function SliderCard(
       y: 0,
       x: 0,
       decelerate: 3000,
-    });
+    })
     return () => {
-      controls.stop();
-    };
-  }, [activeStep]);
+      controls.stop()
+    }
+  }, [activeStep])
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => {
-      return prevActiveStep === imageData.length - 1 ? 0 : prevActiveStep + 1;
-    });
-  };
+      return prevActiveStep === imageData.length - 1 ? 0 : prevActiveStep + 1
+    })
+  }
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) =>
       prevActiveStep === 0 ? 0 : prevActiveStep - 1
-    );
-  };
+    )
+  }
 
   //   const handleStepChange = (step: number) => {
   //     setActiveStep(step);
   //   };
 
   React.useEffect(() => {
-    let backTimeout: number;
-    let forwardTimeout: number;
+    let backTimeout: number
+    let forwardTimeout: number
     function clearTimeouts() {
       if (backTimeout) {
-        window.clearTimeout(backTimeout);
+        window.clearTimeout(backTimeout)
       }
       if (forwardTimeout) {
-        window.clearTimeout(forwardTimeout);
+        window.clearTimeout(forwardTimeout)
       }
     }
 
     function autoPlay(time: number) {
-      const limit = maxSteps - 1;
+      const limit = maxSteps - 1
       if (activeStep === limit) {
-        setGoingBack(true);
+        setGoingBack(true)
         backTimeout = window.setTimeout(() => {
-          handleBack();
-        }, time);
-        return;
+          handleBack()
+        }, time)
+        return
       }
       if (activeStep === 0) {
-        setGoingBack(false);
+        setGoingBack(false)
         forwardTimeout = window.setTimeout(() => {
-          handleNext();
-        }, time);
+          handleNext()
+        }, time)
       }
       if (
         !goingBack && activeStep < limit
       ) {
         forwardTimeout = window.setTimeout(() => {
-          handleNext();
-        }, time);
+          handleNext()
+        }, time)
       } else if (activeStep !== 0 && goingBack && activeStep < limit) {
         backTimeout = window.setTimeout(() => {
-          handleBack();
-        }, time);
+          handleBack()
+        }, time)
       }
     }
     if (loop && maxSteps > 1) {
-      autoPlay(7000);
+      autoPlay(7000)
     }
     return () => {
-      clearTimeouts();
-    };
-  }, [activeStep, maxSteps, loop]);
+      clearTimeouts()
+    }
+  }, [activeStep, maxSteps, loop])
 
-  const shouldShowControlsInTitle = showControlsInTitle && maxSteps > 1;
+  const shouldShowControlsInTitle = showControlsInTitle && maxSteps > 1
 
   return (
     <div className={classes.sliderCardRoot}>
@@ -280,7 +283,7 @@ function SliderCard(
       >
         <AnimateSharedLayout>
           {imageData.map((data, index) => {
-            if (index !== activeStep) return null;
+            if (index !== activeStep) return null
             return <motion.div
               layout
               layoutId="outline"
@@ -296,9 +299,10 @@ function SliderCard(
                 position: "relative",
                 transition: "background 1s ease-in",
                 backgroundSize: "cover",
-                backgroundPosition: "center 0",
                 backgroundRepeat: "no-repeat",
                 objectFit: "cover",
+                backgroundPosition: "center 0",
+
               }}
               initial={goingBack
                 ? {
@@ -321,7 +325,7 @@ function SliderCard(
             >
               {showBackdrop &&
                 <span className={classes.imageBackdrop} />}
-            </motion.div>;
+            </motion.div>
           })}
         </AnimateSharedLayout>
         {/* <motion.div
@@ -389,13 +393,13 @@ function SliderCard(
           />}
         />}
     </div>
-  );
+  )
 }
 
 function SliderNextButton(
   { disabled, handleNext }: { handleNext: () => void; disabled: boolean },
 ) {
-  const theme = useTheme();
+  const theme = useTheme()
   return <IconButton
     size="small"
     color="inherit"
@@ -406,13 +410,13 @@ function SliderNextButton(
     {theme.direction === "rtl"
       ? <KeyboardArrowLeft color="inherit" />
       : <KeyboardArrowRight color="inherit" />}
-  </IconButton>;
+  </IconButton>
 }
 
 function SliderBackButton(
   { disabled, handleBack }: { handleBack: () => void; disabled: boolean },
 ) {
-  const theme = useTheme();
+  const theme = useTheme()
   return <IconButton
     size="small"
     color="inherit"
@@ -424,7 +428,7 @@ function SliderBackButton(
       ? <KeyboardArrowRight color="inherit" />
       : <KeyboardArrowLeft color="inherit" />}
     {/* Back */}
-  </IconButton>;
+  </IconButton>
 }
 
-export default SliderCard;
+export default SliderCard

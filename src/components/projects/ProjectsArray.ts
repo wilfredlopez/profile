@@ -28,19 +28,10 @@ const corona: Project = {
   description: coronaVirusDescription,
 }
 
-const xyMusic: Project = {
-  classKey: 'vape',
-  images: PROJECT_IMAGES.xyMusic,
-  url: 'https://vapemusic-ion.netlify.app/',
-  name: 'XYMusic',
-  title: 'XY Music - Search and Listen.',
-  description: xyMusicDescription,
-}
-
 const vapeMusic: Project = {
   classKey: 'vape',
   images: PROJECT_IMAGES.vapeMusic,
-  url: 'https://vapemusic.club',
+  url: 'https://vapemusic-ion.netlify.app/',
   name: 'Vape Music',
   title: 'Vape Music - Latin Music Listen & Download',
   description: vapeMusicDescription,
@@ -77,7 +68,6 @@ export const ProjectsArray: Project[] = [
   twoDeal,
   vapeMusic,
   expenseManager,
-  xyMusic,
   corona,
   retailmeNow,
 ]
