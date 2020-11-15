@@ -1,10 +1,13 @@
-# Test Locally 
+# Test Locally
+
 ```bash
 npm run build
 npm run export
 node server/server.js
 ```
-# TO PUSH TO GITHUB ONLY
+
+# TO PUSH TO GITHUB and Deploy
+
 ```bash
 git add .
 git commit -am "WHATEREVER"
@@ -12,13 +15,11 @@ git push origin master
 npm run deploy
 ```
 
-
 https://wilfredlopez.github.io/profile
 
-
 ## NextJS | Push your “out” folder as the root of your gh-pages branch
-git subtree push --prefix out origin gh-pages
 
+git subtree push --prefix out origin gh-pages
 
 ### Workaround
 
