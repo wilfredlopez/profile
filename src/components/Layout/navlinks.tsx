@@ -1,15 +1,15 @@
-import GitHubIcon from "@material-ui/icons/GitHub";
-import HomeIcon from "@material-ui/icons/Home";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import MailIcon from "@material-ui/icons/Mail";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import WebIcon from "@material-ui/icons/Web";
+import GitHubIcon from "@material-ui/icons/GitHub"
+import HomeIcon from "@material-ui/icons/Home"
+import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import MailIcon from "@material-ui/icons/Mail"
+import TwitterIcon from "@material-ui/icons/Twitter"
+import InstagramIcon from "@material-ui/icons/Instagram"
+import WebIcon from "@material-ui/icons/Web"
 
 export interface NavLinkItem {
-  text: string;
-  href: string;
-  Icon?: JSX.Element;
+  text: string
+  href: string
+  Icon?: JSX.Element
 }
 
 export const SOCIAL_LINKS: NavLinkItem[] = [
@@ -33,7 +33,7 @@ export const SOCIAL_LINKS: NavLinkItem[] = [
     text: "Instagram",
     Icon: <InstagramIcon />,
   },
-];
+]
 
 export const NAV_LINKS: NavLinkItem[] = [
   {
@@ -51,4 +51,4 @@ export const NAV_LINKS: NavLinkItem[] = [
     text: "Contact",
     Icon: <MailIcon />,
   },
-];
+]

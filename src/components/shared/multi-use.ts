@@ -11,3 +11,11 @@ export const PrimaryBackgroundSection = styled.section<{
   display: flex;
   flex-direction: column;
 `
+
+export const FooterSection = styled.section<{}>`
+  background: rgb(4, 12, 20);
+  color: #ffffff;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+`

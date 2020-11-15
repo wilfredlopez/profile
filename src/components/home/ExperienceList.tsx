@@ -65,7 +65,7 @@ export const ExperienceList = () => {
                   component='h3'
                   style={{
                     color: isCurrent
-                      ? 'blue' : '#fff'
+                      ? 'blue' : 'inherit'
                     // : prefersDarkMode
                     // ? '#c8c8c8'
                     // : '#fcfcfc',

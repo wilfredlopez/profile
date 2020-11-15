@@ -109,7 +109,7 @@ const InstagramButton = styled(Button)`
   }
 `
 
-interface Props {}
+interface Props { }
 const SideItems: React.FC<Props> = () => {
   return (
     <Fragment>
@@ -123,9 +123,12 @@ const SideItems: React.FC<Props> = () => {
           target='_blank'
           rel='noopener noreferrer'
           role='link'
+
           id='profile-link'
         >
-          <GitHubIcon /> <span>Github</span>
+          <GitHubIcon /> <span style={{
+            color: 'black'
+          }}>Github</span>
         </GithubButton>
         {/* </Hidden> */}
         <LinkedInButton

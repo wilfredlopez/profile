@@ -36,8 +36,8 @@ const spring = {
 const useNpmStyles = makeStyles(theme => {
   return {
     wrapper: {
-      color: '#000',
-      background: '#fff',
+      color: theme.palette.text.primary,
+      background: theme.palette.background.paper
     },
     cardRoot: {
       color: '#000',
@@ -53,6 +53,8 @@ const useNpmStyles = makeStyles(theme => {
 
 const NpmPackages = (props: Props) => {
   const classes = useNpmStyles()
+
+  const theme = useTheme()
 
   const positions = useRef<Position[]>([]).current
   const [items, setItems] = React.useState(
@@ -73,8 +75,8 @@ const NpmPackages = (props: Props) => {
         style={
           props.dark
             ? {
-              background: DARK_BACKGROUND_COLOR,
-              color: 'white',
+              background: theme.palette.background.paper,
+              color: 'inherit',
             }
             : {}
         }

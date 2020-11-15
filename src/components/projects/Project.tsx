@@ -24,7 +24,7 @@ interface Props {
 
 export const TitleLink = styled(StyledHtmlLink)`
   font-size: 1.2rem;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.dark};
   font-weight: 500;
 `
 
@@ -36,7 +36,7 @@ const Project: React.FC<Props> = (
     <>
       <DividerElement
         className="header project-tile"
-        style={{ textTransform: "uppercase", marginTop: "1rem" }}
+        style={{ textTransform: "uppercase", marginTop: "2rem", paddingTop: '2rem' }}
       >
         <TitleLink
           href={url}

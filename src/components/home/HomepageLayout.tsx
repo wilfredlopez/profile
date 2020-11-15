@@ -30,7 +30,7 @@ const SummaryLi = styled.li`
   }
 `
 
-const Title = styled(Typography)<{ component: string }>`
+const Title = styled(Typography) <{ component: string }>`
   text-decoration: underline;
   margin-bottom: 30px !important;
 `
@@ -80,7 +80,10 @@ const HomepageLayout = () => {
   return (
     <React.Fragment>
       <PrimaryBackgroundSection>
-        <HomepageHeading />
+        <Paper elevation={1}>
+
+          <HomepageHeading />
+        </Paper>
       </PrimaryBackgroundSection>
       <Paper square elevation={0}>
         <Grid

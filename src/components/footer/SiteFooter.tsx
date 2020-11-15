@@ -7,6 +7,7 @@ import SocialList from '../partials/SocialList'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import ProjectLinks from './ProjectLinks'
+import { FooterSection } from '../shared/multi-use'
 
 export const FooterNavLink = styled.a<{ isActive?: boolean }>`
   color: ${props => (props.isActive ? props.theme.colors.tertiary : 'inherit')};
@@ -23,14 +24,14 @@ export const FooterNavLink = styled.a<{ isActive?: boolean }>`
   }
 `
 
-const FooterTitle = styled(Typography)<{ component?: string }>`
+const FooterTitle = styled(Typography) <{ component?: string }>`
   /* text-align: center; */
 `
 
 const SiteFooter = () => {
   const { pathname } = useRouter()
   return (
-    <PrimaryBackgroundSection style={{ padding: '1em 0em' }}>
+    <FooterSection style={{ padding: '1em 0em' }}>
       <Container>
         <Grid
           container
@@ -115,7 +116,7 @@ const SiteFooter = () => {
           </Grid>
         </Grid>
       </Container>
-    </PrimaryBackgroundSection>
+    </FooterSection>
   )
 }
 
