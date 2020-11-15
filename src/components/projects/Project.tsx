@@ -22,9 +22,10 @@ interface Props {
   description: JSX.Element
 }
 
+
 export const TitleLink = styled(StyledHtmlLink)`
   font-size: 1.2rem;
-  color: ${(props) => props.theme.colors.dark};
+  color: inherit
   font-weight: 500;
 `
 
