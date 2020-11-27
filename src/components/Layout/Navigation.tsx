@@ -60,7 +60,7 @@ export default function Navigation() {
       <AppBar position='fixed' className={classes.toolbar}>
         <Toolbar>
           <Link href="/">
-            <a className="clear-link">
+            <a className="clear-link" style={{ display: 'inline-flex' }}>
 
 
               <Logo />
