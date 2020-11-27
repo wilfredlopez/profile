@@ -1,8 +1,7 @@
 # Test Locally
 
 ```bash
-npm run build
-npm run export
+npm run build-export
 node server/server.js
 ```
 
