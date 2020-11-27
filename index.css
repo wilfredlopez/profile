@@ -13,6 +13,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+#welcome-section{
+  place-content: center;
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+}
+
+.caption-text{
+  letter-spacing: 0.07em !important;
+}
 
 
 .border-full {
@@ -46,4 +56,8 @@ li {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.clear-link{
+  display: inherit;
 }
