@@ -35,9 +35,10 @@ const Project: React.FC<Props> = (
   const classes = useSharedStyles()
   return (
     <>
+
       <DividerElement
         className="header project-tile"
-        style={{ textTransform: "uppercase", marginTop: "2rem", paddingTop: '2rem' }}
+        style={{ textTransform: "uppercase", paddingTop: '2rem' }}
       >
         <TitleLink
           href={url}

@@ -35,11 +35,12 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
   },
   title: {
-    marginLeft: theme.spacing(0.5),
+    marginLeft: theme.spacing(1),
     marginTop: 'auto',
     marginBottom: 'auto',
-    letterSpacing: '0.07em',
-    fontSize: '1.2rem'
+    letterSpacing: '0.06em',
+    fontSize: '1.2rem',
+    textShadow: '3px 3px 10px rgb(0 0 0 / 50%)'
 
   },
   spacer: {

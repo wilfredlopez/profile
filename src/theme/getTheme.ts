@@ -10,7 +10,8 @@ export const SECONDARY_COLOR_CONTRAST = common['black']
 export let PRIMARY_COLOR: string = '#914345' // '#f25022' //'#af6800' //'#b73e35' // primary[700] // '#032e4e'
 export const PRIMARY_COLOR_CONTRAST = common['white']
 
-export const TOOLBAR_MIN_HEIGHT = 50
+// export const TOOLBAR_MIN_HEIGHT = 50
+export const TOOLBAR_MIN_HEIGHT = 60
 // export const DARK_COLOR = '#040c14'
 export let DARK_COLOR = '#ffffff'
 export let LIGHT_COLOR: string = common['black']
@@ -32,6 +33,9 @@ export default function getTheme(prefersDarkMode = false) {
     status: {
       ...red,
       danger: red[500],
+    },
+    typography: {
+      fontFamily: "'Poppins','Roboto', sans-serif",
     },
     palette: {
       type: prefersDarkMode ? 'dark' : 'light',

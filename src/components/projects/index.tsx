@@ -3,7 +3,7 @@ import { usePagesContext } from '@root/context/PagesContext'
 import React, { useEffect } from 'react'
 import ProjectsArray from './ProjectsArray'
 import Project from './Project'
-import { Paper } from '@material-ui/core'
+import { Paper, Typography } from '@material-ui/core'
 
 interface Props {
   loop?: boolean
@@ -31,11 +31,16 @@ const Projects = ({
   }, [])
   return (
     <React.Fragment>
-
-      {/* {addMarginTop && <div style={{ marginTop: '5rem' }} />} */}
-      {limitTo
-        ? <Paper>
-          {ProjectsArray.slice(0, limitTo).map(proj => (
+      <Paper>
+        <Typography
+          className="caption-text"
+          style={{ textTransform: "uppercase", fontSize: '1.7rem', marginTop: "2.6rem", paddingTop: '2rem', }}
+          variant="h5" component="h1"
+          gutterBottom
+          align="center">Featured Projects</Typography>
+        {/* {addMarginTop && <div style={{ marginTop: '5rem' }} />} */}
+        {limitTo
+          ? ProjectsArray.slice(0, limitTo).map(proj => (
             <Project
               key={proj.title}
               loop={loop}
@@ -47,20 +52,21 @@ const Projects = ({
               title={proj.title}
               description={proj.description}
             ></Project>
-          ))}</Paper>
-        : <Paper>{ProjectsArray.map(proj => (
-          <Project
-            key={proj.title}
-            loop={loop}
-            showSliderControls={showSliderControls}
-            classKey={proj.classKey}
-            images={proj.images}
-            url={proj.url}
-            name={proj.name}
-            title={proj.title}
-            description={proj.description}
-          ></Project>
-        ))}</Paper>}
+          ))
+          : ProjectsArray.map(proj => (
+            <Project
+              key={proj.title}
+              loop={loop}
+              showSliderControls={showSliderControls}
+              classKey={proj.classKey}
+              images={proj.images}
+              url={proj.url}
+              name={proj.name}
+              title={proj.title}
+              description={proj.description}
+            ></Project>
+          ))}
+      </Paper>
     </React.Fragment>
   )
 }

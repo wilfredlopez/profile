@@ -6,7 +6,7 @@ import PageWrapper from "@components/PageWrapper"
 import { motion } from "framer-motion"
 import { fadeInUp } from "@root/animation"
 import NpmPackages from "@components/npm-package/NpmPackages"
-import { Paper } from '@material-ui/core'
+import { Paper, Typography } from '@material-ui/core'
 
 // import SliderCard from "@components/shared/SliderCard";
 // import { PROJECT_IMAGES } from "@components/pages/constants/projectImages";
@@ -37,6 +37,7 @@ const projects = () => {
           <PageWrapper>
 
             <motion.div variants={fadeInUp}>
+
               <Projects />
               <NpmPackages />
             </motion.div>

@@ -11,6 +11,7 @@ import styled from 'styled-components'
 // import { BrandButton } from "@root/theme/Custom";
 import ScaleUpDownComponent from '@components/shared/ScaleUpDownComponent'
 import { motion } from 'framer-motion'
+import { CONTACT_EMAIL } from '@root/constants'
 interface Props {
   height?: string
 }
@@ -118,7 +119,7 @@ const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
                 color="primary"
                 variant='contained'
               >
-                <StyledAnker href='mailto:cubamc@gmail.com' title='contact me'>
+                <StyledAnker href={`mailto:${CONTACT_EMAIL}`} title='contact me'>
                   Contact Me
             </StyledAnker>
               </Button>

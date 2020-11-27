@@ -27,6 +27,10 @@ const contact = () => {
         <br />
 
         <Instagram />
+        <br />
+        <br />
+        <br />
+        <br />
         <HomepageHeading />
       </PageWrapper>
     </>

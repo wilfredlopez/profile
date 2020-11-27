@@ -63,6 +63,7 @@ export const ExperienceList = () => {
                 <Typography
                   variant='h6'
                   component='h3'
+                  align="center"
                   style={{
                     color: isCurrent
                       ? 'blue' : 'inherit'

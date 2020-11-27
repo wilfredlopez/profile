@@ -22,7 +22,10 @@ const index = () => {
       </Head>
 
       <PageWrapper>
-        <Paper style={{ overflow: 'hidden' }} square>
+        <Paper style={{
+          overflow: 'hidden'
+
+        }} square>
           <HomepageLayout />
           <NpmPackages dark limit={6} />
         </Paper>

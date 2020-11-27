@@ -100,15 +100,15 @@ const HomepageLayout = () => {
             justify='space-around'
             alignItems='flex-start'
           >
-            <SectionGridStyled item xs={12} sm={4}>
+            <SectionGridStyled item xs={12} md={4}>
               <Title variant='h4' component='h2' align='center' className="caption-text">
                 Experiences
               </Title>
               <ExperienceList />{' '}
             </SectionGridStyled>
 
-            <Grid item xs={10} sm={4}>
-              <Hidden xsDown>
+            <Grid item xs={10} sm={6} md={4}>
+              <Hidden smDown>
                 <Box
                   css={{
                     marginTop: 50,

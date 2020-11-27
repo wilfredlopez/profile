@@ -23,6 +23,22 @@ export default makeStyles((theme: Theme) =>
       color: theme.palette.background.paper,
       paddingTop: '4rem',
       paddingBottom: '2rem',
+      [theme.breakpoints.down('xs')]: {
+        paddingTop: '5rem',
+      },
+    },
+    backToTopAncher: {
+      minHeight: 0,
+      // marginBottom: '3.1rem',
+      marginBottom: theme.spacing(1),
+      [theme.breakpoints.down('xs')]: {
+        // marginBottom: '3.78rem',
+        marginBottom: theme.spacing(3.5),
+      },
+      [theme.breakpoints.up('sm')]: {
+        // marginBottom: '1rem',
+        marginBottom: theme.spacing(2),
+      },
     },
     constrainedSection: {
       marginLeft: 'auto',

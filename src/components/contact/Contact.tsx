@@ -5,6 +5,7 @@ import { Segment, StyledHtmlLink, DividerElement } from '@components/shared'
 import styled from 'styled-components'
 import { usePagesContext } from '@root/context/PagesContext'
 import Logo from '@components/shared/Logo'
+import { CONTACT_EMAIL } from '@root/constants'
 
 const Centerer = styled.span`
   display: flex;
@@ -52,7 +53,7 @@ const Contact = () => {
             </Grid>
           </DividerElement>
         </Segment> */}
-        <Segment style={{ padding: '0em 0em' }}>
+        <Segment>
           <Grid container>
             {/* <Grid container>
               <Grid item>
@@ -90,20 +91,26 @@ const Contact = () => {
               </Grid>
             </Grid> */}
             <div style={{ width: '100%' }}>
+              <Typography
+                className="caption-text"
+                style={{ textTransform: "uppercase", fontSize: '1.7rem', marginTop: "1.5rem", }}
+                component="h1"
+                align="center" variant="h5" gutterBottom>Contact</Typography>
               <br />
-              <Typography component="h1" align="center" variant="h4" gutterBottom>Contact</Typography>
               {/* <h3 className='text-center'>Contact</h3> */}
             </div>
             <Grid container>
               <Grid item xs={12}>
 
                 <Logo height={175} width={175} />
+                <br />
+                <br />
               </Grid>
               <Grid item xs={6}>
                 <div style={{ textAlign: 'right' }}>
                   <Button size='large' color='secondary'>
                     <StyledHtmlLink
-                      href='mailto:cubamc@gmail.com'
+                      href={`mailto:${CONTACT_EMAIL}`}
                       title='By Email'
                     >
                       <Centerer>
