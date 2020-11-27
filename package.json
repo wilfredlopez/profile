@@ -29,6 +29,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "build-export": "rimraf out && next build && next export && touch out/.nojekyll",
     "start:next": "next start",
     "start": "node server/server.js",
     "dev:RS": "react-scripts start",
