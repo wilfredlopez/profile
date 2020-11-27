@@ -20,7 +20,7 @@ const Projects = ({
 }: Props) => {
   const { changePage } = usePagesContext()
   useEffect(() => {
-    changePage('Showcase')
+    changePage('Featured')
   }, [changePage])
   useEffect(() => {
     window.scrollTo({

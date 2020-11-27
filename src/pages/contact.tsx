@@ -1,9 +1,9 @@
-import React from "react";
-import Contact from "@components/contact/Contact";
-import Head from "next/head";
-import PageWrapper from "@components/PageWrapper";
-import Instagram from "@components/partials/Instagram";
-import HomepageHeading from "@components/partials/HomepageHeading";
+import React from "react"
+import Contact from "@components/contact/Contact"
+import Head from "next/head"
+import PageWrapper from "@components/PageWrapper"
+import Instagram from "@components/partials/Instagram"
+import HomepageHeading from "@components/partials/HomepageHeading"
 
 const contact = () => {
   return (
@@ -23,13 +23,14 @@ const contact = () => {
       </Head>
       <PageWrapper>
         <Contact />
+        <br />
+        <br />
+
         <Instagram />
-        <br />
-        <br />
         <HomepageHeading />
       </PageWrapper>
     </>
-  );
-};
+  )
+}
 
-export default contact;
+export default contact

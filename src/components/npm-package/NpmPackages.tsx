@@ -47,6 +47,7 @@ const useNpmStyles = makeStyles(theme => {
       alignItems: 'flex-start',
       display: 'flex',
       flexDirection: 'column',
+      borderRadius: '1.1rem'
     },
   }
 })
@@ -86,7 +87,7 @@ const NpmPackages = (props: Props) => {
         <Container>
           <Box mb={2} pt={2}>
             <DividerElement>
-              <Typography align='center'>NPM Packages</Typography>
+              <Typography align='center' className="caption-text"><b>NPM Packages</b></Typography>
             </DividerElement>
           </Box>
           <Grid
@@ -188,6 +189,7 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
       >
         <Card
           className={classes.cardRoot}
+          elevation={2}
           style={{
             position: 'relative',
             background: 'white',

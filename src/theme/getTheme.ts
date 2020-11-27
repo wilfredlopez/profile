@@ -23,6 +23,7 @@ const BORDER_RADIOUS = 4
 //Cool Green #38b584 or #76b9ff
 export default function getTheme(prefersDarkMode = false) {
   // const prefersDarkMode = true
+
   PRIMARY_COLOR = prefersDarkMode ? '#040c14' : PRIMARY_COLOR
   SECONDARY_COLOR = prefersDarkMode ? 'rgb(145 45 17)' : SECONDARY_COLOR
   LIGHT_COLOR = prefersDarkMode ? common['white'] : common['black']

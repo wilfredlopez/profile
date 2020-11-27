@@ -22,7 +22,7 @@ const projects = () => {
     <>
       <motion.div initial="initial" animate="animate">
         <Head>
-          <title key="title">Showcase Projects | Wilfred Lopez</title>
+          <title key="title">Featured Projects | Wilfred Lopez</title>
           <link rel="canonical" href="https://wilfredlopez.net/projects" />
         </Head>
         <motion.div

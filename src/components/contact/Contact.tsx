@@ -4,6 +4,7 @@ import { MailOutline as MailIcon, Phone as PhoneIcon } from '@material-ui/icons'
 import { Segment, StyledHtmlLink, DividerElement } from '@components/shared'
 import styled from 'styled-components'
 import { usePagesContext } from '@root/context/PagesContext'
+import Logo from '@components/shared/Logo'
 
 const Centerer = styled.span`
   display: flex;
@@ -35,7 +36,7 @@ const Contact = () => {
   return (
     <React.Fragment>
       <Container maxWidth='md'>
-        <Segment style={{ padding: '2em 0em' }}>
+        {/* <Segment style={{ padding: '2em 0em' }}>
           <DividerElement>
             <Grid container justify='center' alignContent='center'>
               <Typography
@@ -50,10 +51,10 @@ const Contact = () => {
               </Typography>
             </Grid>
           </DividerElement>
-        </Segment>
+        </Segment> */}
         <Segment style={{ padding: '0em 0em' }}>
           <Grid container>
-            <Grid>
+            {/* <Grid container>
               <Grid item>
                 <Paragraph>
                   Wilfred D. Lopez, from Dominican Republic. Lives in Garfield,
@@ -87,11 +88,17 @@ const Contact = () => {
                   </Paragraph>
                 </List>
               </Grid>
-            </Grid>
+            </Grid> */}
             <div style={{ width: '100%' }}>
-              <h3 className='text-center'>Contact Me</h3>
+              <br />
+              <Typography component="h1" align="center" variant="h4" gutterBottom>Contact</Typography>
+              {/* <h3 className='text-center'>Contact</h3> */}
             </div>
             <Grid container>
+              <Grid item xs={12}>
+
+                <Logo height={175} width={175} />
+              </Grid>
               <Grid item xs={6}>
                 <div style={{ textAlign: 'right' }}>
                   <Button size='large' color='secondary'>

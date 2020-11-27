@@ -5,7 +5,9 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import SideDrawer from './SideDrawer'
-import SideItems from './SideItems'
+// import SideItems from './SideItems'
+import Logo from '@components/shared/Logo'
+import Link from 'next/link'
 
 
 // const GRADIANT = 'linear-gradient(0deg, #2f946d 40%, #30a275 50%, #298a64 100%)'
@@ -57,20 +59,28 @@ export default function Navigation() {
     <div className={classes.root}>
       <AppBar position='fixed' className={classes.toolbar}>
         <Toolbar>
-          <SideDrawer anchor='left' />
+          <Link href="/">
+            <a className="clear-link">
 
-          <Hidden only='xs'>
-            <Typography className={classes.title} variant='h6' component='h1'>
-              WilfredLopez
+
+              <Logo />
+
+
+              <Typography className={classes.title} variant='h6' component='h1'>
+                Wilfred Lopez
             </Typography>
-          </Hidden>
+              {/* <Hidden only='xs'>
+              </Hidden> */}
+            </a>
+          </Link>
           <div className={classes.separator} />
           {/* <Hidden only="xs">
             <Typography variant="caption" className={classes.title}>
             WilfredLopez.Net
             </Typography>
           </Hidden> */}
-          <SideItems />
+          {/* <SideItems /> */}
+          <SideDrawer anchor="right" />
         </Toolbar>
       </AppBar>
     </div>

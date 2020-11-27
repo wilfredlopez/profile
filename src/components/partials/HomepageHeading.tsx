@@ -11,8 +11,6 @@ import styled from 'styled-components'
 // import { BrandButton } from "@root/theme/Custom";
 import ScaleUpDownComponent from '@components/shared/ScaleUpDownComponent'
 import { motion } from 'framer-motion'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { Theme } from '@material-ui/core/styles'
 interface Props {
   height?: string
 }
@@ -38,15 +36,12 @@ const Item = styled.div`
 //       display: flex;
 //     }
 // `;
-const HomepageHeading: React.FC<Props> = ({ height = '80vh' }) => {
+const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
 
-  const isSm = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
 
   return (
 
-    <Responsive style={{
-      paddingBottom: isSm ? '4rem' : '0'
-    }}>
+    <Responsive>
       <Segment>
         <Container id='welcome-section' style={{ height }}>
           <motion.div

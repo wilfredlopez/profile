@@ -25,7 +25,7 @@ interface Props {
 }
 
 const ShowCaseProjectButton = (
-  { color = "default", size = "large", variant }: Props,
+  { color = "default", size = 'small', variant }: Props,
 ) => {
   return (
     <Grid

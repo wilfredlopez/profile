@@ -1,4 +1,4 @@
-import { SECONDARY_COLOR } from '@root/theme/getTheme'
+// import { SECONDARY_COLOR } from '@root/theme/getTheme'
 import styled from 'styled-components'
 
 export const NonStyledAnchor = styled.a`

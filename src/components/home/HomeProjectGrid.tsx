@@ -1,20 +1,22 @@
-import { DividerElement } from "@components/shared";
-import { Box, Grid } from "@material-ui/core";
-import { ImageButton } from "@root/theme/Custom";
-import React from "react";
-import ProjectsArray from "../projects/ProjectsArray";
+import { DividerElement } from "@components/shared"
+import { Box, Grid } from "@material-ui/core"
+import { ImageButton } from "@root/theme/Custom"
+import React from "react"
+import ProjectsArray from "../projects/ProjectsArray"
 
 interface Props {
-  limit?: number;
+  limit?: number
 }
 
 // const PArray = ProjectsArray.slice(0, 2);
 
 const HomeProjectGrid = ({ limit }: Props) => {
-  const PArray = limit ? ProjectsArray.slice(0, limit) : ProjectsArray;
+  const PArray = limit ? ProjectsArray.slice(0, limit) : ProjectsArray
   return (
     <Box py={2}>
-      <Grid container spacing={2} alignContent="center" justify="center">
+      <Grid
+
+        container spacing={2} alignContent="center" justify="center">
         {PArray.map((proj, index) => {
           return <Grid
             key={`project-grid-${proj.name}-${index}`}
@@ -33,11 +35,11 @@ const HomeProjectGrid = ({ limit }: Props) => {
               width={500}
               minHeight={700}
             />
-          </Grid>;
+          </Grid>
         })}
       </Grid>
     </Box>
-  );
-};
+  )
+}
 
-export default HomeProjectGrid;
+export default HomeProjectGrid

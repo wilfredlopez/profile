@@ -43,7 +43,7 @@ export const NAV_LINKS: NavLinkItem[] = [
   },
   {
     href: "/projects",
-    text: "Showcase Projects",
+    text: "Featured Projects",
     Icon: <WebIcon />,
   },
   {

@@ -67,7 +67,7 @@ const HomepageLayout = () => {
 
   const summary = (
     <Grid item>
-      <Container maxWidth='md'>
+      <Container maxWidth='md' style={{ margin: 0 }}>
         <List style={{ fontSize: '1.1em' }}>
           {SUMMARY_TEXTS.map(text => {
             return <SummaryLi key={text}>{text}</SummaryLi>
@@ -80,7 +80,7 @@ const HomepageLayout = () => {
   return (
     <React.Fragment>
       <PrimaryBackgroundSection>
-        <Paper elevation={1}>
+        <Paper elevation={1} className={classes.homepageHeadingPaper}>
 
           <HomepageHeading />
         </Paper>
@@ -101,7 +101,7 @@ const HomepageLayout = () => {
             alignItems='flex-start'
           >
             <SectionGridStyled item xs={12} sm={4}>
-              <Title variant='h4' component='h2' align='center'>
+              <Title variant='h4' component='h2' align='center' className="caption-text">
                 Experiences
               </Title>
               <ExperienceList />{' '}
@@ -115,7 +115,7 @@ const HomepageLayout = () => {
                   }}
                 />
               </Hidden>
-              <Title variant='h4' component='h2' align='center'>
+              <Title variant='h4' component='h2' align='center' className="caption-text">
                 Skills
               </Title>
 
@@ -155,11 +155,11 @@ const HomepageLayout = () => {
         </Container> */}
       </Paper>
       <Box pb={2} />
-      <Paper square>
+      <Paper square elevation={1}>
         <Box pt={1} />
 
-        <Typography align='center' variant='h4' component='h2'>
-          Showcase Projects
+        <Typography align='center' variant='h4' component='h2' className="caption-text">
+          Featured Projects
         </Typography>
 
         <Container

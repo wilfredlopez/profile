@@ -63,7 +63,7 @@ const SiteFooter = () => {
                 <ListItem>
                   <NavLink href='/projects'>
                     <FooterNavLink isActive={pathname === '/projects'}>
-                      Showcase Projects
+                      Featured Projects
                     </FooterNavLink>
                   </NavLink>
                 </ListItem>
@@ -80,7 +80,7 @@ const SiteFooter = () => {
               <List>
                 <ListItem>
                   <FooterTitle variant='h6' component='h2'>
-                    Showcase Projects
+                    Featured Projects
                   </FooterTitle>
                 </ListItem>
                 <ProjectLinks />
