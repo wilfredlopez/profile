@@ -29,9 +29,17 @@ const useStyles = makeStyles(theme => ({
     //   width: "calc(100% - 240px)",
     // },
   },
-  title: {
+  titleContainer: {
     flexGrow: 1,
+    display: 'flex'
+  },
+  title: {
     marginLeft: theme.spacing(1),
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    letterSpacing: '0.07em',
+    fontSize: '1.2rem'
+
   },
   spacer: {
     flexGrow: 2,
@@ -60,13 +68,9 @@ export default function Navigation() {
       <AppBar position='fixed' className={classes.toolbar}>
         <Toolbar>
           <Link href="/">
-            <a className="clear-link" style={{ display: 'inline-flex' }}>
-
-
+            <a className={classes.titleContainer} >
               <Logo />
-
-
-              <Typography className={classes.title} variant='h6' component='h1'>
+              <Typography className={classes.title} variant="h1" component='h1'>
                 Wilfred Lopez
             </Typography>
               {/* <Hidden only='xs'>
