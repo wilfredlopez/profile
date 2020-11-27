@@ -2,12 +2,12 @@ import React from 'react'
 
 interface Props {
     width?: number
-    height?: number | string
+    height?: number
 }
 
-const Logo = ({ width = 35, height = 'auto' }: Props) => {
+const Logo = ({ width = 35, height = 35 }: Props) => {
     return (
-        <svg width={width} viewBox="0 0 68 66" style={{ height }}>
+        <svg width={width} height={height} viewBox="0 0 68 66" >
             <g transform="translate(-1087 -234)">
                 <circle id="Ellipse_6" data-name="Ellipse 6" cx="19.5" cy="19.5" r="19.5" transform="translate(1116 242)" fill="#ff9b9b" />
                 <circle id="Ellipse_3" data-name="Ellipse 3" cx="19.5" cy="19.5" r="19.5" transform="translate(1098 234)" fill="#469fa2" />

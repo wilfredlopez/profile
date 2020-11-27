@@ -31,10 +31,11 @@ const useStyles = makeStyles(theme => ({
   },
   titleContainer: {
     flexGrow: 1,
-    display: 'flex'
+    display: 'flex',
+    marginLeft: theme.spacing(1),
   },
   title: {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(0.5),
     marginTop: 'auto',
     marginBottom: 'auto',
     letterSpacing: '0.07em',
