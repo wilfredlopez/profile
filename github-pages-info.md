@@ -8,6 +8,8 @@ node server/server.js
 
 # TO PUSH TO GITHUB and Deploy
 
+`THIS IS NOW DEPRECIATED` (Now Using NETLIFY to DEPLOY `master` Branch)
+
 ```bash
 git add .
 git commit -am "WHATEREVER"
