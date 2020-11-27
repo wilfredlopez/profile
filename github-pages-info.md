@@ -10,6 +10,8 @@ node server/server.js
 
 `THIS IS NOW DEPRECIATED` (Now Using NETLIFY to DEPLOY `master` Branch)
 
+`wilfredprofile.netlify.app`
+
 ```bash
 git add .
 git commit -am "WHATEREVER"
