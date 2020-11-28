@@ -14,6 +14,8 @@ export interface ParticlePros {
 const GRAVITY = 0.005
 const FRICTION = 0.99
 
+const MAX_VELOCITY = 5
+
 export default class Particle implements ParticlePros {
   x: number
   y: number
@@ -54,5 +56,11 @@ export default class Particle implements ParticlePros {
     this.x += this.velocity.x
     this.y += this.velocity.y
     this.alpha -= 0.005
+    if (this.velocity.x > MAX_VELOCITY) {
+      this.velocity.x = GRAVITY
+    }
+    if (this.velocity.y > MAX_VELOCITY) {
+      this.velocity.y = FRICTION
+    }
   }
 }

@@ -30,6 +30,7 @@ export default class ParticleMachine {
   POWER: number
   RADIUS: number
   backgroundColor: string
+  private _frameId: number | undefined
   constructor({
     ctx,
     MAX_PARTICLES = 400,
@@ -66,7 +67,10 @@ export default class ParticleMachine {
   public animate(location?: StartLocation) {
     this._ANIMATION_ON = true
     const ctx = this.ctx
-    let id: number
+    if (typeof this._frameId !== 'undefined') {
+      cancelAnimationFrame(this._frameId)
+    }
+    let id = this._frameId
     if (location) {
       //   this._PARTICLES = [] as Particle[]
       this._createParticles(location)
@@ -82,8 +86,8 @@ export default class ParticleMachine {
       if (!this._ANIMATION_ON) {
         return
       }
-
-      id = requestAnimationFrame(loop)
+      this._frameId = requestAnimationFrame(loop)
+      id = this._frameId
       ctx.fillStyle = this.backgroundColor //'rgba(0,0,0,0.05)'
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
       // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
