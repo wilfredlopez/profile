@@ -3,11 +3,14 @@ const debug = process.env.NODE_ENV !== 'production'
 const withImages = require('next-images')
 module.exports = withImages({
   esModule: true,
-  exportPathMap: function () {
+  exportPathMap: function (defaultPathMap = {}) {
     return {
+      ...defaultPathMap,
       '/': { page: '/' },
+      '/home': { page: '/' },
       '/projects': { page: '/projects' },
       '/contact': { page: '/contact' },
+      // '/newyear': { page: '/newyear' },
     }
   },
   assetPrefix: !debug ? '.' : '',
