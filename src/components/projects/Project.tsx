@@ -79,9 +79,11 @@ const Project: React.FC<Props> = (
       {props.images.length === 1 &&
         <div style={{
           marginBottom: "1rem",
+          textAlign: 'center'
         }} className={classes.minPaddingX.concat(" " + classes.flexCenter)}>
           <ImageButton
             linkUrl={url}
+
             title={title}
             backgroundUrl={props.images[0].imgPath}
             width={520}

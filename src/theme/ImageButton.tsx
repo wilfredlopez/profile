@@ -162,6 +162,9 @@ const WithLink = (
   return <NonStyledAnchor
     href={linkUrl}
     target={linkTarget}
+    style={{
+      width: '100%'
+    }}
     rel={linkTarget === "_blank" ? "noopener noreferrer" : undefined}
   >
     {children}

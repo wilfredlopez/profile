@@ -1,6 +1,6 @@
 import { ImageToSlider } from '@components/shared/SliderCard'
 import retailmenowImg from '../../img/retailmenow.jpeg'
-import vapemusicImg from '../../img/vapemusic-example.jpg'
+// import vapemusicImg from '../../img/vapemusic-example.jpg'
 
 const ExpenseMangerImages: ImageToSlider[] = [
   {

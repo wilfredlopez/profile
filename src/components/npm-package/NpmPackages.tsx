@@ -17,10 +17,13 @@ import { motion } from 'framer-motion'
 import React, { useRef } from 'react'
 import { DividerElement, StyledHtmlLink } from '../shared'
 import { findIndex, Position, move } from '../shared/find-index'
-import { DARK_BACKGROUND_COLOR } from '@root/theme/getTheme'
+// import { DARK_BACKGROUND_COLOR } from '@root/theme/getTheme'
 import { throttle } from '@wilfredlopez/react-utils'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { PRIMARY_COLOR, TERTIARY_COLOR, SECONDARY_COLOR } from '../../theme/getTheme'
+import {
+  // PRIMARY_COLOR, TERTIARY_COLOR, 
+  SECONDARY_COLOR
+} from '../../theme/getTheme'
 
 interface Props {
   dark?: boolean
@@ -47,7 +50,7 @@ const useNpmStyles = makeStyles(theme => {
       alignItems: 'flex-start',
       display: 'flex',
       flexDirection: 'column',
-      borderRadius: '1.1rem'
+      borderRadius: '1rem'
     },
   }
 })
