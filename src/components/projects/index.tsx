@@ -34,7 +34,11 @@ const Projects = ({
       <Paper>
         <Typography
           className="caption-text"
-          style={{ textTransform: "uppercase", fontSize: '1.7rem', marginTop: "2.6rem", paddingTop: '2rem', }}
+          style={{
+            textTransform: "uppercase", fontSize: '1.7rem',
+            // marginTop: "2.6rem",
+            paddingTop: '2rem',
+          }}
           variant="h5" component="h1"
           gutterBottom
           align="center">Featured Projects</Typography>

@@ -1,6 +1,6 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core'
 
-export default makeStyles((theme: Theme) =>
+const useSharedStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: theme.palette.common.black,
@@ -21,25 +21,43 @@ export default makeStyles((theme: Theme) =>
     homepageHeadingPaper: {
       background: theme.palette.type === 'dark' ? 'inherit' : '#b15558',
       color: theme.palette.background.paper,
-      paddingTop: '4rem',
-      paddingBottom: '2rem',
-      [theme.breakpoints.down('xs')]: {
-        paddingTop: '5rem',
-      },
+      // paddingTop: '4rem',
+      // paddingBottom: '2rem',
+      // [theme.breakpoints.down('xs')]: {
+      //   paddingTop: '5rem',
+      // },
     },
     backToTopAncher: {
-      minHeight: 0,
-      // marginBottom: '3.1rem',
-      marginBottom: theme.spacing(1),
-      [theme.breakpoints.down('xs')]: {
-        // marginBottom: '3.78rem',
-        marginBottom: theme.spacing(3.5),
-      },
+      display: 'inline-block',
+      height: theme.mixins.toolbar.minHeight,
+      marginBottom: '-1px',
+      background: 'transparent',
+      // marginBottom: '-10px',
+      // [theme.breakpoints.down('sm')]: {
+      //   marginBottom: '-1px',
+      //   paddingBotton: '10px',
+      // },
+    },
+    welcomeSection: {
+      height: 'unset',
       [theme.breakpoints.up('sm')]: {
-        // marginBottom: '1rem',
-        marginBottom: theme.spacing(2),
+        height: '81vh',
       },
     },
+
+    // backToTopAncher: {
+    //   minHeight: 0,
+    //   // marginBottom: '3.1rem',
+    //   marginBottom: theme.spacing(1),
+    //   [theme.breakpoints.down('xs')]: {
+    //     // marginBottom: '3.78rem',
+    //     marginBottom: theme.spacing(3.5),
+    //   },
+    //   [theme.breakpoints.up('sm')]: {
+    //     // marginBottom: '1rem',
+    //     marginBottom: theme.spacing(2),
+    //   },
+    // },
     constrainedSection: {
       marginLeft: 'auto',
       [theme.breakpoints.only('md')]: {
@@ -57,3 +75,5 @@ export default makeStyles((theme: Theme) =>
     },
   })
 )
+
+export default useSharedStyles

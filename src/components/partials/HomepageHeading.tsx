@@ -12,6 +12,7 @@ import styled from 'styled-components'
 import ScaleUpDownComponent from '@components/shared/ScaleUpDownComponent'
 import { motion } from 'framer-motion'
 import { CONTACT_EMAIL } from '@root/constants'
+import useSharedStyles from '@root/theme/useSharedStyles'
 interface Props {
   height?: string
 }
@@ -38,13 +39,13 @@ const Item = styled.div`
 //     }
 // `;
 const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
-
-
+  const classes =
+    useSharedStyles()
   return (
 
     <Responsive>
       <Segment>
-        <Container id='welcome-section' style={{ height }}>
+        <Container className={classes.welcomeSection} id='welcome-section'>
           <motion.div
             initial={{ scale: 1 }}
             animate={{ scale: [1.3, 1] }}

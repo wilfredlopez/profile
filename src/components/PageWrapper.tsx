@@ -13,6 +13,7 @@ interface Props { }
 const PageWrapper = (props: PropsWithChildren<Props>) => {
   const classes = useSharedStyles()
 
+
   return (
     <>
       <Navigation />
