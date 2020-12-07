@@ -25,16 +25,22 @@ const useStyles = makeStyles((theme: Theme) =>
       "&:hover, &$focusVisible": {
         zIndex: 1,
         "& $imageBackdrop": {
-          opacity: 0.15,
+          opacity: 0.05,
         },
         "& $imageMarked": {
           opacity: 0,
         },
         "& $imageTitle": {
-          color: theme.palette.primary.main,
-          background: "rgb(255 255 255 / 93%)",
-          border: "3px solid currentColor",
+          // color: theme.palette.primary.main,
+          // background: "rgb(255 255 255 / 93%)",
+          // border: "3px solid currentColor",
           transition: theme.transitions.create("opacity"),
+          background: 'rgba(255,255,255,0.4)',
+          backgroundClip: 'padding-box',
+          backdropFilter: 'blur(40px)',
+          borderBottom: '2px solid transparent',
+          borderLeft: '2px solid transparent',
+          color: 'black',
           // fontWeight: "bold",
           // border: "4px solid rgba(40, 40, 40,84%)",
           // background: "rgba(40, 40, 40,84%)",
@@ -77,6 +83,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.common.black,
       opacity: 0.4,
       transition: theme.transitions.create("opacity"),
+
     },
     imageTitle: {
       position: "relative",

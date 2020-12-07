@@ -22,12 +22,17 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     transition: 'width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-    background: theme.palette.type === 'dark' ? GRADIANT_DARK : GRADIANT,//'#af6800', //'#1b1f29', //theme.palette.grey[100],
-    color: theme.palette.common.white, //theme.palette.secondary.contrastText,
+    // background: theme.palette.type === 'dark' ? GRADIANT_DARK : GRADIANT,//'#af6800', //'#1b1f29', //theme.palette.grey[100],
+    // color: theme.palette.common.white, //theme.palette.secondary.contrastText,
     // width: "100%",
     // [theme.breakpoints.up("md")]: {
     //   width: "calc(100% - 240px)",
     // },
+    background: 'rgba(255,255,255,0.1)',
+    backgroundClip: 'padding-box',
+    backdropFilter: 'blur(40px)',
+    border: '1px solid transparent',
+    color: 'inherit'
   },
   titleContainer: {
     flexGrow: 1,
@@ -40,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 'auto',
     letterSpacing: '0.06em',
     fontSize: '1.2rem',
-    textShadow: '3px 3px 10px rgb(0 0 0 / 50%)'
+    textShadow: '2px 2px 8px rgb(0 0 0 / 30%)'
 
   },
   spacer: {
