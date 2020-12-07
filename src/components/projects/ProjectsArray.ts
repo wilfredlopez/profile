@@ -6,7 +6,6 @@ import {
   retailmeNowDescription,
   vapeMusicDescription,
   twoDealDescription,
-  xyMusicDescription,
 } from './descriptions'
 import { PROJECT_IMAGES } from './images'
 
@@ -31,7 +30,7 @@ const corona: Project = {
 const vapeMusic: Project = {
   classKey: 'vape',
   images: PROJECT_IMAGES.vapeMusic,
-  url: 'https://vapemusic-ion.netlify.app/',
+  url: 'https://music.wilfredlopez.net/',
   name: 'Vape Music',
   title: 'Vape Music - Latin Music Listen & Download',
   description: vapeMusicDescription,
