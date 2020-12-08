@@ -206,6 +206,7 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
               component: "h1",
               style: {
                 fontSize: '1.3rem',
+                maxWidth: data.name.length > 20 ? 'fit-content' : 'unset'
               },
             }}
             subheaderTypographyProps={{

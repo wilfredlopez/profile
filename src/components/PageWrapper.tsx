@@ -5,6 +5,7 @@ import Navigation from './Layout/Navigation'
 import SiteFooter from './footer/SiteFooter'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 import useSharedStyles from '@root/theme/useSharedStyles'
+import { GlassFab } from './shared'
 
 interface Props { }
 
@@ -30,9 +31,9 @@ const PageWrapper = (props: PropsWithChildren<Props>) => {
       </footer>
 
       <ScrollTop {...props}>
-        <Fab color='primary' size='small' aria-label='scroll back to top'>
-          <KeyboardArrowUpIcon />
-        </Fab>
+        <GlassFab color="inherit" size='small' aria-label='scroll back to top'>
+          <KeyboardArrowUpIcon color="inherit" />
+        </GlassFab>
       </ScrollTop>
     </>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Avatar, Typography, Button } from '@material-ui/core'
 import wilfredImg from '@root/img/wilfred-profile.png'
-import { Responsive } from '../shared'
+import { Responsive, GlassButton } from '../shared'
 import Segment from '../shared/Segment'
 import WorkIcon from '@material-ui/icons/Work'
 import RoomIcon from '@material-ui/icons/Room'
@@ -115,7 +115,7 @@ const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
               <span>Garfield, NJ, USA.</span>
             </div>
             <motion.div style={{ margin: '1rem 0' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.2 }}>
-              <Button
+              <GlassButton
                 endIcon={<MailOutlineIcon />}
                 color="primary"
                 variant='contained'
@@ -123,7 +123,7 @@ const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
                 <StyledAnker href={`mailto:${CONTACT_EMAIL}`} title='contact me'>
                   Contact Me
             </StyledAnker>
-              </Button>
+              </GlassButton>
             </motion.div>
           </Item>
 

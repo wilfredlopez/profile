@@ -1,4 +1,4 @@
-import { StyledHtmlLink } from '@components/shared'
+// import { StyledHtmlLink } from '@components/shared'
 import { Button, Typography } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import DragHandleIcon from '@material-ui/icons/DragHandle'
 import MailIcon from '@material-ui/icons/Mail'
 import MenuIcon from '@material-ui/icons/Menu'
-import { SECONDARY_COLOR } from '@root/theme/getTheme'
+// import { SECONDARY_COLOR } from '@root/theme/getTheme'
 import clsx from 'clsx'
 import NavLink from 'next/link'
 import { useRouter } from 'next/router'
@@ -45,24 +45,42 @@ export const StyledNavLink = styled.a<{ isActive?: boolean }>`
     color: ${props => props.theme.colors.tertiary};
   }
 `
+export const StyledHtmlLinkWhite = styled.a<{ color?: string; noHover?: boolean }>`
+  color: ${props => (props.color ? props.color : 'inherit')};
+  text-decoration: none;
+  &:hover {
+    color: ${props =>
+    props.noHover ? 'inherit' : 'black'};
+  }
+`
 
 export type Anchor = 'top' | 'left' | 'bottom' | 'right'
 interface Props {
   anchor: Anchor
 }
 
-const variants = {
-  open: { opacity: 1, x: 0 },
-  closed: { opacity: 0, x: '-100%' },
-}
+// const variants = {
+//   open: { opacity: 1, x: 0 },
+//   closed: { opacity: 0, x: '-100%' },
+// }
 
-const listItemVariants = {
-  open: {
-    opacity: 1,
-    y: 0,
-  },
-  closed: { opacity: 0, y: '-100%' },
-}
+// const listItemVariants = {
+//   open: {
+//     opacity: 1,
+//     y: 0,
+//   },
+//   closed: { opacity: 0, y: '-100%' },
+// }
+
+export const StyledNavLinkWhite = styled.a<{ isActive?: boolean }>`
+  color: ${props => (props.isActive ? 'black' : 'inherit')};
+  font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
+`
 
 export default function SideDrawer({ anchor }: Props) {
   const classes = useStyles()
@@ -108,14 +126,14 @@ export default function SideDrawer({ anchor }: Props) {
       <List>
         {NAV_LINKS.map(({ text, href, Icon }, index) => (
           <NavLink key={text} href={href}>
-            <StyledNavLink isActive={href === router.pathname}>
+            <StyledNavLinkWhite isActive={href === router.pathname}>
               <ListItem button>
                 <ListItemIcon style={{ color: 'inherit' }}>
                   {Icon ? Icon : <DragHandleIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
-            </StyledNavLink>
+            </StyledNavLinkWhite>
           </NavLink>
         ))}
       </List>
@@ -126,7 +144,7 @@ export default function SideDrawer({ anchor }: Props) {
           <Typography variant='h6'>Social</Typography>
         </ListItem>
         {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (
-          <StyledHtmlLink
+          <StyledHtmlLinkWhite
             href={href}
             title={text}
             target='_blank'
@@ -140,7 +158,7 @@ export default function SideDrawer({ anchor }: Props) {
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
-          </StyledHtmlLink>
+          </StyledHtmlLinkWhite>
         ))}
       </List>
     </div>
@@ -175,7 +193,13 @@ export default function SideDrawer({ anchor }: Props) {
         //   },
         // }}
         PaperProps={{
-          style: { width: 240, overflow: 'hidden' },
+          style: {
+            width: 240, overflow: 'hidden',
+            backgroundColor: 'rgb(255 255 255 / 20%)',
+            backdropFilter: 'blur(40px)',
+            color: 'white'
+
+          },
         }}
         SlideProps={{
           timeout: {
