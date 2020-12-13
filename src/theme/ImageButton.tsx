@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
           background: 'rgba(255,255,255,0.4)',
           backgroundClip: 'padding-box',
           backdropFilter: 'blur(40px)',
+          WebkitBackdropFilter: 'blur(40px)',
           borderBottom: '2px solid transparent',
           borderLeft: '2px solid transparent',
           color: 'black',

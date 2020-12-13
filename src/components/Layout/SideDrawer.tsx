@@ -197,7 +197,8 @@ export default function SideDrawer({ anchor }: Props) {
             width: 240, overflow: 'hidden',
             backgroundColor: 'rgb(255 255 255 / 20%)',
             backdropFilter: 'blur(40px)',
-            color: 'white'
+            WebkitBackdropFilter: 'blur(40px)',
+            color: 'white',
 
           },
         }}
