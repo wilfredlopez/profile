@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import Fireworks from './Fireworks'
 import styles from './new-year.module.css'
 import ParticleMachine from './FireworksMachine'
+import { useRouter } from 'next/router'
 
+import { IconButton } from '@material-ui/core'
+import { ArrowBack } from '@material-ui/icons'
 interface Props {
 
 }
@@ -21,7 +24,7 @@ const NewYear = (props: Props) => {
     const [height, setHeight] = useState(0)
     const [machine, setMachine] = useState<ParticleMachine>()
     const [Canvas, setCanvas] = useState<HTMLCanvasElement | null>(null)
-
+    const router = useRouter()
     React.useEffect(() => {
         function handleResize() {
             setWidth(window.innerWidth)
@@ -63,12 +66,24 @@ const NewYear = (props: Props) => {
     return (
 
         <div className={styles.newyear}>
+            <div className={styles.backButtonContainer}>
+                <IconButton
+                    onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        router.push('/')
+                    }}
+                    style={{ color: 'white' }}>
+                    <ArrowBack color="inherit" />
+                </IconButton>
+            </div>
             <div className={styles['text-content']}>
 
                 <h1>HAPPY NEW YEAR</h1>
                 <h2>2021</h2>
                 <p className={styles.tapkey}>TAP TO FIRE</p>
-                <p>By Wilfred Lopez</p>
+
+                <p className={styles.madeBy}>By Wilfred Lopez</p>
             </div>
             <Fireworks
                 fireworkProps={{

@@ -38,6 +38,7 @@
     color: #e8e6e2;
     font-size: 2.4rem;
     margin: 0;
+    text-align: center;
 }
 
 .newyear h2{
@@ -53,6 +54,15 @@
     bottom: 0;
     right: 18%;
     font-size: 1rem;
+}
+
+.backButtonContainer{
+    position: absolute;
+}
+
+.newyear .madeBy{
+        transform: translateY(80px);
+        cursor: pointer;
 }
 
 @media screen and (min-width:790px){
