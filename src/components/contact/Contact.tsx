@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { Button, Grid, Typography, List, Container } from '@material-ui/core'
-import { MailOutline as MailIcon, Phone as PhoneIcon } from '@material-ui/icons'
-import { Segment, StyledHtmlLink, DividerElement } from '@components/shared'
-import styled from 'styled-components'
-import { usePagesContext } from '@root/context/PagesContext'
+import { Segment, StyledHtmlLink } from '@components/shared'
 import Logo from '@components/shared/Logo'
+import { Button, Container, Grid, Typography } from '@material-ui/core'
+import { MailOutline as MailIcon, Phone as PhoneIcon } from '@material-ui/icons'
 import { CONTACT_EMAIL } from '@root/constants'
+import { usePagesContext } from '@root/context/PagesContext'
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
 
 const Centerer = styled.span`
   display: flex;
@@ -13,12 +13,12 @@ const Centerer = styled.span`
   align-items: center;
 `
 
-const Paragraph = styled.p`
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 1.33em;
-  text-align: left;
-`
+// const Paragraph = styled.p`
+//   margin-top: 0;
+//   margin-bottom: 5px;
+//   font-size: 1.33em;
+//   text-align: left;
+// `
 
 const Contact = () => {
   const { changePage } = usePagesContext()
@@ -36,6 +36,8 @@ const Contact = () => {
 
   return (
     <React.Fragment>
+
+
       <Container maxWidth='md'>
         {/* <Segment style={{ padding: '2em 0em' }}>
           <DividerElement>

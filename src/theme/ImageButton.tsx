@@ -5,6 +5,24 @@ import Typography from "@material-ui/core/Typography"
 import { NonStyledAnchor } from "@components/shared"
 const BORDER_RADIOUS = 2
 
+
+const OVERRIDES = {
+  imageTitle_HOVER: {
+    opacity: 0,
+  },
+  imageTitle: {
+    background: 'rgba(255,255,255,0.4)',
+    backgroundClip: 'padding-box',
+    backdropFilter: 'blur(40px)',
+    WebkitBackdropFilter: 'blur(40px)',
+    borderBottom: '2px solid transparent',
+    color: 'black'
+  },
+  imageBackdrop: {
+    opacity: 0,
+  }
+}
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -25,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
       "&:hover, &$focusVisible": {
         zIndex: 1,
         "& $imageBackdrop": {
-          opacity: 0.05,
+          opacity: 0.01,
         },
         "& $imageMarked": {
           opacity: 0,
@@ -42,6 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
           borderBottom: '2px solid transparent',
           borderLeft: '2px solid transparent',
           color: 'black',
+          ...OVERRIDES.imageTitle_HOVER
           // fontWeight: "bold",
           // border: "4px solid rgba(40, 40, 40,84%)",
           // background: "rgba(40, 40, 40,84%)",
@@ -82,14 +101,15 @@ const useStyles = makeStyles((theme: Theme) =>
       top: 0,
       bottom: 0,
       backgroundColor: theme.palette.common.black,
-      opacity: 0.4,
+      // opacity: 0.4,
       transition: theme.transitions.create("opacity"),
-
+      ...OVERRIDES.imageBackdrop
     },
     imageTitle: {
       position: "relative",
       padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) +
         6}px`,
+      ...OVERRIDES.imageTitle
     },
     imageMarked: {
       height: 3,

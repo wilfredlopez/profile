@@ -25,7 +25,7 @@ interface Props {
 }
 
 const ShowCaseProjectButton = (
-  { color = "default", size = 'small', variant }: Props,
+  { color = "default", size = 'large', variant = 'text' }: Props,
 ) => {
   return (
     <Grid
@@ -33,19 +33,17 @@ const ShowCaseProjectButton = (
       justify="center"
       style={{ marginTop: 25, marginBottom: 25 }}
     >
-      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.2 }}>
-        <BrandButton
-          color={color}
-          size={size}
-          variant={variant}
-        >
-          <Link href="/projects">
-            <NonStyledAnchor>
-              {"More Projects".toUpperCase()}
-            </NonStyledAnchor>
-          </Link>
-        </BrandButton>
-      </motion.div>
+      <BrandButton
+        color={color}
+        size={size}
+        variant={variant}
+      >
+        <Link href="/projects">
+          <NonStyledAnchor>
+            {"More Projects".toUpperCase()}
+          </NonStyledAnchor>
+        </Link>
+      </BrandButton>
     </Grid>
   )
 }

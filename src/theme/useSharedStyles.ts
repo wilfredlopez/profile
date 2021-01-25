@@ -1,4 +1,13 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core'
+import { hex2Rgb } from './hexToRgb'
+
+
+function getLinearGradient(hexOrRgb: string, alpha = 0.9) {
+  const color = hex2Rgb(hexOrRgb)
+  const transparent = `rgba(${color.red},${color.green}, ${color.blue}, ${alpha})`
+  return `linear-gradient(0deg, ${hexOrRgb}, ${transparent}, ${hexOrRgb})`
+}
+
 
 const useSharedStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,7 +28,8 @@ const useSharedStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     homepageHeadingPaper: {
-      background: theme.palette.type === 'dark' ? 'inherit' : '#b15558',
+      // background: theme.palette.type === 'dark' ? 'inherit' : theme.palette.primary.light,// '#b15558',
+      background: theme.palette.type === 'dark' ? 'inherit' : getLinearGradient(theme.palette.primary.light),// '#b15558',
       color: theme.palette.background.paper,
       // paddingTop: '4rem',
       // paddingBottom: '2rem',
@@ -27,6 +37,7 @@ const useSharedStyles = makeStyles((theme: Theme) =>
       //   paddingTop: '5rem',
       // },
     },
+
     backToTopAncher: {
       display: 'inline-block',
       height: theme.mixins.toolbar.minHeight,

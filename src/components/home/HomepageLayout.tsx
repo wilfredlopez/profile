@@ -170,7 +170,7 @@ const HomepageLayout = () => {
         >
           <HomeProjectGrid limit={4} />
         </Container>
-        <ShowCaseProjectButton color='inherit' variant='outlined' />
+        <ShowCaseProjectButton color='primary' variant='contained' />
         <Box pb={2} />
       </Paper>
       {/* <SocialMediaEmbeds /> */}

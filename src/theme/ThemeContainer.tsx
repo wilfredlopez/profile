@@ -13,9 +13,7 @@ body{
   font-family: 'Poppins', 'Roboto', sans-serif;
 }
 
-html{
-  background: radial-gradient(#757575d9, #ffffff9e, #d8d5d5f5, #b19d9e, #c1c1c1, #ffffffd9, #bbabacd9);
-}
+
 
 `
 

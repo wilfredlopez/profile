@@ -116,7 +116,7 @@ export default function MyApp(props: AppProps) {
                 opacity: [1, 0.5, 0],
                 transition: {
                   duration: 0.4,
-                  delay: 0,
+                  delay: 0.1,
                 },
               },
             }}

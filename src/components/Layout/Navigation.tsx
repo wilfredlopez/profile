@@ -1,4 +1,4 @@
-import { Hidden } from '@material-ui/core'
+// import { Hidden } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import { makeStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -12,8 +12,8 @@ import Link from 'next/link'
 
 // const GRADIANT = 'linear-gradient(0deg, #2f946d 40%, #30a275 50%, #298a64 100%)'
 // const GRADIANT = 'linear-gradient(0deg, #e6491d 40%, #d6431a 50%, #9a2f11 100%)' // 'linear-gradient(180deg, rgb(132 78 0) 45%, rgb(255 157 4) 100%)' // 'linear-gradient(180deg, rgb(35 35 35) 45%, rgb(191 115 1) 100%)'
-const GRADIANT = 'linear-gradient(0deg, #863f41 40%, #8a4143 50%, #914345 100%)'
-const GRADIANT_DARK = 'linear-gradient(0deg, #101010 40%, #101010 50%, #171717 100%)' //'linear-gradient(0deg, #982f11 40%, #922d11 50%, #4c1709 100%)'
+// const GRADIANT = 'linear-gradient(0deg, #863f41 40%, #8a4143 50%, #914345 100%)'
+// const GRADIANT_DARK = 'linear-gradient(0deg, #101010 40%, #101010 50%, #171717 100%)' //'linear-gradient(0deg, #982f11 40%, #922d11 50%, #4c1709 100%)'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -46,7 +46,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 'auto',
     letterSpacing: '0.06em',
     fontSize: '1.2rem',
-    textShadow: '2px 2px 8px rgb(0 0 0 / 30%)'
+    textShadow: '2px 2px 5px rgb(0 0 0 / 5%)',
+    fontWeight: 400,
+    textTransform: 'uppercase',
 
   },
   spacer: {
@@ -54,6 +56,13 @@ const useStyles = makeStyles(theme => ({
   },
   separator: {
     flex: '1 1 auto',
+  },
+  navBackground: {
+    background: 'radial-gradient(#757575d9, #ffffff9e, #d8d5d5f5, #b19d9e, #c1c1c1, #ffffffd9, #bbabacd9)',
+    position: "absolute",
+    left: 0,
+    right: 0,
+    height: 50
   },
   listItem: {
     justifyContent: 'center',
@@ -73,28 +82,32 @@ export default function Navigation() {
 
   return (
     <div className={classes.root}>
-      <AppBar position='fixed' className={classes.toolbar}>
-        <Toolbar>
-          <Link href="/">
-            <a className={classes.titleContainer} >
-              <Logo />
-              <Typography className={classes.title} variant="h1" component='h1'>
-                Wilfred Lopez
+      <div className={classes.navBackground}>
+        <AppBar position='fixed' className={classes.toolbar}>
+
+
+          <Toolbar>
+            <Link href="/">
+              <a className={classes.titleContainer} >
+                <Logo />
+                <Typography className={classes.title} variant="h1" component='h1'>
+                  Wilfred Lopez
             </Typography>
-              {/* <Hidden only='xs'>
+                {/* <Hidden only='xs'>
               </Hidden> */}
-            </a>
-          </Link>
-          <div className={classes.separator} />
-          {/* <Hidden only="xs">
+              </a>
+            </Link>
+            <div className={classes.separator} />
+            {/* <Hidden only="xs">
             <Typography variant="caption" className={classes.title}>
             WilfredLopez.Net
             </Typography>
           </Hidden> */}
-          {/* <SideItems /> */}
-          <SideDrawer anchor="right" />
-        </Toolbar>
-      </AppBar>
+            {/* <SideItems /> */}
+            <SideDrawer anchor="right" />
+          </Toolbar>
+        </AppBar>
+      </div>
     </div>
   )
 }

@@ -114,15 +114,16 @@ const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
             <div>
               <span>Garfield, NJ, USA.</span>
             </div>
-            <motion.div style={{ margin: '1rem 0' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.2 }}>
+            <motion.div style={{ margin: '1rem 0' }} whileHover={{ scale: 1.09 }} whileTap={{ scale: 1.3 }}>
               <GlassButton
                 endIcon={<MailOutlineIcon />}
                 color="primary"
                 variant='contained'
+                size="large"
               >
                 <StyledAnker href={`mailto:${CONTACT_EMAIL}`} title='contact me'>
-                  Contact Me
-            </StyledAnker>
+                  CONTACT ME
+                </StyledAnker>
               </GlassButton>
             </motion.div>
           </Item>
