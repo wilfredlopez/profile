@@ -30,8 +30,10 @@ const useStyles = makeStyles(theme => ({
     // },
     background: 'rgba(255,255,255,0.1)',
     backgroundClip: 'padding-box',
-    backdropFilter: 'blur(40px)',
-    WebkitBackdropFilter: 'blur(40px)',
+    // backdropFilter: 'blur(40px)',
+    backdropFilter: 'blur(40px) contrast(1.5)'
+    // WebkitBackdropFilter: 'blur(40px)',
+    WebkitBackdropFilter: 'blur(40px) contrast(1.5)',
     border: '1px solid transparent',
     color: 'inherit'
   },
