@@ -1,7 +1,7 @@
 import { NonStyledAnchor } from "@components/shared"
 import { Grid } from "@material-ui/core"
 import { BrandButton } from "@root/theme/Custom"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 import React from "react"
 import Link from "next/link"
 

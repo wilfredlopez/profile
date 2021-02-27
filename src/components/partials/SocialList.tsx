@@ -3,11 +3,11 @@ import { ListItem } from '@material-ui/core'
 import { StyledLink } from '@components/shared'
 
 import GitHubIcon from '@material-ui/icons/GitHub'
-import YouTubeIcon from '@material-ui/icons/YouTube'
+// import YouTubeIcon from '@material-ui/icons/YouTube'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import styled from 'styled-components'
 import {
-  FacebookIconStyled,
+  // FacebookIconStyled,
   InstagramIconStyled,
   LinkedInIconStyled,
 } from '../Layout/SideItems'

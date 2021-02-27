@@ -4,6 +4,23 @@ import { AppProps } from "next/app"
 import RootProvider from "@root/RootProvider"
 import { AnimatePresence, motion } from "framer-motion"
 
+const opacityAnimate = [
+  .4,
+  .6,
+  0.4,
+  0.6,
+  0.7,
+  .75,
+  0.8,
+  .85,
+  0.9,
+  .95,
+  .96,
+  .98,
+  .99,
+  1,
+]
+
 export default function MyApp(props: AppProps) {
   const { Component, pageProps, router } = props
   React.useEffect(() => {
@@ -30,9 +47,9 @@ export default function MyApp(props: AppProps) {
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
           rel="stylesheet" />
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          rel="stylesheet" />
+          rel="stylesheet" /> */}
 
 
         <link
@@ -80,30 +97,15 @@ export default function MyApp(props: AppProps) {
             exit="pageExit"
             variants={{
               pageInitial: {
-                opacity: [1, 0.5, 0, .5, 1],
+                opacity: [1, 0.5, 0.2, .5, 1],
 
                 transition: {
-                  duration: 0.9,
+                  duration: 0.2,
                   delay: 0,
                 },
               },
               pageAnimate: {
-                opacity: [
-                  .1,
-                  .3,
-                  0.4,
-                  0.6,
-                  0.7,
-                  .75,
-                  0.8,
-                  .85,
-                  0.9,
-                  .95,
-                  .96,
-                  .98,
-                  .99,
-                  1,
-                ],
+                opacity: opacityAnimate,
                 transition: {
                   duration: 0.8,
                   delay: 0,
@@ -113,7 +115,7 @@ export default function MyApp(props: AppProps) {
                 // backgroundColor: "white",
                 // filter: `invert()`,
                 // opacity: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 0.8, 0],
-                opacity: [1, 0.5, 0],
+                opacity: [1, 0.5, 0.5],
                 transition: {
                   duration: 0.4,
                   delay: 0.1,

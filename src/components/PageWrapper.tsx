@@ -26,7 +26,7 @@ const PageWrapper = (props: PropsWithChildren<Props>) => {
         id='back-to-top-anchor'
       />
 
-      <Paper>
+      <Paper component="main">
 
         {props.children}
       </Paper>

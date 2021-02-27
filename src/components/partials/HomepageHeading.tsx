@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Avatar, Typography, Button } from '@material-ui/core'
+import { Container, Avatar, Typography } from '@material-ui/core'
 import wilfredImg from '@root/img/wilfred-profile.png'
 import { Responsive, GlassButton } from '../shared'
 import Segment from '../shared/Segment'
@@ -14,7 +14,6 @@ import { motion } from 'framer-motion'
 import { CONTACT_EMAIL } from '@root/constants'
 import useSharedStyles from '@root/theme/useSharedStyles'
 interface Props {
-  height?: string
 }
 
 const StyledAnker = styled.a`
@@ -38,7 +37,7 @@ const Item = styled.div`
 //       display: flex;
 //     }
 // `;
-const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
+const HomepageHeading: React.FC<Props> = () => {
   const classes =
     useSharedStyles()
   return (
@@ -73,7 +72,7 @@ const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
 
           <Typography
             component='h1'
-            variant='h4'
+            variant='h3'
             style={{
               // fontSize: "2em",
               fontWeight: 'normal',

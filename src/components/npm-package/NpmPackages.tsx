@@ -20,6 +20,7 @@ import { findIndex, Position, move } from '../shared/find-index'
 // import { DARK_BACKGROUND_COLOR } from '@root/theme/getTheme'
 import { throttle } from '@wilfredlopez/react-utils'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { TitleLink } from '../projects/Project'
 import {
   // PRIMARY_COLOR, TERTIARY_COLOR, 
   SECONDARY_COLOR
@@ -88,17 +89,24 @@ const NpmPackages = ({ limit, dark, omitDivider }: Props) => {
         className={classes.wrapper}
         elevation={0}
       >
+        <Box mb={3} pt={2}>
+
+          {omitDivider ?
+
+            <Typography align='center' variant="h4">NPM Packages</Typography>
+            :
+            <DividerElement>
+              <TitleLink
+                target="_blank"
+                rel="noopener noreferrer"
+                noHover href="https://www.npmjs.com/~wilfredlopez">
+                NPM Packages
+</TitleLink>
+            </DividerElement>
+          }
+
+        </Box>
         <Container>
-          <Box mb={3} pt={2}>
-            {omitDivider ? <Typography align='center' variant="h5">NPM Packages</Typography>
-
-              :
-
-              <DividerElement>
-                <Typography align='center' className="caption-text"><b>NPM Packages</b></Typography>
-              </DividerElement>
-            }
-          </Box>
           <Grid
             container
             spacing={2}
@@ -260,7 +268,7 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
                 rel='noopener noreferrer'
                 role='link'
               >
-                {data.name}
+                {data.fullName || data.name}
               </StyledHtmlLink>
             </Typography>
           </CardContent>

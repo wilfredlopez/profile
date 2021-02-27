@@ -170,4 +170,4 @@ const HomepageLayout: React.FC<{}> = () => {
     </React.Fragment>
   )
 }
-export default memo(HomepageLayout)
+export default memo(HomepageLayout, () => false)

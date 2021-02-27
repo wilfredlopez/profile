@@ -1,8 +1,11 @@
-import { List, Hidden } from '@material-ui/core'
+import {
+  List,
+  //  Hidden
+} from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import TwitterIcon from '@material-ui/icons/Twitter'
+// import TwitterIcon from '@material-ui/icons/Twitter'
 
 import React, { Fragment } from 'react'
 import InstagramIcon from '@material-ui/icons/Instagram'
@@ -95,19 +98,19 @@ export const TwitterButton = styled(Button)`
   }
 `
 
-const InstagramButton = styled(Button)`
-  background-color: #ec4770 !important;
-  /* color: #f8f8f8 !important;; */
-  border-radius: 6px;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
-  /* padding: 7px 14px; */
-  padding: 6px 8px !important;
-  font-size: 0.81rem !important;
-  margin-left: 6px !important;
-  &:hover {
-    /* background-color: #1DA1F2 !important;; */
-  }
-`
+// const InstagramButton = styled(Button)`
+//   background-color: #ec4770 !important;
+//   /* color: #f8f8f8 !important;; */
+//   border-radius: 6px;
+//   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+//   /* padding: 7px 14px; */
+//   padding: 6px 8px !important;
+//   font-size: 0.81rem !important;
+//   margin-left: 6px !important;
+//   &:hover {
+//     /* background-color: #1DA1F2 !important;; */
+//   }
+// `
 
 interface Props { }
 const SideItems: React.FC<Props> = () => {

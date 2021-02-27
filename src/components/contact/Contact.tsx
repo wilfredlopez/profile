@@ -13,13 +13,6 @@ const Centerer = styled.span`
   align-items: center;
 `
 
-// const Paragraph = styled.p`
-//   margin-top: 0;
-//   margin-bottom: 5px;
-//   font-size: 1.33em;
-//   text-align: left;
-// `
-
 const Contact = () => {
   const { changePage } = usePagesContext()
   useEffect(() => {
@@ -82,13 +75,13 @@ const Contact = () => {
                 className="caption-text"
                 style={{ textTransform: "uppercase", fontSize: '1.7rem', marginTop: "1.5rem", }}
                 component="h1"
-                align="center" variant="h5" gutterBottom>Contact</Typography>
+                align="center"
+                variant="h5"
+                gutterBottom>Contact</Typography>
               <br />
-              {/* <h3 className='text-center'>Contact</h3> */}
             </div>
             <Grid container>
               <Grid item xs={12}>
-
                 <Logo height={175} width={175} />
                 <br />
                 <br />

@@ -15,6 +15,10 @@ const contact = () => {
           content="web development, profile, contact"
         />
         <meta
+          name="description"
+          content="Wilfred Lopez, Contact Page."
+        />
+        <meta
           name="keywords"
           content="Contact, Profile, Wilfred Donald Lopez, react, typescript, wilfred lopez, Wilfred, Lopez, Developer, GraphQL, profile, NodeJS, MongoDB, Web Accessibility, Javascript, css, html"
         />

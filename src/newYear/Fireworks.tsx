@@ -21,6 +21,8 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
 }
 
 
+
+
 const Fireworks = ({ fireworkProps: { getElements, canvasBackgroundColor, canvasWith = 400, canvasHeight = 400, isRunning = true, speed, maxParticles, minParticles, particleSize = 1, canvasMinHeight, canvasMinWidth }, ...divProps }: Props) => {
     const canvas = useRef<HTMLCanvasElement>(null)
     useEffect(() => {

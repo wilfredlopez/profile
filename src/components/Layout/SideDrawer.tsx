@@ -128,7 +128,7 @@ export default function SideDrawer({ anchor }: Props) {
     >
       <List>
         {NAV_LINKS.map(({ text, href, Icon }, index) => (
-          <NavLink key={text} href={href}>
+          <NavLink key={text + index + "nav_links"} href={href}>
             <StyledNavLinkWhite isActive={href === router.pathname}>
               <ListItem button>
                 <ListItemIcon style={{ color: 'inherit' }}>

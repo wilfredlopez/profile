@@ -25,8 +25,9 @@ interface Props {
 
 export const TitleLink = styled(StyledHtmlLink)`
   font-size: 1.2rem;
-  color: inherit
+  color: inherit;
   font-weight: 500;
+  cursor: pointer;
 `
 
 const Project: React.FC<Props> = (

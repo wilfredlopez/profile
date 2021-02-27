@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Grid, Typography, List, ListItem } from '@material-ui/core'
 // import { NavLink } from "react-router-dom";
 import NavLink from 'next/link'
-import { PrimaryBackgroundSection } from '../shared'
+// import { PrimaryBackgroundSection } from '../shared'
 import SocialList from '../partials/SocialList'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'

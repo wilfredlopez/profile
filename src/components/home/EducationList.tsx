@@ -80,6 +80,7 @@ const StyledItem = styled.li`
   font-size: 1.5rem;
   white-space: nowrap;
   border-bottom: 1px solid #dcd5d5;
+  cursor: pointer;
   /* transition: all 100ms ease-in-out; */
   /* &:hover{
       transform: translate(10px);

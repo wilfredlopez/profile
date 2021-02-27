@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import BounceComponent from '../shared/BounceComponent'
 import { NonStyledAnchor } from '../shared/StyledLink'
 import { INSTAGRAM_COLOR } from '@components/Layout/SideItems'
+
+
 const InstagramText = styled(Typography)`
       background: #f3f3f3;
       color: ${INSTAGRAM_COLOR};

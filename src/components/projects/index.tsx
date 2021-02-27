@@ -9,14 +9,12 @@ interface Props {
   loop?: boolean
   showSliderControls?: boolean
   limitTo?: number
-  addMarginTop?: boolean
 }
 
 const Projects = ({
   loop = false,
   showSliderControls = true,
   limitTo,
-  addMarginTop = true,
 }: Props) => {
   const { changePage } = usePagesContext()
   useEffect(() => {

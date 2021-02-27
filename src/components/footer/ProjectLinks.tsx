@@ -1,12 +1,12 @@
-import React from "react";
-import { NonActiveLink } from "@components/shared";
-import { ListItem } from "@material-ui/core";
-import ProjectsArray from "@components/projects/ProjectsArray";
+import React, { memo } from "react"
+import { NonActiveLink } from "@components/shared"
+import { ListItem } from "@material-ui/core"
+import ProjectsArray from "@components/projects/ProjectsArray"
 
 const list: PLinkProps[] = ProjectsArray.map((p) => ({
   href: p.url,
   displayText: p.name,
-}));
+}))
 
 interface Props {
 }
@@ -22,12 +22,12 @@ const ProjectLinks = (_props: Props) => {
         />
       )}
     </div>
-  );
-};
+  )
+}
 
 interface PLinkProps {
-  href: string;
-  displayText: string;
+  href: string
+  displayText: string
 }
 
 const ProjectLink = ({ displayText, href }: PLinkProps) => {
@@ -40,7 +40,7 @@ const ProjectLink = ({ displayText, href }: PLinkProps) => {
     >
       {displayText}
     </NonActiveLink>
-  </ListItem>;
-};
+  </ListItem>
+}
 
-export default ProjectLinks;
+export default memo(ProjectLinks, () => false)

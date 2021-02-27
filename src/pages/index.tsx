@@ -11,7 +11,7 @@ const index = () => {
     <>
       <Head>
         <title key='title'>Home | Wilfred Lopez</title>
-        <meta name='description' content='Home | Wilfred Lopez'></meta>
+        <meta name='description' content='Wilfred Lopez Home Page'></meta>
         <link rel='canonical' href='https://wilfredlopez.net/' />
         {/* <script
           async

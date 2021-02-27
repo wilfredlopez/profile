@@ -6,23 +6,23 @@ const validHexSize = new RegExp(`^${match3or4Hex}$|^${match6or8Hex}$`, "i")
 
 
 
-function errorFallback(format: 'array' | 'css' | 'object') {
-    const red = 50
-    const green = 50
-    const blue = 50
-    const alpha = 1
-    if (format === "array") {
-        return [red, green, blue, alpha] as const
-    }
+// function errorFallback(format: 'array' | 'css' | 'object') {
+//     const red = 50
+//     const green = 50
+//     const blue = 50
+//     const alpha = 1
+//     if (format === "array") {
+//         return [red, green, blue, alpha] as const
+//     }
 
-    if (format === "css") {
-        const alphaString =
-            alpha === 1 ? "" : ` / ${Number((alpha * 100).toFixed(2))}%`
-        return `rgb(${red} ${green} ${blue}${alphaString})`
-    }
+//     if (format === "css") {
+//         const alphaString =
+//             alpha === 1 ? "" : ` / ${Number((alpha * 100).toFixed(2))}%`
+//         return `rgb(${red} ${green} ${blue}${alphaString})`
+//     }
 
-    return { red, green, blue, alpha }
-}
+//     return { red, green, blue, alpha }
+// }
 
 const float = "-?\\d*(?:\\.\\d+)"
 
