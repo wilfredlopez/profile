@@ -1,6 +1,6 @@
 // import NpmPackages from "@components/npm-package/NpmPackages";
 import { usePagesContext } from '@root/context/PagesContext'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import ProjectsArray from './ProjectsArray'
 import Project from './Project'
 import { Paper, Typography } from '@material-ui/core'
@@ -28,7 +28,7 @@ const Projects = ({
     })
   }, [])
   return (
-    <React.Fragment>
+    <>
       <Paper>
         <Typography
           className="caption-text"
@@ -69,7 +69,7 @@ const Projects = ({
             ></Project>
           ))}
       </Paper>
-    </React.Fragment>
+    </>
   )
 }
 

@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import React, { PropsWithChildren } from "react";
+import { motion } from "framer-motion"
+import { PropsWithChildren } from "react"
 
 interface Props {
-  percentBounce?: number;
+  percentBounce?: number
 }
 
 const bounceTransition = {
@@ -17,7 +17,7 @@ const bounceTransition = {
     ease: "easeOut",
     repeatDelay: 0.8,
   },
-};
+}
 
 const BounceComponent = (
   { percentBounce, children }: PropsWithChildren<Props>,
@@ -33,7 +33,7 @@ const BounceComponent = (
     >
       {children}
     </motion.div>
-  );
-};
+  )
+}
 
-export default BounceComponent;
+export default BounceComponent

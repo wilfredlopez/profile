@@ -1,4 +1,3 @@
-import React from 'react'
 import { Container, Avatar, Typography } from '@material-ui/core'
 import wilfredImg from '@root/img/wilfred-profile.png'
 import { Responsive, GlassButton } from '../shared'

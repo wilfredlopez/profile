@@ -1,5 +1,5 @@
 import { Fab, Paper, } from '@material-ui/core'
-import React, { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 import { ScrollTop } from './Layout/BackToTop'
 import Navigation from './Layout/Navigation'
 import SiteFooter from './footer/SiteFooter'

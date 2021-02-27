@@ -1,4 +1,4 @@
-import React from 'react'
+import { CSSProperties } from 'react'
 import { MatchedVariants, useCustomStyles, matchToVariant } from './useCustomStyles/index'
 import Button, { ButtonProps } from '@material-ui/core/Button'
 
@@ -12,7 +12,7 @@ const ButtonFlex = ({ color, children, disableUppercase, ...buttonProps }: Butto
     const classes = useCustomStyles()
     const className = color ? classes[color] : ""
     const variant = matchToVariant(color)
-    let styles: React.CSSProperties = {
+    let styles: CSSProperties = {
         textTransform: 'uppercase'
     }
     if (disableUppercase) {

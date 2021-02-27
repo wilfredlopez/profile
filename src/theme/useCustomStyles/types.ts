@@ -16,38 +16,38 @@ type ColorTypesRaw = typeof COLORS[IndexOfColors]
 
 type EnsureVarians<
   V extends ButtonProps['variant'] = ButtonProps['variant']
-> = V extends undefined ? never : V
+  > = V extends undefined ? never : V
 
 export type Variant = EnsureVarians<RawVariant>
 export type ColorTypes = ColorTypesRaw
-// type Cases<T extends string> = `${Uppercase<T>} ${Lowercase<T>} ${Capitalize<T>} ${Uncapitalize<T>}`;
+// type Cases<T extends string> = `${Uppercase<T>} ${Lowercase<T>} ${Capitalize<T>} ${Uncapitalize<T>}`
 
 // type ColorUpper<T extends string> = `${Uppercase<T>}`
 // type WithDash<V extends string, R extends string> = `${V}-${R}`
-// type WithCapital<V extends string, R extends string> = `${V}${Capitalize<R>}`
-// export type MatchedVariants = WithCapital<Variant, ColorTypes>
-export type MatchedVariants =
-  | 'textError'
-  | 'textWarning'
-  | 'textInfo'
-  | 'textSuccess'
-  | 'textPrimary'
-  | 'textSecondary'
-  | 'textInherit'
-  | 'textDefault'
-  | 'outlinedError'
-  | 'outlinedWarning'
-  | 'outlinedInfo'
-  | 'outlinedSuccess'
-  | 'outlinedPrimary'
-  | 'outlinedSecondary'
-  | 'outlinedInherit'
-  | 'outlinedDefault'
-  | 'containedError'
-  | 'containedWarning'
-  | 'containedInfo'
-  | 'containedSuccess'
-  | 'containedPrimary'
-  | 'containedSecondary'
-  | 'containedInherit'
-  | 'containedDefault'
+type WithCapital<V extends string, R extends string> = `${V}${Capitalize<R>}`
+export type MatchedVariants = WithCapital<Variant, ColorTypes>
+// export type MatchedVariants =
+//   | 'textError'
+//   | 'textWarning'
+//   | 'textInfo'
+//   | 'textSuccess'
+//   | 'textPrimary'
+//   | 'textSecondary'
+//   | 'textInherit'
+//   | 'textDefault'
+//   | 'outlinedError'
+//   | 'outlinedWarning'
+//   | 'outlinedInfo'
+//   | 'outlinedSuccess'
+//   | 'outlinedPrimary'
+//   | 'outlinedSecondary'
+//   | 'outlinedInherit'
+//   | 'outlinedDefault'
+//   | 'containedError'
+//   | 'containedWarning'
+//   | 'containedInfo'
+//   | 'containedSuccess'
+//   | 'containedPrimary'
+//   | 'containedSecondary'
+//   | 'containedInherit'
+//   | 'containedDefault'

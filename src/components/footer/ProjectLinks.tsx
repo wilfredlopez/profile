@@ -1,4 +1,4 @@
-import React, { memo } from "react"
+import { memo } from "react"
 import { NonActiveLink } from "@components/shared"
 import { ListItem } from "@material-ui/core"
 import ProjectsArray from "@components/projects/ProjectsArray"

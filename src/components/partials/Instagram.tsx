@@ -1,6 +1,5 @@
 import { Container, Typography } from '@material-ui/core'
 
-import React from 'react'
 import styled from 'styled-components'
 import BounceComponent from '../shared/BounceComponent'
 import { NonStyledAnchor } from '../shared/StyledLink'

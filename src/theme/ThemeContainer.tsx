@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import { PropsWithChildren, useMemo } from 'react'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import {
   // createGenerateClassName,
@@ -30,7 +30,7 @@ import getTheme, { styledComponentsTheme } from './getTheme'
 export function ThemeContainer(props: PropsWithChildren<{}>) {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
-  const theme = React.useMemo(() => getTheme(prefersDarkMode), [
+  const theme = useMemo(() => getTheme(prefersDarkMode), [
     prefersDarkMode,
   ])
 

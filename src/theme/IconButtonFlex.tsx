@@ -1,4 +1,3 @@
-import React from 'react'
 import { MatchedVariants, useCustomStyles } from './useCustomStyles/index'
 import { IconButton, IconButtonProps } from '@material-ui/core'
 

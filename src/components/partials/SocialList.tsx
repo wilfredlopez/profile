@@ -1,4 +1,3 @@
-import React from 'react'
 import { ListItem } from '@material-ui/core'
 import { StyledLink } from '@components/shared'
 
@@ -69,7 +68,7 @@ const SocialList = () => {
       </ListItem>
     )
   })
-  return <React.Fragment>{listItems}</React.Fragment>
+  return <>{listItems}</>
 }
 
 export default SocialList

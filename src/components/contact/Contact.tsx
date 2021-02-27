@@ -4,7 +4,7 @@ import { Button, Container, Grid, Typography } from '@material-ui/core'
 import { MailOutline as MailIcon, Phone as PhoneIcon } from '@material-ui/icons'
 import { CONTACT_EMAIL } from '@root/constants'
 import { usePagesContext } from '@root/context/PagesContext'
-import React, { useEffect } from 'react'
+import { useEffect, Fragment } from 'react'
 import styled from 'styled-components'
 
 const Centerer = styled.span`
@@ -28,7 +28,7 @@ const Contact = () => {
   }, [])
 
   return (
-    <React.Fragment>
+    <Fragment>
 
 
       <Container maxWidth='md'>
@@ -116,7 +116,7 @@ const Contact = () => {
           </Grid>
         </Segment>
       </Container>
-    </React.Fragment>
+    </Fragment>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Fireworks from './Fireworks'
 import styles from './new-year.module.css'
 import ParticleMachine from './FireworksMachine'
@@ -38,7 +38,7 @@ const NewYear = (props: Props) => {
     const [Canvas, setCanvas] = useState<HTMLCanvasElement | null>(null)
     const router = useRouter()
     const year = useMemo(() => isJanuaryTenOrLess() ? new Date().getFullYear() : new Date().getFullYear() + 1, [])
-    React.useEffect(() => {
+    useEffect(() => {
         function handleResize() {
             setWidth(window.innerWidth)
             setHeight(window.innerHeight)
@@ -54,7 +54,7 @@ const NewYear = (props: Props) => {
     }, [])
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         function handleClick(e: MouseEvent) {
             // console.log('machine', { machine })
             if (machine && Canvas) {

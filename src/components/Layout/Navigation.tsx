@@ -3,7 +3,6 @@ import AppBar from '@material-ui/core/AppBar'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import React from 'react'
 import SideDrawer from './SideDrawer'
 // import SideItems from './SideItems'
 import Logo from '@components/shared/Logo'
@@ -16,18 +15,18 @@ import Link from 'next/link'
 // const GRADIANT_DARK = 'linear-gradient(0deg, #101010 40%, #101010 50%, #171717 100%)' //'linear-gradient(0deg, #982f11 40%, #922d11 50%, #4c1709 100%)'
 
 
-function getNavBackgroundAndColor(theme: Theme) {
-  if (theme.palette.type === 'dark') {
-    return {
-      background: `radial-gradient(#757575d9, #8080809e, #313131f5, #b19d9e, #656060, #060606d9, #bbabacd9)`,
-      color: 'white'
-    }
-  }
-  return {
-    background: 'radial-gradient(#757575d9, #ffffff9e, #d8d5d5f5, #b19d9e, #c1c1c1, #ffffffd9, #bbabacd9)',
-    color: 'black'
-  }
-}
+// function getNavBackgroundAndColor(theme: Theme) {
+//   if (theme.palette.type === 'dark') {
+//     return {
+//       background: `radial-gradient(#757575d9, #8080809e, #313131f5, #b19d9e, #656060, #060606d9, #bbabacd9)`,
+//       color: 'white'
+//     }
+//   }
+//   return {
+//     background: 'radial-gradient(#757575d9, #ffffff9e, #d8d5d5f5, #b19d9e, #c1c1c1, #ffffffd9, #bbabacd9)',
+//     color: 'black'
+//   }
+// }
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -75,7 +74,9 @@ const useStyles = makeStyles(theme => ({
   },
   navBackground: {
     // background: 'radial-gradient(#757575d9, #ffffff9e, #d8d5d5f5, #b19d9e, #c1c1c1, #ffffffd9, #bbabacd9)',
-    ...getNavBackgroundAndColor(theme),
+    // ...getNavBackgroundAndColor(theme),
+    background: theme.palette.background.paper,
+    color: theme.palette.getContrastText(theme.palette.background.paper),
     position: "absolute",
     left: 0,
     right: 0,

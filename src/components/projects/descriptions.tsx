@@ -1,4 +1,3 @@
-import React from "react";
 
 export const retailmeNowDescription: JSX.Element = (
   <>
@@ -7,7 +6,7 @@ export const retailmeNowDescription: JSX.Element = (
       Technologies: NextJS, GraphQL, NodeJS, Material-IU.
     </p>
   </>
-);
+)
 
 export const expenseManagerDescription = (
   <>
@@ -20,7 +19,7 @@ export const expenseManagerDescription = (
       Technologies: Ionic, GraphQL, NodeJS.
     </p>
   </>
-);
+)
 
 export const xyMusicDescription = (
   <>
@@ -31,7 +30,7 @@ export const xyMusicDescription = (
       Technologies: Ionic React, GraphQL & Apollo Client.
     </p>
   </>
-);
+)
 
 export const vapeMusicDescription = (
   <>
@@ -49,7 +48,7 @@ export const vapeMusicDescription = (
       the playlist and use the Audio Player to switch from song to song.
     </p> */}
   </>
-);
+)
 
 export const coronaVirusDescription = (
   <>
@@ -61,7 +60,7 @@ export const coronaVirusDescription = (
       React, NodeJS, Express.
     </p>
   </>
-);
+)
 
 export const easyTodosDescription = (
   <>
@@ -78,7 +77,7 @@ export const easyTodosDescription = (
       an have it listed back again.
     </p>
   </>
-);
+)
 
 export const twoDealDescription = (
   <>
@@ -89,4 +88,4 @@ export const twoDealDescription = (
       Technologies: Express, Rest API, Stripe Checkout, NextJS, Material-UI.
     </p>
   </>
-);
+)

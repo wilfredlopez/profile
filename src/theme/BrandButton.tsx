@@ -1,12 +1,12 @@
-import React, { CSSProperties, PropsWithChildren } from "react";
+import { CSSProperties, PropsWithChildren } from "react"
 import {
   createStyles,
   makeStyles,
   Theme,
-} from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import clsx from "clsx";
-import { assertNever } from "@wilfredlopez/react-utils";
+} from "@material-ui/core/styles"
+import Button from "@material-ui/core/Button"
+import clsx from "clsx"
+import { assertNever } from "@wilfredlopez/react-utils"
 
 export type PaletteColorKeys =
   | "primary"
@@ -14,9 +14,9 @@ export type PaletteColorKeys =
   | "error"
   | "warning"
   | "tertiary"
-  | "success";
+  | "success"
 
-type RegularButtonColor = "inherit" | "primary" | "secondary";
+type RegularButtonColor = "inherit" | "primary" | "secondary"
 
 type CustomColor =
   | "vape"
@@ -28,57 +28,57 @@ type CustomColor =
   | "warning"
   | "tertiary"
   | "success"
-  | "default";
+  | "default"
 
-type ButtonStylesColor = CustomColor | RegularButtonColor;
+type ButtonStylesColor = CustomColor | RegularButtonColor
 
 interface ButtonStyles {
   onClick?:
-    | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-    | undefined;
-  ref?: React.Ref<HTMLButtonElement>;
-  color?: ButtonStylesColor;
-  className?: string;
-  style?: CSSProperties;
-  size?: "medium" | "large" | "small" | "default";
-  type?: "button" | "submit" | "reset";
+  | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
+  | undefined
+  ref?: React.Ref<HTMLButtonElement>
+  color?: ButtonStylesColor
+  className?: string
+  style?: CSSProperties
+  size?: "medium" | "large" | "small" | "default"
+  type?: "button" | "submit" | "reset"
   /**
          * The content of the button.
          */
-  children?: React.ReactNode;
+  children?: React.ReactNode
   /**
            * If `true`, the button will be disabled.
            */
-  disabled?: boolean;
+  disabled?: boolean
   /**
            * If `true`, no elevation is used.
            */
-  disableElevation?: boolean;
+  disableElevation?: boolean
   /**
            * If `true`, the  keyboard focus ripple will be disabled.
            */
-  disableFocusRipple?: boolean;
+  disableFocusRipple?: boolean
   /**
            * Element placed after the children.
            */
-  endIcon?: React.ReactNode;
+  endIcon?: React.ReactNode
   /**
            * If `true`, the button will take up the full width of its container.
            */
-  fullWidth?: boolean;
+  fullWidth?: boolean
   /**
            * The URL to link to when the button is clicked.
            * If defined, an `a` element will be used as the root node.
            */
-  href?: string | undefined;
+  href?: string | undefined
   /**
            * Element placed before the children.
            */
-  startIcon?: React.ReactNode;
+  startIcon?: React.ReactNode
   /**
            * The variant to use. Defaults to contained
            */
-  variant?: "text" | "outlined" | "contained";
+  variant?: "text" | "outlined" | "contained"
 }
 
 const color = (theme: Theme) => {
@@ -95,8 +95,8 @@ const color = (theme: Theme) => {
     vape: "#fff",
     expense: "#fff",
     shop: "#fff",
-  };
-};
+  }
+}
 
 const colorHover = (theme: Theme) => {
   return {
@@ -112,8 +112,8 @@ const colorHover = (theme: Theme) => {
     vape: "#ff1f00",
     expense: "#2e9e7a",
     shop: "rgb(20, 20, 20)",
-  };
-};
+  }
+}
 
 const bgs = (theme: Theme) => {
   return {
@@ -129,8 +129,8 @@ const bgs = (theme: Theme) => {
     expense: "#2e9e7a",
     shop: "rgb(20, 20, 20)",
     vape: "#ff1f00",
-  };
-};
+  }
+}
 
 const bgsHover = (theme: Theme) => {
   return {
@@ -146,8 +146,8 @@ const bgsHover = (theme: Theme) => {
     vape: "#e01b00",
     expense: "#288b6b",
     shop: "#000",
-  };
-};
+  }
+}
 
 function getColorFor(
   matchColor: CustomColor | "primary" | "secondary",
@@ -175,7 +175,7 @@ function getColorFor(
         background: "transparent",
       },
     },
-  };
+  }
 }
 
 const useButtonStyles = makeStyles((theme: Theme) =>
@@ -200,7 +200,7 @@ const useButtonStyles = makeStyles((theme: Theme) =>
     expense: getColorFor("expense", theme),
     shop: getColorFor("shop", theme),
   })
-);
+)
 
 function switchColorToRegular(
   color?: ButtonStylesColor,
@@ -216,15 +216,15 @@ function switchColorToRegular(
     case "vape":
     case "warning":
     case "default":
-      return undefined;
+      return undefined
     case "inherit":
     case "primary":
     case "secondary":
     case undefined:
-      return color;
+      return color
     default:
-      assertNever(color);
-      return undefined;
+      assertNever(color)
+      return undefined
   }
 }
 function switchColorToCustom(
@@ -235,7 +235,7 @@ function switchColorToCustom(
     case "primary":
     case "secondary":
     case undefined:
-      return undefined;
+      return undefined
     case "blue":
     case "error":
     case "expense":
@@ -246,11 +246,11 @@ function switchColorToCustom(
     case "vape":
     case "warning":
     case "default":
-      return color;
+      return color
 
     default:
-      assertNever(color);
-      return undefined;
+      assertNever(color)
+      return undefined
   }
 }
 
@@ -260,9 +260,9 @@ export const BrandButton = (
       ButtonStyles
     >,
 ) => {
-  const defaultColor = switchColorToRegular(color);
-  const customColor = switchColorToCustom(color);
-  const classes = useButtonStyles();
+  const defaultColor = switchColorToRegular(color)
+  const customColor = switchColorToCustom(color)
+  const classes = useButtonStyles()
 
   return <Button
     color={defaultColor}
@@ -275,5 +275,5 @@ export const BrandButton = (
     )}
   >
     {children}
-  </Button>;
-};
+  </Button>
+}

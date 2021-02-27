@@ -1,4 +1,4 @@
-import React from "react"
+import { useState, useEffect } from "react"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import MobileStepper from "@material-ui/core/MobileStepper"
 import Paper from "@material-ui/core/Paper"
@@ -164,11 +164,11 @@ function SliderCard(
 ) {
   const classes = useStyles()
   const controls = useAnimation()
-  const [activeStep, setActiveStep] = React.useState(0)
-  const [goingBack, setGoingBack] = React.useState(false)
+  const [activeStep, setActiveStep] = useState(0)
+  const [goingBack, setGoingBack] = useState(false)
   const maxSteps = imageData.length
 
-  React.useEffect(() => {
+  useEffect(() => {
     // controls.set({
     //   opacity: 0,
     //   x: "-100px",
@@ -200,7 +200,7 @@ function SliderCard(
   //     setActiveStep(step);
   //   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     let backTimeout: number
     let forwardTimeout: number
     function clearTimeouts() {

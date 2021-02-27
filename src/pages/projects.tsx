@@ -5,7 +5,6 @@ import Projects from "@components/projects/index"
 import { fadeInUp } from "@root/animation"
 import { motion } from "framer-motion"
 import Head from "next/head"
-import React from "react"
 
 // import SliderCard from "@components/shared/SliderCard";
 // import { PROJECT_IMAGES } from "@components/pages/constants/projectImages";

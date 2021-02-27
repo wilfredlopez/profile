@@ -30,6 +30,7 @@ export default function getTheme(prefersDarkMode = false) {
 
 
 
+
   PRIMARY_COLOR = prefersDarkMode ? '#040c14' : PRIMARY_COLOR
   SECONDARY_COLOR = prefersDarkMode ? 'rgb(145 45 17)' : SECONDARY_COLOR
   LIGHT_COLOR = prefersDarkMode ? common['white'] : common['black']

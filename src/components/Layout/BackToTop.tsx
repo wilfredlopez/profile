@@ -1,9 +1,8 @@
-import React from "react";
 
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles"
+import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 
-import Zoom from "@material-ui/core/Zoom";
+import Zoom from "@material-ui/core/Zoom"
 
 interface Props {
   /**
@@ -12,8 +11,8 @@ interface Props {
    * IT ALSO NEEDS AN ELEMENT TO ANCHOR WITH. EXAMPLE: <Toolbar id="back-to-top-anchor" />
    * THE ID SHOUDL BE back-to-top-anchor
    */
-  window?: () => Window;
-  children: React.ReactElement;
+  window?: () => Window
+  children: React.ReactElement
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -24,11 +23,11 @@ const useStyles = makeStyles((theme: Theme) =>
       right: theme.spacing(2),
     },
   })
-);
+)
 
 export function ScrollTop(props: Props) {
-  const { children, window } = props;
-  const classes = useStyles();
+  const { children, window } = props
+  const classes = useStyles()
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
   // This is only being set here because the demo is in an iframe.
@@ -36,18 +35,18 @@ export function ScrollTop(props: Props) {
     target: window ? window() : undefined,
     disableHysteresis: true,
     threshold: 100,
-  });
+  })
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const anchor = ((event.target as HTMLDivElement).ownerDocument || document)
       .querySelector(
         "#back-to-top-anchor",
-      );
+      )
 
     if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" })
     }
-  };
+  }
 
   return (
     <Zoom in={trigger}>
@@ -55,5 +54,5 @@ export function ScrollTop(props: Props) {
         {children}
       </div>
     </Zoom>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import React from "react"
+import { useEffect } from "react"
 import Head from "next/head"
 import { AppProps } from "next/app"
 import RootProvider from "@root/RootProvider"
@@ -23,7 +23,7 @@ const opacityAnimate = [
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps, router } = props
-  React.useEffect(() => {
+  useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side") as
       | HTMLDivElement
@@ -34,7 +34,7 @@ export default function MyApp(props: AppProps) {
   }, [])
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title key="title">Web Development | Wilfred Lopez</title>
         <meta charSet="utf-8" />
@@ -127,6 +127,6 @@ export default function MyApp(props: AppProps) {
           </motion.div>
         </AnimatePresence>
       </RootProvider>
-    </React.Fragment>
+    </>
   )
 }

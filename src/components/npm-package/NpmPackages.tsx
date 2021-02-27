@@ -11,10 +11,10 @@ import {
   Typography,
   useTheme,
 } from '@material-ui/core'
-import { NnmPackage, NPM_PACKAGES } from './NPM_PACKAGES'
+import { NnmPackage, NPM_PACKAGES, } from './NPM_PACKAGES'
 import { BrandButton } from '@root/theme/Custom'
 import { motion } from 'framer-motion'
-import React, { useRef } from 'react'
+import { useRef, useState, useEffect, useCallback, useMemo } from 'react'
 import { DividerElement, StyledHtmlLink } from '../shared'
 import { findIndex, Position, move } from '../shared/find-index'
 // import { DARK_BACKGROUND_COLOR } from '@root/theme/getTheme'
@@ -57,24 +57,43 @@ const useNpmStyles = makeStyles(theme => {
   }
 })
 
+
+
 const NpmPackages = ({ limit, dark, omitDivider }: Props) => {
   const classes = useNpmStyles()
 
   const theme = useTheme()
 
   const positions = useRef<Position[]>([]).current
-  const [items, setItems] = React.useState(
-    limit ? NPM_PACKAGES.slice(0, limit) : NPM_PACKAGES
+  const [items, setItems] = useState(
+    () => limit ? NPM_PACKAGES.slice(0, limit) : NPM_PACKAGES
   )
-  function setPosition(i: number, offset: Position) {
+  const setPosition = useCallback(function setPosition(i: number, offset: Position) {
     positions[i] = offset
-  }
-  const moveItem = (i: number, dragOffset: number) => {
+  }, [])
+  const moveItem = useCallback((i: number, dragOffset: number) => {
     const targetIndex = findIndex(i, dragOffset, positions)
     if (targetIndex !== i) {
       setItems(move(items, i, targetIndex))
     }
-  }
+  }, [items])
+
+
+  const ComponentItems = useMemo(() => items.map((pa, index) => {
+    return (
+      <Grid key={pa.name} item xs={12} md={6}>
+        <NpmPackage
+          data={pa}
+          // totalItems={items.length}
+          i={index}
+          moveItem={moveItem}
+          setPosition={setPosition}
+        />
+      </Grid>
+    )
+  }), [items])
+
+
   return (
     <Box>
       <Paper
@@ -114,19 +133,20 @@ const NpmPackages = ({ limit, dark, omitDivider }: Props) => {
             alignContent='center'
             alignItems='center'
           >
-            {items.map((pa, index) => {
+            {ComponentItems}
+            {/* {items.map((pa, index) => {
               return (
                 <Grid key={pa.name} item xs={12} md={6}>
                   <NpmPackage
                     data={pa}
-                    totalItems={items.length}
+                    // totalItems={items.length}
                     i={index}
                     moveItem={moveItem}
                     setPosition={setPosition}
                   />
                 </Grid>
               )
-            })}
+            })} */}
           </Grid>
         </Container>
         <Box pb={2} />
@@ -138,7 +158,7 @@ const NpmPackages = ({ limit, dark, omitDivider }: Props) => {
 interface PackProps {
   data: NnmPackage
   i: number
-  totalItems: number
+  // totalItems: number
   setPosition: (i: number, pos: Position) => void
   moveItem: (i: number, dragOffset: number) => void
 }
@@ -149,13 +169,16 @@ const flat = {
   transition: { delay: 0.3 },
 }
 
-function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
+
+
+function NpmPackage({ data, i, moveItem, setPosition }: PackProps) {
   const classes = useNpmStyles()
-  const [isDragging, setDragging] = React.useState(false)
+  const [isDragging, setDragging] = useState(false)
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up('sm'))
   const ref = useRef<HTMLDivElement>(null)
-  const [copyMessageOpen, setCopyMessageOpenTo] = React.useState(false)
+  const [copyMessageOpen, setCopyMessageOpenTo] = useState(false)
+
   const _setPosition = throttle(function () {
     setPosition(i, {
       height: ref.current!.offsetHeight,
@@ -164,7 +187,7 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
   }, 100)
 
   // Update the measured position of the item so we can calculate when we should rearrange.
-  React.useEffect(() => {
+  useEffect(() => {
     _setPosition()
   })
 

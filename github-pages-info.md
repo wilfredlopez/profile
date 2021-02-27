@@ -5,9 +5,7 @@ npm run build-export
 node server/server.js
 ```
 
-# TO PUSH TO GITHUB and Deploy
-
-`THIS IS NOW DEPRECIATED` (Now Using NETLIFY to DEPLOY `master` Branch)
+# TO PUSH TO GITHUB and Deploy `THIS IS NOW DEPRECIATED` (Now Using NETLIFY to DEPLOY `master` Branch)
 
 `wilfredprofile.netlify.app`
 

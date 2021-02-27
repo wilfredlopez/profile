@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react"
+import { PropsWithChildren } from "react"
 import { Theme, makeStyles, createStyles } from "@material-ui/core/styles"
 import ButtonBase, { ButtonBaseProps } from "@material-ui/core/ButtonBase"
 import Typography from "@material-ui/core/Typography"
@@ -13,10 +13,10 @@ const OVERRIDES = {
   imageTitle: {
     background: 'rgba(255,255,255,0.4)',
     backgroundClip: 'padding-box',
-              // backdropFilter: 'blur(40px)',
-          backdropFilter: 'blur(40px) contrast(1.5)',
-          // WebkitBackdropFilter: 'blur(40px)',
-          WebkitBackdropFilter: 'blur(40px) contrast(1.5)',
+    // backdropFilter: 'blur(40px)',
+    backdropFilter: 'blur(40px) contrast(1.5)',
+    // WebkitBackdropFilter: 'blur(40px)',
+    WebkitBackdropFilter: 'blur(40px) contrast(1.5)',
     borderBottom: '2px solid transparent',
     color: 'black'
   },

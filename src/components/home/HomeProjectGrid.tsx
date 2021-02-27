@@ -1,7 +1,6 @@
 import { DividerElement } from "@components/shared"
 import { Box, Grid } from "@material-ui/core"
 import { ImageButton } from "@root/theme/Custom"
-import React from "react"
 import ProjectsArray from "../projects/ProjectsArray"
 
 interface Props {

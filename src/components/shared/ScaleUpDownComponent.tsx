@@ -2,20 +2,20 @@ import {
   PRIMARY_COLOR,
   SECONDARY_COLOR,
   TERTIARY_COLOR,
-} from "@root/theme/getTheme";
-import { AnimationProps, motion } from "framer-motion";
-import React, { PropsWithChildren } from "react";
+} from "@root/theme/getTheme"
+import { AnimationProps, motion } from "framer-motion"
+import { PropsWithChildren } from "react"
 
 interface Props {
   /**
    * number to scale up to. defaults to 1.2
    */
-  scaleTo?: number;
+  scaleTo?: number
   /**
    * a tuple of strings of colors. defaults to ["#ff6699", "#6666ff"]
    * pass an empty array to disable the effect
    */
-  backgrounds?: [string, string];
+  backgrounds?: [string, string]
 }
 
 const scaleTransition = {
@@ -31,7 +31,7 @@ const scaleTransition = {
     ease: "easeOut",
     repeatDelay: 0.5,
   },
-};
+}
 
 const ScaleUpDownComponent = (
   {
@@ -42,9 +42,9 @@ const ScaleUpDownComponent = (
 ) => {
   let animate: AnimationProps["animate"] = {
     scale: [0.9, scaleTo],
-  };
+  }
   if (backgrounds.length > 0) {
-    animate.backgroundColor = backgrounds;
+    animate.backgroundColor = backgrounds
   }
   return (
     <motion.div
@@ -54,7 +54,7 @@ const ScaleUpDownComponent = (
     >
       {children}
     </motion.div>
-  );
-};
+  )
+}
 
-export default ScaleUpDownComponent;
+export default ScaleUpDownComponent

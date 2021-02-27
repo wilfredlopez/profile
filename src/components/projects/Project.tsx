@@ -7,7 +7,6 @@ import {
 } from "@material-ui/core"
 import { BrandButton, ImageButton } from "@root/theme/Custom"
 import useSharedStyles from "@root/theme/useSharedStyles"
-import React from "react"
 import styled from "styled-components"
 import { DividerElement } from "@components/shared"
 

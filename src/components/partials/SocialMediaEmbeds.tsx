@@ -1,6 +1,6 @@
-import React from "react";
-import { Grid, Typography } from "@material-ui/core";
-import { DividerElement } from "@components/shared";
+import { useRef } from 'react'
+import { Grid, Typography } from "@material-ui/core"
+import { DividerElement } from "@components/shared"
 
 const facebookPostsList = [
   {
@@ -23,13 +23,13 @@ const facebookPostsList = [
       "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FWilfredDonaldLo%2Fposts%2F10162092215695497&width=500",
     height: "210",
   },
-];
+]
 
 interface Props {
 }
 
 const SocialMediaEmbeds: React.FC<Props> = (props) => {
-  const contextRef = React.useRef<HTMLDivElement>(null);
+  const contextRef = useRef<HTMLDivElement>(null)
   const facebookPosts = facebookPostsList.map((p) => {
     return (
       <iframe
@@ -52,8 +52,8 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
         allow="encrypted-media"
       >
       </iframe>
-    );
-  });
+    )
+  })
 
   return (
     <div style={{ padding: "1em" }}>
@@ -84,13 +84,13 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
               item
               style={{ paddingBottom: "1em", paddingTop: "1em", zIndex: 1 }}
             >
-              <React.Fragment>
+              <>
                 <Typography variant="h6" component="h3" align="center">
                   <u>Facebook</u>
                 </Typography>
 
                 {facebookPosts}
-              </React.Fragment>
+              </>
             </Grid>
 
             <Grid item style={{ paddingBottom: "1em", paddingTop: "1em" }}>
@@ -113,7 +113,7 @@ const SocialMediaEmbeds: React.FC<Props> = (props) => {
         </div>
       </Grid>
     </div>
-  );
-};
+  )
+}
 
-export default SocialMediaEmbeds;
+export default SocialMediaEmbeds

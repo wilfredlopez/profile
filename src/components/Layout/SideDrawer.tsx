@@ -1,4 +1,3 @@
-// import { StyledHtmlLink } from '@components/shared'
 import { Button, Typography } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
@@ -10,12 +9,13 @@ import { makeStyles } from '@material-ui/core/styles'
 import DragHandleIcon from '@material-ui/icons/DragHandle'
 import MailIcon from '@material-ui/icons/Mail'
 import MenuIcon from '@material-ui/icons/Menu'
-// import { SECONDARY_COLOR } from '@root/theme/getTheme'
+import { useState, Fragment } from 'react'
 import clsx from 'clsx'
 import NavLink from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
 import styled from 'styled-components'
+// import { StyledHtmlLink } from '@components/shared'
+// import { SECONDARY_COLOR } from '@root/theme/getTheme'
 import { NAV_LINKS, SOCIAL_LINKS } from './navlinks'
 
 interface Props { }
@@ -96,7 +96,7 @@ export default function SideDrawer({ anchor }: Props) {
   //     defaultMatches: true,
   //   },
   // );
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     top: false,
     left: false,
     bottom: false,
@@ -171,7 +171,7 @@ export default function SideDrawer({ anchor }: Props) {
   const isOpen = state[anchor]
 
   return (
-    <React.Fragment key={anchor}>
+    <Fragment key={anchor}>
       {/* <Hidden mdUp initialWidth="sm"> */}
       <Button
         // edge="start"
@@ -216,6 +216,6 @@ export default function SideDrawer({ anchor }: Props) {
       >
         {list(anchor)}
       </Drawer>
-    </React.Fragment>
+    </Fragment>
   )
 }

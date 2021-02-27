@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 
 interface Props {
-  sizeInPx?: string;
+  sizeInPx?: string
 }
 
 const GraphQlIcon = ({ sizeInPx = "48px" }: Props) => {
@@ -27,7 +27,7 @@ const GraphQlIcon = ({ sizeInPx = "48px" }: Props) => {
         d="M42.72,35H6.28L24.5,2.978L42.72,35z M9.72,33H39.28L24.5,7.022L9.72,33z"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default GraphQlIcon;
+export default GraphQlIcon

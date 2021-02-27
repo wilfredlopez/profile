@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core'
 import { usePagesContext } from '@root/context/PagesContext'
 import useSharedStyles from '@root/theme/useSharedStyles'
-import React, { useEffect, useMemo, memo } from 'react'
+import { useEffect, useMemo, memo } from 'react'
 import styled from 'styled-components'
 import { ExperienceList } from './ExperienceList'
 import { EducationList } from './EducationList'
@@ -83,7 +83,7 @@ const HomepageLayout: React.FC<{}> = () => {
 
 
   return (
-    <React.Fragment>
+    <>
       <PrimaryBackgroundSection>
         <Paper elevation={1} className={classes.homepageHeadingPaper}>
 
@@ -167,7 +167,7 @@ const HomepageLayout: React.FC<{}> = () => {
 
       </Paper>
       {/* <SocialMediaEmbeds /> */}
-    </React.Fragment>
+    </>
   )
 }
 export default memo(HomepageLayout, () => false)

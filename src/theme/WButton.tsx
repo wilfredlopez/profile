@@ -1,13 +1,12 @@
-import React from "react";
 import {
   withStyles,
   CreateCSSProperties,
-} from "@material-ui/styles";
+} from "@material-ui/styles"
 import MuiButton, {
   ButtonProps,
-} from "@material-ui/core/Button";
-import MuiIconButtom, { IconButtonProps } from "@material-ui/core/IconButton";
-import { Theme } from "@material-ui/core/styles";
+} from "@material-ui/core/Button"
+import MuiIconButtom, { IconButtonProps } from "@material-ui/core/IconButton"
+import { Theme } from "@material-ui/core/styles"
 
 export type PaletteColorKeys =
   | "primary"
@@ -15,7 +14,7 @@ export type PaletteColorKeys =
   | "error"
   | "warning"
   | "tertiary"
-  | "success";
+  | "success"
 
 function getOverridesColor(
   colorKey: PaletteColorKeys,
@@ -25,7 +24,7 @@ function getOverridesColor(
   return {
     color: theme
       .palette[colorKey][variant === "contained" ? "contrastText" : "main"],
-  };
+  }
 }
 
 function getOverridesBackgroundContained(
@@ -41,7 +40,7 @@ function getOverridesBackgroundContained(
         backgroundColor: theme.palette[colorKey].main,
       },
     },
-  };
+  }
 }
 
 const WButton: React.ComponentType<ButtonProps> = withStyles((
@@ -49,7 +48,7 @@ const WButton: React.ComponentType<ButtonProps> = withStyles((
 ) => ({
   root: (props: ButtonProps) =>
     props.variant === "contained" && props.color &&
-    props.color !== "inherit" && props.color !== "default"
+      props.color !== "inherit" && props.color !== "default"
       ? {
         ...getOverridesColor(props.color, props.variant, theme),
         ...getOverridesBackgroundContained(props.color, theme),
@@ -57,16 +56,16 @@ const WButton: React.ComponentType<ButtonProps> = withStyles((
       : (props.variant === "outlined" || props.variant === "text") &&
         props.color &&
         props.color !== "inherit" && props.color !== "default"
-      ? { ...getOverridesColor(props.color, props.variant, theme) }
-      : {},
-}))(MuiButton);
+        ? { ...getOverridesColor(props.color, props.variant, theme) }
+        : {},
+}))(MuiButton)
 
 const WIconButton: React.ComponentType<IconButtonProps> = withStyles((
   theme: Theme,
 ) => ({
   root: (props: IconButtonProps) =>
     props.color &&
-    props.color !== "inherit" && props.color !== "default"
+      props.color !== "inherit" && props.color !== "default"
       ? {
         color: theme.palette[props.color].main,
         ["&:disabled"]: {
@@ -79,6 +78,6 @@ const WIconButton: React.ComponentType<IconButtonProps> = withStyles((
         },
       }
       : {},
-}))(MuiIconButtom);
+}))(MuiIconButtom)
 
-export { WButton, WIconButton };
+export { WButton, WIconButton }
