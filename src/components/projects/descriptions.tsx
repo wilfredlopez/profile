@@ -72,7 +72,7 @@ export const easyTodosDescription = (
       information that regards to a particular task.
     </p>
     <p>
-      All todos have a "Notes" section that can be styled and edited very easy.
+      All todos have a &ldquo;Notes&ldquo; section that can be styled and edited very easy.
       You can filter the list, mark a todo as completed or find a completed todo
       an have it listed back again.
     </p>

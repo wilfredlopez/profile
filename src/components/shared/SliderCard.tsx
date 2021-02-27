@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import MobileStepper from "@material-ui/core/MobileStepper"
 import Paper from "@material-ui/core/Paper"
@@ -182,13 +182,13 @@ function SliderCard(
     return () => {
       controls.stop()
     }
-  }, [activeStep])
+  }, [activeStep, controls])
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setActiveStep((prevActiveStep) => {
       return prevActiveStep === imageData.length - 1 ? 0 : prevActiveStep + 1
     })
-  }
+  }, [imageData])
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) =>
@@ -245,7 +245,7 @@ function SliderCard(
     return () => {
       clearTimeouts()
     }
-  }, [activeStep, maxSteps, loop])
+  }, [activeStep, maxSteps, loop, goingBack, handleNext])
 
   const shouldShowControlsInTitle = showControlsInTitle && maxSteps > 1
 

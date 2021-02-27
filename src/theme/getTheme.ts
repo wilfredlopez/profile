@@ -7,7 +7,7 @@ import { DefaultTheme } from 'styled-components'
 export let SECONDARY_COLOR: string = secondary['500'] // common['white'] //
 export const SECONDARY_COLOR_CONTRAST = common['black']
 
-export let PRIMARY_COLOR: string = '#914345' // '#f25022' //'#af6800' //'#b73e35' // primary[700] // '#032e4e'
+export let PRIMARY_COLOR = '#914345' // '#f25022' //'#af6800' //'#b73e35' // primary[700] // '#032e4e'
 export const PRIMARY_COLOR_CONTRAST = common['white']
 
 // export const TOOLBAR_MIN_HEIGHT = 50

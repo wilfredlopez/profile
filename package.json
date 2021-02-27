@@ -30,17 +30,22 @@
     "autoprefixer": "^10.2.4",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-define": "^2.0.0",
+    "concurrently": "^6.0.0",
     "eslint": "^7.20.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-watch": "^7.0.0",
     "express": "^4.17.1",
     "gh-pages": "^3.1.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.2.2"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "concurrently \"npm run lint-js:watch\" \"next dev\"",
+    "lint-js:watch": "esw -w -c ./.eslintrc.js --ext .tsx --ext .ts --ignore-path ./.eslintignore",
+    "lint-md:watch": "remark --watch .",
     "build": "next build",
     "build-export": "rimraf out && next build && next export && touch out/.nojekyll",
     "start:next": "next start",
@@ -53,7 +58,7 @@
     "predeploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll",
     "deploy": "gh-pages -d out -t true",
     "lint:fix": "eslint --ext js,jsx,ts,tsx --fix",
-    "lint": "eslint --ext js,jsx,ts,tsx"
+    "lint": "eslint src --ext .ts,.tsx"
   },
   "browserslist": {
     "production": [

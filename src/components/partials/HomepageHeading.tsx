@@ -79,7 +79,7 @@ const HomepageHeading: React.FC<Props> = () => {
               marginTop: '0.5em',
             }}
           >
-            <ScaleUpDownComponent backgrounds={[] as any}>
+            <ScaleUpDownComponent backgrounds={[]}>
               WILFRED LOPEZ
           </ScaleUpDownComponent>
           </Typography>

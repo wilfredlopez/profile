@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import ParticleMachine from './FireworksMachine'
 
 
@@ -23,8 +23,9 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
 
 
 
-const Fireworks = ({ fireworkProps: { getElements, canvasBackgroundColor, canvasWith = 400, canvasHeight = 400, isRunning = true, speed, maxParticles, minParticles, particleSize = 1, canvasMinHeight, canvasMinWidth }, ...divProps }: Props) => {
+const Fireworks = ({ fireworkProps: { getElements: UpgetElements, canvasBackgroundColor, canvasWith = 400, canvasHeight = 400, isRunning = true, speed, maxParticles, minParticles, particleSize = 1, canvasMinHeight, canvasMinWidth }, ...divProps }: Props) => {
     const canvas = useRef<HTMLCanvasElement>(null)
+    const getElements = useMemo(() => UpgetElements, [UpgetElements])
     useEffect(() => {
         let machine: ParticleMachine
         if (isRunning) {
@@ -44,7 +45,7 @@ const Fireworks = ({ fireworkProps: { getElements, canvasBackgroundColor, canvas
         return () => {
             machine?.stopAnimate()
         }
-    }, [canvas, canvasWith, canvasHeight, isRunning, particleSize, maxParticles, minParticles, speed, canvasBackgroundColor])
+    }, [canvas, getElements, canvasWith, canvasHeight, isRunning, particleSize, maxParticles, minParticles, speed, canvasBackgroundColor])
 
 
     return (

@@ -3,6 +3,8 @@ const debug = process.env.NODE_ENV !== 'production'
 const withImages = require('next-images')
 module.exports = withImages({
   esModule: true,
+  // reactStrictMode: true,
+  poweredByHeader: false,
   exportPathMap: function (defaultPathMap = {}) {
     return {
       ...defaultPathMap,
@@ -25,6 +27,15 @@ module.exports = withImages({
       }
       return rule
     })
+    //eslint
+    if (options.dev) {
+      config.module.rules.push({
+        // test: /\.(j|t)sx?$/,
+        test: /\.(j|t)sx?$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      })
+    }
     return config
   },
 })

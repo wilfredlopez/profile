@@ -10,7 +10,7 @@ const createColorStyles = (theme: Theme) => {
 
   const data: StyleRules<MatchedVariants> = {} as StyleRules<MatchedVariants>
 
-  for (let [variant, color] of prod) {
+  for (const [variant, color] of prod) {
     data[transformName(variant, color)] = transformTemplate(
       variant,
       color,

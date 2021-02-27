@@ -12,7 +12,7 @@ const ButtonFlex = ({ color, children, disableUppercase, ...buttonProps }: Butto
     const classes = useCustomStyles()
     const className = color ? classes[color] : ""
     const variant = matchToVariant(color)
-    let styles: CSSProperties = {
+    const styles: CSSProperties = {
         textTransform: 'uppercase'
     }
     if (disableUppercase) {

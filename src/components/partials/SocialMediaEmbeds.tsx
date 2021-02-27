@@ -28,7 +28,7 @@ const facebookPostsList = [
 interface Props {
 }
 
-const SocialMediaEmbeds: React.FC<Props> = (props) => {
+const SocialMediaEmbeds: React.FC<Props> = () => {
   const contextRef = useRef<HTMLDivElement>(null)
   const facebookPosts = facebookPostsList.map((p) => {
     return (

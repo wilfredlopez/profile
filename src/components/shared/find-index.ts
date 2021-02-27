@@ -43,7 +43,7 @@ export const findIndex = (
   return clamp(0, positions.length, target) as number
 }
 
-const arrayMoveMutate = (array: any[], from: number, to: number) => {
+const arrayMoveMutate = <T>(array: T[], from: number, to: number) => {
   const startIndex = to < 0 ? array.length + to : to
 
   if (startIndex >= 0 && startIndex < array.length) {

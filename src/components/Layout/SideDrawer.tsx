@@ -20,7 +20,7 @@ import { NAV_LINKS, SOCIAL_LINKS } from './navlinks'
 
 interface Props { }
 
-const useStyles = makeStyles(_theme => ({
+const useStyles = makeStyles(() => ({
   list: {
     width: 250,
   },

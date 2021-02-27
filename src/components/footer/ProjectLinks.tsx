@@ -8,10 +8,8 @@ const list: PLinkProps[] = ProjectsArray.map((p) => ({
   displayText: p.name,
 }))
 
-interface Props {
-}
 
-const ProjectLinks = (_props: Props) => {
+const ProjectLinks = () => {
   return (
     <div>
       {list.map((p) =>

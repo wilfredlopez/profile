@@ -3,6 +3,7 @@ import NextDocument from "next/document"
 import Document, { Html, Head, Main, NextScript } from "next/document"
 import { ServerStyleSheets as MaterialUiServerStyleSheets } from "@material-ui/core/styles"
 import { ServerStyleSheet as StyledComponentSheets } from "styled-components"
+import type { AppType } from 'next/dist/next-server/lib/utils'
 
 export default class MyDocument extends Document {
   render() {
@@ -28,8 +29,8 @@ MyDocument.getInitialProps = async (ctx) => {
   try {
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp: (App: any) =>
-          (props: any) =>
+        enhanceApp: (App: AppType) =>
+          (props: React.ComponentProps<AppType>) =>
             // styledComponentSheet.collectStyles(
             //   materialUiSheets.collect(<App {...props} />
             materialUiSheets.collect(

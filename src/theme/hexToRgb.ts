@@ -76,82 +76,82 @@ const pattern6 = `^
 
 const rgb3PercentageRe = new RegExp(pattern6)
 export function rgbStringToRgb(str: string) {
-    const rgb =
-        rgb4NumberRe.exec(str) ||
-        rgb4PercentageRe.exec(str) ||
-        rgb3NumberRe.exec(str) ||
-        rgb3PercentageRe.exec(str)
+  const rgb: unknown =
+    rgb4NumberRe.exec(str) ||
+    rgb4PercentageRe.exec(str) ||
+    rgb3NumberRe.exec(str) ||
+    rgb3PercentageRe.exec(str)
 
-    if (rgb) {
-        const { values } = getRGB(rgb as any)
-        return { red: values[0], green: values[1], blue: values[2], alpha: 1 }
-    }
-    return undefined
+  if (rgb) {
+    const { values } = getRGB(rgb as InputRGAArray)
+    return { red: values[0], green: values[1], blue: values[2], alpha: 1 }
+  }
+  return undefined
 }
 
 const clamp = (num: number, min: number, max: number) =>
-    Math.min(Math.max(min, num), max)
+  Math.min(Math.max(min, num), max)
 
 /* 500 => 255, -10 => 0, 128 => 128 */
 const parseRGB = (num: string | number) => {
-    let n = num
-    if (typeof n !== "number")
-        n = n.endsWith("%") ? (parseFloat(n) * 255) / 100 : parseFloat(n)
-    return clamp(Math.round(n), 0, 255)
+  let n = num
+  if (typeof n !== "number")
+    n = n.endsWith("%") ? (parseFloat(n) * 255) / 100 : parseFloat(n)
+  return clamp(Math.round(n), 0, 255)
 }
 
 type InputRGAArray = [number | null, ...number[]]
 function getRGB([, r, g, b, a = 1]: InputRGAArray): {
-    type: "rgb",
-    values: [number, number, number],
-    alpha: number
+  type: "rgb",
+  values: [number, number, number],
+  alpha: number
 } {
-    return {
-        type: "rgb",
-        values: [r, g, b].map(parseRGB) as [number, number, number],
-        alpha: a
-    }
+  return {
+    type: "rgb",
+    values: [r, g, b].map(parseRGB) as [number, number, number],
+    alpha: a
+  }
 }
 
 
 export function hex2Rgb(hex: string) {
 
-    const output = { red: 0, green: 0, blue: 0, alpha: 1 }
-    if (
-        typeof hex !== "string" ||
-        nonHexChars.test(hex) ||
-        !validHexSize.test(hex)
-    ) {
-        const asRgb = rgbStringToRgb(hex)
-        if (asRgb) {
-            return asRgb
-        }
-        // return errorFallback(options.format || 'object')
-        // throw new TypeError("Expected a valid hex string")
-        return output
+  const output = { red: 0, green: 0, blue: 0, alpha: 1 }
+  if (
+    typeof hex !== "string" ||
+    nonHexChars.test(hex) ||
+    !validHexSize.test(hex)
+  ) {
+    const asRgb = rgbStringToRgb(hex)
+    if (asRgb) {
+      return asRgb
     }
-
-    hex = hex.replace(/^#/, "")
-    let alpha = 1
-
-    if (hex.length === 8) {
-        alpha = Number.parseInt(hex.slice(6, 8), 16) / 255
-        hex = hex.slice(0, 6)
-    }
-
-    if (hex.length === 4) {
-        alpha = Number.parseInt(hex.slice(3, 4).repeat(2), 16) / 255
-        hex = hex.slice(0, 3)
-    }
-
-    if (hex.length === 3) {
-        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
-    }
-
-    const number = Number.parseInt(hex, 16)
-    output.red = number >> 16
-    output.green = (number >> 8) & 255
-    output.blue = number & 255
-    output.alpha = alpha
+    // return errorFallback(options.format || 'object')
+    // throw new TypeError("Expected a valid hex string")
     return output
+  }
+
+  hex = hex.replace(/^#/, "")
+  let alpha = 1
+
+  if (hex.length === 8) {
+    alpha = Number.parseInt(hex.slice(6, 8), 16) / 255
+    hex = hex.slice(0, 6)
+  }
+
+  if (hex.length === 4) {
+    alpha = Number.parseInt(hex.slice(3, 4).repeat(2), 16) / 255
+    hex = hex.slice(0, 3)
+  }
+
+  if (hex.length === 3) {
+    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
+  }
+
+  const number = Number.parseInt(hex, 16)
+  output.red = number >> 16
+  output.green = (number >> 8) & 255
+  output.blue = number & 255
+  output.alpha = alpha
+  return output
 }

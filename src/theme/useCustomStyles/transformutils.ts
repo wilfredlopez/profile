@@ -22,7 +22,7 @@ export function produceTuple(
   const ilen = VARIANTS.length
   let j: number
   const jlen = COLORS.length
-  var result: Array<[Variant, ColorTypes]> = []
+  const result: Array<[Variant, ColorTypes]> = []
   while (idx < ilen) {
     j = 0
     while (j < jlen) {

@@ -70,13 +70,13 @@ const NpmPackages = ({ limit, dark, omitDivider }: Props) => {
   )
   const setPosition = useCallback(function setPosition(i: number, offset: Position) {
     positions[i] = offset
-  }, [])
+  }, [positions])
   const moveItem = useCallback((i: number, dragOffset: number) => {
     const targetIndex = findIndex(i, dragOffset, positions)
     if (targetIndex !== i) {
       setItems(move(items, i, targetIndex))
     }
-  }, [items])
+  }, [items, positions])
 
 
   const ComponentItems = useMemo(() => items.map((pa, index) => {
@@ -91,7 +91,7 @@ const NpmPackages = ({ limit, dark, omitDivider }: Props) => {
         />
       </Grid>
     )
-  }), [items])
+  }), [items, moveItem, setPosition])
 
 
   return (

@@ -91,7 +91,7 @@ export default class ParticleMachine {
       ctx.fillStyle = this.backgroundColor //'rgba(0,0,0,0.05)'
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
       // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-      for (let [index, particle] of this._PARTICLES.entries()) {
+      for (const [index, particle] of this._PARTICLES.entries()) {
         if (particle.alpha <= 0) {
           this._PARTICLES.splice(index, 1)
         }

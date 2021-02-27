@@ -1,5 +1,4 @@
 import {
-  PRIMARY_COLOR,
   SECONDARY_COLOR,
   TERTIARY_COLOR,
 } from "@root/theme/getTheme"
@@ -15,7 +14,7 @@ interface Props {
    * a tuple of strings of colors. defaults to ["#ff6699", "#6666ff"]
    * pass an empty array to disable the effect
    */
-  backgrounds?: [string, string]
+  backgrounds?: [string, string] | never[]
 }
 
 const scaleTransition = {
@@ -40,7 +39,7 @@ const ScaleUpDownComponent = (
     children,
   }: PropsWithChildren<Props>,
 ) => {
-  let animate: AnimationProps["animate"] = {
+  const animate: AnimationProps["animate"] = {
     scale: [0.9, scaleTo],
   }
   if (backgrounds.length > 0) {

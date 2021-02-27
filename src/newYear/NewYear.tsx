@@ -6,9 +6,6 @@ import { useRouter } from 'next/router'
 
 import { IconButton } from '@material-ui/core'
 import { ArrowBack } from '@material-ui/icons'
-interface Props {
-
-}
 
 
 const addBodyStyle = () => {
@@ -31,7 +28,7 @@ function isJanuaryTenOrLess() {
 }
 
 
-const NewYear = (props: Props) => {
+const NewYear = () => {
     const [width, setWidth] = useState(0)
     const [height, setHeight] = useState(0)
     const [machine, setMachine] = useState<ParticleMachine>()
