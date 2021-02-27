@@ -27,7 +27,7 @@ const HomeProjectGrid = ({ limit }: Props) => {
             <DividerElement>
               {proj.name}
             </DividerElement>
-            <Box mb={1} />
+            <Box mb={3} />
             <ImageButton
               linkUrl={proj.url}
               title={proj.title}
@@ -35,6 +35,7 @@ const HomeProjectGrid = ({ limit }: Props) => {
               width={500}
               minHeight={700}
             />
+            <Box mb={3} />
           </Grid>
         })}
       </Grid>

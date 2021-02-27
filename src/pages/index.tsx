@@ -27,7 +27,11 @@ const index = () => {
 
         }} square>
           <HomepageLayout />
-          <NpmPackages dark limit={6} />
+          <br />
+          <br />
+          <NpmPackages dark limit={6} omitDivider />
+          <br />
+          <br />
         </Paper>
       </PageWrapper>
     </>

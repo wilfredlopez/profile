@@ -29,8 +29,9 @@ const useSharedStyles = makeStyles((theme: Theme) =>
     },
     homepageHeadingPaper: {
       // background: theme.palette.type === 'dark' ? 'inherit' : theme.palette.primary.light,// '#b15558',
-      background: theme.palette.type === 'dark' ? 'inherit' : getLinearGradient(theme.palette.primary.light),// '#b15558',
-      color: theme.palette.background.paper,
+      // background: theme.palette.type === 'dark' ? 'inherit' : getLinearGradient(theme.palette.primary.light),// '#b15558',
+      background: theme.palette.type === 'dark' ? theme.palette.background.paper : getLinearGradient('#ffffff'),// '#b15558',
+      color: theme.palette.type === 'dark' ? theme.palette.background.default : '#000000', // theme.palette.background.paper,
       // paddingTop: '4rem',
       // paddingBottom: '2rem',
       // [theme.breakpoints.down('xs')]: {

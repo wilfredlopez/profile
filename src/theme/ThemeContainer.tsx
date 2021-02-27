@@ -12,7 +12,9 @@ const GlobalStyles = createGlobalStyle`
 body{
   font-family: 'Poppins', 'Roboto', sans-serif;
 }
-
+::-webkit-scrollbar{
+  display: none;
+}
 
 
 `

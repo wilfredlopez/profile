@@ -39,22 +39,7 @@ const Contact = () => {
 
 
       <Container maxWidth='md'>
-        {/* <Segment style={{ padding: '2em 0em' }}>
-          <DividerElement>
-            <Grid container justify='center' alignContent='center'>
-              <Typography
-                variant='h3'
-                component='h2'
-                style={{
-                  fontSize: '2em',
-                  textAlign: 'center',
-                }}
-              >
-                Contact
-              </Typography>
-            </Grid>
-          </DividerElement>
-        </Segment> */}
+
         <Segment>
           <Grid container>
             {/* <Grid container>

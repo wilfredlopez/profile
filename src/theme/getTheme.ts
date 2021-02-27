@@ -19,11 +19,16 @@ export const TERTIARY_COLOR = '#ff6c42' //'#ff9800' // '#76b9ff' // '#8c2f2f' //
 export const TERTIARY_COLOR_CONTRAST = common['white']
 export const DARK_BACKGROUND_COLOR = '#424242' //'#303030'
 const BORDER_RADIOUS = 4
+
+export const LINK_COLOR = '#7bfdff'
+export const LINK_COLOR_HOVER = '#aefeff'
 //#914345
 
 //Cool Green #38b584 or #76b9ff
 export default function getTheme(prefersDarkMode = false) {
   // const prefersDarkMode = true
+
+
 
   PRIMARY_COLOR = prefersDarkMode ? '#040c14' : PRIMARY_COLOR
   SECONDARY_COLOR = prefersDarkMode ? 'rgb(145 45 17)' : SECONDARY_COLOR

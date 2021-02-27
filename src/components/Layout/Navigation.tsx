@@ -1,6 +1,6 @@
-// import { Hidden } from '@material-ui/core'
+// import { Hidden, Theme } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, Theme } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
@@ -14,6 +14,20 @@ import Link from 'next/link'
 // const GRADIANT = 'linear-gradient(0deg, #e6491d 40%, #d6431a 50%, #9a2f11 100%)' // 'linear-gradient(180deg, rgb(132 78 0) 45%, rgb(255 157 4) 100%)' // 'linear-gradient(180deg, rgb(35 35 35) 45%, rgb(191 115 1) 100%)'
 // const GRADIANT = 'linear-gradient(0deg, #863f41 40%, #8a4143 50%, #914345 100%)'
 // const GRADIANT_DARK = 'linear-gradient(0deg, #101010 40%, #101010 50%, #171717 100%)' //'linear-gradient(0deg, #982f11 40%, #922d11 50%, #4c1709 100%)'
+
+
+function getNavBackgroundAndColor(theme: Theme) {
+  if (theme.palette.type === 'dark') {
+    return {
+      background: `radial-gradient(#757575d9, #8080809e, #313131f5, #b19d9e, #656060, #060606d9, #bbabacd9)`,
+      color: 'white'
+    }
+  }
+  return {
+    background: 'radial-gradient(#757575d9, #ffffff9e, #d8d5d5f5, #b19d9e, #c1c1c1, #ffffffd9, #bbabacd9)',
+    color: 'black'
+  }
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -60,7 +74,8 @@ const useStyles = makeStyles(theme => ({
     flex: '1 1 auto',
   },
   navBackground: {
-    background: 'radial-gradient(#757575d9, #ffffff9e, #d8d5d5f5, #b19d9e, #c1c1c1, #ffffffd9, #bbabacd9)',
+    // background: 'radial-gradient(#757575d9, #ffffff9e, #d8d5d5f5, #b19d9e, #c1c1c1, #ffffffd9, #bbabacd9)',
+    ...getNavBackgroundAndColor(theme),
     position: "absolute",
     left: 0,
     right: 0,

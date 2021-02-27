@@ -8,18 +8,22 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import ProjectLinks from './ProjectLinks'
 import { FooterSection } from '../shared/multi-use'
+import { LINK_COLOR_HOVER, LINK_COLOR } from '../../theme/getTheme'
 
 export const FooterNavLink = styled.a<{ isActive?: boolean }>`
-  color: ${props => (props.isActive ? props.theme.colors.tertiary : 'inherit')};
-  font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
+  /* color: ${props => (props.isActive ? props.theme.colors.tertiary : 'inherit')}; */
+  color: ${props => (props.isActive ? LINK_COLOR_HOVER : 'inherit')};
+  /* font-weight: ${props => (props.isActive ? 'bold' : 'normal')}; */
   text-decoration: none;
   cursor: pointer;
   &.item {
-    color: ${props => props.theme.colors.tertiary};
+    /* color: ${props => props.theme.colors.tertiary}; */
+    color: ${LINK_COLOR};
     font-weight: 500;
   }
   &:hover {
-    color: ${props => props.theme.colors.tertiary};
+    /* color: ${props => props.theme.colors.tertiary}; */
+    color: ${LINK_COLOR_HOVER};
     font-weight: 500;
   }
 `

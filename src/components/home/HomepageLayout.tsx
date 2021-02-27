@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core'
 import { usePagesContext } from '@root/context/PagesContext'
 import useSharedStyles from '@root/theme/useSharedStyles'
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo, memo } from 'react'
 import styled from 'styled-components'
 import { ExperienceList } from './ExperienceList'
 import { EducationList } from './EducationList'
@@ -20,8 +20,8 @@ import HomeProjectGrid from './HomeProjectGrid'
 import ShowCaseProjectButton from './ShowCaseProjectButton'
 
 const SummaryLi = styled.li`
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-left: 12px;
   text-align: start;
   font-size: 1.16rem;
@@ -50,10 +50,24 @@ const SUMMARY_TEXTS = [
   'Proficient experience in QA testing methodology.',
   'Proven ability to document issues and bugs.',
 ]
+const _summary = (
+  <Grid item>
+    <Container maxWidth='md' style={{ margin: 0, padding: 0 }}>
+      <List style={{ fontSize: '1.1em' }}>
+        {SUMMARY_TEXTS.map(text => {
+          return <SummaryLi key={text}>{text}</SummaryLi>
+        })}
+      </List>
+    </Container>
+  </Grid>
+)
 
-const HomepageLayout = () => {
+
+const HomepageLayout: React.FC<{}> = () => {
   const { changePage } = usePagesContext()
   const classes = useSharedStyles()
+  const Summary = useMemo(() => _summary, [])
+
   useEffect(() => {
     changePage('Home')
   }, [changePage])
@@ -65,17 +79,8 @@ const HomepageLayout = () => {
     })
   }, [])
 
-  const summary = (
-    <Grid item>
-      <Container maxWidth='md' style={{ margin: 0 }}>
-        <List style={{ fontSize: '1.1em' }}>
-          {SUMMARY_TEXTS.map(text => {
-            return <SummaryLi key={text}>{text}</SummaryLi>
-          })}
-        </List>
-      </Container>
-    </Grid>
-  )
+
+
 
   return (
     <React.Fragment>
@@ -85,6 +90,7 @@ const HomepageLayout = () => {
           <HomepageHeading />
         </Paper>
       </PrimaryBackgroundSection>
+      <Box pb={2} />
       <Paper square elevation={0}>
         <Grid
           container
@@ -118,7 +124,6 @@ const HomepageLayout = () => {
               <Title variant='h4' component='h2' align='center' className="caption-text">
                 Skills
               </Title>
-
               <EducationList />
             </Grid>
           </Grid>
@@ -131,32 +136,18 @@ const HomepageLayout = () => {
             >
               <Box
                 css={{
-                  marginTop: 25,
+                  marginTop: 50,
                 }}
               />
-              {summary}
+              {Summary}
             </Container>
           </Grid>
-          {/* <ShowCaseProjectButton /> */}
         </Grid>
-
-        {/* <Container
-          id="projects"
-          classes={{
-            root: classes.minPaddingX,
-          }}
-        >
-          <AllProjects
-            addMarginTop={false}
-            showSliderControls={false}
-            loop={false}
-            limitTo={2}
-          />
-        </Container> */}
+        <Box pb={2} />
       </Paper>
       <Box pb={2} />
       <Paper square elevation={1}>
-        <Box pt={1} />
+        <Box pt={3} />
 
         <Typography align='center' variant='h4' component='h2' className="caption-text">
           Featured Projects
@@ -168,13 +159,15 @@ const HomepageLayout = () => {
             root: classes.minPaddingX,
           }}
         >
+          <Box pb={2} />
           <HomeProjectGrid limit={4} />
         </Container>
         <ShowCaseProjectButton color='primary' variant='contained' />
         <Box pb={2} />
+
       </Paper>
       {/* <SocialMediaEmbeds /> */}
     </React.Fragment>
   )
 }
-export default HomepageLayout
+export default memo(HomepageLayout)

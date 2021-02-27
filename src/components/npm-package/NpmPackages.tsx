@@ -28,6 +28,7 @@ import {
 interface Props {
   dark?: boolean
   limit?: number
+  omitDivider?: boolean
 }
 
 const spring = {
@@ -55,14 +56,14 @@ const useNpmStyles = makeStyles(theme => {
   }
 })
 
-const NpmPackages = (props: Props) => {
+const NpmPackages = ({ limit, dark, omitDivider }: Props) => {
   const classes = useNpmStyles()
 
   const theme = useTheme()
 
   const positions = useRef<Position[]>([]).current
   const [items, setItems] = React.useState(
-    props.limit ? NPM_PACKAGES.slice(0, props.limit) : NPM_PACKAGES
+    limit ? NPM_PACKAGES.slice(0, limit) : NPM_PACKAGES
   )
   function setPosition(i: number, offset: Position) {
     positions[i] = offset
@@ -77,7 +78,7 @@ const NpmPackages = (props: Props) => {
     <Box>
       <Paper
         style={
-          props.dark
+          dark
             ? {
               background: theme.palette.background.paper,
               color: 'inherit',
@@ -88,10 +89,15 @@ const NpmPackages = (props: Props) => {
         elevation={0}
       >
         <Container>
-          <Box mb={2} pt={2}>
-            <DividerElement>
-              <Typography align='center' className="caption-text"><b>NPM Packages</b></Typography>
-            </DividerElement>
+          <Box mb={3} pt={2}>
+            {omitDivider ? <Typography align='center' variant="h5">NPM Packages</Typography>
+
+              :
+
+              <DividerElement>
+                <Typography align='center' className="caption-text"><b>NPM Packages</b></Typography>
+              </DividerElement>
+            }
           </Box>
           <Grid
             container
@@ -228,6 +234,8 @@ function NpmPackage({ data, i, moveItem, setPosition, totalItems }: PackProps) {
                   style={{
                     position: 'absolute',
                     right: 12,
+                    padding: "3px 5px",
+                    fontSize: "0.7125rem"
                   }}
                   variant='outlined'
                   color='success'

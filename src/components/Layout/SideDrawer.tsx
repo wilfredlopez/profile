@@ -20,7 +20,7 @@ import { NAV_LINKS, SOCIAL_LINKS } from './navlinks'
 
 interface Props { }
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(_theme => ({
   list: {
     width: 250,
   },
@@ -36,22 +36,33 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const StyledNavLink = styled.a<{ isActive?: boolean }>`
-  color: ${props => (props.isActive ? props.theme.colors.tertiary : 'inherit')};
-  font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    color: ${props => props.theme.colors.tertiary};
-  }
-`
-export const StyledHtmlLinkWhite = styled.a<{ color?: string; noHover?: boolean }>`
-  color: ${props => (props.color ? props.color : 'inherit')};
-  text-decoration: none;
-  &:hover {
-    color: ${props =>
-    props.noHover ? 'inherit' : 'black'};
-  }
+// const StyledNavLink = styled.a<{ isActive?: boolean }>`
+//   color: ${props => (props.isActive ? props.theme.colors.tertiary : 'inherit')};
+//   font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
+//   text-decoration: none;
+//   cursor: pointer;
+//   &:hover {
+//     color: ${props => props.theme.colors.tertiary};
+//   }
+// `
+//  const StyledHtmlLinkWhite = styled.a<{ color?: string; noHover?: boolean, isActive?: boolean }>`
+//   color: ${props => (props.color ? props.color : 'inherit')};
+//   text-decoration: none;
+//   font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
+// cursor: pointer;
+//   &:hover {
+//     color: ${props =>
+//     props.noHover ? 'inherit' : 'black'};
+//   }
+// `
+export const StyledNavLinkWhite = styled.a<{ isActive?: boolean }>`
+color: ${props => (props.isActive ? '#7bfdff' : 'inherit')};
+font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
+cursor: pointer;
+text-decoration: none;
+&:hover {
+  color: #aefeff;
+}
 `
 
 export type Anchor = 'top' | 'left' | 'bottom' | 'right'
@@ -72,15 +83,7 @@ interface Props {
 //   closed: { opacity: 0, y: '-100%' },
 // }
 
-export const StyledNavLinkWhite = styled.a<{ isActive?: boolean }>`
-  color: ${props => (props.isActive ? 'black' : 'inherit')};
-  font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    color: black;
-  }
-`
+
 
 export default function SideDrawer({ anchor }: Props) {
   const classes = useStyles()
@@ -144,7 +147,7 @@ export default function SideDrawer({ anchor }: Props) {
           <Typography variant='h6'>Social</Typography>
         </ListItem>
         {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (
-          <StyledHtmlLinkWhite
+          <StyledNavLinkWhite
             href={href}
             title={text}
             target='_blank'
@@ -158,7 +161,7 @@ export default function SideDrawer({ anchor }: Props) {
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
-          </StyledHtmlLinkWhite>
+          </StyledNavLinkWhite>
         ))}
       </List>
     </div>

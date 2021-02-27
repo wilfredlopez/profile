@@ -73,7 +73,7 @@ const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
 
           <Typography
             component='h1'
-            variant='h3'
+            variant='h4'
             style={{
               // fontSize: "2em",
               fontWeight: 'normal',
@@ -105,16 +105,17 @@ const HomepageHeading: React.FC<Props> = ({ height = '81vh' }) => {
             >
               <WorkIcon />
 
-              <Typography>Quality Assurance/Web Development</Typography>
-              <small>React, Nodejs, Express, MongoDB, Web Accessibility</small>
+              <Typography component="h2" variant="h6">Quality Assurance/Web Development</Typography>
+              <Typography component="h3" variant="body2">React, Nodejs, Express, MongoDB, Web Accessibility</Typography>
+              <small></small>
             </motion.div>
           </Item>
           <Item>
             <RoomIcon />
             <div>
-              <span>Garfield, NJ, USA.</span>
+              <Typography variant="caption">Garfield, NJ, USA.</Typography>
             </div>
-            <motion.div style={{ margin: '1rem 0' }} whileHover={{ scale: 1.09 }} whileTap={{ scale: 1.3 }}>
+            <motion.div style={{ margin: '1rem 0' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.3 }}>
               <GlassButton
                 endIcon={<MailOutlineIcon />}
                 color="primary"
