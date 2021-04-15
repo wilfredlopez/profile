@@ -1,0 +1,19 @@
+.ContainerForm {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  gap: 1.2rem;
+}
+
+.ContainerForm > * {
+  margin: 1rem;
+}
+
+.ButtonSubmit:focus {
+  outline: 1px solid currentColor;
+}
+
+.ThanksDiv {
+  width: 100%;
+  text-align: center;
+}

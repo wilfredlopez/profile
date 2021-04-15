@@ -1,6 +1,6 @@
 import { Container, Avatar, Typography } from '@material-ui/core'
 import wilfredImg from '@root/img/wilfred-profile.png'
-import { Responsive, GlassButton } from '../shared'
+import { Responsive, GlassButton, StyledLink } from '../shared'
 import Segment from '../shared/Segment'
 import WorkIcon from '@material-ui/icons/Work'
 import RoomIcon from '@material-ui/icons/Room'
@@ -10,15 +10,16 @@ import styled from 'styled-components'
 // import { BrandButton } from "@root/theme/Custom";
 import ScaleUpDownComponent from '@components/shared/ScaleUpDownComponent'
 import { motion } from 'framer-motion'
-import { CONTACT_EMAIL } from '@root/constants'
+// import { CONTACT_EMAIL } from '@root/constants'
 import useSharedStyles from '@root/theme/useSharedStyles'
+import Link from 'next/link'
 interface Props {
 }
 
-const StyledAnker = styled.a`
-  color: inherit;
-  text-decoration: none;
-`
+// const StyledAnker = styled.a`
+//   color: inherit;
+//   text-decoration: none;
+// `
 const Item = styled.div`
   display: flex;
   flex-direction: column;
@@ -120,9 +121,14 @@ const HomepageHeading: React.FC<Props> = () => {
                 variant='contained'
                 size="large"
               >
-                <StyledAnker href={`mailto:${CONTACT_EMAIL}`} title='contact me'>
+                <Link href="/contact">
+                  <StyledLink title='contact me'>
+
+                    {/* <StyledAnker href={`mailto:${CONTACT_EMAIL}`} title='contact me'> */}
                   CONTACT ME
-                </StyledAnker>
+                {/* </StyledAnker> */}
+                  </StyledLink>
+                </Link>
               </GlassButton>
             </motion.div>
           </Item>

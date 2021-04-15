@@ -25,7 +25,9 @@ export const LINK_COLOR_HOVER = '#aefeff'
 //#914345
 
 //Cool Green #38b584 or #76b9ff
-export default function getTheme(prefersDarkMode = false) {
+export default function getTheme(
+  prefersDarkMode = false
+) {
   // const prefersDarkMode = true
 
 

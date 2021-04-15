@@ -531,6 +531,11 @@
   resolved "https://registry.yarnpkg.com/@wilfredlopez/react-utils/-/react-utils-3.0.2.tgz#820680c48c7102d50bca673d1ce2ab02218439f5"
   integrity sha512-C8c/at66omQa4IrbvTXld4pPivJl3zBHpLHDCxgAuUpokAFE7cODPZeFCUp9Rc7nNeEzI2felbISi0KvfPpNLA==
 
+"@wilfredlopez/validator@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@wilfredlopez/validator/-/validator-1.0.1.tgz#1865af4964b895998774329c478855acc05c5be1"
+  integrity sha512-Dn4gAYdXe/dPrj2VGTSCC9T0R8EvRwIIazvAry3q68MwjwD9KQvbjsxtARdSGZoWMdGckJQ8Pw47g77dirKeTg==
+
 accepts@~1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.7.tgz#531bc726517a3b2b41f850021c6cc15eaab507cd"

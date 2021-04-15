@@ -1,17 +1,55 @@
-import { Segment, StyledHtmlLink } from '@components/shared'
+import { ContactForm } from '@components/ContactForm'
+import {
+  Segment,
+  // StyledHtmlLink 
+} from '@components/shared'
 import Logo from '@components/shared/Logo'
-import { Button, Container, Grid, Typography } from '@material-ui/core'
-import { MailOutline as MailIcon, Phone as PhoneIcon } from '@material-ui/icons'
-import { CONTACT_EMAIL } from '@root/constants'
+import {
+  // Button, 
+
+  Container, Grid, Typography
+} from '@material-ui/core'
+// import { MailOutline as MailIcon, Phone as PhoneIcon } from '@material-ui/icons'
+// import { CONTACT_EMAIL } from '@root/constants'
 import { usePagesContext } from '@root/context/PagesContext'
 import { useEffect, Fragment } from 'react'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
-const Centerer = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+// const Centerer = styled.span`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// `
+
+// const GridEmailAndPhone = () =>( <>
+//                 <Grid item xs={6}>
+//                 <div style={{ textAlign: 'right' }}>
+//                   <Button size='large' color='secondary'>
+//                     <StyledHtmlLink
+//                       href={`mailto:${CONTACT_EMAIL}`}
+//                       title='By Email'
+//                     >
+//                       <Centerer>
+//                         <span>By Email</span>
+
+//                         <MailIcon />
+//                       </Centerer>
+//                     </StyledHtmlLink>
+//                   </Button>
+//                 </div>
+//               </Grid>
+//               <Grid item xs={6} style={{ textAlign: 'left' }}>
+//                 <Button size='large' color='secondary'>
+//                   <StyledHtmlLink href='tel:1+5514442665' title='By Phone'>
+//                     <Centerer>
+//                       <span>By Phone</span>
+//                       <PhoneIcon />
+//                     </Centerer>
+//                   </StyledHtmlLink>
+//                 </Button>
+//               </Grid>
+//   </>)
+
 
 const Contact = () => {
   const { changePage } = usePagesContext()
@@ -86,32 +124,8 @@ const Contact = () => {
                 <br />
                 <br />
               </Grid>
-              <Grid item xs={6}>
-                <div style={{ textAlign: 'right' }}>
-                  <Button size='large' color='secondary'>
-                    <StyledHtmlLink
-                      href={`mailto:${CONTACT_EMAIL}`}
-                      title='By Email'
-                    >
-                      <Centerer>
-                        <span>By Email</span>
-
-                        <MailIcon />
-                      </Centerer>
-                    </StyledHtmlLink>
-                  </Button>
-                </div>
-              </Grid>
-              <Grid item xs={6} style={{ textAlign: 'left' }}>
-                <Button size='large' color='secondary'>
-                  <StyledHtmlLink href='tel:1+5514442665' title='By Phone'>
-                    <Centerer>
-                      <span>By Phone</span>
-                      <PhoneIcon />
-                    </Centerer>
-                  </StyledHtmlLink>
-                </Button>
-              </Grid>
+              {/* {GridEmailAndPhone} */}
+              <ContactForm />
             </Grid>
           </Grid>
         </Segment>

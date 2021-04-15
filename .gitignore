@@ -24,3 +24,7 @@ yarn-error.log*
 .next
 dist
 out
+.env
+.env.development
+.env.production
+backend
