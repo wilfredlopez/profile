@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "es2017",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "es2017", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,20 +17,11 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@root/*": [
-        "./src/*"
-      ]
+      "@components/*": ["./src/components/*"],
+      "@root/*": ["./src/*"]
     },
     "jsx": "preserve"
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules", "backend"],
+  "include": ["**/*.ts", "**/*.tsx"]
 }
