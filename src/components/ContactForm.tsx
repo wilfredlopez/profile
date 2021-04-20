@@ -17,7 +17,11 @@ interface EmailBodyParams {
     message: string
 }
 
-function sendAPIRequest(values: EmailBodyParams) {
+type SuceessOrFailuer = "Success" | "Failure"
+
+// export const sleep = (n: number) => new Promise((r) => setTimeout(r, n))
+
+async function sendAPIRequest(values: EmailBodyParams) {
 
     return fetch(EMAIL_API_URL, {
         method: "POST",
@@ -25,7 +29,7 @@ function sendAPIRequest(values: EmailBodyParams) {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(values)
-    }).then(res => res.json()).then(data => data as { result: "Success" | "Failure" })
+    }).then(res => res.json()).then(data => data as { result: SuceessOrFailuer })
 }
 
 
@@ -39,6 +43,7 @@ export const ContactForm = () => {
     const emailRef = useRef<HTMLInputElement>(null)
     const [emailError, setEmailError] = useState("")
     const [showThankYou, setShowThankYou] = useState(false)
+    const [disableSend, setDisableSend] = useState(false)
 
     async function sendContactForm() {
         const validEmail = Validator.isEmail(email)
@@ -48,10 +53,13 @@ export const ContactForm = () => {
             return
         }
 
+        setDisableSend(true)
+
         try {
             const req = await sendAPIRequest({
                 name, email, subject, message
             })
+            console.log("Sending Request")
             if (req.result === 'Success') {
                 console.log("SUCCESS")
             }
@@ -65,6 +73,7 @@ export const ContactForm = () => {
                 name: "",
                 subject: ""
             })
+            setDisableSend(false)
 
         }
 
@@ -74,7 +83,7 @@ export const ContactForm = () => {
         setShowThankYou(true)
         setTimeout(() => {
             setShowThankYou(false)
-        }, 5000)
+        }, 4000)
     }
 
 
@@ -138,7 +147,11 @@ export const ContactForm = () => {
                         value={message} multiline placeholder="message" required rows={5} />
                 </FormControl>
                 <FormControl fullWidth>
-                    <ButtonFlex className={classes.ButtonSubmit} color="outlinedDefault" type="submit">Send</ButtonFlex>
+                    <ButtonFlex
+                        className={classes.ButtonSubmit}
+                        disabled={disableSend}
+                        color="containedInfo"
+                        type="submit">{disableSend ? "...." : "Send"}</ButtonFlex>
                 </FormControl>
             </form>
             <div className={classes.ThanksDiv}>

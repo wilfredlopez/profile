@@ -5,6 +5,7 @@ interface Props {
   percentBounce?: number
 }
 
+
 const bounceTransition = {
   y: {
     duration: 0.4,
@@ -30,6 +31,7 @@ const BounceComponent = (
         y: [`${percentBounce}%`, `-${percentBounce}%`],
         // backgroundColor: ["#ff6699", "#6666ff"],
       }}
+      className="bounce"
     >
       {children}
     </motion.div>

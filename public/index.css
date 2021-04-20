@@ -10,21 +10,21 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-#welcome-section{
+#welcome-section {
   place-content: center;
-    /* margin: auto; */
-    display: flex;
-    flex-direction: column;
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
 }
 
-.caption-text{
+.caption-text {
   letter-spacing: 0.07em !important;
   /* text-shadow: 3px 4px 5px rgb(0 0 0 / 19%); */
 }
-
 
 .border-full {
   /* border-radius: 100%; */
@@ -47,18 +47,36 @@ code {
   text-align: center;
 }
 
-
 ul,
 li {
   list-style: none;
 }
-
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
-.clear-link{
+.clear-link {
   display: inherit;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.bounce {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode play-state; */
+  animation: bounce-anim2 0.4s alternate 0.05s infinite ease-in-out;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@keyframes bounce-anim2 {
+  from {
+    transform: translateY(0px) translateZ(0px);
+  }
+  to {
+    transform: translateY(-20px) translateZ(-20px);
+  }
 }
