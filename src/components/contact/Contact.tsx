@@ -9,6 +9,7 @@ import {
 
   Container, Grid, Typography
 } from '@material-ui/core'
+import { EMAIL_API_ROOT_URL } from '@root/constants'
 // import { MailOutline as MailIcon, Phone as PhoneIcon } from '@material-ui/icons'
 // import { CONTACT_EMAIL } from '@root/constants'
 import { usePagesContext } from '@root/context/PagesContext'
@@ -51,13 +52,26 @@ import { useEffect, Fragment } from 'react'
 //   </>)
 
 
+/**
+ * Making sure the heroku application is up for the contact form to work.
+ */
+async function refreshHerokuEmailApi() {
+  try {
+    fetch(EMAIL_API_ROOT_URL).then(res => res.json())
+  } catch (_) {
+    console.log("")
+  }
+}
+
 const Contact = () => {
   const { changePage } = usePagesContext()
+
   useEffect(() => {
     changePage('Contact')
   }, [changePage])
 
   useEffect(() => {
+    refreshHerokuEmailApi()
     window.scrollTo({
       top: 0,
       left: 0,
