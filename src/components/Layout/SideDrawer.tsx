@@ -1,6 +1,5 @@
-import { Button, Typography } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider'
-import Drawer from '@material-ui/core/Drawer'
+// import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -8,8 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import { makeStyles } from '@material-ui/core/styles'
 import DragHandleIcon from '@material-ui/icons/DragHandle'
 import MailIcon from '@material-ui/icons/Mail'
-import MenuIcon from '@material-ui/icons/Menu'
-import { useState, Fragment } from 'react'
+import { Fragment } from 'react'
 import clsx from 'clsx'
 import NavLink from 'next/link'
 import { useRouter } from 'next/router'
@@ -22,10 +20,19 @@ interface Props { }
 
 const useStyles = makeStyles(() => ({
   list: {
-    width: 250,
+    // width: 250,
+    display: 'flex'
   },
   fullList: {
     width: 'auto',
+  },
+  innerList: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  InnerText: {
+    fontSize: '12px'
   },
   menuButton: {
     // marginRight: theme.spacing(0.5),
@@ -36,25 +43,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-// const StyledNavLink = styled.a<{ isActive?: boolean }>`
-//   color: ${props => (props.isActive ? props.theme.colors.tertiary : 'inherit')};
-//   font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
-//   text-decoration: none;
-//   cursor: pointer;
-//   &:hover {
-//     color: ${props => props.theme.colors.tertiary};
-//   }
-// `
-//  const StyledHtmlLinkWhite = styled.a<{ color?: string; noHover?: boolean, isActive?: boolean }>`
-//   color: ${props => (props.color ? props.color : 'inherit')};
-//   text-decoration: none;
-//   font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
-// cursor: pointer;
-//   &:hover {
-//     color: ${props =>
-//     props.noHover ? 'inherit' : 'black'};
-//   }
-// `
+
 export const StyledNavLinkWhite = styled.a<{ isActive?: boolean }>`
 color: ${props => (props.isActive ? '#7bfdff' : 'inherit')};
 font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
@@ -70,18 +59,6 @@ interface Props {
   anchor: Anchor
 }
 
-// const variants = {
-//   open: { opacity: 1, x: 0 },
-//   closed: { opacity: 0, x: '-100%' },
-// }
-
-// const listItemVariants = {
-//   open: {
-//     opacity: 1,
-//     y: 0,
-//   },
-//   closed: { opacity: 0, y: '-100%' },
-// }
 
 
 
@@ -90,43 +67,14 @@ export default function SideDrawer({ anchor }: Props) {
 
   const router = useRouter()
 
-  // const isBreakpoint = useMediaQuery(
-  //   (theme: Theme) => theme.breakpoints.up("md"),
-  //   {
-  //     defaultMatches: true,
-  //   },
-  // );
-  const [state, setState] = useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  })
-
-  const toggleDrawer = (anchor: Anchor, open: boolean) => (
-    event: React.KeyboardEvent | React.MouseEvent
-  ) => {
-    if (
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' ||
-        (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return
-    }
-
-    setState({ ...state, [anchor]: open })
-  }
-
   const list = (anchor: Anchor) => (
     <div
       className={clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role='presentation'
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List className={classes.innerList}>
         {NAV_LINKS.map(({ text, href, Icon }, index) => (
           <NavLink key={text + index + "nav_links"} href={href}>
             <StyledNavLinkWhite isActive={href === router.pathname}>
@@ -134,7 +82,9 @@ export default function SideDrawer({ anchor }: Props) {
                 <ListItemIcon style={{ color: 'inherit' }}>
                   {Icon ? Icon : <DragHandleIcon />}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary={text} primaryTypographyProps={
+                  { className: classes.InnerText }
+                } />
               </ListItem>
             </StyledNavLinkWhite>
           </NavLink>
@@ -142,10 +92,10 @@ export default function SideDrawer({ anchor }: Props) {
       </List>
       <Divider />
 
-      <List>
-        <ListItem button={false}>
+      <List className={classes.innerList}>
+        {/* <ListItem button={false}>
           <Typography variant='h6'>Social</Typography>
-        </ListItem>
+        </ListItem> */}
         {SOCIAL_LINKS.map(({ text, Icon, href }, index) => (
           <StyledNavLinkWhite
             href={href}
@@ -159,7 +109,11 @@ export default function SideDrawer({ anchor }: Props) {
               <ListItemIcon style={{ color: 'inherit' }}>
                 {Icon ? Icon : <MailIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text}
+                primaryTypographyProps={
+                  { className: classes.InnerText }
+                }
+              />
             </ListItem>
           </StyledNavLinkWhite>
         ))}
@@ -167,55 +121,13 @@ export default function SideDrawer({ anchor }: Props) {
     </div>
   )
 
-  // const isOpen = state[anchor] || isBreakpoint;
-  const isOpen = state[anchor]
 
   return (
     <Fragment key={anchor}>
-      {/* <Hidden mdUp initialWidth="sm"> */}
-      <Button
-        // edge="start"
-        onClick={toggleDrawer(anchor, true)}
-        className={classes.menuButton}
-        color='inherit'
-        aria-label='menu'
-      >
-        <MenuIcon />
-      </Button>
-      {/* </Hidden> */}
 
-      <Drawer
-        id='navbar-drawer'
-        anchor={anchor}
-        // variant={isBreakpoint ? "permanent" : undefined}
-        open={isOpen}
-        // ModalProps={{
-        //   disableScrollLock: isBreakpoint,
-        //   style: {
-        //     position: isBreakpoint ? "relative" : "fixed",
-        //   },
-        // }}
-        PaperProps={{
-          style: {
-            width: 240, overflow: 'hidden',
-            backgroundColor: 'rgb(255 255 255 / 20%)',
-            backdropFilter: 'blur(40px)',
-            WebkitBackdropFilter: 'blur(40px)',
-            color: 'white',
 
-          },
-        }}
-        SlideProps={{
-          timeout: {
-            exit: 300,
-            enter: 250,
-          },
-        }}
-        // hideBackdrop={isBreakpoint}
-        onClose={toggleDrawer(anchor, false)}
-      >
-        {list(anchor)}
-      </Drawer>
+
+      {list(anchor)}
     </Fragment>
   )
 }
